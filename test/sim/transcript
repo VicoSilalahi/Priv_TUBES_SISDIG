@@ -1,0 +1,96 @@
+# Compile of keyschedule.vhd failed with 6 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 7 errors.
+# Compile of keyschedule.vhd failed with 5 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 6 errors.
+# Compile of keyschedule.vhd failed with 7 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 8 errors.
+# Compile of keyschedule.vhd failed with 7 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 8 errors.
+# Compile of keyschedule.vhd failed with 3 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of keyschedule.vhd failed with 1 errors.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 2 failed with 2 errors.
+# Compile of keyschedule.vhd was successful.
+# Compile of keyschedule_tb.vhd failed with 2 errors.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of keyschedule.vhd was successful.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of keyschedule.vhd was successful.
+# Compile of keyschedule_tb.vhd failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of keyschedule.vhd was successful.
+# Compile of keyschedule_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.keyschedule_tb
+# vsim -voptargs="+acc" work.keyschedule_tb 
+# Start time: 15:35:51 on Nov 21,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.keyschedule_tb(bench)#1
+# Loading work.keyschedule(rtl)#1
+add wave -position insertpoint  \
+sim:/keyschedule_tb/clk_period \
+sim:/keyschedule_tb/K \
+sim:/keyschedule_tb/K_nr
+add wave -position insertpoint  \
+sim:/keyschedule_tb/clk_period \
+sim:/keyschedule_tb/K \
+sim:/keyschedule_tb/K_nr \
+sim:/keyschedule_tb/nr
+add wave -position insertpoint  \
+sim:/keyschedule_tb/K \
+sim:/keyschedule_tb/K_nr \
+sim:/keyschedule_tb/nr
+run
+# Compile of keyschedule.vhd was successful.
+# Compile of keyschedule_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+quit -sim
+# End time: 15:38:52 on Nov 21,2024, Elapsed time: 0:03:01
+# Errors: 0, Warnings: 16
+vsim -voptargs=+acc work.keyschedule_tb
+# vsim -voptargs="+acc" work.keyschedule_tb 
+# Start time: 15:38:53 on Nov 21,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.keyschedule_tb(bench)#1
+# Loading work.keyschedule(rtl)#1
+add wave -position insertpoint  \
+sim:/keyschedule_tb/clk_period \
+sim:/keyschedule_tb/K \
+sim:/keyschedule_tb/K_nr \
+sim:/keyschedule_tb/nr
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+add wave -position insertpoint  \
+sim:/keyschedule_tb/keyschedule_inst/delta \
+sim:/keyschedule_tb/keyschedule_inst/K \
+sim:/keyschedule_tb/keyschedule_inst/K_nr \
+sim:/keyschedule_tb/keyschedule_inst/nr \
+sim:/keyschedule_tb/keyschedule_inst/T \
+sim:/keyschedule_tb/keyschedule_inst/T_2
+run
+# End time: 16:09:50 on Nov 21,2024, Elapsed time: 0:30:57
+# Errors: 0, Warnings: 3
