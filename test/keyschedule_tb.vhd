@@ -27,6 +27,10 @@ begin
   begin
     K  <= x"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
     nr <= 0;
-    wait for 5 * clk_period;
+    wait for clk_period;
+    while nr < 24 loop
+      nr <= nr + 1;
+      wait for clk_period;
+    end loop;
   end process;
 end;
