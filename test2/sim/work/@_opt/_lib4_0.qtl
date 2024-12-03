@@ -1,0 +1,583 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/sim
+T_opt
+!s110 1733210992
+VSVHnHd@eW5F=>D<RooVfo1
+04 13 11 work constant_roll behavioural 1
+=1-28dfeb994648-674eb36f-1f8-30f4
+R1
+!s12b OEM100
+!s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Econstant_roll
+Z3 w1733210919
+Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 22
+R2
+Z7 8C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd
+Z8 FC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd
+l0
+L5 1
+V3`aB_eYLl]JBIU5z_oi`90
+!s100 8TRh8h;7AKN:8eJWPiGbI0
+Z9 OL;C;2023.3;77
+32
+Z10 !s110 1733210963
+!i10b 1
+!i113 0
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioural
+R4
+R5
+R6
+DEx4 work 13 constant_roll 0 22 3`aB_eYLl]JBIU5z_oi`90
+!i122 22
+l31
+L14 46
+VjGeAi:fNZJaXnEe3N_?KC3
+!s100 >Uf:H1IcbPl2lV:Gb`i2D0
+R9
+32
+R10
+!i10b 1
+!i113 0
+R11
+R12
+Eregister_32bit
+Z13 w1733205871
+Z14 DPx4 ieee 9 math_real 0 22 :8NNHF3SFI6^on5?4X[S`1
+R4
+R5
+R6
+!i122 23
+R2
+Z15 8C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd
+Z16 FC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd
+l0
+L7 1
+V:M=n[IXQK9[HM9Q0=XMi83
+!s100 411c<Q3lnkg8gahKRPzm73
+R9
+32
+Z17 !s110 1733210964
+!i10b 1
+!i113 0
+R11
+R12
+Abehavioral
+R14
+R4
+R5
+R6
+DEx4 work 14 register_32bit 0 22 :M=n[IXQK9[HM9Q0=XMi83
+!i122 23
+l17
+L15 15
+VA7T?Z`oGZm=_4Z259XJi`3
+!s100 hVX]lokQS<S>n`9a=QFf91
+R9
+32
+R17
+!i10b 1
+!i113 0
+R11
+R12
+{$MODEL_TECH/..} -nowarn 3
+R9
+Bbody
+DPx4 work 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+R15
+!i122 0
+l0
+L428 2020
+V54hD:cle8>8A;gPGAd7A50
+!s100 54hD:cle8>8A;gPGAd7A50
+R6
+33
+R43
+!i10b 1
+!i113 1
+R54
+R9
+Pstd_logic_arith
+R15
+R14
+!i122 15
+R26
+R3
+Z55 8vhdl_src/synopsys/mti_std_logic_arith.vhd
+Z56 Fvhdl_src/synopsys/mti_std_logic_arith.vhd
+l0
+L25 589
+VB[jVX6I8iRX2o6WYW0BB>3
+!s100 B[jVX6I8iRX2o6WYW0BB>3
+R6
+31
+b1
+R7
+!i10b 1
+!i113 1
+Z57 o-suppress 12110 -debuglib -93 -work ieee -dirpath {$MODEL_TECH/..}
+R9
+Bbody
+DPx4 work 15 std_logic_arith 0 22 B[jVX6I8iRX2o6WYW0BB>3
+R15
+R14
+!i122 15
+l0
+L620 2204
+VYK5N;aoc9U5hT0_HU4<NU0
+!s100 YK5N;aoc9U5hT0_HU4<NU0
+R6
+31
+R7
+!i10b 1
+!i113 1
+R57
+R9
+Pstd_logic_misc
+Z58 DPx8 synopsys 10 attributes 0 22 9IX8bg`a2S[Azh3JDMQM02
+R15
+R14
+!i122 16
+R21
+R3
+Z59 8vhdl_src/synopsys/mti_std_logic_misc.vhd
+Z60 Fvhdl_src/synopsys/mti_std_logic_misc.vhd
+l0
+L24 147
+VVh1S?Q;D1AH@iib=XF9h<0
+!s100 Vh1S?Q;D1AH@iib=XF9h<0
+R6
+31
+b1
+Z61 !s110 1689615079
+!i10b 1
+!i113 1
+R57
+R9
+Bbody
+DPx4 work 14 std_logic_misc 0 22 Vh1S?Q;D1AH@iib=XF9h<0
+R58
+R15
+R14
+!i122 16
+l0
+L173 794
+VO0mTInEDdl1`9QU[kcfC?3
+!s100 O0mTInEDdl1`9QU[kcfC?3
+R6
+31
+R61
+!i10b 1
+!i113 1
+R57
+R9
+Pstd_logic_signed
+Z62 DPx4 ieee 15 std_logic_arith 0 22 B[jVX6I8iRX2o6WYW0BB>3
+R15
+R14
+!i122 17
+R26
+R3
+Z63 8vhdl_src/synopsys/mti_std_logic_signed.vhd
+Z64 Fvhdl_src/synopsys/mti_std_logic_signed.vhd
+l0
+L35 190
+V33nZVN1bfI5lKJc7clY>c0
+!s100 33nZVN1bfI5lKJc7clY>c0
+R6
+31
+b1
+R61
+!i10b 1
+!i113 1
+R57
+R9
+Bbody
+DPx4 work 16 std_logic_signed 0 22 33nZVN1bfI5lKJc7clY>c0
+R62
+R15
+R14
+!i122 17
+l0
+L232 251
+V;FZ1nOF@T9oCDM5:X:4W[2
+!s100 ;FZ1nOF@T9oCDM5:X:4W[2
+R6
+31
+R61
+!i10b 1
+!i113 1
+R57
+R9
+Pstd_logic_textio
+R14
+R15
+!i122 18
+R21
+R3
+Z65 8vhdl_src/synopsys/std_logic_textio.vhd
+Z66 Fvhdl_src/synopsys/std_logic_textio.vhd
+l0
+L22 47
+VC8j>g0lzF^EAA]5<S6PY32
+!s100 C8j>g0lzF^EAA]5<S6PY32
+R6
+31
+b1
+Z67 !s110 1689615080
+!i10b 1
+!i113 1
+R57
+R9
+Bbody
+DPx4 work 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+R14
+R15
+!i122 18
+l0
+L70 584
+VT[AofGS5mc`a?WfcFT[G[1
+!s100 T[AofGS5mc`a?WfcFT[G[1
+R6
+31
+R67
+!i10b 1
+!i113 1
+R57
+R9
+Pstd_logic_unsigned
+R62
+R15
+R14
+!i122 19
+R21
+R3
+Z68 8vhdl_src/synopsys/mti_std_logic_unsigned.vhd
+Z69 Fvhdl_src/synopsys/mti_std_logic_unsigned.vhd
+l0
+L34 193
+Vo4hn5gYc0WVo72BSL@Ta50
+!s100 o4hn5gYc0WVo72BSL@Ta50
+R6
+31
+b1
+R67
+!i10b 1
+!i113 1
+R57
+R9
+Bbody
+DPx4 work 18 std_logic_unsigned 0 22 o4hn5gYc0WVo72BSL@Ta50
+R62
+R15
+R14
+!i122 19
+l0
+L234 241
+VEjan6iT6fRnZGnYKn3HFj2
+!s100 Ejan6iT6fRnZGnYKn3HFj2
+R6
+31
+R67
+!i10b 1
+!i113 1
+R57
+R9
+/thermal_systems
+R0
+R1
+!i122 14
+R2
+R3
+R4
+R5
+l0
+L578 36
+VkO4DYhS]Llaj_Rlz<Qk[D2
+!s100 kO4DYhS]Llaj_Rlz<Qk[D2
+R6
+35
+R7
+!i10b 1
+!i113 1
+R8
+R9
+Pupf
+R47
+R15
+R14
+!i122 13
+R16
+R3
+Z70 8vhdl_src/ieee/mti_upf.vhd
+Z71 Fvhdl_src/ieee/mti_upf.vhd
+l0
+L4 1092
+V7zU<Gbzg_m7_7ga;J1b][2
+!s100 7zU<Gbzg_m7_7ga;J1b][2
+R6
+33
+b1
+R23
+!i10b 1
+!i113 1
+R11
+R9
+Bbody
+DPx4 work 3 upf 0 22 7zU<Gbzg_m7_7ga;J1b][2
+R47
+R15
+R14
+!i122 13
+l0
+L1097 957
+VPfL;WSkh8@GDcc6ZO2^[B3
+!s100 PfL;WSkh8@GDcc6ZO2^[B3
+R6
+33
+R23
+!i10b 1
+!i113 1
+R11
+R9
+Pvital_memory
+Z72 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z73 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+R15
+R14
+!i122 22
+Z74 w1689614229
+R3
+8vhdl_src/vital2000/memory_p_2000.vhd
+Fvhdl_src/vital2000/memory_p_2000.vhd
+l0
+L238 1493
+V^1ad]H6OBL]mNk0Ec1hI50
+!s100 ^1ad]H6OBL]mNk0Ec1hI50
+R6
+31
+b1
+Z75 !s110 1689615082
+!i10b 1
+!i113 1
+Z76 o-suppress 12110 -debuglib -93 -work ieee -novital -dirpath {$MODEL_TECH/..}
+R9
+Bbody
+DPx4 work 12 vital_memory 0 22 ^1ad]H6OBL]mNk0Ec1hI50
+R72
+R73
+R15
+R14
+!i122 23
+8vhdl_src/vital2000/memory_b_2000.vhd
+Fvhdl_src/vital2000/memory_b_2000.vhd
+l0
+L239 6912
+VmR^LI9g=zTL2@6hVL?^:V0
+!s100 mR^LI9g=zTL2@6hVL?^:V0
+R6
+31
+R24
+!i10b 1
+!i113 1
+R76
+R9
+Pvital_primitives
+R73
+R15
+R14
+!i122 21
+Z77 w1689614228
+R3
+8vhdl_src/vital2000/prmtvs_p_2000.vhd
+Fvhdl_src/vital2000/prmtvs_p_2000.vhd
+l0
+L50 1364
+VY]H?Y_]z4@VoaWAGJ=36m1
+!s100 Y]H?Y_]z4@VoaWAGJ=36m1
+R6
+31
+b1
+Z78 !s110 1689615081
+!i10b 1
+!i113 1
+R76
+R9
+Bbody
+DPx4 work 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+R73
+R15
+R14
+!i122 22
+R74
+8vhdl_src/vital2000/prmtvs_b_2000.vhd
+Fvhdl_src/vital2000/prmtvs_b_2000.vhd
+l0
+L33 5589
+V8_g68ZkaEO7cFj_;62j]U1
+!s100 8_g68ZkaEO7cFj_;62j]U1
+R6
+31
+R75
+!i10b 1
+!i113 1
+R76
+R9
+Pvital_timing
+R15
+R14
+!i122 20
+R77
+R3
+8vhdl_src/vital2000/timing_p_2000.vhd
+Fvhdl_src/vital2000/timing_p_2000.vhd
+l0
+L70 1133
+V6STbz=m1W[80IE06h_el^0
+!s100 6STbz=m1W[80IE06h_el^0
+R6
+31
+b1
+R67
+!i10b 1
+!i113 1
+R76
+R9
+Bbody
+DPx4 work 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+R15
+R14
+!i122 21
+R74
+8vhdl_src/vital2000/timing_b_2000.vhd
+Fvhdl_src/vital2000/timing_b_2000.vhd
+l0
+L49 2161
+Vib5lkDE5]n8gcaTFoV9[=3
+!s100 ib5lkDE5]n8gcaTFoV9[=3
+R6
+31
+R78
+!i10b 1
+!i113 1
+R76
+R9
+m255
+K4
+z2
+!s8c locked
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+!s95 MTI
+cModel Technology Builtin Library
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+dC:/cygwin/pc_home/rhino/buildsites/2023.p/builds/win64.4422009/modeltech
+Penv
+!i122 1
+Z0 w1689614225
+Z1 d$MODEL_TECH/..
+Z2 8vhdl_src/std/env.vhd
+Z3 Fvhdl_src/std/env.vhd
+l0
+L1 11
+VQPZJVBPkV?55nUWhDzFik0
+!s100 QPZJVBPkV?55nUWhDzFik0
+Z4 OL;C;2023.3;77
+32
+b1
+Z5 !s110 1689615035
+!i10b 1
+!i113 1
+Z6 o-suppress 12110 -debuglib -work std -dirpath {$MODEL_TECH/..}
+Z7 tExplicit 1 CvgOpt 0
+Bbody
+DPx4 work 3 env 0 22 QPZJVBPkV?55nUWhDzFik0
+!i122 1
+l0
+L15 49
+V;=VzJI]0PkQWMU[>07^]O3
+!s100 ;=VzJI]0PkQWMU[>07^]O3
+R4
+32
+R5
+!i10b 1
+!i113 1
+R6
+R7
+Pstandard
+!i122 0
+w1689614227
+R1
+8vhdl_src/std/standard.vhd
+Fvhdl_src/std/standard.vhd
+l0
+L8 86
+VgDZ6V?kmeR>nj0X]h5Kf63
+!s100 gDZ6V?kmeR>nj0X]h5Kf63
+R4
+33
+R5
+!i10b 1
+!i113 1
+o-suppress 12110 -debuglib -s -2008 -work std -dirpath {$MODEL_TECH/..}
+R7
+Ptextio
+!i122 2
+Z8 w1673563938
+R1
+Z9 8vhdl_src/std/textio.vhd
+Z10 Fvhdl_src/std/textio.vhd
+l0
+L1 166
+VLS[?81n5ZHWBI9JkBZTV<2
+!s100 LS[?81n5ZHWBI9JkBZTV<2
+R4
+33
+b1
+Z11 !s110 1689615036
+!i10b 1
+!i113 1
+Z12 o-suppress 12110 -debuglib -2008 -work std -dirpath {$MODEL_TECH/..}
+R7
+Bbody
+DPx4 work 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+!i122 2
+l0
+L186 428
+VOj3HJ19O2z`I?Lg`LXkm;0
+!s100 Oj3HJ19O2z`I?Lg`LXkm;0
+R4
+33
+R11
+!i10b 1
+!i113 1
+R12
+R7

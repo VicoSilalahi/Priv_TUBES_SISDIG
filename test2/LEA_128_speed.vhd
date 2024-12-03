@@ -37,33 +37,42 @@ architecture Behavioral of LEA_128_speed is
     );
   end component;
 
-  component xor_32bit is
-    port (
-      a, b : in std_logic_vector (31 downto 0);
-      y    : out std_logic_vector (31 downto 0)
-    );
-  end component;
+  -- component xor_32bit is
+  --   port (
+  --     a, b : in std_logic_vector (31 downto 0);
+  --     y    : out std_logic_vector (31 downto 0)
+  --   );
+  -- end component;
 
-  component add_modulo_32bit is
-    port (
-      a, b : in std_logic_vector (31 downto 0);
-      y    : out std_logic_vector (31 downto 0)
-    );
-  end component;
+  -- component add_modulo_32bit is
+  --   port (
+  --     a, b : in std_logic_vector (31 downto 0);
+  --     y    : out std_logic_vector (31 downto 0)
+  --   );
+  -- end component;
 
-  component rotate_left is
-    port (
-      data_in  : in std_logic_vector (31 downto 0);
-      sel      : in integer range 0 to 31;
-      data_out : out std_logic_vector (31 downto 0)
-    );
-  end component;
+  -- component rotate_left is
+  --   port (
+  --     data_in  : in std_logic_vector (31 downto 0);
+  --     sel      : in integer range 0 to 31;
+  --     data_out : out std_logic_vector (31 downto 0)
+  --   );
+  -- end component;
 
-  component rotate_right is
+  -- component rotate_right is
+  --   port (
+  --     data_in  : in std_logic_vector (31 downto 0);
+  --     sel      : in integer range 0 to 31;
+  --     data_out : out std_logic_vector (31 downto 0)
+  --   );
+  -- end component;
+
+  component constant_roll is
     port (
-      data_in  : in std_logic_vector (31 downto 0);
-      sel      : in integer range 0 to 31;
-      data_out : out std_logic_vector (31 downto 0)
+      clk                            : in std_logic;
+      reset                          : in std_logic;
+      enable                         : in std_logic;
+      Cout_0, Cout_1, Cout_2, Cout_3 : out std_logic_vector(31 downto 0)
     );
   end component;
 
@@ -74,7 +83,7 @@ architecture Behavioral of LEA_128_speed is
   signal enREG, resREG, resCONST : std_logic;
   signal outMuxX, outMuxK        : chunk_32(3 downto 0);
   signal outRegX, outRegK        : chunk_32(3 downto 0);
-  signal outRegConst             : chunk_32(3 downto 0);
+  signal Cout                    : chunk_32(3 downto 0);
 
 begin
 
@@ -112,12 +121,47 @@ begin
     );
   end generate;
 
-  internalX(0) <= std_logic_vector(unsigned(outRegX(0) xor internalRK(0)) + unsigned(outRegX(1) xor internalRK(1)));
-  internalX(1) <= std_logic_vector(unsigned(outRegX(1) xor internalRK(2)) + unsigned(outRegX(2) xor internalRK(1)));
-  internalX(2) <= std_logic_vector(unsigned(outRegX(2) xor internalRK(3)) + unsigned(outRegX(3) xor internalRK(1)));
+  internalX(0) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegX(0) xor internalRK(0)) + unsigned(outRegX(1) xor internalRK(1)), 9));
+  internalX(1) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegX(1) xor internalRK(2)) + unsigned(outRegX(2) xor internalRK(1)), 5));
+  internalX(2) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegX(2) xor internalRK(3)) + unsigned(outRegX(3) xor internalRK(1)), 3));
   internalX(3) <= outRegX(0);
 
+  -- Key Schedule
+  -- Constant Rolling
+  constant_roll_inst : constant_roll
+  port map
+  (
+    clk    => clk,
+    reset  => reset,
+    enable => enable,
+    Cout_0 => Cout(0),
+    Cout_1 => Cout(1),
+    Cout_2 => Cout(2),
+    Cout_3 => Cout(3)
+  );
 
+  muxK_inst : for i in 0 to 3 generate
+    muxK : mux_2to1_32bit
+    port map
+    (
+      sel => selKEY,
+      a   => RK(i),
+      b   => internalRK(i),
+      y   => outMuxK(i)
+    );
+  end generate;
+
+  regK_inst : for i in 0 to 3 generate
+    regK : register_32bit
+    port map
+    (
+      clk    => clk,
+      reset  => reset,
+      enable => enREG,
+      d      => outMuxK(i),
+      q      => outRegK(i)
+    );
+  end generate;  
   -- muxKEY : for i in 0 to 3 generate
   --   muxK : mux_2to1_32bit
   --   port map
