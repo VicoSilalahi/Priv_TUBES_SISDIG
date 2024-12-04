@@ -43,10 +43,10 @@ begin
     elsif rising_edge(clk) then
       if enable = '1' then
         -- Perform roll-left operations and pass data between registers
-        regC3 <= shift_left(regC0, 1);
-        regC2 <= shift_left(regC3, 1);
-        regC1 <= shift_left(regC2, 1);
-        regC0 <= shift_left(regC1, 1);
+        regC3 <= std_logic_vector(shift_left(unsigned(regC0), 1));
+        regC2 <= std_logic_vector(shift_left(unsigned(regC3), 1));
+        regC1 <= std_logic_vector(shift_left(unsigned(regC2), 1));
+        regC0 <= std_logic_vector(shift_left(unsigned(regC1), 1));
       end if;
     end if;
   end process;

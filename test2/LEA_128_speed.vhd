@@ -8,7 +8,8 @@ entity LEA_128_speed is
     clk   : in std_logic;
     reset : in std_logic;
     i_key : in std_logic_vector(127 downto 0);
-    i_ptx : in std_logic_vector(127 downto 0)
+    i_ptx : in std_logic_vector(127 downto 0);
+    start : in std_logic
   );
 end entity;
 
@@ -37,36 +38,6 @@ architecture Behavioral of LEA_128_speed is
     );
   end component;
 
-  -- component xor_32bit is
-  --   port (
-  --     a, b : in std_logic_vector (31 downto 0);
-  --     y    : out std_logic_vector (31 downto 0)
-  --   );
-  -- end component;
-
-  -- component add_modulo_32bit is
-  --   port (
-  --     a, b : in std_logic_vector (31 downto 0);
-  --     y    : out std_logic_vector (31 downto 0)
-  --   );
-  -- end component;
-
-  -- component rotate_left is
-  --   port (
-  --     data_in  : in std_logic_vector (31 downto 0);
-  --     sel      : in integer range 0 to 31;
-  --     data_out : out std_logic_vector (31 downto 0)
-  --   );
-  -- end component;
-
-  -- component rotate_right is
-  --   port (
-  --     data_in  : in std_logic_vector (31 downto 0);
-  --     sel      : in integer range 0 to 31;
-  --     data_out : out std_logic_vector (31 downto 0)
-  --   );
-  -- end component;
-
   component constant_roll is
     port (
       clk                            : in std_logic;
@@ -76,14 +47,29 @@ architecture Behavioral of LEA_128_speed is
     );
   end component;
 
+  component counterComparator is
+    port (
+      clk    : in std_logic;
+      resCTR : in std_logic;
+      enCTR  : in std_logic;
+      isDone : out std_logic
+    );
+  end component;
+
   type chunk_32 is array (natural range <>) of std_logic_vector(31 downto 0);
-  signal RK, internalRK          : chunk_32(3 downto 0);
-  signal X, internalX            : chunk_32(3 downto 0);
-  signal selKEY, selPTX          : std_logic;
-  signal enREG, resREG, resCONST : std_logic;
-  signal outMuxX, outMuxK        : chunk_32(3 downto 0);
-  signal outRegX, outRegK        : chunk_32(3 downto 0);
-  signal Cout                    : chunk_32(3 downto 0);
+  signal RK, internalRK                         : chunk_32(3 downto 0);
+  signal X, internalX                           : chunk_32(3 downto 0);
+  signal sPTX, sKEY                             : std_logic;
+  signal enREG, enCTR, resREG, resCONST, resCTR : std_logic;
+
+  signal outMuxX, outMuxK : chunk_32(3 downto 0);
+  signal outRegX, outRegK : chunk_32(3 downto 0);
+  signal Cout             : chunk_32(3 downto 0);
+
+  signal isDone : std_logic;
+
+  type STATE is (S_Idle, S_Round, S_End, S_Reset);
+  signal Current_State, Next_State : STATE := S_Idle;
 
 begin
 
@@ -102,7 +88,7 @@ begin
     muxX : mux_2to1_32bit
     port map
     (
-      sel => selPTX,
+      sel => sPTX,
       a   => X(i),
       b   => internalX(i),
       y   => outMuxX(i)
@@ -133,7 +119,7 @@ begin
   (
     clk    => clk,
     reset  => reset,
-    enable => enable,
+    enable => enREG,
     Cout_0 => Cout(0),
     Cout_1 => Cout(1),
     Cout_2 => Cout(2),
@@ -144,7 +130,7 @@ begin
     muxK : mux_2to1_32bit
     port map
     (
-      sel => selKEY,
+      sel => sKEY,
       a   => RK(i),
       b   => internalRK(i),
       y   => outMuxK(i)
@@ -161,51 +147,81 @@ begin
       d      => outMuxK(i),
       q      => outRegK(i)
     );
-  end generate;  
-  -- muxKEY : for i in 0 to 3 generate
-  --   muxK : mux_2to1_32bit
-  --   port map
-  --   (
-  --     sel => selKEY,
-  --     a   => X(i),
-  --     b   => outMuxK(i),
-  --     y   => outRegK(i)
-  --   );
-  -- end generate;
+  end generate;
 
-  -- muxPTX : for i in 0 to 3 generate
-  --   muxP : mux_2to1_32bit
-  --   port map
-  --   (
-  --     sel => selPTX,
-  --     a   => a,
-  --     b   => b,
-  --     y   => y
-  --   );
-  -- end generate;
+  internalRK(0) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegK(0)) + unsigned(Cout(0)), 1));
+  internalRK(1) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegK(1)) + unsigned(Cout(1)), 3));
+  internalRK(2) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegK(2)) + unsigned(Cout(2)), 6));
+  internalRK(3) <= std_logic_vector(SHIFT_LEFT(unsigned(outRegK(3)) + unsigned(Cout(3)), 11));
+  -- Counter and Comparator
+  counterComparator_inst : counterComparator
+  port map
+  (
+    clk    => clk,
+    resCTR => resCTR,
+    enCTR  => enCTR,
+    isDone => isDone
+  );
 
-  -- regKEYTEMP : for i in 0 to 3 generate
-  --   regT : register_32bit
-  --   port map
-  --   (
-  --     clk    => clk,
-  --     reset  => reset,
-  --     enable => enREG,
-  --     d      => d,
-  --     q      => q
-  --   );
-  -- end generate;
+  -- FSM
+  -- S_Idle, S_Round, S_End, S_Reset
+  -- is_done, start, stop
+  -- sPTX, sKEY, enREG, enCTR, resREG, resCONST, resCTR
 
-  -- regPTXX : for i in 0 to 3 generate
-  --   regX : register_32bit
-  --   port map
-  --   (
-  --     clk    => clk,
-  --     reset  => reset,
-  --     enable => enREG,
-  --     d      => d,
-  --     q      => q
-  --   );
-  -- end generate;
+  process (clk)
+  begin
+    if reset = '1' then
+      Next_State <= S_Reset;
+    end if;
+    if rising_edge(clk) then
+      Current_State <= Next_State;
+    end if;
+  end process;
 
+  process (Next_State, Current_State)
+  begin
+    Next_State <= Current_State;
+    case Current_State is
+      when S_Idle =>
+        if start = '1' then
+          Next_State <= S_Round;
+        end if;
+        sPTX     <= '0';
+        sKEY     <= '0';
+        enREG    <= '1';
+        enCTR    <= '1';
+        resREG   <= '0';
+        resCONST <= '0';
+        resCTR   <= '0';
+      when S_Round =>
+        if isDone = '1' then
+          Next_State <= S_End;
+        end if;
+        sPTX     <= '1';
+        sKEY     <= '1';
+        enREG    <= '1';
+        enCTR    <= '1';
+        resREG   <= '0';
+        resCONST <= '0';
+        resCTR   <= '0';
+      when S_End =>
+        sPTX     <= '0';
+        sKEY     <= '0';
+        enREG    <= '0';
+        enCTR    <= '0';
+        resREG   <= '0';
+        resCONST <= '0';
+        resCTR   <= '0';
+      when others =>
+        Next_State <= S_Reset;
+        sPTX       <= '0';
+        sKEY       <= '0';
+        enREG      <= '0';
+        enCTR      <= '0';
+        resREG     <= '1';
+        resCONST   <= '1';
+        resCTR     <= '1';
+    end case;
+
+  end process;
 end Behavioral;

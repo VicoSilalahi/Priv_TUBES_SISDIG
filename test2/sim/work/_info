@@ -1,67 +1,63 @@
 m255
 K4
 z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
-R0
-R1
-R0
-R1
-!s11e MIXED_VERSIONS
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/sim
+Z1 dD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/sim
 T_opt
-!s110 1733210992
-VSVHnHd@eW5F=>D<RooVfo1
-04 13 11 work constant_roll behavioural 1
-=1-28dfeb994648-674eb36f-1f8-30f4
-R1
+!s110 1733338352
+VhI0>oP7bJ3]Jk7>4N5WzB1
+04 13 10 work lea_128_speed behavioral 1
+=1-7c10c985eae4-6750a4ee-20f-5a3c
+R0
 !s12b OEM100
-!s124 OEM10U1 
-o-quiet -auto_acc_if_foreign -work work
+!s124 OEM10U18 
+o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
 Econstant_roll
-Z3 w1733210919
+Z2 w1733337995
+Z3 DPx4 ieee 9 math_real 0 22 :8NNHF3SFI6^on5?4X[S`1
 Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 22
-R2
-Z7 8C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd
-Z8 FC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd
+!i122 0
+R1
+Z7 8D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/constant_roll.vhd
+Z8 FD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/constant_roll.vhd
 l0
-L5 1
-V3`aB_eYLl]JBIU5z_oi`90
-!s100 8TRh8h;7AKN:8eJWPiGbI0
+L6 1
+VY0KZXNC[@>;P63mQ5fihC3
+!s100 :QTd9e5bm;nT7OV1T@h9B2
 Z9 OL;C;2023.3;77
 32
-Z10 !s110 1733210963
+Z10 !s110 1733338314
 !i10b 1
-Z11 !s108 1733210963.000000
-Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd|
-Z13 !s107 C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/constant_roll.vhd|
+Z11 !s108 1733338313.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/constant_roll.vhd|
+Z13 !s107 D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/constant_roll.vhd|
 !i113 0
 Z14 o-work work -2002 -explicit
 Z15 tExplicit 1 CvgOpt 0
 Abehavioural
+R3
 R4
 R5
 R6
-DEx4 work 13 constant_roll 0 22 3`aB_eYLl]JBIU5z_oi`90
-!i122 22
-l31
-L14 46
-VjGeAi:fNZJaXnEe3N_?KC3
-!s100 >Uf:H1IcbPl2lV:Gb`i2D0
+DEx4 work 13 constant_roll 0 22 Y0KZXNC[@>;P63mQ5fihC3
+!i122 0
+l32
+L15 46
+V5DX@zOhT`jeVOTgjzi8ia1
+!s100 5Y[6@24bzT]1?6To@fVMn0
 R9
 32
 R10
@@ -72,48 +68,183 @@ R13
 !i113 0
 R14
 R15
-Eregister_32bit
-Z16 w1733205871
-Z17 DPx4 ieee 9 math_real 0 22 :8NNHF3SFI6^on5?4X[S`1
+Edemux_1to2_32bit
+Z16 w1733136599
+R3
 R4
 R5
 R6
-!i122 23
-R2
-Z18 8C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd
-Z19 FC:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd
+!i122 1
+R1
+Z17 8D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/demux_1to2_32bit.vhd
+Z18 FD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/demux_1to2_32bit.vhd
+l0
+L7 1
+V_CX]R;CA^hD3Qc8[zXf5W2
+!s100 c1^?OTRgEEL^7IILBM<Rg2
+R9
+32
+R10
+!i10b 1
+Z19 !s108 1733338314.000000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/demux_1to2_32bit.vhd|
+Z21 !s107 D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/demux_1to2_32bit.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R3
+R4
+R5
+R6
+DEx4 work 16 demux_1to2_32bit 0 22 _CX]R;CA^hD3Qc8[zXf5W2
+!i122 1
+l16
+L15 5
+VhanQc7j1Q7jWKkF9YOfMM0
+!s100 PQF30XVWTR>XXLYjiFcT62
+R9
+32
+R10
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R14
+R15
+Elea_128_speed
+Z22 w1733337988
+R3
+R4
+R5
+R6
+!i122 2
+R1
+Z23 8D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/LEA_128_speed.vhd
+Z24 FD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/LEA_128_speed.vhd
+l0
+L6 1
+Ve_j@jN?YNoIeJNTT=0GQP3
+!s100 0kYDEa;_:ClRLzE]GzMDH2
+R9
+32
+R10
+!i10b 1
+R19
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/LEA_128_speed.vhd|
+Z26 !s107 D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/LEA_128_speed.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R3
+R4
+R5
+R6
+DEx4 work 13 lea_128_speed 0 22 e_j@jN?YNoIeJNTT=0GQP3
+!i122 2
+l60
+L16 127
+VPhJd<j3Yk<6Rc?Q[OOi0L0
+!s100 g8JV0DK720a:_i@>^F`MZ2
+R9
+32
+R10
+!i10b 1
+R19
+R25
+R26
+!i113 0
+R14
+R15
+Emux_2to1_32bit
+Z27 w1733136605
+R3
+R4
+R5
+R6
+!i122 3
+R1
+Z28 8D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/mux_2to1_32bit.vhd
+Z29 FD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/mux_2to1_32bit.vhd
+l0
+L7 1
+V[AoOm<NZQ_b<PTo_Tl>Dj2
+!s100 5Pke5DF2B0<NPLNz1Gha;1
+R9
+32
+R10
+!i10b 1
+R19
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/mux_2to1_32bit.vhd|
+Z31 !s107 D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/mux_2to1_32bit.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R3
+R4
+R5
+R6
+DEx4 work 14 mux_2to1_32bit 0 22 [AoOm<NZQ_b<PTo_Tl>Dj2
+!i122 3
+l16
+L15 4
+VN>M;^7eSbdGVS0VMSFNKb1
+!s100 dD4hTchb1<>U9TVhAAFe:1
+R9
+32
+R10
+!i10b 1
+R19
+R30
+R31
+!i113 0
+R14
+R15
+Eregister_32bit
+Z32 w1733136624
+R3
+R4
+R5
+R6
+!i122 4
+R1
+Z33 8D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/register_32bit.vhd
+Z34 FD:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/register_32bit.vhd
 l0
 L7 1
 V:M=n[IXQK9[HM9Q0=XMi83
 !s100 411c<Q3lnkg8gahKRPzm73
 R9
 32
-Z20 !s110 1733210964
+R10
 !i10b 1
-Z21 !s108 1733210964.000000
-Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd|
-Z23 !s107 C:/Users/ASUS/Documents/Sisdig/EL2002_LEA128CFB/test2/register_32bit.vhd|
+R19
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/register_32bit.vhd|
+Z36 !s107 D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/test2/register_32bit.vhd|
 !i113 0
 R14
 R15
 Abehavioral
-R17
+R3
 R4
 R5
 R6
 DEx4 work 14 register_32bit 0 22 :M=n[IXQK9[HM9Q0=XMi83
-!i122 23
+!i122 4
 l17
 L15 15
 VA7T?Z`oGZm=_4Z259XJi`3
 !s100 hVX]lokQS<S>n`9a=QFf91
 R9
 32
-R20
+R10
 !i10b 1
-R21
-R22
-R23
+R19
+R35
+R36
 !i113 0
 R14
 R15
