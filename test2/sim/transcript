@@ -259,3 +259,5 @@ force -freeze sim:/constant_roll/enable 1 0
 force -freeze sim:/constant_roll/reset 1 0, 0 {25 ns} -r 50
 run
 # Causality operation skipped due to absence of debug database file
+# End time: 15:52:41 on Dec 03,2024, Elapsed time: 1:22:51
+# Errors: 0, Warnings: 1
