@@ -67,9 +67,7 @@ architecture rtl of top is
   -- Top Entity FSM
   type state is (IDLE, REGKEY, LEA);
   signal currentstate, nextstate : state := IDLE;
-  /*
-  Currentstate: 
-  */
+  -- Currentstate
 
 begin
   -- Register for Masterkey Input, Will not change except when reset
@@ -166,64 +164,3 @@ begin
   end process;
 
 end architecture;
-
-/*
-ToDO
-1. FSM For Top Entity
-    Signals:
-        S_IV: Controls the multiplexer to select the IV source.
-        En_IV, En_Key: Enable signals for the IV and key registers.
-        START_LEA: Initiates the encryption process.
-        isdone: Indicates the completion of the encryption by the LEA_encrypt component.
-
-Proposed FSM:
-
-States:
-
-    IDLE: The initial state. Waits for the start signal.
-    LOAD_KEY: Loads the master key from the UART (not yet implemented).
-    ENCRYPT: Initiates the LEA_encrypt process.
-    SEND_DATA: Sends the ciphertext to the PC via UART (not yet implemented).
-    WAIT_FOR_PLAINTEXT: Waits for the next plaintext input from the PC.
-
-State Transitions:
-
-    IDLE -> LOAD_KEY: Upon receiving the start signal, transition to the LOAD_KEY state.
-    LOAD_KEY -> ENCRYPT: After loading the master key, transition to the ENCRYPT state.
-    ENCRYPT -> SEND_DATA: When the isdone signal from LEA_encrypt is asserted, transition to the SEND_DATA state.
-    SEND_DATA -> WAIT_FOR_PLAINTEXT: After sending the ciphertext, transition to the WAIT_FOR_PLAINTEXT state.
-    WAIT_FOR_PLAINTEXT -> ENCRYPT: Upon receiving the next plaintext from the PC, transition back to the ENCRYPT state.
-
-State Actions:
-
-    IDLE:
-        Set S_IV to '0' to select the initial IV.
-        Enable the key register (En_Key) to load the master key.
-        Disable the IV register (En_IV).
-        Deassert START_LEA.
-    LOAD_KEY:
-        Set S_IV to '0'.
-        Disable the key register (En_Key).
-        Disable the IV register (En_IV).
-        Deassert START_LEA.
-    ENCRYPT:
-        Set S_IV to '1' to select the calculated next IV.
-        Enable the IV register (En_IV).
-        Disable the key register (En_Key).
-        Assert START_LEA to initiate encryption.
-    SEND_DATA:
-        Set S_IV to '1'.
-        Disable the key register (En_Key).
-        Disable the IV register (En_IV).
-        Deassert START_LEA.
-        Send the ciphertext to the PC via UART (not yet implemented).
-    WAIT_FOR_PLAINTEXT:
-        Set S_IV to '0'.
-        Disable the key register (En_Key).
-        Disable the IV register (En_IV).
-        Deassert START_LEA.
-        Wait for the next plaintext input from the PC.
-
-
-
-*/
