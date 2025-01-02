@@ -1,0 +1,56 @@
+round_function pseudo-code
+
+fn ROL(num, val) -- num buat yang mau diRol, val mau berapa kali
+
+x[4]: array
+x[0] = P[0]
+x[1] = P[1]
+X[2] = P[2]
+X[3] = P[3]
+RK[6]: array
+r: int := 0
+
+while r < 24:
+  x_temp[4] = [x[0], x[1], x[2], x[3]]
+  x[0] = ROL(((x0_temp xor RK[0])+(x1_temp xor RK[1])), 9)
+  x[1] = ROR(((x1_temp xor RK[2])+(x2_temp xor RK[3])), 5)
+  x[2] = ROR(((x2_temp xor RK[4])+(x3_temp xor RK[5])), 3)
+  x[3] = x0_temp
+  r += 1
+
+key_schedule pseudo_code
+
+d[4] = [C3EFE9DB, 44626B02, 79E27C8A, 78DF30EC]
+
+K[4]: array
+T[4]: array
+RK[6]: array
+T = K
+r: int := 0
+T_temp[4]: array 
+while r < 24:
+  T_temp[4]: array = [T[0], T[1], T[2], T[3]]   ---declare temporary array
+  T[0] = ROL((T_temp[0] + ROL(d[r mod 4], r)), 1)
+  T[1] = ROL((T_temp[1] + ROL(d[r mod 4], (r+1))), 3)
+  T[2] = ROL((T_temp[2] + ROL(d[r mod 4], (r+2))), 6)
+  T[3] = ROL((T_temp[3] + ROL(d[r mod 4], (r+3))), 11)
+  RK = [T_temp[0], T_temp[1], T_temp[2], T_temp[1], T_temp[3], T_temp[1]]
+  r+=1
+  
+  ---------------------------------------------------------
+  
+  while r < 24:
+  T_temp[4]: array = [T[0], T[1], T[2], T[3]]   ---declare temporary array
+  T[0] = ROL((T_temp[0] + ROL(d[r mod 4], r)), 1)
+  T[1] = ROL((T_temp[1] + ROL(d[r mod 4], (r+1))), 3)
+  T[2] = ROL((T_temp[2] + ROL(d[r mod 4], (r+2))), 6)
+  T[3] = ROL((T_temp[3] + ROL(d[r mod 4], (r+3))), 11)
+  RK = [T_temp[0], T_temp[1], T_temp[2], T_temp[1], T_temp[3], T_temp[1]]
+    
+  x_temp[4] = [x[0], x[1], x[2], x[3]]
+  x[0] = ROL(((x0_temp xor RK[0])+(x1_temp xor RK[1])), 9)
+  x[1] = ROR(((x1_temp xor RK[2])+(x2_temp xor RK[3])), 5)
+  x[2] = ROR(((x2_temp xor RK[4])+(x3_temp xor RK[5])), 3)
+  x[3] = x0_temp
+  r += 1
+  r+=1
