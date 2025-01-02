@@ -1,0 +1,48 @@
+D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_TX_TB.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_TX_TB.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_TX_tb
+-- Compiling architecture behave of UART_TX_tb
+
+} {} {}} D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/TOP_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/TOP_tb.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_Echo_Top_tb
+-- Compiling architecture behavior of UART_Echo_Top_tb
+
+} {} {}} D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_RX.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_RX.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_RX
+-- Compiling architecture rtl of UART_RX
+
+} {} {}} D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_RX_TB.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/UART_RX_TB.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_RX_tb
+-- Compiling architecture behave of UART_RX_tb
+
+} {} {}} D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/TOP.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none D:/teknikelektro/SistemDigital/EL2002_LEA128CFB/UART/TOP.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity UART_Echo_Top
+-- Compiling architecture rtl of UART_Echo_Top
+-- Loading entity UART_RX
+-- Loading entity UART_TX
+
+} {} {}}

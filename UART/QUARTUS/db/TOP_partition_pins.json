@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_TX_Serial",
+					"strict" : false
+				},
+				{
+					"name" : "o_RX_LED",
+					"strict" : false
+				},
+				{
+					"name" : "o_LED2",
+					"strict" : false
+				},
+				{
+					"name" : "i_Button_LED2",
+					"strict" : false
+				},
+				{
+					"name" : "i_Clk",
+					"strict" : false
+				},
+				{
+					"name" : "i_Button",
+					"strict" : false
+				},
+				{
+					"name" : "i_RX_Serial",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

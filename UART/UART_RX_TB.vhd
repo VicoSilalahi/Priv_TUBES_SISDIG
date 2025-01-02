@@ -5,12 +5,17 @@ use ieee.numeric_std.all;
 entity UART_RX_tb is
 end UART_RX_tb;
 
+-- To determine CLKS_PER_BIT:
+-- CLKS_PER_BIT = BIT_PERIOD/CLOCK_PERIOD
+-- BIT_PERIOD = 1/BAUD_RATE
+-- CLOCK PERIOD = 1/Hz
+
 architecture behave of UART_RX_tb is
 
   -- Updated UART_RX Component Declaration
   component uart_rx is
     generic (
-      g_CLKS_PER_BIT : integer := 115 -- Needs to be set correctly
+      g_CLKS_PER_BIT : integer := 87 -- Needs to be set correctly
     );
     port (
       i_clk       : in std_logic;
@@ -21,30 +26,12 @@ architecture behave of UART_RX_tb is
     );
   end component uart_rx;
 
-  -- Updated UART_TX Component Declaration (Unchanged for 128-bit simulation)
-  -- component uart_tx is
-  --   generic (
-  --     g_CLKS_PER_BIT : integer := 115 -- Needs to be set correctly
-  --   );
-  --   port (
-  --     i_clk       : in std_logic;
-  --     i_tx_dv     : in std_logic;
-  --     i_tx_byte   : in std_logic_vector(7 downto 0);
-  --     o_tx_active : out std_logic;
-  --     o_tx_serial : out std_logic;
-  --     o_tx_done   : out std_logic
-  --   );
-  -- end component uart_tx;
-
-  -- Constants and Signals
   constant c_CLKS_PER_BIT : integer := 87;
   constant c_BIT_PERIOD   : time := 8680 ns;
 
   signal r_CLOCK     : std_logic := '0';
   signal r_TX_DV     : std_logic := '0';
   signal r_TX_BYTE   : std_logic_vector(7 downto 0) := (others => '0');
-  signal w_TX_SERIAL : std_logic;
-  signal w_TX_DONE   : std_logic;
   signal w_RX_DV     : std_logic;
   signal w_RX_BYTE   : std_logic_vector(7 downto 0);
   signal w_RX_BLOCK  : std_logic_vector(127 downto 0);

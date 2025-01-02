@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Dec 29 21:34:31 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : TOP
+Top-level Entity Name : UART_Echo_Top
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 540 / 6,272 ( 9 % )
+    Total combinational functions : 230 / 6,272 ( 4 % )
+    Dedicated logic registers : 464 / 6,272 ( 7 % )
+Total registers : 464
+Total pins : 7 / 92 ( 8 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

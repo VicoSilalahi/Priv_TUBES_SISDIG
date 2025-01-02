@@ -10,7 +10,7 @@ architecture behave of UART_TX_tb is
   -- Component Declaration for the Unit Under Test (UUT)
   component UART_TX is
     generic (
-      g_CLKS_PER_BIT : integer := 115 -- Needs to be set correctly
+      g_CLKS_PER_BIT : integer := 87 -- Needs to be set correctly
     );
     port (
       i_Clk       : in  std_logic;
@@ -23,7 +23,7 @@ architecture behave of UART_TX_tb is
   end component;
 
   -- Test Bench clock period and UART clock settings
-  constant c_CLOCK_PERIOD : time := 10 ns;         -- 100 MHz Clock
+  constant c_CLOCK_PERIOD : time := 50 ns;         -- 10 MHz Clock
   constant c_BIT_PERIOD   : time := 8680 ns;       -- For 115200 baud
   constant c_CLKS_PER_BIT : integer := 87;         -- 100000000 / 115200
 
@@ -88,8 +88,8 @@ begin
     wait for 20 * c_CLOCK_PERIOD;
 
     -- Send a 128-bit block
-    -- r_TX_Block <= X"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
-    r_TX_Block <= X"00000000000000000000000000000000";
+    r_TX_Block <= X"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
+    -- r_TX_Block <= X"00000000000000000000000000000000";
     r_TX_DV <= '1';
     wait for c_CLOCK_PERIOD;
     r_TX_DV <= '0';
