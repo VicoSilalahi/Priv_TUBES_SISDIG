@@ -29,181 +29,182 @@ o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
+R2
 Ebitwise_xor_32bit
-Z3 w1733921498
+Z3 w1735921128
 Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 57
-R2
-Z7 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-Z8 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
+!i122 75
+Z7 dC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/questa
+Z8 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd
+Z9 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd
 l0
-Z9 L17 1
+Z10 L17 1
 VUL^F8:MP?=4m2WI0dPRDT1
 !s100 2<Dkk:?K<57;X4[zm4<LB1
-Z10 OL;C;2023.3;77
+Z11 OL;C;2023.3;77
 32
-Z11 !s110 1735672123
+Z12 !s110 1736053960
 !i10b 1
-Z12 !s108 1735672123.000000
-Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd|
-Z14 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd|
+Z13 !s108 1736053960.000000
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd|
+Z15 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd|
 !i113 0
-Z15 o-work work -2002 -explicit
-Z16 tExplicit 1 CvgOpt 0
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1 CvgOpt 0
 Abehavior
 R4
 R5
 R6
 DEx4 work 17 bitwise_xor_32bit 0 22 UL^F8:MP?=4m2WI0dPRDT1
-!i122 57
+!i122 75
 l26
 L24 7
 Vf2zSK1gPA@E``eTWEgFN01
 !s100 15J2hWE4@Q9^Bif2C1n7X2
-R10
-32
 R11
-!i10b 1
+32
 R12
+!i10b 1
 R13
 R14
-!i113 0
 R15
+!i113 0
 R16
+R17
 Ecounter_24_32bit
 R3
 R4
 R5
 R6
-!i122 58
-R2
-Z17 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-Z18 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
+!i122 76
+R7
+Z18 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd
+Z19 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd
 l0
-R9
+R10
 Vo0R;dbgi8HaQ?1=40dfN03
 !s100 ;h3`Y?B_[V7Wna41l<oL?1
-R10
-32
 R11
-!i10b 1
+32
 R12
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd|
-Z20 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd|
+!i10b 1
+R13
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd|
+Z21 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
 R4
 R5
 R6
 DEx4 work 16 counter_24_32bit 0 22 o0R;dbgi8HaQ?1=40dfN03
-!i122 58
+!i122 76
 l29
 L25 20
 Vdn2Wm2<IUm:9?RXd5IB620
 !s100 ;V@`Y;NFYeQ1^d_P`VY;42
-R10
-32
 R11
-!i10b 1
+32
 R12
-R19
+!i10b 1
+R13
 R20
+R21
 !i113 0
-R15
 R16
+R17
 Ecypher_block
-Z21 w1735669759
+R3
 R4
 R5
 R6
-!i122 59
-R2
-Z22 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-Z23 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
+!i122 77
+R7
+Z22 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block.vhd
+Z23 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block.vhd
 l0
-R9
+R10
 V49@hR<7e3PV823U6`HfU]2
 !s100 UzT0<`K6oRR`oPTJe>9l[1
-R10
-32
 R11
+32
+Z24 !s110 1736053961
 !i10b 1
-R12
-Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd|
-Z25 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd|
+R13
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block.vhd|
+Z26 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
 R4
 R5
 R6
-Z26 DEx4 work 12 cypher_block 0 22 49@hR<7e3PV823U6`HfU]2
-!i122 59
+Z27 DEx4 work 12 cypher_block 0 22 49@hR<7e3PV823U6`HfU]2
+!i122 77
 l241
 L27 708
 Vb:JM=GjQ4dP]ddAVTS;E`0
 !s100 71hMH]eROC?M@eJI4;HN:1
-R10
-32
 R11
-!i10b 1
-R12
+32
 R24
+!i10b 1
+R13
 R25
+R26
 !i113 0
-R15
 R16
+R17
 Ecypher_block_tb
-Z27 w1733923091
+R3
 R4
 R5
 R6
-!i122 60
-R2
-Z28 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-Z29 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
+!i122 78
+R7
+Z28 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block_tb.vhd
+Z29 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block_tb.vhd
 l0
 L6 1
 V<5NJg8lH?3II]Z_PdfV];3
 !s100 `RAWOH@D>Zd6>3]lJa9B;2
-R10
-32
 R11
+32
+R24
 !i10b 1
-R12
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd|
-Z31 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd|
+Z30 !s108 1736053961.000000
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block_tb.vhd|
+Z32 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/cypher_block_tb.vhd|
 !i113 0
-R15
 R16
+R17
 Abench
-R26
+R27
 R4
 R5
 R6
 DEx4 work 15 cypher_block_tb 0 22 <5NJg8lH?3II]Z_PdfV];3
-!i122 60
+!i122 78
 l20
 L9 25
 V1eL4bRlD3074D`;WL;P671
 !s100 >3i`NW@c5R]3:Zb6<SV>N2
-R10
-32
 R11
+32
+R24
 !i10b 1
-R12
 R30
 R31
+R32
 !i113 0
-R15
 R16
+R17
 Eencrypt_lea
-R3
+w1733921498
 R4
 R5
 R6
@@ -215,7 +216,7 @@ l0
 L5 1
 VPIA6WiMX^mEo^EzbJQ:^10
 !s100 zl5h]gRN_n7l7::5_5F0N3
-R10
+R11
 32
 !s110 1735666289
 !i10b 1
@@ -223,607 +224,762 @@ R10
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd|
 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd|
 !i113 0
-R15
 R16
+R17
 Elea_encrypt_fsm
 R3
 R4
 R5
 R6
-!i122 61
-R2
-Z32 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-Z33 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
+!i122 79
+R7
+Z33 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd
+Z34 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd
 l0
 L26 1
 VDR<Q7HU_^S^[@jH_YMkOZ2
 !s100 J8zT8lIY2nooko8;dARDh2
-R10
+R11
 32
-Z34 !s110 1735672140
+R24
 !i10b 1
-Z35 !s108 1735672140.000000
-Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd|
-Z37 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd|
+R30
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd|
+Z36 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 15 lea_encrypt_fsm 0 22 DR<Q7HU_^S^[@jH_YMkOZ2
-!i122 61
+!i122 79
 l36
 L33 66
 V?;4H>:QbQkQ6QVD=66EfM3
 !s100 JbOFTaG?`8c?R:nKF6l:;2
-R10
+R11
 32
-R34
+R24
 !i10b 1
+R30
 R35
 R36
-R37
 !i113 0
-R15
 R16
+R17
 Emodular_addition_32bit
 R3
 R4
 R5
 R6
-!i122 62
-R2
-Z38 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-Z39 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
+!i122 80
+R7
+Z37 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd
+Z38 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd
 l0
-R9
+R10
 V=a<E=:9HkS<JQNI0Hi?kg0
 !s100 V27Hf9ckWRScVOGHEJ<6i3
-R10
+R11
 32
-Z40 !s110 1735672141
+R24
 !i10b 1
-R35
-Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd|
-Z42 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd|
+R30
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd|
+Z40 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
 R4
 R5
 R6
 DEx4 work 22 modular_addition_32bit 0 22 =a<E=:9HkS<JQNI0Hi?kg0
-!i122 62
+!i122 80
 l28
 L24 12
 Ve=43NAbFUg2A6B61KHoih0
 !s100 :G9=P_M7>TKFo;YAOD9@f1
-R10
+R11
 32
-R40
+R24
 !i10b 1
-R35
-R41
-R42
+R30
+R39
+R40
 !i113 0
-R15
 R16
+R17
+Emux2to1_128bit
+R3
+R4
+R5
+R6
+!i122 82
+R7
+Z41 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd
+Z42 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd
+l0
+L6 1
+VHIWQjfl1CF=LcQ>z=SS_i1
+!s100 G;Id31W1jgLLC11d<MmMV2
+R11
+32
+Z43 !s110 1736053962
+!i10b 1
+Z44 !s108 1736053962.000000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd|
+Z46 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd|
+!i113 0
+R16
+R17
+Artl
+R4
+R5
+R6
+DEx4 work 14 mux2to1_128bit 0 22 HIWQjfl1CF=LcQ>z=SS_i1
+!i122 82
+l17
+L15 14
+VIT4dUbjbbo[cXG9U7iQLE1
+!s100 W]J;>Yg;NLGUE^`LX@`Xb0
+R11
+32
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 0
+R16
+R17
 Emux2to1_32bit
 R3
 R4
 R5
 R6
-!i122 63
-R2
-Z43 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-Z44 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
+!i122 81
+R7
+Z47 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_32bit.vhd
+Z48 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_32bit.vhd
 l0
-Z45 L16 1
+Z49 L16 1
 VjU7zk^cfXYz^c8j:jS>BZ0
 !s100 lHkOO[DQG:VbS6b7FS3JX0
-R10
+R11
 32
-R40
+R24
 !i10b 1
-Z46 !s108 1735672141.000000
-Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd|
-Z48 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd|
+R30
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_32bit.vhd|
+Z51 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
 R4
 R5
 R6
 DEx4 work 13 mux2to1_32bit 0 22 jU7zk^cfXYz^c8j:jS>BZ0
-!i122 63
+!i122 81
 l27
 L25 14
 VNa@2=z>cMkmWWkVjOoXSM2
 !s100 FE]``hDP4Mg>OWdK[>kK03
-R10
+R11
 32
-R40
+R24
 !i10b 1
-R46
-R47
-R48
+R30
+R50
+R51
 !i113 0
-R15
 R16
+R17
 Epseudo_rng
-Z49 w1733921499
+R3
 R4
 R5
 R6
-!i122 64
-R2
-Z50 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-Z51 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
+!i122 83
+R7
+Z52 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/pseudo_RNG.vhd
+Z53 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/pseudo_RNG.vhd
 l0
 L5 1
 V2jRZL_F]k2=<[N@QE9Ui>0
 !s100 cWh59N4Z9V`V[f3ai1oi^2
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd|
-Z53 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd|
+R44
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/pseudo_RNG.vhd|
+Z55 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/pseudo_RNG.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 pseudo_rng 0 22 2jRZL_F]k2=<[N@QE9Ui>0
-!i122 64
+!i122 83
 l16
 L14 16
 V`aAOO9hfnI?_:6:[W[3TI3
 !s100 :M1gA6;nhD2L`6e>359Y^0
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-R52
-R53
+R44
+R54
+R55
 !i113 0
-R15
 R16
-Eregister_32bit
-R49
+R17
+Eregister_128bit
+R3
 R4
 R5
 R6
-!i122 65
-R2
-Z54 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-Z55 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
+!i122 85
+R7
+Z56 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_128bit.vhd
+Z57 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_128bit.vhd
 l0
-R45
+L11 1
+Vb4Fi0dVzg=U>bi9DgPC^<2
+!s100 Z_;GiTYFF[andR;gQ0?e40
+R11
+32
+R43
+!i10b 1
+R44
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_128bit.vhd|
+Z59 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_128bit.vhd|
+!i113 0
+R16
+R17
+Abehavior
+R4
+R5
+R6
+DEx4 work 15 register_128bit 0 22 b4Fi0dVzg=U>bi9DgPC^<2
+!i122 85
+l23
+L19 21
+VH61d=N[9J2Wf:ePB7m@B92
+!s100 I;hmK<TA?VgaB=TGKfb8F1
+R11
+32
+R43
+!i10b 1
+R44
+R58
+R59
+!i113 0
+R16
+R17
+Eregister_32bit
+R3
+R4
+R5
+R6
+!i122 84
+R7
+Z60 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_32bit.vhd
+Z61 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_32bit.vhd
+l0
+R49
 Va8lGFSX:91R37hf9V9[dC2
 !s100 GcmQdLh`W[Y0[nZ_NVEgf2
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd|
-Z57 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd|
+R44
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_32bit.vhd|
+Z63 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/register_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 14 register_32bit 0 22 a8lGFSX:91R37hf9V9[dC2
-!i122 65
+!i122 84
 l28
 L24 21
 VOZE1M_GW1fU2KGf7B6cd:0
 !s100 Sz4N5hG>4No7EeV61Kn@33
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-R56
-R57
+R44
+R62
+R63
 !i113 0
-R15
 R16
+R17
 Ereverse_32bit_for_lea_input
-R49
+R3
 R4
 R5
 R6
-!i122 66
-R2
-Z58 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-Z59 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
+!i122 86
+R7
+Z64 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd
+Z65 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd
 l0
 L5 1
 VX^NTIn^Edmoi1E:`ALkzd0
 !s100 49GVROo0R[zUV24@<DLN60
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd|
-Z61 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd|
+R44
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd|
+Z67 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd|
 !i113 0
-R15
 R16
+R17
 Artl
 R4
 R5
 R6
 DEx4 work 27 reverse_32bit_for_lea_input 0 22 X^NTIn^Edmoi1E:`ALkzd0
-!i122 66
+!i122 86
 l14
 L12 41
 V^<;idKgYhlMQTLA<ZeYh<0
 !s100 dE:aJT4g4NR3XLH4BkFkn2
-R10
+R11
 32
-R40
+R43
 !i10b 1
-R46
-R60
-R61
+R44
+R66
+R67
 !i113 0
-R15
 R16
+R17
 Erol11_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 72
-R2
-Z62 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-Z63 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
+!i122 92
+R7
+Z68 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol11_32bit.vhd
+Z69 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol11_32bit.vhd
 l0
-R9
+R10
 V?Wc`nNG5V1oF2f?_G=Z?50
 !s100 j]2j@Q2WVX4aoR9:[R2VT3
-R10
+R11
 32
-Z64 !s110 1735672142
+Z70 !s110 1736053964
 !i10b 1
-Z65 !s108 1735672142.000000
-Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd|
-Z67 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd|
+Z71 !s108 1736053964.000000
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol11_32bit.vhd|
+Z73 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol11_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 11 rol11_32bit 0 22 ?Wc`nNG5V1oF2f?_G=Z?50
-!i122 72
+!i122 92
 l28
-Z68 L24 11
+Z74 L24 11
 V>lf^M=8gdB3h@oVi_9Z1j0
 !s100 nNFLe7P][fQc8?Ea31aRg3
-R10
+R11
 32
-R64
+R70
 !i10b 1
-R65
-R66
-R67
+R71
+R72
+R73
 !i113 0
-R15
 R16
+R17
 Erol1_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 67
-R2
-Z69 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-Z70 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
+!i122 87
+R7
+Z75 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol1_32bit.vhd
+Z76 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol1_32bit.vhd
 l0
-R9
+R10
 V9zikD>SdJl8>9O7PhiNeI3
 !s100 ne6L?ezZ]S_<m`UmfMEkW1
-R10
+R11
 32
-R40
+Z77 !s110 1736053963
 !i10b 1
-R46
-Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd|
-Z72 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd|
+Z78 !s108 1736053963.000000
+Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol1_32bit.vhd|
+Z80 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol1_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 rol1_32bit 0 22 9zikD>SdJl8>9O7PhiNeI3
-!i122 67
+!i122 87
 l28
-R68
+R74
 V70^IM>7CN`NV<gc91T2I>0
 !s100 7Ob3n?o?b`3AKVJz?X`fd0
-R10
+R11
 32
-R40
+R77
 !i10b 1
-R46
-R71
-R72
+R78
+R79
+R80
 !i113 0
-R15
 R16
+R17
 Erol2_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 68
-R2
-Z73 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-Z74 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
+!i122 88
+R7
+Z81 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol2_32bit.vhd
+Z82 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol2_32bit.vhd
 l0
-R9
+R10
 VT5K3gC=W0iSS3o8H_INEl3
 !s100 ^zm0m_4XFbn9QCe31116I3
-R10
+R11
 32
-R40
+R77
 !i10b 1
-R46
-Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd|
-Z76 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd|
+R78
+Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol2_32bit.vhd|
+Z84 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol2_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 rol2_32bit 0 22 T5K3gC=W0iSS3o8H_INEl3
-!i122 68
+!i122 88
 l28
-R68
+R74
 VDCVZI3f3V44mI[B6V^ZaN1
 !s100 H:PBfN1AF1nAE2FI<1BYF0
-R10
+R11
 32
-R40
+R77
 !i10b 1
-R46
-R75
-R76
+R78
+R83
+R84
 !i113 0
-R15
 R16
+R17
 Erol3_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 69
-R2
-Z77 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-Z78 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
+!i122 89
+R7
+Z85 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol3_32bit.vhd
+Z86 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol3_32bit.vhd
 l0
-R9
+R10
 VziZchPlOb_I;Oh<[gAZTX0
 !s100 Z9gBolX1D;MzkJ?[>2bhG3
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-Z79 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd|
-Z80 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd|
+R78
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol3_32bit.vhd|
+Z88 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol3_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 rol3_32bit 0 22 ziZchPlOb_I;Oh<[gAZTX0
-!i122 69
+!i122 89
 l28
-R68
+R74
 VnzFJ_XZcA`=<[3YG3@67z2
 !s100 VBY4[oXWRRY@EBMei3ROX1
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-R79
-R80
+R78
+R87
+R88
 !i113 0
-R15
 R16
+R17
 Erol6_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 70
-R2
-Z81 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-Z82 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
+!i122 90
+R7
+Z89 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol6_32bit.vhd
+Z90 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol6_32bit.vhd
 l0
-R9
+R10
 VkJM<VQfE0SI3H6lFWlL@Q3
 !s100 `Fi2N?TX=C0c@TXi<_B1W3
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-Z83 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd|
-Z84 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd|
+R78
+Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol6_32bit.vhd|
+Z92 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol6_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 rol6_32bit 0 22 kJM<VQfE0SI3H6lFWlL@Q3
-!i122 70
+!i122 90
 l28
-R68
+R74
 VJY`2flog`RPS`3VeWN@Em0
 !s100 2Z0lzi?>IR;b]i^DCk34R2
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-R83
-R84
+R78
+R91
+R92
 !i113 0
-R15
 R16
+R17
 Erol9_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 71
-R2
-Z85 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol9_32bit.vhd
-Z86 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol9_32bit.vhd
+!i122 91
+R7
+Z93 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol9_32bit.vhd
+Z94 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol9_32bit.vhd
 l0
-R9
+R10
 Vc:3d1SbOO4O1hDDbT4m4d3
 !s100 fML4j]jeFBKG6@ZgjfnL22
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol9_32bit.vhd|
-Z88 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol9_32bit.vhd|
+R78
+Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol9_32bit.vhd|
+Z96 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/rol9_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 rol9_32bit 0 22 c:3d1SbOO4O1hDDbT4m4d3
-!i122 71
+!i122 91
 l28
-R68
+R74
 VD^knGNklzW6SV2oCVcHRJ1
 !s100 R1kSkL2nKId3DmT;DG5:B2
-R10
+R11
 32
-R64
+R77
 !i10b 1
-R65
-R87
-R88
+R78
+R95
+R96
 !i113 0
-R15
 R16
+R17
 Eror3_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 73
-R2
-Z89 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror3_32bit.vhd
-Z90 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror3_32bit.vhd
+!i122 93
+R7
+Z97 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd
+Z98 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd
 l0
-R9
+R10
 V=zDz4YGcd:8LGFWUV^UG80
 !s100 cnD=IB3[_fGlhkd^h36VE1
-R10
+R11
 32
-R64
+R70
 !i10b 1
-R65
-Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror3_32bit.vhd|
-Z92 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror3_32bit.vhd|
+R71
+Z99 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd|
+Z100 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 ror3_32bit 0 22 =zDz4YGcd:8LGFWUV^UG80
-!i122 73
+!i122 93
 l28
-R68
+R74
 VTEB4[@OLNd?o[PBLJhgoX1
 !s100 RLVCGQ[@JfoAkE1EHbQ;a1
-R10
+R11
 32
-R64
+R70
 !i10b 1
-R65
-R91
-R92
+R71
+R99
+R100
 !i113 0
-R15
 R16
+R17
 Eror5_32bit
-R49
+R3
 R4
 R5
 R6
-!i122 74
-R2
-Z93 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror5_32bit.vhd
-Z94 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror5_32bit.vhd
+!i122 94
+R7
+Z101 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd
+Z102 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd
 l0
-R9
+R10
 V[NOaWNg@gPB:`:4IV6?C_3
 !s100 0E54hjIU0eIUB@k;MCn6i3
-R10
+R11
 32
-R64
+R70
 !i10b 1
-R65
-Z95 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror5_32bit.vhd|
-Z96 !s107 D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/ror5_32bit.vhd|
+R71
+Z103 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd|
+Z104 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd|
 !i113 0
-R15
 R16
+R17
 Abehavior
 R4
 R5
 R6
 DEx4 work 10 ror5_32bit 0 22 [NOaWNg@gPB:`:4IV6?C_3
-!i122 74
+!i122 94
 l28
-R68
+R74
 V0ceR2G0S;cT5C5Ci]`o7W2
 !s100 m01hoaEi4;o0e]I8b=Q0X3
-R10
+R11
 32
-R64
+R70
 !i10b 1
-R65
-R95
-R96
+R71
+R103
+R104
 !i113 0
-R15
 R16
+R17
+Etop
+w1736052107
+Z105 DPx4 ieee 9 math_real 0 22 :8NNHF3SFI6^on5?4X[S`1
+R4
+R5
+R6
+!i122 95
+R7
+8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd
+FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd
+l0
+L6 1
+VKUkLVd=QeV5hnhd_UHSik0
+!s100 YUa56hZ?4`NKCa>KXdNf?1
+R11
+32
+R70
+!i10b 1
+R71
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd|
+!s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd|
+!i113 0
+R16
+R17
+Etop_tb
+Z106 w1736051904
+R4
+R5
+R6
+!i122 96
+R7
+Z107 8C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd
+Z108 FC:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd
+l0
+L5 1
+VelW`U>l<DCEQN`g9ion`i3
+!s100 fHzf`_=Rc;Fl[o?762cUk2
+R11
+32
+Z109 !s110 1736053965
+!i10b 1
+R71
+Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd|
+!s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd|
+!i113 0
+R16
+R17
+Abench
+R105
+DEx4 work 3 top 0 22 KUkLVd=QeV5hnhd_UHSik0
+R4
+R5
+R6
+DEx4 work 6 top_tb 0 22 elW`U>l<DCEQN`g9ion`i3
+!i122 96
+l21
+L8 66
+V[oYkLBQJ_<4aI1]fI7A332
+!s100 [m2JT=hLC^^lST4`4:LAk3
+R11
+32
+R109
+!i10b 1
+R71
+R110
+Z111 !s107 C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd|
+!i113 0
+R16
+R17

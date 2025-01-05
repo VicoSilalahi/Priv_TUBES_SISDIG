@@ -15,7 +15,7 @@ entity top is
 end entity;
 
 architecture rtl of top is
-  component LEA_encrypt is -- Main component of LEA-128 Encryption
+  component cypher_block is -- Main component of LEA-128 Encryption
     port (
       Plaintext, Master_Key : in std_logic_vector(127 downto 0);
       Start                 : in std_logic; -- Signal to initiate the beginning of encryption
@@ -45,8 +45,6 @@ architecture rtl of top is
 
   -- Top Entity Output
   signal S_IN, S_IV, En_IV, En_Key, DataValid, START_LEA, STOP_LEA : std_logic := '0';
-  -- type arr is array (natural range <>) of std_logic_vector(31 downto 0);
-  -- signal T, X : arr(3 downto 0);
   signal T, X, C : std_logic_vector(127 downto 0);
 
   -- Top Entity Input
@@ -65,7 +63,7 @@ architecture rtl of top is
   signal OutMUXIV : std_logic_vector(127 downto 0);
 
   -- Top Entity FSM
-  type state is (IDLE, REGKEY, LEA);
+  type state is (IDLE, LOAD_KEY, ENCRYPT, SEND_DATA, WAIT_FOR_PLAINTEXT);
   signal currentstate, nextstate : state := IDLE;
   -- Currentstate
 
@@ -105,7 +103,7 @@ begin
   );
 
   -- LEA Encryption for 128-bit Masterkey
-  LEA_encrypt_inst : LEA_encrypt
+  cypher_block_inst : cypher_block
   port map
   (
     Plaintext  => X, -- Plaintext to be fed into the LEA-128. INPUT FROM 
@@ -117,6 +115,7 @@ begin
     o_isdone   => isdone -- Output signal on which is '1' when all 24 rounds are done, to be fed into the top entity FSM
   );
 
+  -- FSM process
   process (clk)
   begin
     if rising_edge(clk) then
@@ -124,43 +123,83 @@ begin
       case currentstate is
         when IDLE =>
           if start = '1' then
-            nextstate <= REGKEY;
+            nextstate <= LOAD_KEY;
           else
             nextstate <= IDLE;
           end if;
 
-        when REGKEY =>
-          nextstate <= LEA;
-        when LEA =>
+        when LOAD_KEY =>
+          -- Code for UART Send
+          nextstate <= ENCRYPT; -- Assuming key loading is instantaneous
+
+        when ENCRYPT =>
           if reset = '1' then
             nextstate <= IDLE;
+          elsif isdone = '1' then
+            nextstate <= SEND_DATA;
           else
-            nextstate <= LEA;
+            nextstate <= ENCRYPT;
           end if;
+
+        when SEND_DATA =>
+          -- Replace this with actual UART send logic 
+          nextstate <= WAIT_FOR_PLAINTEXT;
+
+        when WAIT_FOR_PLAINTEXT =>
+          -- Replace this with logic to wait for plaintext 
+          -- (e.g., check for a "plaintext_ready" signal from the UART receiver)
+          nextstate <= ENCRYPT;
+
         when others =>
           nextstate <= IDLE;
       end case;
     end if;
   end process;
-
+  -- Signal assignments based on current state
   process (currentstate)
   begin
-    if currentstate = IDLE then
-      S_IV      <= '0';
-      en_IV     <= '1';
-      en_KEY    <= '1';
-      START_LEA <= '0';
-    elsif currentstate = REGKEY then
-      S_IV      <= '0';
-      en_IV     <= '0';
-      en_KEY    <= '0';
-      START_LEA <= '0';
-    elsif currentstate = LEA then
-      S_IV      <= '1';
-      en_IV     <= '1';
-      en_KEY    <= '0';
-      START_LEA <= '1';
-    end if;
-  end process;
+    case currentstate is
+      when IDLE =>
+        S_IV      <= '0';
+        En_IV     <= '0'; -- Disable IV register initially
+        En_Key    <= '1'; -- Enable key register
+        START_LEA <= '0';
 
+      when LOAD_KEY =>
+        S_IV      <= '0';
+        En_IV     <= '0';
+        En_Key    <= '0'; -- Disable key register after loading
+        START_LEA <= '0';
+
+      when ENCRYPT =>
+        S_IV      <= '1';
+        En_IV     <= '1'; -- Enable IV register for CFB
+        En_Key    <= '0';
+        START_LEA <= '1';
+
+      when SEND_DATA =>
+        S_IV      <= '1';
+        En_IV     <= '0';
+        En_Key    <= '0';
+        START_LEA <= '0';
+
+      when WAIT_FOR_PLAINTEXT =>
+        S_IV      <= '0';
+        En_IV     <= '0';
+        En_Key    <= '0';
+        START_LEA <= '0';
+
+      when others =>
+        -- Default assignments
+        S_IV      <= '0';
+        En_IV     <= '0';
+        En_Key    <= '0';
+        START_LEA <= '0';
+    end case;
+  end process;
 end architecture;
+
+-- TODO
+-- Simulate and Fix Plaintext Logic
+-- Supposed to be that after I load key, LEA-128 will have to wait until RX is finished with receiving
+-- Probaby after LOAD_KEY, go to WAIT_FOR_PLAINTEXT

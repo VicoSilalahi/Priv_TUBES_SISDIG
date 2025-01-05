@@ -1,0 +1,13 @@
+v 4
+file . "TOP_tb.vhd" "a79078aa697fe96af1eaf1fd98e9d9f66c851e24" "20250105120201.509":
+  entity top_tb at 1( 0) + 0 on 37;
+  architecture bench of top_tb at 8( 100) + 0 on 38;
+file . ".\UART_TX.vhd" "2bd92ce8fb3fc4eb5690793d7e8404aae0b111f2" "20250105120201.188":
+  entity uart_tx at 1( 0) + 0 on 33;
+  architecture rtl of uart_tx at 23( 845) + 0 on 34;
+file . ".\UART_RX.vhd" "ae4e9838775fc68cf905de83efb5a7d83d17b0c3" "20250105120201.187":
+  entity uart_rx at 1( 0) + 0 on 31;
+  architecture rtl of uart_rx at 22( 857) + 0 on 32;
+file . ".\TOP.vhd" "2f96b28aa5f9ca87cb6da66f94e06b8c1d76f154" "20250105120201.189":
+  entity top at 4( 139) + 0 on 35;
+  architecture rtl of top at 21( 647) + 0 on 36;

@@ -14,6 +14,7 @@ entity UART_RX is
     i_Clk       : in std_logic; -- Internal Clock
     i_RX_Serial : in std_logic; -- Input RX Pin (Receive from Client/PC)
     o_RX_DV     : out std_logic; -- Output Signal when a byte has been received ToDo: Create the mechanism for 128-bit DV
+    o_RX_128DV  : out std_logic;
     o_RX_Byte   : out std_logic_vector(7 downto 0); -- ToDo: Remove doesn't need outside of simulation
     o_RX_block  : out std_logic_vector(127 downto 0) -- Output of the UART Receiver, sized 128-bit to be input into TOP
   );
@@ -32,6 +33,7 @@ architecture rtl of UART_RX is
   signal r_RX_Byte   : std_logic_vector(7 downto 0)          := (others => '0'); -- Internal signal for the Byte register
   signal r_RX_DV     : std_logic                             := '0'; -- Internal signal for when a byte has been received
   -- ToDo: Create the internal signal mechanism for 128-bit DV
+  signal r_RX_128DV : std_logic := '0';
 
   type MEM is array (15 downto 0) of std_logic_vector(7 downto 0); -- Just a type for the array of 16-Bytes = 128-bits
   signal MEM_UART    : MEM                   := (others => (others => '0')); -- The signal for the array of 128-bit buffer
@@ -102,14 +104,17 @@ begin
             MEM_UART(r_MEM_Index) <= r_RX_Byte; -- Store in memory
             r_MEM_Index           <= (r_MEM_Index + 1) mod 16; -- Block Indexing that Wraps around for each 16 Bytes
             -- ToDo: Create the mechanism for 128-bit DV here. By making an if statement to check the r_MEM_Index
-            r_Clk_Count           <= 0; -- Reset the Clock Index
-            r_SM_Main             <= s_Cleanup;
+            if r_MEM_Index = 15 then
+              r_RX_128DV <= '1';
+            end if;
+            r_Clk_Count <= 0; -- Reset the Clock Index
+            r_SM_Main   <= s_Cleanup;
           end if;
 
         when s_Cleanup =>
-          r_SM_Main <= s_Idle;
-          r_RX_DV   <= '0';
-
+          r_SM_Main  <= s_Idle;
+          r_RX_DV    <= '0';
+          r_RX_128DV <= '0';
         when others =>
           r_SM_Main <= s_Idle;
       end case;
@@ -118,6 +123,7 @@ begin
 
   -- Signal to be Output
   o_RX_DV    <= r_RX_DV;
+  o_RX_128DV <= r_RX_128DV;
   o_RX_Byte  <= r_RX_Byte;
   o_RX_block <= r_RX_block;
 

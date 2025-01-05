@@ -2,111 +2,97 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity UART_Echo_Top_tb is
-end UART_Echo_Top_tb;
+entity TOP_tb is
+end;
 
-architecture behavior of UART_Echo_Top_tb is
+architecture bench of TOP_tb is
+  -- Clock period
+  constant clk_period : time := 10 ns;
+  -- Generics
+  constant g_CLKS_PER_BIT : integer := 87;
+  constant g_BIT_PERIOD   : time    := 8680 ns;
 
-  -- Component Declaration for the Unit Under Test (UUT)
-  component UART_Echo_Top
-    generic (
-      g_CLKS_PER_BIT : integer := 20833
-    );
-    port (
-      i_Clk         : in std_logic; 
-      i_RX_Serial   : in std_logic;
-      i_Button      : in std_logic;
-      o_TX_Serial   : out std_logic;
-      o_RX_LED      : out std_logic;
-      i_Button_LED2 : in std_logic;
-      o_LED2        : out std_logic
-    );
-  end component;
+  -- Ports
+  signal i_Clk       : std_logic := '0';
+  signal i_reset     : std_logic := '0';
+  signal i_button    : std_logic := '0';
+  signal i_RX_Serial : std_logic := '1'; -- Idle state for UART
+  signal o_TX_Serial : std_logic;
 
-  -- Testbench Signals
-  signal tb_Clk         : std_logic := '0';
-  signal tb_RX_Serial   : std_logic := '1';
-  signal tb_Button      : std_logic := '1';
-  signal tb_Button_LED2 : std_logic := '0';
-  signal tb_TX_Serial   : std_logic;
-  signal tb_RX_LED      : std_logic;
-  signal tb_LED2        : std_logic;
+  -- Procedure for Sending 8-Bit Byte
+  procedure UART_WRITE_BYTE (
+    i_data_in       : in std_logic_vector(7 downto 0);
+    signal o_serial : out std_logic) is
+  begin
+    -- Send Start Bit
+    o_serial <= '0';
+    wait for g_BIT_PERIOD;
 
-  constant c_CLK_PERIOD : time := 2 ns;
+    -- Send Data Byte
+    for ii in 0 to 7 loop
+      o_serial <= i_data_in(ii);
+      wait for g_BIT_PERIOD;
+    end loop;
+
+    -- Send Stop Bit
+    o_serial <= '1';
+    wait for g_BIT_PERIOD;
+  end procedure;
+
+  -- Procedure for Sending 128-Bit Block
+  procedure UART_WRITE_BLOCK (
+    i_data_block    : in std_logic_vector(127 downto 0);
+    signal o_serial : out std_logic) is
+    variable v_byte : std_logic_vector(7 downto 0);
+  begin
+    -- Send Each Byte in Block
+    for ii in 0 to 15 loop
+      v_byte := i_data_block((ii + 1) * 8 - 1 downto ii * 8);
+      UART_WRITE_BYTE(v_byte, o_serial);
+    end loop;
+  end procedure;
 
 begin
-
-  -- Instantiate the Unit Under Test (UUT)
-  UUT: UART_Echo_Top
-    generic map (
-      g_CLKS_PER_BIT => 20833
+  -- Instantiate TOP entity
+  TOP_inst : entity work.TOP
+    generic map(
+      g_CLKS_PER_BIT => g_CLKS_PER_BIT
     )
-    port map (
-      i_Clk         => tb_Clk,
-      i_RX_Serial   => tb_RX_Serial,
-      i_Button      => tb_Button,
-      o_TX_Serial   => tb_TX_Serial,
-      o_RX_LED      => tb_RX_LED,
-      i_Button_LED2 => tb_Button_LED2,
-      o_LED2        => tb_LED2
+    port map(
+      i_Clk       => i_Clk,
+      i_reset     => i_reset,
+      i_button    => i_button,
+      i_RX_Serial => i_RX_Serial,
+      o_TX_Serial => o_TX_Serial
     );
 
-  -- Clock Generation
-  clk_process : process
+  -- Generate clock signal
+  i_Clk <= not i_Clk after clk_period / 2;
+
+  -- Stimulus process
+  stim_proc: process
+    constant c_TEST_BLOCK : std_logic_vector(127 downto 0) :=
+      x"0F1E2D3C4B5A69788796A5B4C3D2E1F0";
   begin
-    tb_Clk <= '0';
-    wait for c_CLK_PERIOD / 2;
-    tb_Clk <= '1';
-    wait for c_CLK_PERIOD / 2;
-  end process;
-
-  -- Stimulus Process
-  stimulus_process : process
-  begin
-    -- Initialize Inputs
-    tb_Button <= '1';
-    tb_RX_Serial <= '1';
-    tb_Button_LED2 <= '0';
-    wait for 100 ns;
-
-    -- Simulate reception of data
-    tb_RX_Serial <= '0';  -- Start bit
-    wait for c_CLK_PERIOD * 20833;
-    
-    tb_RX_Serial <= '1';  -- Data bits (example: 8 data bits = "10101010")
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '0';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '1';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '0';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '1';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '0';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '1';
-    wait for c_CLK_PERIOD * 20833;
-    tb_RX_Serial <= '1'; -- Stop bit
-    wait for c_CLK_PERIOD * 20833;
-
-    -- Wait for processing
-    wait for 1 us;
-
-    -- Simulate button press
-    tb_Button <= '0';
+    -- Apply reset
+    i_reset <= '1';
     wait for 20 ns;
-    tb_Button <= '1';
+    i_reset <= '0';
+    wait for 20 ns;
 
-    -- Wait for some time to observe output
-    wait for 1 us;
+    -- Send 128-bit block
+    UART_WRITE_BLOCK(c_TEST_BLOCK, i_RX_Serial);
+    wait for 100 * g_BIT_PERIOD;
 
-    -- Simulate LED2 button press
-    tb_Button_LED2 <= '1';
-    wait for 100 ns;
-    tb_Button_LED2 <= '0';
+    -- Simulate button press to trigger transmission
+    i_button <= '1';
+    wait for clk_period;
+    i_button <= '0';
 
-    wait;
+    -- Wait to observe feedback data being transmitted
+    wait for 200 * g_BIT_PERIOD;
+
+    -- End simulation
+    assert false report "Simulation Complete" severity failure;
   end process;
-
-end behavior;
+end architecture;
