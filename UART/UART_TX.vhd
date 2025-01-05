@@ -111,7 +111,8 @@ begin
           -- Cleanup State
         when s_Cleanup =>
           o_TX_Active <= '0';
-          r_TX_Done   <= '1'; --
+          r_TX_Done   <= '0';
+          r_Block_Done <= '0';
           r_SM_Main   <= s_Idle;
 
         when others =>

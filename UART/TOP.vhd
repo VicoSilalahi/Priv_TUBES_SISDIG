@@ -14,7 +14,8 @@ entity TOP is
     i_reset     : in std_logic; -- Reset/Clear Memory of TX (MEM_UART)
     i_button    : in std_logic; -- Button to start transmission from FPGA to Client (PC)
     i_RX_Serial : in std_logic;
-    o_TX_Serial : out std_logic -- TX Line for UART_TX
+    o_TX_Serial : out std_logic; -- TX Line for UART_TX
+    o_BLOCK     : out std_logic_vector(127 downto 0)
   );
 end entity;
 
@@ -103,20 +104,21 @@ begin
   );
 
   TX_Block <= RX_Block;
+  o_BLOCK <= RX_Block;
 
   -- Feedback Logic
   -- To feedback to PC again, TODO: Read from RX that all 128-bit is received (use RX_128DV) then drive TX_DV high to send the data in TX_Block
-  process (i_Clk)
-  begin
-    if rising_edge(i_Clk) then
-      -- If RX_128DV is high (indicating 128-bit block is ready) and not already transmitting
-      if RX_128DV = '1' and feedback_enabled = '0' then
-        TX_DV            <= '1'; -- Start transmission
-        feedback_enabled <= '1'; -- Prevent retriggering until TX is complete
-      elsif TX_Done = '1' then
-        TX_DV            <= '0'; -- Transmission done, clear TX_DV
-        feedback_enabled <= '0'; -- Allow next transmission
-      end if;
-    end if;
-  end process;
+  -- process (i_Clk)
+  -- begin
+  --   if rising_edge(i_Clk) then
+  --     -- If RX_128DV is high (indicating 128-bit block is ready) and not already transmitting
+  --     if RX_128DV = '1' and feedback_enabled = '0' then
+  --       TX_DV            <= '1'; -- Start transmission
+  --       feedback_enabled <= '1'; -- Prevent retriggering until TX is complete
+  --     elsif TX_Done = '1' then
+  --       TX_DV            <= '0'; -- Transmission done, clear TX_DV
+  --       feedback_enabled <= '0'; -- Allow next transmission
+  --     end if;
+  --   end if;
+  -- end process;
 end architecture;
