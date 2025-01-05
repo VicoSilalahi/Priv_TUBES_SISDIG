@@ -71,17 +71,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Compiling entity pseudo_RNG
 -- Compiling architecture behavior of pseudo_RNG
 
-} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top_tb.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity top_tb
--- Compiling architecture bench of top_tb
--- Loading package MATH_REAL
--- Loading entity top
-
 } {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/counter_24_32bit.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package STANDARD
@@ -90,6 +79,15 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package NUMERIC_STD
 -- Compiling entity counter_24_32bit
 -- Compiling architecture rtl of counter_24_32bit
+
+} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mux2to1_128bit
+-- Compiling architecture rtl of mux2to1_128bit
 
 } {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror3_32bit.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
@@ -109,14 +107,14 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Compiling entity rol9_32bit
 -- Compiling architecture behavior of rol9_32bit
 
-} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/mux2to1_128bit.vhd
+} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity mux2to1_128bit
--- Compiling architecture rtl of mux2to1_128bit
+-- Compiling entity bitwise_xor_32bit
+-- Compiling architecture behavior of bitwise_xor_32bit
 
 } {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/modular_addition_32bit.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
@@ -127,16 +125,7 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Compiling entity modular_addition_32bit
 -- Compiling architecture rtl of modular_addition_32bit
 
-} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/bitwise_xor_32bit.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity bitwise_xor_32bit
--- Compiling architecture behavior of bitwise_xor_32bit
-
-} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd
+} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -145,21 +134,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package MATH_REAL
 -- Compiling entity top
 -- Compiling architecture rtl of top
-** Error: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(117): near "/": syntax error
-** Error: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(126): Illegal concurrent statement.
-** Error: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(128): Illegal concurrent statement.
-** Error: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(139): Illegal concurrent statement.
-** Error: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(159): near "if": (vcom-1576) expecting ';'.
-** Note: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/top.vhd(159): VHDL Compiler exiting
-
-} {10.0 15.0} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ror5_32bit
--- Compiling architecture behavior of ror5_32bit
 
 } {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/lea_encrypt_fsm.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
@@ -169,6 +143,15 @@ Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
 -- Loading package NUMERIC_STD
 -- Compiling entity lea_encrypt_fsm
 -- Compiling architecture behavior of lea_encrypt_fsm
+
+} {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/ror5_32bit.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ror5_32bit
+-- Compiling architecture behavior of ror5_32bit
 
 } {} {}} C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/src/reverse_32bit_for_LEA_input.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023

@@ -8,6 +8,7 @@ entity top is
     clk        : in std_logic;
     reset      : in std_logic;
     start      : in std_logic;
+    ds, ptxr   : in std_logic; -- temporary simulation input for UART RX READY AND UART TX DONE
     masterkey  : in std_logic_vector(127 downto 0);
     plaintext  : in std_logic_vector(127 downto 0);
     ciphertext : out std_logic_vector(127 downto 0)
@@ -45,13 +46,16 @@ architecture rtl of top is
 
   -- Top Entity Output
   signal S_IN, S_IV, En_IV, En_Key, DataValid, START_LEA, STOP_LEA : std_logic := '0';
-  signal T, X, C : std_logic_vector(127 downto 0);
+  signal T_in, X_in, C_out                                          : std_logic_vector(127 downto 0);
 
   -- Top Entity Input
   -- To be used when UART is Ready
   signal is_busy : std_logic;
   -- Future ToDo:
   signal isdone : std_logic;
+  -- SHOULD BE TX_DONE
+  signal data_sent       : std_logic := '0';
+  signal plaintext_ready : std_logic := '0';
 
   -- initialization Vector
   constant IV : std_logic_vector(127 downto 0) := x"00000000000000000000000000000000";
@@ -76,7 +80,7 @@ begin
     En  => En_Key, -- Enable Signal, will be on only when loading the Masterkey, which is at the beginning, and reset
     Res => reset, -- Activated or not is fine, because UART Input will changeit anyways
     D   => masterkey,
-    Q   => T
+    Q   => T_in -- Masterkey
   );
 
   -- Register for Plaintext/initialization Vector input, Will Change after every complete encryption
@@ -87,11 +91,12 @@ begin
     En  => En_IV, -- Enable Signal, will be on when loading the next plaintext value from UART
     Res => reset,
     D   => OutMUXIV, -- Input from Multiplexer IVMUX
-    Q   => X -- To Be Fed into LEA-128 Encryption as "Plaintext" for the next iteration of Encryption
+    Q   => X_in -- To Be Fed into LEA-128 Encryption as "Plaintext" for the next iteration of Encryption
   );
 
   -- Initialization Vector 
-  next_IV <= plaintext xor C;
+  next_IV    <= plaintext xor C_out;
+  ciphertext <= plaintext xor C_out;
 
   IVMUX : mux2to1_128bit -- Multiplexer for the next IV to be fed into LEA-128
   port map
@@ -106,74 +111,86 @@ begin
   cypher_block_inst : cypher_block
   port map
   (
-    Plaintext  => X, -- Plaintext to be fed into the LEA-128. INPUT FROM 
-    Master_Key => T, -- Masterkey of 128-bit, which will be key scheduled into 192-bit. Value of master-key won't change
+    Plaintext  => X_in, -- Plaintext to be fed into the LEA-128. INPUT FROM 
+    Master_Key => T_in, -- Masterkey of 128-bit, which will be key scheduled into 192-bit. Value of master-key won't change
     Start      => START_LEA, -- Signal to initiate the begining of encryption process
     Stop       => STOP_LEA, -- To be determined whether useful or not
     Clock      => Clk,
-    Ciphertext => C, -- Output of the LEA-128 Encryption. To be XOR'ed with Actual Plaintext
+    Ciphertext => C_out, -- Output of the LEA-128 Encryption. To be XOR'ed with Actual Plaintext
     o_isdone   => isdone -- Output signal on which is '1' when all 24 rounds are done, to be fed into the top entity FSM
   );
-
+  -- TODO: DELETE BELOW AND CHANGE WITH ACTUAL UART TX UART RX DONE STATUS/FLAG
+  plaintext_ready <= ptxr;
+  data_sent       <= ds;
   -- FSM process
   process (clk)
   begin
     if rising_edge(clk) then
       currentstate <= nextstate;
-      case currentstate is
-        when IDLE =>
-          if start = '1' then
-            nextstate <= LOAD_KEY;
-          else
-            nextstate <= IDLE;
-          end if;
-
-        when LOAD_KEY =>
-          -- Code for UART Send
-          nextstate <= ENCRYPT; -- Assuming key loading is instantaneous
-
-        when ENCRYPT =>
-          if reset = '1' then
-            nextstate <= IDLE;
-          elsif isdone = '1' then
-            nextstate <= SEND_DATA;
-          else
-            nextstate <= ENCRYPT;
-          end if;
-
-        when SEND_DATA =>
-          -- Replace this with actual UART send logic 
-          nextstate <= WAIT_FOR_PLAINTEXT;
-
-        when WAIT_FOR_PLAINTEXT =>
-          -- Replace this with logic to wait for plaintext 
-          -- (e.g., check for a "plaintext_ready" signal from the UART receiver)
-          nextstate <= ENCRYPT;
-
-        when others =>
-          nextstate <= IDLE;
-      end case;
     end if;
   end process;
-  -- Signal assignments based on current state
+
+  -- State transition logic
+  process (currentstate, start, reset, isdone, data_sent, plaintext_ready)
+  begin
+    case currentstate is
+      when IDLE =>
+        if start = '1' then
+          nextstate <= LOAD_KEY;
+        else
+          nextstate <= IDLE;
+        end if;
+
+      when LOAD_KEY =>
+        nextstate <= ENCRYPT; -- Assuming key loading is instantaneous
+
+      when ENCRYPT =>
+        if reset = '1' then
+          nextstate <= IDLE;
+        elsif isdone = '1' then
+          nextstate <= SEND_DATA;
+        else
+          nextstate <= ENCRYPT;
+        end if;
+
+      when SEND_DATA =>
+        if data_sent = '1' then -- From UART TX MAYBE SHOULD BE o_TX_DONE
+          nextstate <= WAIT_FOR_PLAINTEXT;
+        else
+          nextstate <= SEND_DATA;
+        end if;
+
+      when WAIT_FOR_PLAINTEXT =>
+        if plaintext_ready = '1' then -- TODO: From UART RX
+          nextstate <= ENCRYPT;
+        else
+          nextstate <= WAIT_FOR_PLAINTEXT;
+        end if;
+
+      when others =>
+        nextstate <= IDLE;
+    end case;
+  end process;
+
+  -- Output control logic
   process (currentstate)
   begin
     case currentstate is
       when IDLE =>
         S_IV      <= '0';
-        En_IV     <= '0'; -- Disable IV register initially
-        En_Key    <= '1'; -- Enable key register
+        En_IV     <= '0';
+        En_Key    <= '1';
         START_LEA <= '0';
 
       when LOAD_KEY =>
         S_IV      <= '0';
         En_IV     <= '0';
-        En_Key    <= '0'; -- Disable key register after loading
+        En_Key    <= '0';
         START_LEA <= '0';
 
       when ENCRYPT =>
         S_IV      <= '1';
-        En_IV     <= '1'; -- Enable IV register for CFB
+        En_IV     <= '1';
         En_Key    <= '0';
         START_LEA <= '1';
 
@@ -190,7 +207,6 @@ begin
         START_LEA <= '0';
 
       when others =>
-        -- Default assignments
         S_IV      <= '0';
         En_IV     <= '0';
         En_Key    <= '0';
