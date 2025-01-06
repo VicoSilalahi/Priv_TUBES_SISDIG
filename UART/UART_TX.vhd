@@ -14,7 +14,7 @@ entity UART_TX is
     i_Clk       : in std_logic; -- Internal Clock
     i_TX_DV     : in std_logic; -- Input to indicate that the data is ready to be sent/Send immediately
     i_TX_Block  : in std_logic_vector(127 downto 0); -- Input of 128-bits block
-    o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator. ToDo: On TOP put LED
+    o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator. TODO: On TOP put LED
     o_TX_Serial : out std_logic; -- TX Line communicates to Client/PC
     o_TX_Done   : out std_logic -- Indicates 128-bit is done
   );
@@ -31,7 +31,7 @@ architecture RTL of UART_TX is
   signal r_Byte_Index : integer range 0 to 15                 := 0; -- 16 Bytes Total, for indexing r_TX_Block
   signal r_TX_Data    : std_logic_vector(7 downto 0)          := (others => '0'); -- Temporary Buffer for each Byte
   signal r_TX_Block   : std_logic_vector(127 downto 0)        := (others => '0'); -- Internal Signal for the i_TX_Block
-  signal r_TX_Done    : std_logic                             := '0'; -- Unused, ToDo: Make it a byte sent indicator
+  signal r_TX_Done    : std_logic                             := '0'; -- Unused, TODO: Make it a byte sent indicator
   signal r_Block_Done : std_logic                             := '0'; -- 128-bit has been transmitted
 
 begin
@@ -63,7 +63,7 @@ begin
           o_TX_Serial <= '0'; -- Start Bit
 
           if r_Clk_Count < g_CLKS_PER_BIT - 1 then -- Clock Indexing
-            -- ToDo: Figure out whether this clock indexing mechanism could be its own process
+            -- TODO: Figure out whether this clock indexing mechanism could be its own process
             r_Clk_Count <= r_Clk_Count + 1;
           else
             r_Clk_Count <= 0;

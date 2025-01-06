@@ -13,10 +13,10 @@ entity UART_RX is
   port (
     i_Clk       : in std_logic; -- Internal Clock
     i_RX_Serial : in std_logic; -- Input RX Pin (Receive from Client/PC)
-    o_RX_DV     : out std_logic; -- Output Signal when a byte has been received ToDo: Create the mechanism for 128-bit DV
+    o_RX_DV     : out std_logic; -- Output Signal when a byte has been received TODO: Create the mechanism for 128-bit DV
     o_RX_128DV  : out std_logic;
-    o_RX_Byte   : out std_logic_vector(7 downto 0); -- ToDo: Remove doesn't need outside of simulation
-    o_RX_block  : out std_logic_vector(127 downto 0) -- Output of the UART Receiver, sized 128-bit to be input into TOP
+    o_RX_Byte   : out std_logic_vector(7 downto 0); -- TODO: Remove doesn't need outside of simulation
+    o_RX_Block  : out std_logic_vector(127 downto 0) -- Output of the UART Receiver, sized 128-bit to be input into TOP
   );
 end UART_RX;
 architecture rtl of UART_RX is
@@ -32,14 +32,14 @@ architecture rtl of UART_RX is
   signal r_Bit_Index : integer range 0 to 7                  := 0; -- 8 Bits Total
   signal r_RX_Byte   : std_logic_vector(7 downto 0)          := (others => '0'); -- Internal signal for the Byte register
   signal r_RX_DV     : std_logic                             := '0'; -- Internal signal for when a byte has been received
-  -- ToDo: Create the internal signal mechanism for 128-bit DV
+  -- TODO: Create the internal signal mechanism for 128-bit DV
   signal r_RX_128DV : std_logic := '0';
 
   type MEM is array (15 downto 0) of std_logic_vector(7 downto 0); -- Just a type for the array of 16-Bytes = 128-bits
   signal MEM_UART    : MEM                   := (others => (others => '0')); -- The signal for the array of 128-bit buffer
   signal r_MEM_Index : integer range 0 to 15 := 0; -- Indexing for the input process of MEM_UART
 
-  signal r_RX_block : std_logic_vector(127 downto 0) := (others => '0'); -- Concatenated Version of MEM_UART
+  signal r_RX_Block : std_logic_vector(127 downto 0) := (others => '0'); -- Concatenated Version of MEM_UART
 
 begin
 
@@ -70,7 +70,7 @@ begin
 
         when s_RX_Start_Bit =>
           if r_Clk_Count = (g_CLKS_PER_BIT - 1)/2 then -- Clock Indexing
-            -- ToDo: Figure out whether this clock indexing mechanism could be its own process
+            -- TODO: Figure out whether this clock indexing mechanism could be its own process
             if r_RX_Data = '0' then
               r_Clk_Count <= 0;
               r_SM_Main   <= s_RX_Data_Bits;
@@ -103,7 +103,7 @@ begin
             r_RX_DV               <= '1'; -- Outputs the signal of DataValid for each Byte received
             MEM_UART(r_MEM_Index) <= r_RX_Byte; -- Store in memory
             r_MEM_Index           <= (r_MEM_Index + 1) mod 16; -- Block Indexing that Wraps around for each 16 Bytes
-            -- ToDo: Create the mechanism for 128-bit DV here. By making an if statement to check the r_MEM_Index
+            -- TODO: Create the mechanism for 128-bit DV here. By making an if statement to check the r_MEM_Index
             if r_MEM_Index = 15 then
               r_RX_128DV <= '1';
             end if;
@@ -125,10 +125,10 @@ begin
   o_RX_DV    <= r_RX_DV;
   o_RX_128DV <= r_RX_128DV;
   o_RX_Byte  <= r_RX_Byte;
-  o_RX_block <= r_RX_block;
+  o_RX_Block <= r_RX_Block;
 
   -- Update 128-Bit Buffer to append each MEM_UART Array
-  r_RX_block <= MEM_UART(15) & MEM_UART(14) & MEM_UART(13) & MEM_UART(12) &
+  r_RX_Block <= MEM_UART(15) & MEM_UART(14) & MEM_UART(13) & MEM_UART(12) &
     MEM_UART(11) & MEM_UART(10) & MEM_UART(9) & MEM_UART(8) &
     MEM_UART(7) & MEM_UART(6) & MEM_UART(5) & MEM_UART(4) &
     MEM_UART(3) & MEM_UART(2) & MEM_UART(1) & MEM_UART(0);

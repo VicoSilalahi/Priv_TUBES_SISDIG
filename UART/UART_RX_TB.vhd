@@ -94,8 +94,8 @@ begin
 
   -- Test Process
   process
-    constant c_TEST_BLOCK : std_logic_vector(127 downto 0) :=
-    x"0F1E2D3C4B5A69788796A5B4C3D2E1F0";
+    constant c_TEST_BLOCK : std_logic_vector(127 downto 0) := x"0F1E2D3C4B5A69788796A5B4C3D2E1F0";
+    constant c_TEST_BLOCK_2 : std_logic_vector(127 downto 0) := x"01020304050607080910111213141516";
   begin
     -- Wait for System Initialization
     wait until rising_edge(r_CLOCK);
@@ -111,6 +111,24 @@ begin
     else
       report "Test Failed - Incorrect Block Received" severity error;
     end if;
+
+    wait for 1 * c_BIT_PERIOD;
+
+
+
+    UART_WRITE_BLOCK(c_TEST_BLOCK_2, r_RX_SERIAL);
+    wait for 17 * c_BIT_PERIOD;
+
+    -- Validate Received Block
+    wait until rising_edge(r_CLOCK);
+    if w_RX_BLOCK = c_TEST_BLOCK_2 then
+      report "Test Passed - Correct Block Received" severity note;
+    else
+      report "Test Failed - Incorrect Block Received" severity error;
+    end if;
+
+
+  
 
     -- End Simulation
     assert false report "Simulation Complete" severity failure;

@@ -48,6 +48,7 @@ begin
     plaintext <= x"4c6f72656d20697073756d20646f6c6f";
     wait for 1 * clk_period;
     start <= '0';
+    wait for 50 * clk_period;
 
 
     -- 1 Iteration

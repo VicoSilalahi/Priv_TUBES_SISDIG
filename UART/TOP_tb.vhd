@@ -1,47 +1,56 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity TOP_tb is
-end;
+entity UART_TOP_tb is
+end UART_TOP_tb;
 
-architecture bench of TOP_tb is
-  -- Clock period
-  constant clk_period : time := 100 ns;
-  -- Generics
-  constant g_CLKS_PER_BIT : integer := 87;
+architecture behave of UART_TOP_tb is
+
+  -- Component declaration for UART_TOP
+  component UART_TOP is
+    generic (
+      g_CLKS_PER_BIT : integer := 87
+    );
+    port (
+      i_Clk       : in std_logic;
+      i_RX_Serial : in std_logic;
+      o_RX_DV     : out std_logic;
+      o_RX_128DV  : out std_logic;
+      o_RX_Byte   : out std_logic_vector(7 downto 0);
+      o_RX_block  : out std_logic_vector(127 downto 0)
+    );
+  end component;
+
+  constant c_CLKS_PER_BIT : integer := 87;
   constant c_BIT_PERIOD   : time    := 8680 ns;
-  -- Ports
-  signal i_Clk       : std_logic;
-  signal i_reset     : std_logic;
-  signal i_button    : std_logic;
-  signal i_RX_Serial : std_logic;
-  signal o_TX_Serial : std_logic;
-  signal o_BLOCK     : std_logic_vector(127 downto 0);
--- Procedure for Sending 8-Bit Byte
-procedure UART_WRITE_BYTE (
-  i_data_in       : in std_logic_vector(7 downto 0);
-  signal o_serial : out std_logic) is
-  variable v_serial : std_logic;
-begin
-  -- Send Start Bit
-  v_serial := '0';
-  o_serial <= v_serial;
-  wait for c_BIT_PERIOD;
 
-  -- Send Data Byte
-  for ii in 0 to 7 loop
-    v_serial := i_data_in(ii);
-    o_serial <= v_serial;
+  signal r_CLOCK     : std_logic := '0';
+  signal r_RX_SERIAL : std_logic := '1';
+  signal w_RX_DV     : std_logic;
+  signal w_RX_128DV  : std_logic;
+  signal w_RX_BYTE   : std_logic_vector(7 downto 0);
+  signal w_RX_BLOCK  : std_logic_vector(127 downto 0);
+
+  -- Procedure for Sending 8-Bit Byte
+  procedure UART_WRITE_BYTE (
+    i_data_in       : in std_logic_vector(7 downto 0);
+    signal o_serial : out std_logic) is
+  begin
+    -- Send Start Bit
+    o_serial <= '0';
     wait for c_BIT_PERIOD;
-  end loop;
 
-  -- Send Stop Bit
-  v_serial := '1';
-  o_serial <= v_serial;
-  wait for c_BIT_PERIOD;
-end UART_WRITE_BYTE;
+    -- Send Data Byte
+    for ii in 0 to 7 loop
+      o_serial <= i_data_in(ii);
+      wait for c_BIT_PERIOD;
+    end loop;
+
+    -- Send Stop Bit
+    o_serial <= '1';
+    wait for c_BIT_PERIOD;
+  end UART_WRITE_BYTE;
 
   -- Procedure for Sending 128-Bit Block
   procedure UART_WRITE_BLOCK (
@@ -58,47 +67,58 @@ end UART_WRITE_BYTE;
 
 begin
 
-  TOP_inst : entity work.TOP
-    generic map(
-      g_CLKS_PER_BIT => g_CLKS_PER_BIT
-    )
-    port map
-    (
-      i_Clk       => i_Clk,
-      i_reset     => i_reset,
-      i_button    => i_button,
-      i_RX_Serial => i_RX_Serial,
-      o_TX_Serial => o_TX_Serial,
-      o_BLOCK     => o_BLOCK
-    );
+  -- Instantiate UART_TOP
+  UART_TOP_INST : UART_TOP
+  generic map(
+    g_CLKS_PER_BIT => c_CLKS_PER_BIT
+  )
+  port map
+  (
+    i_Clk       => r_CLOCK,
+    i_RX_Serial => r_RX_SERIAL,
+    o_RX_DV     => w_RX_DV,
+    o_RX_128DV  => w_RX_128DV,
+    o_RX_Byte   => w_RX_BYTE,
+    o_RX_block  => w_RX_BLOCK
+  );
 
   -- Clock Generation (10 MHz)
-  i_Clk <= not i_Clk after 50 ns;
+  r_CLOCK <= not r_CLOCK after 50 ns;
 
   -- Test Process
   process
-    constant c_TEST_BLOCK : std_logic_vector(127 downto 0) :=
-    x"0F1E2D3C4B5A69788796A5B4C3D2E1F0";
+    constant c_TEST_BLOCK_1 : std_logic_vector(127 downto 0) := x"0F1E2D3C4B5A69788796A5B4C3D2E1F0";
+    constant c_TEST_BLOCK_2 : std_logic_vector(127 downto 0) := x"01020304050607080910111213141516";
   begin
     -- Wait for System Initialization
-    wait until rising_edge(i_Clk);
-    wait for c_BIT_PERIOD;
+    wait until rising_edge(r_CLOCK);
 
-    -- Send 128-bit Block
-    UART_WRITE_BLOCK(c_TEST_BLOCK, i_RX_Serial);
+    -- Test Block 1
+    UART_WRITE_BLOCK(c_TEST_BLOCK_1, r_RX_SERIAL);
     wait for 17 * c_BIT_PERIOD;
 
-    -- Validate Received Block
-    wait until rising_edge(i_Clk);
-    if o_BLOCK = c_TEST_BLOCK then
-      report "Test Passed - Correct Block Received" severity note;
+    -- Validate Received Block 1
+    wait until rising_edge(r_CLOCK);
+    if w_RX_BLOCK = c_TEST_BLOCK_1 then
+      report "Test Passed - Correct Block 1 Received" severity note;
     else
-      report "Test Failed - Incorrect Block Received" severity error;
+      report "Test Failed - Incorrect Block 1 Received" severity error;
     end if;
-    wait for c_BIT_PERIOD;
+
+    -- Test Block 2
+    UART_WRITE_BLOCK(c_TEST_BLOCK_2, r_RX_SERIAL);
+    wait for 17 * c_BIT_PERIOD;
+
+    -- Validate Received Block 2
+    wait until rising_edge(r_CLOCK);
+    if w_RX_BLOCK = c_TEST_BLOCK_2 then
+      report "Test Passed - Correct Block 2 Received" severity note;
+    else
+      report "Test Failed - Incorrect Block 2 Received" severity error;
+    end if;
 
     -- End Simulation
     assert false report "Simulation Complete" severity failure;
   end process;
 
-end;
+end behave;

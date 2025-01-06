@@ -46,7 +46,7 @@ architecture rtl of top is
 
   -- Top Entity Output
   signal S_IN, S_IV, En_IV, En_Key, DataValid, START_LEA, STOP_LEA : std_logic := '0';
-  signal T_in, X_in, C_out                                          : std_logic_vector(127 downto 0);
+  signal T_in, X_in, C_out                                         : std_logic_vector(127 downto 0);
 
   -- Top Entity Input
   -- To be used when UART is Ready
@@ -56,6 +56,7 @@ architecture rtl of top is
   -- SHOULD BE TX_DONE
   signal data_sent       : std_logic := '0';
   signal plaintext_ready : std_logic := '0';
+  signal i_TX_DV         : std_logic := '0';
 
   -- initialization Vector
   constant IV : std_logic_vector(127 downto 0) := x"00000000000000000000000000000000";
@@ -112,7 +113,7 @@ begin
   port map
   (
     Plaintext  => X_in, -- Plaintext to be fed into the LEA-128. INPUT FROM 
-    Master_Key => T_in, -- Masterkey of 128-bit, which will be key scheduled into 192-bit. Value of master-key won't change
+    Master_Key => T_in, -- Masterkey of 128-bit, which will be key scheduled into 192-bit. Value won't change
     Start      => START_LEA, -- Signal to initiate the begining of encryption process
     Stop       => STOP_LEA, -- To be determined whether useful or not
     Clock      => Clk,
@@ -200,11 +201,15 @@ begin
         En_Key    <= '0';
         START_LEA <= '0';
 
+        i_TX_DV <= '1';
+
       when WAIT_FOR_PLAINTEXT =>
         S_IV      <= '0';
         En_IV     <= '0';
         En_Key    <= '0';
         START_LEA <= '0';
+
+        i_TX_DV <= '0';
 
       when others =>
         S_IV      <= '0';
