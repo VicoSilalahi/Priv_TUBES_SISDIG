@@ -1,1929 +1,0 @@
-m255
-K4
-z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
-!s11e vcom 2023.3 2023.07, Jul 17 2023
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z2 dD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/questa
-T_opt
-!s110 1735666247
-V53BRk7P5_7<_gU[?Q=Fk32
-04 12 3 work cypher_block rtl 1
-=1-7c10c985eae4-67742a47-17f-3500
-R1
-!s12b OEM100
-!s124 OEM10U14 
-o-quiet -auto_acc_if_foreign -work work +acc
-tCvgOpt 0
-n@_opt
-OL;O;2023.3;77
-Ebitwise_xor_32bit
-Z3 w1733921498
-Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
-Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 19
-R2
-Z7 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-Z8 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-l0
-Z9 L17 1
-VUL^F8:MP?=4m2WI0dPRDT1
-!s100 2<Dkk:?K<57;X4[zm4<LB1
-Z10 OL;C;2023.3;77
-32
-Z11 !s110 1735666220
-!i10b 1
-!i113 0
-Z12 o-work work -2002 -explicit
-Z13 tExplicit 1 CvgOpt 0
-Abehavior
-R4
-R5
-R6
-DEx4 work 17 bitwise_xor_32bit 0 22 UL^F8:MP?=4m2WI0dPRDT1
-!i122 19
-l26
-L24 7
-Vf2zSK1gPA@E``eTWEgFN01
-!s100 15J2hWE4@Q9^Bif2C1n7X2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecounter_24_32bit
-R3
-R4
-R5
-R6
-!i122 20
-R2
-Z14 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-Z15 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-l0
-R9
-Vo0R;dbgi8HaQ?1=40dfN03
-!s100 ;h3`Y?B_[V7Wna41l<oL?1
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 16 counter_24_32bit 0 22 o0R;dbgi8HaQ?1=40dfN03
-!i122 20
-l29
-L25 20
-Vdn2Wm2<IUm:9?RXd5IB620
-!s100 ;V@`Y;NFYeQ1^d_P`VY;42
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block
-Z16 w1735666214
-R4
-R5
-R6
-!i122 21
-R2
-Z17 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-Z18 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-l0
-L752 1
-V52n?T7@8>?P54j@9V`lge2
-!s100 iOX^9^F4NI`U]GW=_fF<O3
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-Z19 DEx4 work 12 cypher_block 0 22 52n?T7@8>?P54j@9V`lge2
-!i122 21
-l902
-L761 225
-VMEdJfWHAPeb=`TeB?:l3R1
-!s100 3i8H5Hl8Ak=:5g>EFg3e>0
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block_tb
-Z20 w1733923091
-R4
-R5
-R6
-!i122 22
-R2
-Z21 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-Z22 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-l0
-L6 1
-V<5NJg8lH?3II]Z_PdfV];3
-!s100 `RAWOH@D>Zd6>3]lJa9B;2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Abench
-R19
-R4
-R5
-R6
-DEx4 work 15 cypher_block_tb 0 22 <5NJg8lH?3II]Z_PdfV];3
-!i122 22
-l20
-L9 25
-V1eL4bRlD3074D`;WL;P671
-!s100 >3i`NW@c5R]3:Zb6<SV>N2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Eencrypt_lea
-R3
-R4
-R5
-R6
-!i122 23
-R2
-8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-l0
-L5 1
-VPIA6WiMX^mEo^EzbJQ:^10
-!s100 zl5h]gRN_n7l7::5_5F0N3
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Elea_encrypt_fsm
-R3
-R4
-R5
-R6
-!i122 24
-R2
-Z23 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-Z24 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-l0
-L26 1
-VDR<Q7HU_^S^[@jH_YMkOZ2
-!s100 J8zT8lIY2nooko8;dARDh2
-R10
-32
-Z25 !s110 1735666221
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 15 lea_encrypt_fsm 0 22 DR<Q7HU_^S^[@jH_YMkOZ2
-!i122 24
-l36
-L33 66
-V?;4H>:QbQkQ6QVD=66EfM3
-!s100 JbOFTaG?`8c?R:nKF6l:;2
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Emodular_addition_32bit
-R3
-R4
-R5
-R6
-!i122 25
-R2
-Z26 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-Z27 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-l0
-R9
-V=a<E=:9HkS<JQNI0Hi?kg0
-!s100 V27Hf9ckWRScVOGHEJ<6i3
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 22 modular_addition_32bit 0 22 =a<E=:9HkS<JQNI0Hi?kg0
-!i122 25
-l28
-L24 12
-Ve=43NAbFUg2A6B61KHoih0
-!s100 :G9=P_M7>TKFo;YAOD9@f1
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Emux2to1_32bit
-R3
-R4
-R5
-R6
-!i122 26
-R2
-Z28 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-Z29 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-l0
-Z30 L16 1
-VjU7zk^cfXYz^c8j:jS>BZ0
-!s100 lHkOO[DQG:VbS6b7FS3JX0
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 13 mux2to1_32bit 0 22 jU7zk^cfXYz^c8j:jS>BZ0
-!i122 26
-l27
-L25 14
-VNa@2=z>cMkmWWkVjOoXSM2
-!s100 FE]``hDP4Mg>OWdK[>kK03
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Epseudo_rng
-Z31 w1733921499
-R4
-R5
-R6
-!i122 27
-R2
-Z32 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-Z33 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-l0
-L5 1
-V2jRZL_F]k2=<[N@QE9Ui>0
-!s100 cWh59N4Z9V`V[f3ai1oi^2
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 pseudo_rng 0 22 2jRZL_F]k2=<[N@QE9Ui>0
-!i122 27
-l16
-L14 16
-V`aAOO9hfnI?_:6:[W[3TI3
-!s100 :M1gA6;nhD2L`6e>359Y^0
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Eregister_32bit
-R31
-R4
-R5
-R6
-!i122 28
-R2
-Z34 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-Z35 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-l0
-R30
-Va8lGFSX:91R37hf9V9[dC2
-!s100 GcmQdLh`W[Y0[nZ_NVEgf2
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 14 register_32bit 0 22 a8lGFSX:91R37hf9V9[dC2
-!i122 28
-l28
-L24 21
-VOZE1M_GW1fU2KGf7B6cd:0
-!s100 Sz4N5hG>4No7EeV61Kn@33
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Ereverse_32bit_for_lea_input
-R31
-R4
-R5
-R6
-!i122 29
-R2
-Z36 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-Z37 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-l0
-L5 1
-VX^NTIn^Edmoi1E:`ALkzd0
-!s100 49GVROo0R[zUV24@<DLN60
-R10
-32
-Z38 !s110 1735666222
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 27 reverse_32bit_for_lea_input 0 22 X^NTIn^Edmoi1E:`ALkzd0
-!i122 29
-l14
-L12 41
-V^<;idKgYhlMQTLA<ZeYh<0
-!s100 dE:aJT4g4NR3XLH4BkFkn2
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Erol11_32bit
-R31
-R4
-R5
-R6
-!i122 35
-R2
-Z39 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-Z40 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-l0
-R9
-V?Wc`nNG5V1oF2f?_G=Z?50
-!s100 j]2j@Q2WVX4aoR9:[R2VT3
-R10
-32
-Z41 !s110 1735666223
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 11 rol11_32bit 0 22 ?Wc`nNG5V1oF2f?_G=Z?50
-!i122 35
-l28
-Z42 L24 11
-V>lf^M=8gdB3h@oVi_9Z1j0
-!s100 nNFLe7P][fQc8?Ea31aRg3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Erol1_32bit
-R31
-R4
-R5
-R6
-!i122 30
-R2
-Z43 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-Z44 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-l0
-R9
-V9zikD>SdJl8>9O7PhiNeI3
-!s100 ne6L?ezZ]S_<m`UmfMEkW1
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol1_32bit 0 22 9zikD>SdJl8>9O7PhiNeI3
-!i122 30
-l28
-R42
-V70^IM>7CN`NV<gc91T2I>0
-!s100 7Ob3n?o?b`3AKVJz?X`fd0
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Erol2_32bit
-R31
-R4
-R5
-R6
-!i122 31
-R2
-Z45 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-Z46 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-l0
-R9
-VT5K3gC=W0iSS3o8H_INEl3
-!s100 ^zm0m_4XFbn9QCe31116I3
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol2_32bit 0 22 T5K3gC=W0iSS3o8H_INEl3
-!i122 31
-l28
-R42
-VDCVZI3f3V44mI[B6V^ZaN1
-!s100 H:PBfN1AF1nAE2FI<1BYF0
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Erol3_32bit
-R31
-R4
-R5
-R6
-!i122 32
-R2
-Z47 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-Z48 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-l0
-R9
-VziZchPlOb_I;Oh<[gAZTX0
-!s100 Z9gBolX1D;MzkJ?[>2bhG3
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol3_32bit 0 22 ziZchPlOb_I;Oh<[gAZTX0
-!i122 32
-l28
-R42
-VnzFJ_XZcA`=<[3YG3@67z2
-!s100 VBY4[oXWRRY@EBMei3ROX1
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Erol6_32bit
-R31
-R4
-R5
-R6
-!i122 33
-R2
-Z49 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-Z50 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-l0
-R9
-VkJM<VQfE0SI3H6lFWlL@Q3
-!s100 `Fi2N?TX=C0c@TXi<_B1W3
-R10
-32
-R38
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol6_32bit 0 22 kJM<VQfE0SI3H6lFWlL@Q3
-!i122 33
-l28
-R42
-VJY`2flog`RPS`3VeWN@Em0
-!s100 2Z0lzi?>IR;b]i^DCk34R2
-R10
-32´Qøu£‡ïÂ³1pbe¬g]•ù–bnÈ¬Üƒ*=½Ìí…C«¬íè–t?èšÚº´QÊ¿è™†r?éË«¥@Û®ú›°|Gn¿Ê²@$æoøÉÁj…;†×ÔòÌ]d.·Õmgø‡ğ1AL3S¦/§j °=\ÔÍ—pÈ¬vVæ W›((èL!H+¯²`3ck5¼ı$Û©U³=«oóp¨šôwÑá×
-•é8ß­aıNZòåF$~YLI¢p_¿m£¼–y\öåGü„N$g±ågõ»P)»#;Ö Ì˜Û¼ŒŒøÚø$&‚ÛeT›¯ÒubtOè˜öÔŸ\' ^°8H+Šóˆ†e•EŠõ¢3(éæ–ªrÚí‚ß' ]ãù.yÄMÔABßéÌ ?J2p»WäùÌÓœÔú*¡”xÚõ®€~f<Ó½b8V.íŠl?Í_=…½ôa‰‘u!E°/²"Œ!/âÃTŞ˜ ‹¯rñçëdA3ñ²mÕGeLİ†Ù‘I6“¶â7SÅÃ¢^¯qOÉŒaëxóKÉÆÈÉa	„_‹øà3Û%\Íˆz³­£X³€£hÖÔ¯h3iRuóvX0û2"yd$ÚØ	Ä_wÇAò®¢'¿ĞÊP5Ó÷ çRq¿;{ãnHšåO¡Mv ëŠX+%Ä^™	¯„dË§ÎÎ³¹œ·ì'pı@”`3XÓ#/áFJÒS$S*»>ò3J±ÿò'"Ğ`yöY*	Ä‚™Ãş¸)Ø²š%WÿÍŒ“ÎvÓjµİmíS( H|Š›9]ŠKŸÔß÷‘×.´æpO½ãl—ØêA ôæW‹,˜(óÜ×ÏÖ4Îí œ&hz7s]Yòqös`uº§<‰[—cĞr?æx .ÃwM÷`:w|##«…3•úøÔòÄÙ&0ÂwÕé%Ök01IÈq}JÚ/¯îbÑœÔÅ2æ@Èv^bâywP(¬ªbëáH#+ğNß£k±şÓÈ)«NuKÀ™­¢z²—^±Ÿ÷ù~‘µÓ-Á
-½cßûõo¶«ÁÖ¢ïäøHÑà¬V~»ÒŠŒ¼n}/5c,I÷am[Ãe-­Öo­)…+Ò¥ğZş\%Ê:`]{üúÜÉŸ¨ÛAwèğNıR”s¶z$ ìââØ¿qÒsÕz†û¿šhIËæÂ8ÀD}‰Åü¢ÎÙjH¥‘O†IkÙ^šEÑÇq%Êz«ÇŞ¯ôYïëêÑø»—æÅ Ô\é¥?£q»Ë·êõ¥³Ê  Ic½"°éY¡õ_øµP‚½Vä%Û»¸ŞDvóD¸AÅ¯¼˜}	Ëê–¨.ĞZ£“ ¹İİá÷¢)¡Œù¶¢†+²<İÉ²U¾êõ®O.ş¨ŸÓ~½†¦nëéE>¯M3ÂJ#ÜÛ"r•&ëÃV%jš'©‘Ùe/•k
- TXb°¹Ên½»€º,Çú›ï¡î‡æ…	‡ıd}V~cz­ìÜø}ƒÛš‚¼Å5˜G+â…Bo´siÁ»Øa)dıß>¿fMAv®”mA«•—w	
-BZWB6v1k\ÃfSy„Yó"0qwKçA)Äkh‡qJWoçx—i ¦5àâ²“l¦Ç;‚Š¦á#o£Ä!‡=‰…×ÂMÆãx‡ºdx	W%º:<Ç>&0Z@Ery;ÚKæ­İu}õÁ\õvù+—+1²Â)eÈˆ1>ÖK«¥DúIœ,Ö§j´Vs: Ø¡I‡®R)—*S$ßÑ}é"Šÿ¡¦Š2‘@ÅS’¦lEe#ÆM¯{áÕîÖé€‹ø…–G½"‰U	p%|TGì”mÀG>ØÖ?SZI£ÏMø»1YŸ5xNªX(§*T¼Yš&Ne4çdRsI|É“DYM¤?İÂ3.t×f~Ğ¡¬ÅSl6z2-±-dï¡NZFö×%›í}ŸÆÔÃ2ª™Ëç€h@‡-Á“‹ˆ|G<ÃóRŞÜMl.Ê€˜ƒ[w²{à¡[†9ÃŸÆ‘³ÌRÜWM¦A›£¶¸Ù
-tM÷¸!S4Wiˆ”-8\°ßâZnzº‹Šàll¯î˜‰˜u×FâgÑSX–MÉoåp¨´‘+(1ƒbÙ‚»°lıj YÇÇ›&ÙÊcdàBÚ,Ê#7‡ëÉğdpášìÍáÛCƒÖCESU˜Jò}|Ô´~°^BN)i:ˆØµ/ÜFsß©$:8f­  <™îÇw"JÊµkÂ7WM“Á‚LsÁB>ÑO(+jıUSrQtw™¤Q5BVr²S!Ã†h‚~ŒPüvÀW,pë'Å
-mW2ÆìÄÈ³f6’Gå"­€¤~dVêíÑÜï0ôqœCØ¨ª5RIXDÊÕtp[é2OégÑ)a‹Æø»Äk6r¬x» Ùœí×1ú¸’;ãO,›æS¯§g	Š‚õ†Ñ‰yåØ‚ÃÑ’<ú*BVŒê¶Fv0Kş†æùrÑËå¤WáT(µí}Œ™#ßn^·¶:^]Q}àR	ú>—ş´Y¥ÑŞ¤Ja4…§EÕšşùÒåŸ¬™8œˆÉ«îº†T¼dpT1™®°Fny¯öîø–lò½E–Ãxƒ"2:º÷ôf¶¿tR0!*í˜SÛÀucØ ‘kóQŸÅ¬ÃÁœ¨ÎİÊüÎúş®¸®ë²öi˜ÑåEÇwæÙ<» ê=jö¤'3i_Ãg,=»,µİ
-.X·ó&ë÷~ &§„p†®¿?Ú4Hæ¤ºÏ¼ˆ¹Ì™3U²®FY`“k$rS7hË±,PØ†@Ë¥jÌÒ?ç*ØaìVMy€X“"2M†&é‚€+½ÛêZ±=«ßÉ-xÑFÜ(²ëåûñ"TB¢¥ÉÿcHC%Úøú)ØŠdiZX²©Zû^ÂögàÂsfÏàHÌö1EñzFQá»²PDmúÄĞ2S$"ç~êf®¼éVü>éÌĞ®Ï¬:[!LÀ20>µ&ä;uU<á 33]¬K»*št‚'xÙb9sÑ»â|v„İbqØßQ]ía—q˜µ	Ì5<Pr«ïê&ßË4P…v§Z`òf¦8mø¬Z¨î#ñIÌc/´Åï]µº’Ò(TÂh‚è¨@öYiS02·¨‡YSŸ»¼Ó&«Æ†j N¦°s)†wmÎÄ`-“xĞ›±ú\Ó¥…dò…İir¿AO2~N«B©›9ªÿ®ºÓ´ˆá!•OsuU™°Áíè…‡Y³¬ÊÍèÓ•M—1/ªğ«×™¬8 0æ ä5r®ô÷ZøŠÒ¿ä¶ññ3
-Ì˜’9„&„N±®V£#9‚<Ö)Ñ‡hôj‹-Ûµ½Æÿ©ÿËd†Ş¿®'%ùÑ ¼Hb…èã¯ˆc'û 4Îø	Ú«x¥šZ’«{ç’Öe3ü³dïâiĞ:ñGÑxgM-{‡‚¾¾|ñnÅÕEé»íS=© £ª£œ—sÈ™¨ı=Ûå°Â¾Á’>ùŸïó<²~İ±Ø„Ö}âµ'„–(Ş5)¯<r¸Ö4VĞúåƒrQ”yÀ~ÉexÄOäVr1LºC2(NQhJÂ1>ĞGIĞA+ìIâs·¨ØƒqîœÜ‰ƒ¸ìË£²K¨ò£eÈH/ù•Š´Ú®ëSo¦Ùz0¼™Uş£ ¿üB÷!ëÔİ¨ø7Fîÿ{ú¨O×º]à‹xĞà"¤E0Ë|“cÂjçHÑ@£Xdz_[€ğ›¸ƒNÂ§eïÜŸs:Û.›ñğr?¯&&>²öôÅp:Â›} k{D06Nã2q@U3RË±iöpŸôfQsNŞ¸_öduÍŞ‚ß®±©uÁ¤”¬ñ§ó=UjøĞóX¿töà»‡ùt°Ã­-ïz`\!5s«´(G½„’3rk‰Æ0¬©|öLğÿm§çBY²¨”Í&ùGzŒ.¯ÃS.ó$ÒÈ…„eH¾•Ë¯á8¯ŞÈ¾ò&O˜Œ™k­ÀŠÈºdtı?a¯®(×ÚæQ¬H>²pøã z TVë ;<Û>«»xªhy¥Úkçğ'á#üAGØ“yĞ5dæ	wM"™²«ó\J‰÷ª?îrÍşk ¹µğëPI	˜4gD#gjµAAhk±ZİWášË¶{¦yİà– /¥®i1ÊQï”%gÂˆÜ•ãÒ¼qBæ6ÄŒr¤Oq _­&n›>¹‹5ìõİÅÓve”d‰gHµS9ÉıÏ Y5N§<ûâzÔ©¡ìhºX²½ì³ååzğác®Ä¾wS5wõ615AJÙ~ç C!;bR24VOÓr6kâ'§ª¢%©„Ò+Ö[p_®\!€¾ºe{ø°½\ÌJŸ¬‘é÷í J·úvæz Jªlç²Ø»;zóĞ*†ÿõ2èL›æÆrhÄxÙÅøèfYoS«.¿h³FGüÕè¯¯{¿€`«úŸœÖuLŸ‡”J B)ç?ã!Ÿÿ|›ƒ77ãW{°XuOiÒOÎP¬”¥¸ãf®²‚a%à€õf5´+&xÓ"§È½Yƒ¹ß÷°,!"®'/•f`o4‡$_ç5³f<a};…¤ìü,£Ôxù¾d^SdÄFº­*=Ø;™®…^õN¿‚ÍÒ`ÆáJìşÓ/íÏràso”z34EÒ9¶ ;
-âwÁ÷à¹ÁØÔæ.Ğº'q“zñîŒPyœ×ıoË?çö*­ZkEm[}ˆmó)•5“ñB{o¿Å X.ˆa"ÒŠ˜}Lº3ŸÚ*µíô¢"VşJ\[¼urbr8‘ T<*¤øëC·Ä4X˜—;–tz‚y\UTKãÌÔÔİ°5ë¡ªGîXß5Ş[9œEiÊÿ’½¯w,Ùq&éŒF$L	·½.İUœ–€%p™›Ô” ¡(Ö3†€<?Cì5¬Á›¢l‹69	m‚%}]ÎFDC˜È²@wo¬µ¹–8Ïc^©övz¹¬º¦A{ãxfR't¬ßäE0`6Û6?G—íhÜœ`Nİk:¥Û„ü?‘„1šüÚ,rwa–'|
-#ÃV¬•¹»I˜ä%
-ıp¾¢HŞN…°?Â¯²½K¬ìJÅ‚ÁÀ[ÍCÁ¢7×TÅ­OõîÂíƒ,Ø›ä4¥U¾Œó>ÊLÜÛ®‡7çõlÈœ¦"£5_¢ÑU%1!ª×.RÆúÂíuÊ$DÊ‘KëNe ­Í]lşftÇ0o2Ö\Aİ‹Xªˆ•Äè!Ï¼ğYË’Á!çÓLQ@;ÆI¯J‡'û±gä£9i/WØáDR1å$©’cRGêĞ¢c# 7î£'PŒ+²!N"¸ŠÆ_FÊùÄı1„õ ÃgÚè´öæj >¼•¢MKÊ Z³±®ĞŒÛ0NáÖAØy«?1Iv@'ïñyRêñGÖv#~Ş³dèì-ãÉ9¤¥2²,æíÏEu	‘„¬º“:º¼Ø–9í6lœşÓ&Ùõ,ŞÎÖzú–	ßª£Z÷Ù¿ß¶Jµü%VÀ¸D~À`MÛ§düww~±íÏoö ¹4ôÛ
-ş.°¦-ë	‡÷ByÊ]³¦\ŸìNP=[§õ(¬n`Î·›—[*®†¬&;)Ü€3d-³Ò$îØ~Œøûš)VKäÆbUÅ¿„àDF~ıË¨Ô:J¨Ò¹~æ`Ã/×F	Ê{‡1®7û­Ñ ùFLÌY¡Ë°úÒ}±˜¸î6¬Ê¢põJ»½ÛÖS‚ƒiÁ¬!ˆ1ISb‹ø¸2¯ú%o¬™fÛÏqJ¿uç@‰Š B%ŸÑİ(»3õ æEvÿı½zôÆzç7N¶5øàéªY"áLç¶<)¹¹)ş-©²µè­‰JÖşÇíÔæez"O«©€G}˜õ"g3Ø“&qwNÚ„3Y—~³ÈŸhİ³ »DªDÛÛ~²ë=×õiÉÊ_–öw/ìLumYŒEü.Ş`Ì’Ë•pš®„‰W$£)Ş¥cf3³Ğ8tìóÎw)¨ù±™\î´ÄIåÅµPú=×Ğ\ÆX‘ûä6ˆ¾q”)ÆõA=şunïy¥:¦tIÈqx† 7À¨Õñ÷ìsbï§Ö.Üp„Fà2zı$/g
-,œÛ7ÌüL×ö&g´mumW·+Z€+)™ÿ0Æ1K¥òsh.„«åè¯geÓ{µ/3ÇHz})b»¸-!	ˆ”ë_÷8èÅ,ø^øš²Jô)B¦¯lÇyËJ´ÚéóÃ“o¢ÜpYU¹İìs¿üF]‰Í'İ¬Coë4÷Fê¸d×¾g´à&DÚ©ü|—$ã.¦'HÕİ´¨º__Çsp›ƒJ…Ù‰'\Ÿw}¥ÂÎâÑã†NÚÊÿíÎóhö‚)åë¹Æ©Û¨ËÄĞM½ñŸwx«b,Êü<ÔŞãX´ôå¢”¯oG/5³v_DÉœFW"~b½¬IÄX&ê²®¥Sù·¾5Ôƒf€&NqË}—.H‘Q(ÕvŸÌ?_Í;ß¦ıãJs$Ì 5ÄœÊ¼şˆò>»Áõ^³“¿B¢°ıÄ2	êáj¯ó©/õYÄ»ª:®'ÌbqFÙvü¨Kåş¯Ì|Nâ¢ûí(åÃHË;Xÿw6k~ÉZ]ìG»áşÂ¨‰óúbsc‘©ÖV1@¯”§KA»€üP|Z®Â«©+“:×âÂR…üÚ¶~±o*«™p=vÚ¼İôvw§‰&×Bâ
-Y‘‚T"¼µ|•´¯è›áÙ²´^º‡ †0ó*1‰üø8*ñDş#‹àËçÙÒˆb =†2Ü­CJ#`ÏNØØ
-éŸ6IXz‘˜O©~À$ÕV²âqDìÑ]Ö3gÒKSÁ©±Ÿ±xjÇ©\Ê<øıı_âûäÀ#©t4àB!‘ Ô<-Şºd¤T ¡Q"@‹šber<Èğ rd*Ûç|Â'l¼ÜKË‹9ŞÍaø‹°V—fğ~Î^N½‹	xí„‡(.¡%îb.oÊõºÉ…Ô"©*”Ã/yßùR—â®)Í2Ó¦`aÖ®¾³Ÿç;úšü¡}5ghDzjñıó[´"à}ø±0UÙœ[XÿQ[º·c,Óe%¶a\P~-Ùœ
-°!#!ëä·”Šğ ‚]Ú¹è½{Í‘¶@1hŞ†éàPP@•]İú5i£†Ç!Mgx5î@GH6ë²©¤ib@“CºõOq£AŸ²!Û™QãÃñD®É½@¹_2xİyŠãs:şGíî°>Ü>Í¥|C-i¸Ñ˜„?f€Ÿaê”.±7iÌ¸fg'Al˜†SuB1¡ƒ¼Ôb6(Ü ÔEPYftÕU1.Q¿¯©"Æõâu•
-Åá“<MáKäµ8§ÿ­Â¦Û†áÇ?ö£µ¦\N&< -ø€n'¼œ˜!4ˆŞ»:–ŸT{LQéCA9 ¾À_|ÁgëW[ıá{£##o€ê­ˆNšrd€Z³*°áOÕ/û(óš®áD¹…šŸL`ZıhmDÿª`^O´tüLÉ«àU¨çèóµs»sµNlë|âáì÷ÿ;ãÕy²³1søIÈÒŠ¶)Ô}Šñ´,'Ij 1çêşx¶s°©¿ª(‹ÌZ@äÑïÖT)Ê²8šğxa…\§æ¦]Ã,ß€“Ds=éÄÌÇtuB³JÃ
-¬™È=4Ñ£f£kíá €
-,ş¹Àô++Æà_æçÈ°€5·°!Ô¹®jg/Lçê¤/4Šı‡Ó#u¾¿¤í¹{…©5d¾} ”u &é„÷SiŞ•Ïí'ä@¥TeÜ¯¢=Ã Xğçt	£tl³àÏìÔU
-ÖötÆ~{­_u_ô1Ïô+ŠèŞ³ƒÜQ§"ä¤a¤ÄMW@Q@ğol½^·fãŒ÷û¥İ›³ôf¯FêckQ7Y$+pÍ†9;£q\ùÄ9ÁîNÚVş§à2[˜Íñ$ÓîêŒ^®íÍÎó#jĞáêš:É*¼åm¯Ú iÀA¤[è*˜×‘èê9|³¥wm¢ç!#åİİÓii€’[Ù­a°[é,.vÒzaJ÷FÑœÈï£g…7éçñEA–Ôr¡
-/¼Æ¬ãõ¨´Í3Ômöğ^(HÜ–É„|µ÷
-™ku¤ÒÙ·7ó#Ï«<ÏhgqåÅQ¿ó@mƒ,Ù‡!l%U´Š-„aÛ§ìŠ´U(›¼ñˆâĞ„µeê	ÊüzB¾YÃğ_]›Z%Y¹Ï¯xò§)‰mã´\CtMràşØŠEx œËÕ‘ÙÉÀ¥L½í‹ã›Ö ú2ÁT¾¼€Ewá.•y¹0''‚Ö÷{¤KŠ½ÄW+Î\ƒª¡	äYuLÙ…:ï}ßp|Àœc4D‹§ëç:R|’çá¬˜F1·>Ñ¯~ïvSjğûÕÎœMŒÖè6UÚ¶æ+¸NÄ}ZhÑóJ9” Êo§* zæ[å	>‰t{LoÉsQMJz‹;ªŒGsGáó3Â¾írx€;©ÁFÎí÷šÒK†öyŠ¹¸&UzªÔìŠ¤Káæwi’¼¯Â‘¾»çËX"tDì)!’(Õu9	é3.fÚ’¯íYÓ6¢ûOÂ¢æ=4c†l®&¨Òq¿ëô
-œRqú—‹˜Â[ø«eÇBX¦âHFáÚhÖHAŒ5U
-ºØÜ1ççx%Y¸ o¡C-…,'w.e•2:
-åEN÷,æèøX5TLÂ~£¤Ü¨¼vÂxÑ«_gÅBrŒ†WÆîë5hÒv’EÊßv4P¦Q™^­ÑŞÀÍ/ÅÜA÷UqIZkä¸•v_¦2†ëH<äËõ6ìãRü_„Ôqh¨¦î;²ãäH¯;İÇlĞ)ãÑ]º_´Æ1aÒ¬› Ës[O §7nµ#;€UpÓq/øÈºÛ1<Û¿øÖ˜“£\«†ŞAHÙ+\]m‹rz…mnmÛ=èÑL:Æú×ö7j)%a‘]—y]ğÅ¯Ææ©ÂÇ]ñ‚(áÙ[ì‘»¯»õo®²…5µhx5cß·Šô-G[”Õf\K§ş:¥h¤I¿:
-â)‡mÀ>œ%QZ¯,‹âÄ}’ˆàCĞCÕšWÒYeF¸Ï¡TI›œÚÁT6ö)©ÊkÁÁAçd
-“CÁŞ7ˆÊøzpT±ŞTÜ“ggÎÃç7O`
-v_¤IÚ¢Z§QÚ“6yƒ.ö9í:¯ò¦;Ş1MÄlöËNò’Ş!×¶©à†Ê9
-¨Ûââ7eiÄÄ ‡'@õZ«ëI„ÓpnÕã_«™PZe @>S¼ÌOÄí¥Úò9ôvã!˜ÄDŒç·ƒµ”Ğ/İG{ÜL½~ü†$xÜ@fˆ¹oVTQ—CctJ?Ïƒ=ÊøÓ¾ãAô7×<Çj¹€ãBË¼›ğ&®¸êîû‘/’Ìsæ¢Å9…	¨Ñªú–`]ìù‡Ğ1gø%Ò±ØEÑèÒÖuÃV
-–Ú®¹!ıMiÅ”$}j#=]âp\>ˆ·ü–z-k‡ñü‡}¥¥gö­Œ!=û#8å—½Œ›¿¿»‰Î¸$%±&Ui~§ºäMMú„Ñ(ñ<AÃ!æ“¬Äé–E×ê¹âxûS<Ì­ c¾¦YŒÙˆZâ2¢}àÉ”ª½A‰ıêsf4ş
-1®¹\—ÙÓ­_õĞ=‡ ùôÔ:#aêO|ØûºoŞ(zŠjğé°$ÔD"ëuDíÃxÇACgÓYvZVÉ­ni Zë³¬ğ}øUäkì@ xÕ¢¹M‡~İÉŠ²yí0èè÷x‡_9‰†r«Š›‚*OûºóË«¥]éşĞ¼bw"	¨M¹Ğ;NäÆ]„XåÅ,Cb<K^j¸Á~Ï>“°Ëáø¦D×~ƒúd$îùÙÖPUĞc×KGÀØ{ëû{¹–¯ì‰ÜAAŠYOgBRŞú¡KEª3817@m„PDl%R.gïª^§uEMÈÁ(ú(øgù.C<Â}$S¤ÊÈ¼uıˆĞ½?gÆ7²sšæWÅÑ4~²v‘z:Ş`TP‚™¡˜›>­Òá0Ì9¥Ü~TgáJe›åØ•I¯§$æÔ¸-î´8.´ğ™¦vê±§^º(–úNàôÑµvZÈÚ²=ÀPv€ó ­ò7kÊ6AœK“s»1Ï÷zü0½ŞæßGÓo¢‘ùôU¶ 4÷ÿüFRt£Tİ¬L’3°·Fê·øÎàÏ×¾c¿0Pà&K'qxK|—+ö"gHÕ l,ú_OŞm–ıô!Æù{µÅf’­Åâz&jÑ¼4ßôäx´_ìØĞ}6bkÚÖ$MIşø®xå	ì¨¯¸J,ÍÙÁà=ªÉ§É9ÁFİ>|zóûåúçLyR¢³m-¾sH UK>]èû?¶n%yZY¤Ç¾ºNÂà	ö¡ÒsgÙ¬æ1Dç¢ñ»„ªÌ›!-®Æâ7Ìæ1“>|%Xj ®ç^i÷,İÈ“cE¿úó´e3äÅ@Z$
-å|ÏvèØWtO¬5C­Ö 1¤ì˜Ñ¡÷ê&¢r†.ÚÀ5bzû@k*ß|œİSˆ±™‡ö ğ Í%mQÓoU{)Ÿ›t‹äÁX¿¦8.‚ÏÅ¨,ø}A¤t9º*¿DchBVô­¬l…bJ¼Ù€XøiœÈüœb']‹©ğR<¶â+ÂQ]u]ÑGû*ñy¯OW S†tüğ¡WDÿ{³·Ee«Ğ’][åC¸3	 ¾èK˜OÏ8Ô¯×\PpÏ3f<i†*ã$W$~±Úúo—(#DÔt>Ï|Ú.;·A„“4o;È¾‡`,µµQGxf³O§# OÆ	¤5e.úƒ‚%SidXQ-a½ƒlt¦öÒw¹ÏSÆÑ‘ˆ·+ç…:1b©ÍÁ–Ùª$R§<Æ¡;pğ<M>è®xƒ^%YÎA	¤í
-”³‘-2F3¥o„oz½dbs¹—ö­w;³-ÎùCE¿ûë„”½ÒË ïÊß®·$b…W¨,çgY_vêÓõ¸€ª64Ó;.ºeó>àY`ôqzQ¹Í‹Eâs÷(!Tuá•^oÅ Tµ>…Ûær¦İäÃ Œö¥u—‚ş&:BÜS0n!Ş¾¼j·4êüŸT-:ıv_éƒ¬òVFævéC1)	˜¨C£3*¼×oªİ?ü€ê»›Å3÷oİíÀ™¦`Ì&nÜËş1Q!d†›è•G!oÀMü\‚SµW|+$3S–Êğ_D¤Ù% Êüc}é&æc»‡)ÈrMBQ™Ïîa®Ùb¥1ÖHCÀ>báIÛz¬©RãjşC+ó~×(İ}±ıãÀ¢.v%Â·_yŒr Š§Ç›»Ns95\àŠÆ5DS(İ¦ã;-Ã¶Q†Vq
-±ˆ»Æ"Vô/†»±4¹Ú™î«ieò×§!F\DzôI8Ó~l”Ğ´öM*òìc|Ç`ÀWË¶;ùõk-Ëœğn0ûôÈVzC±s‚£ÓGRğ±¨i¬ÌÇ9%Ìİ¯Nág†tßÌ¥mo_¯ »R¶Ü••œ‹†ßs<Dxß§‹Ø®f9˜;†èS|ÈC¼?ÈÜ $aŒÃPÇ¼•µD
-ëˆ×"‹ŞvŸBç&­· ¬·é¨üïtUğ/¡ë@™—ß¬Íã+ª»ëÆƒ5\…–RÔîşò?öj&\çê˜õmİİ‚ÔXŸ™£Šƒeènx9Ç¹ÆÏ·H:!+ãinŠ1k5O}iª-Îo²-;ylôÃıá2°µ•PR‰Šï¹¤q·á$³‰ í’Ş¸É‘„i±*Üàˆ•öG#ºéğH–1`â&j5 q)ãa _—"fz+·&ÌÅT`QHá*¹Ç(?ñ¢sı‹ÏÁ¡•TÌü›àõ>u&â}Ææİî`;¶¥4»ŒJf:H¬åÈ„.!Ô…ñtà_¦Ï™z÷ÊcbêÉÆÄ?mì»‘’=x«å¬>ÿR*¶9‚4^¼±şïó[ä†·fq8©•6éÉŒ³ê­ßªS%ÆkÙ¡¢Šşº.z@Ä;÷J¦m^ß£kFL´ÁEMUî×ò:/°–F¦˜´ÁÕ	q>Æğí¦ÉˆÇ>ÙÍ…÷É£ÎGE¤Õ‚Ró/FEoÿd¯Š
-îß“,Û¦>“ÔEşºNÑB<İÃ&;¶cÏ±Sˆƒ? şşu§A¨'%{Pší¯\‰ª¶è¸İ‹L —¦;­_CD]QP;ÿÊ!ß¤ªˆ¡ï—¿69Á·hÍ“{â‰òÃñ"Ú1oÉä`ÏH¨ÕÙ˜ñ„¡› ÄÒğ*ğwœÈØeûxÉ÷‘ ’IÏË‚ùìÃÃ32tµB´BGL|l™È5°—Ï¦£ki§Ì@
-,ö=†˜ë+ÆèÛ ‹°€±]Ûp!Ô±*,ïLïnâCôŠıWeØ¾¿¬iÿE©5l:8Ïdu .mÂ¥‹¶_e‚,ä‹Ö_–x›§-«T@]âé”ÉõC(Éğ[æ@”:æm1YÛÉmÒİ°ğÜšıäŠV?©‚†PSN/9gYJµGŠœV¿öM%hœÒ24hdJüO•_ /ÄT):÷rs¶»Í)ZÆ/šœ”#)™J-Qg·5
-> ?©k°	ÊX”ŞêÄwÂO¢3¬qKuºêœr­ÜF^¾½&ı¬@X›5åfê»2fe÷¾©µÀ&GíÙı\—'Ô^§5hÕêÄ©¨_Ä¹uÉ£J†îù&`5Í^&Ï¼÷C!
-ûÁüÃQ”¡“ ?ïvÒ56ynŞàX|ŞùÍ´{+àºC ¸İCš»;¸yÎ±ï™îg(—üs¨œBj¬“ü>Ù|”¤d`Õ48Õ ¤Rn£—#šÈ`>éÙâb b¶Yá<KØAX@ÁFO0—ŒÏ£*©Çù75R9‹¬ÕK^ïş—p‘ê•)ü!€dÛümPï>ş²í¾LYöÎ>$Q<Ó¿…bBPxÒàW.Ó¥bA)&ÅÚ¶ò•2y2oÂ–é›>Ö;ãÂBºÔÈİÅÑ¡!’3·8Ù°Æ‘,IQF‡^Ïh‡]ï¯Q Cq/­ŒošMì86K&{5hNËrÙ®ßÜ™h|]ÕæJ’@R>ø“l¾„‡W9×:ææsDÔİZÍ¤7ÖË¿ùÈ{£¡O›‡À¢xØ8l\shB{µlpë<ûáM$%ÊÖåk7ÆQm–g¾ÀÄ¼öç·!÷\â²)ÿ:kí‚‹®¥_¯¡µ4«‹H%aæósª”0#±	$mˆÛÍBÍÓÆôEøÛ¾Û­ÇiÌ±ğØ¿(5o¹tX”SSiD5Éõµ(€¤»«2°dq¬bqGÇ“ª¨KäàJšNâ£»HåÃIø[Xá’`~É[C	ÛáşÃMß“úbr}tXÉÖV0^JÂÇKA«™#¿±ÓW$°¦AK<n¬È—c ZÒÄAQ;UIä $t +’%9nhìèG£Ó!&¶\\GäĞcNmªÌ…cc  µ)u&ËğUQø¶:o­v! µÜÆê’uáwç Œ“'ò”|FwùÚ¢ìíÕb«rsÚŠ‹&e:hF;ëâ`DryÈ!xnÙeâ{úQEú=ÿÙ×
-‹1ÈŞ$ÜÁ§^Õ5
-¿ìÒxù}ÜÉ×à‡rnú¸™é”^Ü­ÊÅï#>éÇ‡gc2/äğ®±NXj?Cd‹í³@‚"ª›ç.)@…Ê˜~kõW²	RÜğ„‡->Ê‚´JÏ6¢{âÍ•–9Á³W›‡¬ß··úi½‡æŸ,SÃ²<k•‰l_şDklÒp|%Wt\°23IÒ=Âjîdj?h¢6ûµP]!C~.UøÖ;	võæ2ì˜.¯ÅåÔEßÊûä±d5ÔÂ¢œÿs/w?òän'ìN"{Y¿Ó¨€j`Å³‘0LñL¯>ÑæÆPü^â°:Ó« µw&îê×ë\ÉhtôgHáFtYAd©AkÄJ¾¢5J°}C]ä4×\0¢ vòoóOéN¬˜v³ca'¸4ĞPPEb{È@ÀûÏkµÌÚ¾ˆÛÕœe2?æz°Qm>éÉUì­è”gAØ¦[OÌr¨`ûĞêã.“ıŞ£-Áo¼Ş¯Ô(”ùù¹b>q‡à±»åğê;qß§×3—và3g*U<W
--FßÌLÖëñ§]tp€Æ8j€*4N#ö1JÉÔÂsi3SÚ’Õé¿~©ñ•~‡§êDC­ì½ó¾ú)B/Â¸QhB€K‚E@n´6‰“7<TÈÅC$2j‡E&qcşë·)lØ|¯É!µkX’9È,"‘™ÈÕÅ2±eÖ3%ÖÑ*#-YØ†©»wÂ©V6ŒïÑ†g-^±¿àD$’zJœ3–RÒ¾ÿb[“±åÑ$Ø^è¤~­âJ¼Û¡JĞéœ½öZ†æ>üØ•jÉälêÛÕ=< Ş¶˜“­„) ¾AHÔóŞ{‹rwÔKmÛ00SjZÆúÚ.µLI%aœÕß±]ğÈwDÀÉÂÇP) Ù[áI9‰Ûõo£jÕhx6¯ª`f>KÃ¡$1>j²©NçNu…\èNHÄK¦x—b|ºGpVÿ×.‰L’:‹‡4İé­j/(½ƒ¼s³éö¿—%À5™‡oÇ%Úçå3;ü
-­ĞXt^`’I®P­„å¾uãg¾¶ÂgEàñ&3d´*68ÕB§É­]Ã¿¿÷±<	a$Î'.‘?` o5— _Y‡5£b|g;„´ù».üC~ä;z^ØSi±SUA=….ƒ?ÀÏ TTZ¾úó`#C¹‹s¡s`ó&ë8ãh*üŸOÖÛàÆ<hÍæØo{Œ™ÇŒ­N‘’áŸNÕ×iÏ6DƒËm©s•Ê£W²ïªõó$ÛèÖÍ¾Ì}`Í°UÿˆîœèÏÛçú—~şùŒÖ9ér(Ş¬¤yûg‘ãRïÊÑ5ËUåF˜6f$Íƒ°İÏ×Ñ-Í¶+ÜùÔIöë?_şç$µC®İº™,l˜ÑªMBŸ¦¢r”rœ@5iÀSÈë*ßw&uÛ±™ŒLˆ‹p Í.×ù[ïUp“7ô‹äª°IØ¿¦3”*GE¨=âÎ¨xÙÒ%ÆJ‹'KÇTÊ¶ÌáB¡±\ÎıÃ)…"Â+âDÔ!/À>ñ:“qQ­™Ú$oFå4Ìb³­ñ©ÉkŞÎû¡ÔhÈ¶è%=XŠYH„,ó‚€V4óÛ(1Jl—Ô2¬ÅĞ0V9fä:.°uä|ÕÚâ%œî(wA“õÙ°)]½EI<Úç4qCj@é©fÉªOÖøºÜèc?¦á{(hğ¢`0g`Ü–;±3š•‚UOç.ığgOä
-Çš¥W%«¢±Ñ)-ryÍl&ò¸CnKÿÂ^ê)¯«ãÉõËÃ±MÅÚP…J'8ŠnÁÑè¼IZñöI¶ø‡êjøÖÁ HÆ^ºõÿšF[I05¬V•Ê•%wû§ÿ%VZ<I¾%ùÓ Á	Í®Ö2¹«”¤Ó%MÍÏèŠãG •f®@sbİÄÙÄ#j ³ÔÖÙÎ%”æÚ(ŒDpYÇƒ­®n¿á`6è•ÕÍ§¼7Nm‡$i
-£Uœ•	3$°8×*¾-/]ê^rÒ¼óH¨	ƒ…{ïuPuÈlÅ¡ŒÎ@QÍÊ¿ât;QµÄVS4;R?æt&5'	´j>Ş;³8İ(“«ºÇFÕñH×Í0f;rtêé­eİÛ3½Œ1vúÙ[ª"•aŸë1WríğËIª&¢rÇSîèêi[âw×o°Eo Téõ¾Øx*”¤-‡é¤?ÖìÖĞ.¸.9á¼ƒŒÕMÍˆşZâ,¨Ë˜ê´Y‡ñaÌßc$İt¸å	f~ú«±*·(ÕêFñ¢}vÍŸÁ¡›»1)Ëàõ0šÛ7-ÆæÓÌG;¶«ÉnÜJf4§Q0˜„./;àP¡t¢sŸ™z8¥ÒcQ™³V½Fã¡!lé0´f=Qn{]Øs¨^à&éûîò8”Å³8ÍaCã##!%İô srqC±tDD?ê‡FDƒï G-"õ	À9S›¦a•‘‰wë­Îş·=…»2H^§İÅA"[´;œÄs'Ú*¯¬9I“^Ñ¤àV5ä©
-*l–Ãp:ÌÅÑ'$@gä;9Â=S„}Â¨Àüî)`3±ÓcÙ±>w›xE ^NøÁTqB}pbÏÉfÈ½#¡¨ºİÿt_yGy¢´›±8GÖ(Š¸•GkâV†nálu7OŞp 6)
-ƒ™öCwQx¦€Imì(ÿ°àÉ‰äiŠÜß’½OÙ—ï9S7~²ÕMNÑs º–1¦„Û	Æ¬’]ë
- Õe	Ê^‹$?{ïìMh¿y€….-"`Íµ|Z®…”…c)ß¸±F?]³Ñ%¦Ìÿwd6÷HöOxa0TË·ÖˆÿPJ—üÓd7œÎ²ÓzC›®öt'y¼¼ª+©C¦h‰Éa
-6#\÷Á¸ÑNT«,rrëísrq”Bª—&=%?c@‰À6Üørªæf¤iRĞ1—¶;^ÊuYş Â{îLŞ¤ö9ÍrDª‘á³ sµkí‘í¡3³/NÊñœËÏd§õëÓ,Ó)Á`à½r9‡"=ÁpGúŠ.j·Q÷A ş÷`RA#‰>²y%¶ø:ôˆÚoÈ9!æ;ém¹ wøİÏ~Z›1·2."
-e¡,Cş½=ıÿh¶¦¡LŸQ
-ìŠ•¼oâ‚›cÄÎ'|ÍSzé„Ñâğ”wÀ…Aš{´q‹j¯Û{ûµI‹¤W/…¹ŸøÓw¶ìá °ODe‡ÑüdÈÚeT§vÄ…õâÃ"¥?ø‡;¢¶üh€	Ë@néôwÃ™Ä¬pSş±¹ÚœsµWö]½'vCh›4ıíZ¸fd…|™´K–DİÙü×'$ä^¦-ãeÚÄ¨°ôïÇ‰q(ú…Şùnë…Î1ZnDğ3%BpqüÄMñ|u$Ÿäh³jÈ~Q-4”ZG’àĞÛüœÁµÌÙŒØçLÆò*ïõ‘ÁE¤Wæ¿M}Œœqÿdş·¶?V&TıQx²ru©ú>’¬”Sº¥ÔWş®êa4€õeß:ş«!råŸ©Ë–(É«ëè&&T¼p9|ÈÆhø­FZÓÇ©™¬Rşê†©6%hê¾ù…Xc<ÎÏİKóoë«¡+şÙúë˜4N´µGï…00¼lœ”òÇë¦¦7ÕÛ@p1JúXë.š/¬ÜKµÜÔÆ!p$ˆv]PËï(ƒô¡H ÙØ»ãkƒ×E¬w¿ª„ˆÓÜìçäJÀÂ\çë3æh¹ræÇ06QÊóM=Ò/%nä!qŒÔPÑ3>¢«ñmğÍÙœ"6}İÉø¾Uÿ¯ ¾eæ5•™ÖUåÓ<D}‚t±x®cdR¢›†è˜¯òã¼:•Ş"| $dÑjg¼•è—0Kˆ×'Ö>ÖŸ]í„:!,“ó©¤5tÍÁ¤n¸Œ±ŠMĞöñ6á~·oçeÍ6aG‹´ašĞ4_íÉ|Lşøæ_8]ÜÌ•®ıMÜ¨²w&1«_i.½’Œ†Y-[µÕhÒxyğ”?v4^jy^£:k-/ÅÒêô©µq¢ï5¸›øÃF2†ö^ÌòÕÅ-OÊÙ°‚<zˆÖäHşw“GÒehâ?çkæc4 Û×ù´t$^şôÂCg\E^Ï×óâ'v7†das?_¤„ÓŒ•¹1]ãs7şÕ	ÂÛØËïäÈ;R0…˜C’hHÜ+ÌZ¦ Ç·/¬c!Zëƒm]»Tv”öHZ,ŒÄÈ@ø·^5P2¹Fc5ÿ¸‡eG`ËÆ‹³yµ5×k†tmçË<SÔµSt»ÙB8ætª¼U…"Wh˜ŸgEV
-0.…8G›°CÈ•-øäK@S¤øÛzğ¨Ê”û=Ó·Lµ¯–ò]Rx“¼ui©nìøO‰<’Ï×UÍÑt‰Sf5ôV.¥g$ÊÌ 8pƒıM=¼z¼Ø’sDª¬ƒ±qf»şıÄXíÊÊ¨à?.‰‹H› šÉ¨?Rruí>sŒ˜HÖÊçC~á‘.³bÛÕÀ{0UDÈ6[=Ë?¹˜NÊii¤ÈHÑıñ7à Êa@WÙZæUtçT{B—«L“xK¼ÁÜÛñ_qDİ*xÁb ‰‰ğKfgSğ­”qr3,Ü™éz¤ªìœY
-³)Š‚Á‚±$ƒ ™
-À4ôéËì}7ïG#ñOZîßDÅX¾ºşnyâ \Øâ¤[6%Sõsğù­TƒjDh§éšËqØÙÇĞ‘]ì›äî‡ŸÀû.­­üànq-®Ãµ8M¸a¿?¦C÷ãÃ0]Ê)Gy¯f²$hGÖ%X‘ kâ[TG>yÏ‘4vs˜û6•®¿L]¬†½$Œ¥sÄlÙ|oJ¾ò>”`8¥*`¢""qé‡ê+Ö\y0\\!‡Êúf={ø·ÉÏzŸ¬–·îJ°TuÖz MŞ,ä‚Ø»<³Ó†ÿòF¨O«æÆu„{éÅøïl}LèMæI&œíEè¢r§‰<^á¼—rWmÍˆı<Âx:ë‘+Ò7`Ğf8¥%2Mˆ¿á_"1òD|tëãc…³§Ç!ÙÀ¢j—ÄÇp‡F>¶lQmXØƒÊ+£²mÓ÷[)hlç_mÒKsğV?TU_ÄjÏÂÓÃÁG3ò-×´V%ÈÕËBõËŠÛ‘Ÿá²ƒÌ>r#˜Œçı¶4^şøÚÑşâzìì™€Éø˜Ò¦gà'ğ/ÏŒÁ™g`™%b‘¾»ìsÒ¹"tOT‰!’(°_¨u9	â®¹fÚ’¤UÓs6¢ğ÷Hæ=4h©Ì®&¨ÙÉ5Kô
-œ›êÑú—‹<F+Ñ o$ÒÆc¨²Up†x4o®hˆú3İ ªé¨æ{©Œ”£0	Ş¨ş `ıÁ‘s»ÂX¥Ô*—ˆ†iÆ™€›•=åîIËåâÊ>]ƒñFÅ^eX!G/
-Îyë?¡	-â­ÄËôIUsùfP…™ÊDa8KÑÑØĞX-Ì‹ıì’{V…`û±P|‡\àgîĞÙ8D'œÆ¥Ÿ¦Jh*ıÊñNgÒh¶£%Kæ½İ‘q”¦-ø’1
-üÁH‰¥,AJí‘Oà˜€mïGÖ;ä÷š4ôGĞC÷ú¨ 4%£Q‰ê*ñ°²¬Ñ›şàÊƒøs 0U´`-DAxN(ÑM}Æ"b“nC\,ÿ®‚®×ìFyAs§©‘8A»ú½ÅGm‡–k°2|ïƒŠù€ZšÀŒU'L[0Ô^á.DÖi&ÁF1¡ò²•|’†+‚–íÕÕb£ÂFô?|™…Ñ¥oy‡óxİş-%h	QBÉµ{,ÇYU@CuaF8+ÚMèvÓç€RaØˆ…0Fâp™f´ŞØñ4ÍÅóÑ—Ñ[½Â:º»å%±‰^ô"I³	™JàE½å^”/Õ¯åãT÷ŞRõA¸Â6,‚%<¦«±éh”Ğ(åeá±O®_¾R{uxËQÜJœŸ¯6ı ‚y‰ÕfæytF­÷²Ûˆ–2À*…ÌËŞ)\›åõL„hÙÆËÖŠ˜Lf¥9ÎL¹èôašµşËáãÎwwÇ]êËàZ²{Æƒ6f.Ú2o·Ga÷ yó cK»r²#5 6KÙÂAğ´øÜf) ·õQ›‚}ã^pqœ›§ğ½ë7gñZ ÅzcÅj+pZMû›.å8AÑJûbbmåØ)ølğò‚d&S¡.—Z,Ûf2ª¢PíØ|S<e	Ğ`QcĞ%maæHLÖpÂ4xÖH¸Â
-Vc7 ÷otÏ—I(.µ ¸`’›ä£Ÿ¹¢˜&ä{íƒÌ©e¥ßJœHaX2<ú)_­:„b¾ç¶¦5‡`Mš’w!¹úC…âä‰ğQ¶êšØ¨OP,“¾M3V~ø’yí8€\‹àÎŠ…Nù†:¨ëÈ^ö¡64º´Õ7H<co­bÀ“©UE£ŒOüI¡M‚Øäİ£¿«¤ËFåDÁY›×±æZ(Kàà)¸æû|˜Ø'aY×HÚûûWJ_P;J?âYÔ20ÉÈóLPçw†ömyÉ”íÅAM£Ú©œäw§pÃ(—aø5q²SğP$
-Äz‰À\}3¡¡CúÿZê‘¢¥S¸¾¾°örR X–åíé[2kµ•x@ù©e
-OØ§íÔ-ÓiÇÔSw=ç+äêÉy ğ¡.¸şfZüƒ0•`r¢=Zz£IMÓz„sY‡dV8ùx²Q®«¬ÖwcnÈ³¿jÊ:ù˜ˆİ'bÊ×ˆB÷ˆÏ¡î9ÈØ±ÛHÚû§ÿ0•³P·k¤_«ÊFa^ŞMyCşÄZ³%+Š×ürÜ|Â,“ÌİOı¶R›3ŠA‰(ß<­˜¹+9•×IÌ˜’´=W*¾lq/{¬@C<	¾/Û2ì–‰·PŸü¤0¦{ş¡!D˜áğ<6ÎÓË&(êÛ‘œÜÚöæià—–òdMË¯â9ÆAİ“Îz¦?è¦Xä”!ªM¿ÁI•şxŞâAñÌQ²˜Š€Ey¦–äGtê·ábC
-3lš´ÑªùV92má©ÿ~Ö9Àı´Ş”ÈßæîWEÒ3µ¾/Ô†‘.jn°ãÏj¤&«¯¯S#|‡KíŒm¹r\gL gMK€rhšŒœOöÑó2Ò¶h$JˆZğB>µ/&cp Ü‚rS y¿Ók*…kıÛ²{K¯îåÃVX<f<´¡ƒ¬3“x³ŒJ¯tw,’ØáiÊ´ËØ’ I›z„Œ0;8Kå³nöş/¥FqYÒç-xëWOmç;ÁUs¸»Â:Ï1q÷{w°Q?>u¯øÒ=UïÃ®=Ó@J”)‡k¢t7Ÿÿ° É’ŠıÆé£Y…ÎeÓVú\}Õ^¾UÏü¡ ¶Í³‹Vû´¬ËáWHÛêRJ<½V=ÌA©§û­W1Ñ6¯Ì@ÁN7Qˆ‰m255
-K4
-z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
-R0
-R1
-!s11e vcom 2023.3 2023.07, Jul 17 2023
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z2 dD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/questa
-T_opt
-!s110 1735671448
-VJnaILA]m^^SI4mDE6XZfA3
-04 12 3 work cypher_block rtl 1
-=1-7c10c985eae4-67743e97-389-4070
-R1
-!s12b OEM100
-!s124 OEM10U66 
-o-quiet -auto_acc_if_foreign -work work +acc
-tCvgOpt 0
-n@_opt
-OL;O;2023.3;77
-Ebitwise_xor_32bit
-Z3 w1733921498
-Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
-Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 38
-R2
-Z7 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-Z8 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-l0
-Z9 L17 1
-VUL^F8:MP?=4m2WI0dPRDT1
-!s100 2<Dkk:?K<57;X4[zm4<LB1
-Z10 OL;C;2023.3;77
-32
-Z11 !s110 1735666288
-!i10b 1
-!i113 0
-Z12 o-work work -2002 -explicit
-Z13 tExplicit 1 CvgOpt 0
-Abehavior
-R4
-R5
-R6
-DEx4 work 17 bitwise_xor_32bit 0 22 UL^F8:MP?=4m2WI0dPRDT1
-!i122 38
-l26
-L24 7
-Vf2zSK1gPA@E``eTWEgFN01
-!s100 15J2hWE4@Q9^Bif2C1n7X2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecounter_24_32bit
-R3
-R4
-R5
-R6
-!i122 39
-R2
-Z14 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-Z15 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-l0
-R9
-Vo0R;dbgi8HaQ?1=40dfN03
-!s100 ;h3`Y?B_[V7Wna41l<oL?1
-R10
-32
-Z16 !s110 1735666289
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 16 counter_24_32bit 0 22 o0R;dbgi8HaQ?1=40dfN03
-!i122 39
-l29
-L25 20
-Vdn2Wm2<IUm:9?RXd5IB620
-!s100 ;V@`Y;NFYeQ1^d_P`VY;42
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block
-Z17 w1735666283
-R4
-R5
-R6
-!i122 40
-R2
-Z18 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-Z19 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-l0
-R9
-VR8>I8AWlWOcDbWdW9;VFW0
-!s100 oJm=0DL1D8BOHN^5DHdhX0
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-Z20 DEx4 work 12 cypher_block 0 22 R8>I8AWlWOcDbWdW9;VFW0
-!i122 40
-l240
-L26 707
-Vb`@DlWO3bln^QU;U;^Jj_1
-!s100 ChbElA8FfzcGzQR1EJ4;G0
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block_tb
-Z21 w1733923091
-R4
-R5
-R6
-!i122 41
-R2
-Z22 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-Z23 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-l0
-L6 1
-V<5NJg8lH?3II]Z_PdfV];3
-!s100 `RAWOH@D>Zd6>3]lJa9B;2
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Abench
-R20
-R4
-R5
-R6
-DEx4 work 15 cypher_block_tb 0 22 <5NJg8lH?3II]Z_PdfV];3
-!i122 41
-l20
-L9 25
-V1eL4bRlD3074D`;WL;P671
-!s100 >3i`NW@c5R]3:Zb6<SV>N2
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Eencrypt_lea
-R3
-R4
-R5
-R6
-!i122 42
-R2
-8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-l0
-L5 1
-VPIA6WiMX^mEo^EzbJQ:^10
-!s100 zl5h]gRN_n7l7::5_5F0N3
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Elea_encrypt_fsm
-R3
-R4
-R5
-R6
-!i122 43
-R2
-Z24 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-Z25 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-l0
-L26 1
-VDR<Q7HU_^S^[@jH_YMkOZ2
-!s100 J8zT8lIY2nooko8;dARDh2
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 15 lea_encrypt_fsm 0 22 DR<Q7HU_^S^[@jH_YMkOZ2
-!i122 43
-l36
-L33 66
-V?;4H>:QbQkQ6QVD=66EfM3
-!s100 JbOFTaG?`8c?R:nKF6l:;2
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Emodular_addition_32bit
-R3
-R4
-R5
-R6
-!i122 44
-R2
-Z26 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-Z27 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-l0
-R9
-V=a<E=:9HkS<JQNI0Hi?kg0
-!s100 V27Hf9ckWRScVOGHEJ<6i3
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 22 modular_addition_32bit 0 22 =a<E=:9HkS<JQNI0Hi?kg0
-!i122 44
-l28
-L24 12
-Ve=43NAbFUg2A6B61KHoih0
-!s100 :G9=P_M7>TKFo;YAOD9@f1
-R10
-32
-R16
-!i10b 1
-!i113 0
-R12
-R13
-Emux2to1_32bit
-R3
-R4
-R5
-R6
-!i122 45
-R2
-Z28 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-Z29 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-l0
-Z30 L16 1
-VjU7zk^cfXYz^c8j:jS>BZ0
-!s100 lHkOO[DQG:VbS6b7FS3JX0
-R10
-32
-Z31 !s110 1735666290
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 13 mux2to1_32bit 0 22 jU7zk^cfXYz^c8j:jS>BZ0
-!i122 45
-l27
-L25 14
-VNa@2=z>cMkmWWkVjOoXSM2
-!s100 FE]``hDP4Mg>OWdK[>kK03
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Epseudo_rng
-Z32 w1733921499
-R4
-R5
-R6
-!i122 46
-R2
-Z33 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-Z34 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-l0
-L5 1
-V2jRZL_F]k2=<[N@QE9Ui>0
-!s100 cWh59N4Z9V`V[f3ai1oi^2
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 pseudo_rng 0 22 2jRZL_F]k2=<[N@QE9Ui>0
-!i122 46
-l16
-L14 16
-V`aAOO9hfnI?_:6:[W[3TI3
-!s100 :M1gA6;nhD2L`6e>359Y^0
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Eregister_32bit
-R32
-R4
-R5
-R6
-!i122 47
-R2
-Z35 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-Z36 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-l0
-R30
-Va8lGFSX:91R37hf9V9[dC2
-!s100 GcmQdLh`W[Y0[nZ_NVEgf2
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 14 register_32bit 0 22 a8lGFSX:91R37hf9V9[dC2
-!i122 47
-l28
-L24 21
-VOZE1M_GW1fU2KGf7B6cd:0
-!s100 Sz4N5hG>4No7EeV61Kn@33
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Ereverse_32bit_for_lea_input
-R32
-R4
-R5
-R6
-!i122 48
-R2
-Z37 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-Z38 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-l0
-L5 1
-VX^NTIn^Edmoi1E:`ALkzd0
-!s100 49GVROo0R[zUV24@<DLN60
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 27 reverse_32bit_for_lea_input 0 22 X^NTIn^Edmoi1E:`ALkzd0
-!i122 48
-l14
-L12 41
-V^<;idKgYhlMQTLA<ZeYh<0
-!s100 dE:aJT4g4NR3XLH4BkFkn2
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Erol11_32bit
-R32
-R4
-R5
-R6
-!i122 54
-R2
-Z39 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-Z40 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-l0
-R9
-V?Wc`nNG5V1oF2f?_G=Z?50
-!s100 j]2j@Q2WVX4aoR9:[R2VT3
-R10
-32
-Z41 !s110 1735666291
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 11 rol11_32bit 0 22 ?Wc`nNG5V1oF2f?_G=Z?50
-!i122 54
-l28
-Z42 L24 11
-V>lf^M=8gdB3h@oVi_9Z1j0
-!s100 nNFLe7P][fQc8?Ea31aRg3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Erol1_32bit
-R32
-R4
-R5
-R6
-!i122 49
-R2
-Z43 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-Z44 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-l0
-R9
-V9zikD>SdJl8>9O7PhiNeI3
-!s100 ne6L?ezZ]S_<m`UmfMEkW1
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol1_32bit 0 22 9zikD>SdJl8>9O7PhiNeI3
-!i122 49
-l28
-R42
-V70^IM>7CN`NV<gc91T2I>0
-!s100 7Ob3n?o?b`3AKVJz?X`fd0
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Erol2_32bit
-R32
-R4
-R5
-R6
-!i122 50
-R2
-Z45 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-Z46 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-l0
-R9
-VT5K3gC=W0iSS3o8H_INEl3
-!s100 ^zm0m_4XFbn9QCe31116I3
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol2_32bit 0 22 T5K3gC=W0iSS3o8H_INEl3
-!i122 50
-l28
-R42
-VDCVZI3f3V44mI[B6V^ZaN1
-!s100 H:PBfN1AF1nAE2FI<1BYF0
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Erol3_32bit
-R32
-R4
-R5
-R6
-!i122 51
-R2
-Z47 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-Z48 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-l0
-R9
-VziZchPlOb_I;Oh<[gAZTX0
-!s100 Z9gBolX1D;MzkJ?[>2bhG3
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol3_32bit 0 22 ziZchPlOb_I;Oh<[gAZTX0
-!i122 51
-l28
-R42
-VnzFJ_XZcA`=<[3YG3@67z2
-!s100 VBY4[oXWRRY@EBMei3ROX1
-R10
-32
-R31
-!i10b 1
-!i113 0
-R12
-R13
-Erol6_32bit
-R32
-R4
-R5
-R6
-!i122 52
-R2
-Z49 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-Z50 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-l0
-R9
-VkJM<VQfE0SI3H6lFWlL@Q3
-!s100 `Fi2N?TX=C0c@TXi<_B1W3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol6_32bit 0 22 kJM<VQfE0SI3H6lFWlL@Q3
-!i122 52
-l28
-R42
-VJY`2flog`RPS`3VeWN@Em0
-!s100 2Z0lzi?>IR;b]i^DCk34R2
-R10
-3¹íYÙ_
-²Ê@Ü.Iøä3U,U
- øÆŒÑ3%°•<”SÙ³*µrî—iƒEC-Ë¥K¦w`è—h”TR<Ú´Z·eb)æïï„ 0,îı¥ÿğS£)ëœ¤Mzü•ëS¤ş°Æ6ÌŠ”ıVoq(Şµ©ıN›68“ºÕİÍRnêfD‰oÉ:ùs1Ñrâï Q´V(ÎÛârŠÌ&SÌZ°ÊJ§îîêïQ Zùö‡N‘yş‹ŒvÁE‰|WÅ ®¥gÆíÖçJñF’F÷T`¥lK¯}ÑİıæìBÊ‡S¢"IYV63›¥ubt¥?èA¸ÕVHÛŠõVwal°ùU†¥‰Hß©§±±$…‘œ‰;­˜‘Û©ğyo0Ü2l›@Şºóx7æ=‰3¥UXİ&s¢$!&Õÿ¨ŞSÖıf5’}tÍeÓ;:[ì1xĞ½Ê"›–u×7rãÂ×LF¢|'Z‰ˆêg»ëé1°K©Ê•¾Ö˜#
-BM‡çD6H
-¶í‡IåX¬(Ã=Æ|Ó$½1P©ü	—c.Ìô_mJß0ˆÕgdàòç
-Ñg.ƒÑVgû§lŞ’g©´3¤ERqàE"A,y9Æ>U¶÷ÊóüroÇÉUÚ–;æ¾t0ˆİÀ]ïvs·=Ş%~"Ñ,LºIºh‚F¡ÕïQáIÌoŸöÃ<[§§G}T^T`[8…(½ŞÁ™©ö;¢6~¿…¾í…SMªŠ¿ÌÒ3$ÇhõË‡.îe\Ï£É€™ãX±«[â”¯jÚaA³vZ<ÈW"{O—éìIÄ]\trª²® ãş5ÑÜ“ÔfNq”ˆH×.H˜Î¤|•vÀ9kÍ%Ä·
-r?NÏ«7wt§qåÎé>ïÜ@mˆ”X›ál%^¦'³zO‹¥H!7\×Yˆ#˜æ3Ë¢²Ê˜;yÍm=CˆØCnJäs‹>ê)®°Rß•ËÃ°VtÌvP…K<‰œÁÑé§øL‘öI·ã6Šjø×Ú±^¦^ºôä+P;I04·ïå(´=öàß¨ œW–¬‚*·oâ<˜ü&a[‡7²^/‘ånıg±KND™O‡!|b#—çİŸüÕÓY‰ìB\œ·µEWv2Ğ+ÃS:	ÀP´¤Ó‰Ãúó“}ãŠ%S´w)ÂŞr^iÏäÍmé’¥xL0>hMŠOÔnz¦‘ÓeC!_½ç'-}»Q ğ³ùÉ¼¶€(¡‡rF§ #­PŞîÜPÔCŞAVn÷gnòu(b!Sÿˆ<ºz´h¼ Zë#6ój\)¬"9°ùÊ1ğÆX”[·y¬Ï{'ø¤Â$AD»¬÷êÛAÛkG=âğQD~)7O£9=ç!&$GOÿv»¶X±7»Ò(’5H—-¬$D/V±wRáD†jv¼¤¥²ÛÕÚF±3£íñˆBOº“ ‰ú(ˆŠûC!®ŒôóšúöÙ{/@PÀUş¢C¶iö>HøşÓ¾ÿzåT†Bê]á”„ur¥ZÌéÃcœİ–.İ@¢G˜³Ê”@Ç%ºÌX4:…À²
-øÙá‹[ÅüŒùıÃ/éÈñò+²	¸Ÿ†¤Ğ}ÍôÆ¥º¿V¾é’pğÚ®ùöS‡ÕÓˆ42p©Ø¸7ù›7MŒ™cRºİSj¿p±!›¨ B É°Ï
-›3ğV‡WTßı¸Mæ4æzâa/¤Øàìü80Ãlç³jH«›")û{È —È­ŒB+ÄÜ!Â»µçP5;ìØ˜’vs:ï­úpûì ‰€Ùš)«œŸqd”õZªü=ÇåvÔôä›ùG.&8& ?DÈÂtc®•Ü’8€5Ó'øÅSø¤‡…c´ƒg“Û'zË|®»ı‘P;ì˜ gŸÍ,w_i†ç7|ß=$|6Ë'ôáé	É‰‡hÔ:A¨¤u›œN½É€«ÓLïĞ‹¬¯şëáã ’.Š•é:ûîY}NZğÁM~¤~Yh
-šğ_½Ià„y^Ò¦|„N&Còİçõ¹tjƒ£;Ö¢èÛãš¼ŒÜ™À¤&‚Ë ÷êQ‚B ;mÔy	Oõzm{ó7lÑAO;ºä=
-¸úmA_ºÌo”V\ÂÕÔ}Zê	ø•vqÄ^ÏæK5%Úî¯’¼ÍÙÂÚ¹=¹§ÊbJN|yÉXÜm—Lz/ñ›‰Ãm.„Ğq—%K=gK7lO¶mÚcÎÔÇ½€íû	õ›qJğ©¯·EÓ—¡*R‚ÄÒx—Q“)/Ü’ª©ïbÆ–(ÄZ²?¢V-‚Iñæm÷N¨y™)ay†\šr‹iÆíŞ§Ôt¢Üàöq‰¯Şô™&k¹Æ”Y
-§ÇÎM‚vĞè}‡¸Õ÷1,~a’e*Ê0xƒ+9)«>öéÖiQ:jTr§¹Îò
-6iñÕ‘Cjî«ù¥I1t¥d²‹‰b°~unË5Iš­á€Ú§Ušk¾ùƒ*¶6²/ ^ŞzıÇ
-±:“ ÜqŠ?ÁœÍ¿x¹{\GfZ)#úÛY°EMˆÆ+ÜFúIi‘¿TÚì¥`·İ¢›R»µ¼‹‹ñFXßªSZ=¬F9Œ@¹¦ê½SqÁ7¾È À^ &AŒÎˆEœ—!µIÒi¨Õ‹ÓÜô¿_ÈÙäÃ³}Öôz×VíÃ¼¹¨-ı"#!	‚7"\/÷$­ëcåÔQ™§8ÂóØûÍîz1hÈ¿ÜJŸÀú$%‡jÿõBs{âè‰NäM‹EFüÏ3ƒœ€¸gè0V§#Ÿ¾Ø3°d{êùg/eßtø´Èf"$€%œ<ıSôb¹¼µ€æ(º÷!¾€èµ­}áíF1„qh£º½[k²èUSkÒAeG)ãÙ—,JşU<Ü§gh›:ÏÎ³âvB#4ª¾õT506İw'/BÇín½Œeİm[´ËJü9ğ•!Ÿ¬Ú*gdÆ'zkŸ3Æ]Vªô¨«˜˜âï4ø ¸Ã XÛ…¶^Ò]¯´b­Nİ¬ê+Ô‡‘–¡J€ÈÁÃ&ÇQCÅ«.äèÒ/ÍÀÈÜ¸aä4ƒeËÓğàZ­²S»´Üóíj¨ˆÖ”PœéüöŞM‹â-m‡±A¹Òna]†<:Ê9ìC`))¢ª¸
-çyQ3ş‘–©ÎfDÕXáÕ˜×$ìß»ù¬•ÒEµd»À›¤Íëv@ÏVŸqÍØ½G§q0Íw4}³%OáCIve5Ší=á0Nı„Y“°œ·ìÃ2pò5Âi÷Lx+îº —ËáÔ9Ù§È}^İ†œ¬\´Ãk OÇò8]ß7V¦šš,¨a>ÄŞâG³ı¤çeŸÉÍ‡ÙÿŞGG”'*3RÜÜ}ôoı —”JP–cƒ€b~õNö=¬*¨ÖjÜ~)ßåK¤[­éà†Bƒ=ÒsÏîu¬{5pîwÈÜ¯W7GË:¦è³cfŸ‘‡­…@ŒrDVï½Ü
-ôtÌ•ºˆª0D&9Ê	…¢{é7?ñ)dÙÉÙäk3"ÉÅÙ“Oiww‹ zğà!NšJ©Í:°$Ùç³ ø˜8Ğ{ºÆïğ¼0•Ç#àñ_¬6¿©ÏÈK \š°·—«ø²·sãè†Ğ/zoPNá1Cd0íÔO9üyâä$VI¢oˆç6&\ahİQÏ¯ñYd2:îôÊÄAT,ß€‹ïfú/X‹½$R½ÙÿÃ…ı‰Á®67³b‰Ñ(5Ñ%m…	az;Ïsc/r™ ‰ˆ	Ò"á1İ*’£ò~EtÖmºešôïêàI®¶7ÑpîÔ¹<÷‚³2µe)µÕMeryM©Œ½}–i‚>ø‘IèeT‹T‘ƒïíú”$üeˆáÕ¢WA<Ë¸ß¦2D ã;Çø‘k·~ €6<ö2ñht]Gpd}`­†;“¦Óg¼˜ J–ĞßÄ·„*45Úø‘—É¯s!’lÇ±>'ƒ	.	¿İMÓ_5•½tT¡LJÎ„¶Æ^
-Ğ•jÓNóºz©¬W¡ûz%mµI„V2Xfc~å42g$XBgg>ú9ç‘ó0˜u@á"H»‰ÌU¿`±Cö=rfP²¥_z–2qæ~ˆÔWõíåÖs¾ª¥•t‚Ñ%Ûu
-Ca=ß«ïX’g=ëéÌfi üs+òB§W¿ğŸÅ'Vë¡§XÙ®—êNæ—ã0´fZÎ¹€Á@v†o°u×à„&h‘ùÜş{ŞÅš¯wşïóbÑñyûjİ‹VÙÂç()ÕfÚ$NoÍGo…ÓgalôÃ(œÍe—Š–í‹RÔÒ#UÎ¾´ë¤¼úü—Õ>!ívW†ú´2¼ò^ÇõMe{îc?‰ŒÅ š¡¹÷ô(ÜÜßéÊØ`
-ş©‰»Ÿ|¿ìŞşÏÒlÛÀJ§§µ_ûïÓ4+…çØß¯CÜ^TådnWôLK€QO_m¡·i¼öçeİ”@Äg³ÇFå[P+™+Ø@Ìšù;¬‚løØÚ6ŒñïRVğUÀ3GX/z }@ëÈ+û€aŸä†‹·'ãVŒn<Ø“'ná†ê”gøívmÚı$P›óY¤õı‹ã„®F7±@£wOEÑG#nz9íYÅH™¢«¢¯µRá3ÿ 4Ä‚~g^p
-Êe˜Ö>II¬”wÔ»İ:É¡…gŸr4öB{6gü5Ïù-óÔ¬ÔXÕ'œÍ’ç÷ I¯ÌİÌÙ£±l¿‚–eZğó/eQ$ø*ôd¦ÿKàÎ¾CÏHgù§+î­F¹ÍÈNİUB§5_6Là<D©{™¾xŠÇ²ç(ŞAÓjı—“Äà=,SHõ{ªÕÈ‡áökJ1$mâCdR4QKÎ²y]º\Eå"2=Æ$}·b*Óf®tB!FË&ü¦_NDS‹Q„ı*ğ¬ˆ´şhƒ·HÜ•ªÃ¢]V:³¹ 9­PNéX¨OË?9ÇŸ×QñqÜf1¶v+ğ7$ˆì%m ±Í#d	]Şçº´.g&ûLè°tb¯ïP.¹‡:“V|Ò>³G˜€ñŞ·ú;©†x¦ôS	®–?ÈJ˜‰šøwmÈÛ ¤õéy ³n VÎ 0°ˆ‰*ôä#¨û47÷À3½ÏxÊ§¸¢émã»w'•q3§u?<	ÀSòe=‚p hk*ºãBi±1wåcA7øéT,/øKrwZc­,Äúı(vıÙ$lö XôQJÚH¿’F]Ğ'—n÷d)Ù
-.ŞäVÌNîí¢»Èê“†ÂyÀ¿H5Cc˜Äx6îê$|YbEËÎbvq¦Pˆ™‚!ŞÁÜ;‡óñAöDeÃ=¹Zjõúºãv^·&Ä íëI=æ—ã1Š•(¤ÀfM‰\¼VóÇìÂŒÍôÂOª¿ê¹Éî|‰õÆùø’¼ı@Mûüâ á¥\Ì•¡r$(²xÕSßi.²ï­tY-TFêRxyÿg ´^jüFuŞ£:dm×EÒêûZŠ‰¢àÆ;é8›øÌòyÊöQåó
-KßÉ 9æH"Ç%Û°iw!Y”TQ$'˜‚q%a
-[Â3dV08ç2qv=37RfRË»¢4r>ª“Òa	Š¬ÅR{C!‚-±,sšúşZF÷ÀPÀ]}ŸÇÃ¶i™Ëæ—Hğ‡-À„şÓ¶|G=Ô†BâŞÜLuz€˜‚LéËà¡.İ‰ÃŸŸ³ÊÌSË"A›¢œå
-+¹çéu*©ÌÑ:×‘şs·»qèç' ¶«ÅŸ@Ú ıê¦«—/à“%]ÁHş·vôc\fdL.ø—wu8¾Y1EÏeêû¨%UéÖïÁBt½¶÷ß¤R®UlC$Î¯ş-ı†UŞ.²ÊØf©V>¸(—<…b|›2uèO¢
-msìÄ%Ÿ…x@R¦fPïş_ø,Ë”Ï”…J¿©ãÜÏ´?©ÌŠè¾ôYˆşœ¬üöNñ´LÌŸ1†0h²—ÛêÿGŸi$Ğ\`FY'÷y„xs\Xñšô^`¿Ã·a£0ÇRãÃÒàXe{A¨CùÊıx›òoÍˆŞFüòÚÅ'ã\B<p$*¤>w™šTÓ:îê’?à?„¤DŸ÷O›ê?ïìĞ%ÇB%×K×}¼(ç&œÕÊ©ú™.E¶ŞB4ùÔriR€SÊÂ¼¸fuÙ!'şøˆ‰Y¶ªZ—ùYÆ2Ó7İƒdê°Kñ)ÁGÔ*El>Z€Ë=–n" Éi¦—Ù°RÓÌUUö3>Û§fyÂYp®†Fq,×mÆë¤SÅÓÑˆ‚/¦œÓ¤¶Q®EÜzAŠ2]˜ºi›8¹Ì›JÂºÒ§*½Y!!”\@@	Y°ÀşÛ1ÙÆ‡X Ÿÿ‘İéÀ¦xËñ/«ã˜âÅl8!#Ë%Mä4aœßJŠø	™à”£4¶ğÃ·˜“*¶>›TNã®ï«¼Öy’½›Ú{2.Æ´K´y‚³5?Ê YÏBÈ£jcle! ŒÊ+E ô'ëÁŸ£&çÄp‡dÉÛ·¼áÓÆRªg#ÖK˜d/8Júø/ãu~¸Ûy{‰i2\¡B¸µ'YZ(WvXû´iWÙÑ(ïà{í¬#9ßhÇ×s.ñ«¥v»ªŠ¶‚‰ÃÀ|÷ËÃmf‹,xÓùÎAR{5P‰¥=/qc»à<}ê%@Šæl{qâ—¼šLé¼UYôĞXÜlŞ®­äÿRD 0ó?€{!/…}Vy,æ3¸…*2Å)7:¡
-±D­×{]eAóÅ'tØ!öei]÷‰–ùæ	H¬’ÏÃ$ÎŞÉuzpc4L×á‡J•”ùp‘ _67Ş©¡£¹Ÿp:ı€÷¾š$¦äñ%Üßq[´‰´ˆ}ê*dƒ#®ä,¡C—cv!+ã`©ùx¼<y¶äS»—®pîáƒ-ú$P¶DX_‹’&s#+§)ì*¥O©ÄÛ¡2¬òGğ(IÚë¢;³B+¾´- U5Ã?÷kÇn`tvéÙ¶ÓÓ4M†BU03IÆ9"Çè=ƒüšØ>eUİáJùjÎt7ÿ¬ßy-ïqÆ")U~%¦]SùÊI½ø±ÑÕ˜ ëıáN»€å`öÚoª‡ºö†A7äIòçJ;Í…Şå.pç\ÁH“.µ"ÍÓwïƒıŞç¸›ŞñìvVœ+w^÷[0veD8º}´PrlfGmƒCa{9ç+âk* ‰eH¯”s¼“fØc¨2v©Åÿº˜1 ‚î¹e;!hŸvØº.şbb& +z\ùö?â½İ¾$€Sb„Zä´AºÀê•£›é9Ã¾ınÃc³;Â¶‡}-J¥á:“U)ˆ”¿Õş‘H(Çiğq„ÇfI‰Õ§¯÷{æ›¤Ò.ƒîB®YtŞ]ˆE~­î^nìJšùÏ
-ÅÍ „é&VæuI^Ç²İîe™Áğ*ƒª«ÑÚl›ã“,‹öXÙÀ­¶…kOS şzVú“FB©‹={ºÕÀèò‹úšÉˆœŞ¿‡‘¶ı}fYØfy _àY#1=	;²!Hx¾†_@¡EÉq„ók¤î¨´ğÖã
-ü•¤&÷	³·ÅlOïpNç½ıMë?7"Êƒ¯ñ9V2s–v%bpP¨ì+ˆuúû*ò¹©ïÒ¬Ñ¥~µÒ*ĞšLÀû+´óXèÕH™†0t ı»&gB9Ã@ŸÍ[‰œõÀkâÔ^sFê…1õÎYÇ¿«,şZ!ìòxßŠ7ìùi¬@ôM=µou
-Œë+»Õ•–=‹<¹¢¨,¦$µõhbZ5ià*(›òuİÒTĞäL;$LdKŸ}³b1?¢Qû´bk–üàJğwê´Ê¿dWşiŸøİ.ÿnèë†Õ÷$Ÿ]f=±¸ÅmeÛ·ö\‘L1p–Bwj"“Z¹—rëœ†æ¢t«–EÂ(êo7'%û¯°CeÅ5¾ŞïÆ–òfÿÈú„Á…Ï.æM¤ñÂ2<qıÛæ[%3,ê°$rU{’àe^^úôê”kI*5½¬_ÖqbÖøÿ€?%ÑÌ“ÈœRW²›G) ïi(Û}Š6Y+=ÔÍãbx–õ'ı„^lunaî£<ÿ5¤uÒì’È­ú1¤‰Tš›ş¥`^¹6ğ8wÔyeÍ#©«Á;2<tn·üÃNwĞù]~ìæáqC ˜ÛÍ9• u•tŒ˜¡ ¸+¨•$N„FP”A#Ïë%ui+0]f‚²˜Ü
-şA[‚›:£¹¥£Ï‘‚S»é…Ür@ƒxŒ
-ˆAâ	\•¿Ù¼\Ç#hÜe@N¢*ÿ[Ú@? ±.X£z©
-…{ 1oØy<æ8xwë»eTpØ—'¦"¶a%FíÅE6.b%Ñ` ]|ÎåK«*øê›’pS@°XJğ¨Äp³¾ã·LQçÂ]RvwôöY©Š¤ÈO‡ûtÿ×UÃ5<
-cf5ú²f&W$Ä(h»@®Ö‰ğQŠœ»”ÁM€†l½@ïóÎòˆÙœû¥LŞ¼³Ò-6…(êš6uK¦B»:•vNµ.M–dG ùÈ|£DûTØ= X,è>h‰ÈÙÉjÃ¨õÖ?ïy 3³-U)X¢çÎcùÇ•ÑŠ­±Ü	Î±³*ëğ=Œ’°åm*XÎšçQ1yN™¹éZÎ Å’wT€ôJğĞğøÙ9™´Áp[¤_í‰í8yU>ûäR7íùY
-˜ôK¶cbÛ¯eÃRjt´¥ÆÙÈN³“|öÚ.çôw(×…ÆiÎñf]X’¤ÍÌ0?}û”n{³Ušg%B4¶Sg-|®+Dıû1T*,ï“ã¥¹˜}©·ñòû¾Öüé³û\Â=ÍÌ×%"Îëü¦Ÿ¸.›®ÎŞ’m	ašPÚ³»÷¯ªÙšœ•|ÍÌ‹äÅÄ{ÄËÇô‡i@kŠ^²x7œQ¬”ˆÛEa¯r!œô@ûÙ vê÷fè:›0›¸B
-d³êhİ=üíB$ Æ¡M{£zê•®E9tw‚”»KëøŒ[›˜yíıWgòûº’¶¸‰³ûˆ›­Ì×!f„Mš£í”¿^È¼rA_OÛÊ`öÎÂU¤YBn½”ˆ„f{İ”
-÷éÓÖ«ÍİŞ»FxÊŸ‚Ş$–”
-ô»o®¹­XŒÆÒØÏ&(µÁ¶SeVê{¾Ù›¸«{S:¸œÔW%-6níö'=ŒÛ–WB3$€’ÛÛwSAš
-5Ë·!Cş÷i¨Û>¡Gæ_û·+EEÌŠÏÉ#œ´ı8V¤Úá"“°P>µÇ,º S%Ôø·üÛ9Ø„€&¨y¢©T0'ægGßàF(¹ÃdázHµ®I®³MWO¢k°ÓCüÕçYÏ~ï€–ËüË«¦zºÿ‚Ç}„
-‡²xæ/äkÙùXd%EÈ·+æVlœó&ÌÒ=¦çë„Îq’Z+¿ôÚ´Ü¬«Šo¦Û\Q©ÉUü…aª/üBÑ@ş„İ¨7fígFîı]›½×º_Æêm€à"‚$%›|“a»£·HÑB…9q*_J“ß»N¶%R·[˜$0#»§ß×-'ŒVeõVI“"t:LÆm±`o¹£-ÅH›ıÈa ã5	j±€–K³jõáğ²yPVÆ) ±Ÿù"}å4Øû<›§ö×C½ÇñZ¦¯Òéej+v0åq;.å>+yÀ[bdM‚x)øjšZ²{Ïu`V*¬VQa8”û‘M\Àtß/¥^AFa'h–ru,/ñIô7tF@è˜•F OmQ+‡BëPï§dB_Ì|n¶=d¨Ï¤ŒCq'ÌB%Ù§%˜é3¹Ã ‹
-ŸuB©İÛr!à2¬í9¹¾vbCö¥ŞOåÚ‘JıqG†ß"Ú÷;wx‰UM•M€•£î{‚^ÄÁ ©½‹Ik,Â+€aEOïå¬)“1N¶«´Z·iİèöéçìÆåîOıİ‡…OdÆ	£\”±şx<–®³–'H?pôrsikÛ&l•Ox8½X—ÿ²(@,5dÃøß”k °Ä‡%Šêè³g('äu¤íâu'û¨ÏüX¹ï×öq«Ÿ¥Ò/Š:B!ë+±©¶V	ÅHœÜzAd¼3,l–w
-:€ƒ±2o{=è€],Ú±ùô~[cc¥èÙYÀ©Ú•ë?ğ‡M´¿”ÑmSh’¬wJ+¨oüÛ
-™,ìçTİĞd‹pV4äW>§DÚÍ0:SÁ—7=øàÙÚ©jÚWdşÂvçu+/|8ë¶dtS-Ç*Ü*¢g,…Q‰‚?çTÙùÉài°Bë0Õ ÿàœ¶	«&;çÁşp»ìDæ'@¸
-¨saì¡‰é•GÿB¯çÿº¯:ƒûEdË¥´c 7¾(Ò{‚m’X'c˜jÀZ>×Ú";ùË2"^päG…Ë¼nëŸvÁŸ¢ZE[ïtiò L›;ğD`z)Ç­ÕSl9‚²,¡-dàYÎ[Vö×*cm|ÆÔÌÊ*˜Ûç€gëÀ†=Á“„p†}W<ÃüáÒßÌMcÖJˆƒ[xJûá±T~¹ÂÉi3Ü]Ó¨µ&@‹£„o©¸÷èm ­š˜ë Œ™ç“=9ˆ»½ü$PúÏ´Ñã	øŸÕ÷}Ód²3¢sY­lkèÛ®vß¡Òx#wFÜG{?Ç#gˆìZÕÙÅA›Á“"¯¼ËwPÇ€4Íèg_ŞpSóûî¾I„	ßÏ¬wBØ9XÚm´ëÌVT<ì@¦¹—C§¯üç¹8Ê»¨˜•·–mÖº3öŸÍÅ@‰ù gÎI+»µGdÚªÏË¿¦İ8°T…úá ³²,Bµç¨ S'ôú–îû9Ú¤‚ºY¢«t0"æe<¬“gßâf*˜ÑDáxh·[„¬ Q†SNÆä[AOs>˜ïKñ³(›¢eæ·b¾úéãdº„çt±×²6ÊgÄ[“öè±Ö„JºŒLTïñ‡$ƒ‘Ü“ÉˆY¢›Smd®y(ÚiÎCwI+<À‰§#h—ác¹ÅNltz%B¯³<ëqà4Âì“Üé¾p¤ˆ@XŞI‹ş¤tıwğ9c=$ÕE*24eÚ¼@İ×K.5RİxÁv~ñL¿ÀJC%}§Ë¥ts&ÿºšªe¸ˆ¾èÂû«ÏÇí2!®/÷d¥i«¾™Éšü0îšÍäôéÌ•í:?G#ö6ÊãDÅ_q.·.n~›0QåİË;õSõt‰i „ƒjC7äJËqß WİÍ‘]ëâtãWŸÀüh´°Gá }öçj&<@›!ù˜r¹«º‚©úÿíÍÎ¿…²)’³%ÔrºœØ”Wê˜úÏ‹ÈM¥‡{¿ª_ìù¥$¿59Î¿ >-x°]×Ş±]P^y*/	Î&Êâ!:±
-şœ-ÔÅ?²õËoè :Ç®–ëj°ê/•à,.izÙ´’’”ÇÀíÎïûó¸»è®ş“„HäWãó‰=Œœqû(:÷¶?V"9x²v9mº>’¬~Y¥ÔWúâ.!4€õa“ş¾«%]¶¥Ÿ©ËÚì‰«ëè"@â¼~-3QB‹#b	vÌåu¦û´ãfd}ÍÈ˜×*«ºçµnµ‘œÑ<Ã¸º…É¤?Äƒ;¿¡è’³Á©1IÌvˆûsoQQ*Ú(µM¶ûÂ«ã-^U`„P‰Ğ-ñĞò¡Ş²ÆH¬Vo–©ZùÌoèÌ…n»ïQrÂy >ğı„8Ó¢Is”dp¬ƒ’6t\˜şDIPå€?Ã(iÕs­ánØ)™šõ­Ã¯­½äıtÖÚJ?N¾"uı“MX‹2Ç.óªØ!
-1üKõZh Ê^Ğ„Š÷—R ”JÂìã`­Í˜À?¡C“W–](4†>$%Áˆ°u}_â†N¹bÒ² ¬ÏİSZô]Ê»à",æò*j×h˜”dgyû67ûĞ}` T¶y‡~\o¢tğã¥ï¥˜××:•ìC13n´¸èz-ˆ’«‹<Öâoûshty+ì-ğ*=Ğc÷±AJW9Û…i:Í7F’‰©i
-ïgNœë>ğ¸ R¡B»QoV 3^ó%Cb]8ˆ†Àwd¡s)ó|@:Ônç	>à½%N~ºÄpµü•Í3«6¯¤êê›Ğã¾ºQ{'	XœB˜¼Oë2aà-I©ÂƒíŞŠd†2wÔYĞH²pTêÃŞÕ¥ú”¹ ´yïÖîşUseÒ.’µ¼Í++°§,ÏÅ@œ“FhnMøêJ°$*şÖY´OğÜÈ‚!…]¼üwÚúù*K'ÄÀZ’ÇöiéÆ6“]H÷÷ €¾Ó±JíĞÆBå®Ñœ Yu}ğ•RHBéÌ¬Õnİ³’OóÊsÁˆÄÒ1–r®=Õnzyœï=zç@mÈNšK»¸âL)ÛıÆw$N¾ïÅÜÄx©Ÿş·Šµü°ş(ZYÜ—‰O¢u`È;/¬‘
-t7¼ïˆº3&œœN?ón7r?\…PVphû\Âx²m…g›¤mã-ºö1‘Â^ÒBm½å¡
-(„_—3w-G3-·/+·pY`ZªÃQ¹Ç&İ4Õâsı…úíåá•TÂ¹Äµ>u( _â¦İînû5ö¥:Y®n&:H¢ê n!ÔgÓ'4àQDí½:÷Û„¾~æñ+ÎÆé€Œè±nÍG8·:²2sE¼ÄÅª¯fÁ
-½Ì oŒE¸âı´GrpõGj§T&S‚¸Ù#Ñˆ1D‚z¸2¢+=à\™f	
-×şº¿uê‘‘ĞB%’ Å§K3õ7]ùı½«ì™6zç:Ÿ®ºàé§ˆ$pKÊë›“[/ËÉµÒKxæ‡pÉXÕv©¤F:¹10UÑ¾¬Á >ıŠÒÍÖg¿Šã¨•x½ ŠoöóuôÃÖ§lšd'ß`o\­È—J-­ëÛÃAKr-Ş·ê<ği ¿V1C‡{œà GKz¢§Dj[ÑƒMZõLH2¡Ÿ±J‰_ÀÈÕ¾Ç]@€Î"v=y‰Úâ4GÔ¯Ùò¬…Q×YZP7„æE@õÄFßÓ hÛ§kªõ, ‹8¤k<¸—eOĞ&,Ü»6ş}É38€T¼Ò¾·ş\e	ÇÀë%ï¯3dç2ìIš#f4¸â»É€« æêïûy±ÛDq+æ†C5Pcıòz×9Ñ.°Y2M7L9:™aŠïmå/Û6p¸ªù#J;Q·ë½¢"ÜØ‘KÈlÊ© Ğ²%³)‹«ÔƒDÖ†Ì´G~»C,K,£ ³šö>[TÛ PÌ|ë¶eÚ˜ÙÊWD0†?ìDşßv}U†N"ßÎ`ÄyºŠ®Œåá³)Ö.ÑIÂ³Ø³ÆÒÄR I–ª…ğ;H!8×û³0¼×+Í<ÆjÍÛTV„]ú”n:¼aK.’4<Ï÷òD¿7 Z±Wø÷Õ8¥İÓ>»H”Ò[×@³‘O©, › [u
-ù«½ÜMï­ŠWı§ñK¬Dõfá
-!Q÷µ¨º ÄÀ-öşîŒ	\œ–ÇiÖ%hŞµùóØ¸Ed£qç$]@'R¸¶,LÛ~¿ƒ¡,è´/­Â4YÎ˜g{´k1~hÉ‡`_iù¡uAs9™”Ñ(ˆà<{ĞTÿçÈÒê÷ØÎ×Ë4C°<šöŸŸbZ"|ĞŒ|ùÙ-ÜhH{\›_Ğ%É’D€ÃaEğ¬÷#fÎ1à¶¹e<àÎòe;æü8Q‹…(¢¨›MŒ?EY9Îà7fvu¤®áFOëÂº³'er²eÒ%Ïßîp1G†p›õ7OO_«ã‚À”ü•‘@¥¤ÿs8AM…«Øí_«£¸;‚«¤Á^èCÿZ/8Ü$gXápÇ¸Ö8'f*ëŒ”ü$v›ÛJ?øG™Á¯Ğ[6aaŠFnÏÿBRF;¬Ò7 ~í™àrrPßíÁYú™ì—a=*]Úı(“uT2Úbø¶?kè×F¢“­ˆÛ¨$xÜµ˜KM®q±5>ºµ¨İÓr(˜›¢;ç$N´Ï•ã·Oé¿Ê¾¹Š&—G±²Ç†aUO‰©€LÛÈÁ$bI^r!$ÖúÅkÚÿ£2°´Å ªë€·ölGN¿¡ã]M­PY‡ğ¾Öë«3z ÆG¿	¨pYp'WìÅ8Bì–7ÕBbnØÔëØlóÏNÂ¦"Gôd Ú2ÏõÌöfqŸ#5eÅ‰ŸŞ#šìÿË¡®‘ôKåØ¡£LñLÛ¬Ø–9–mï²¢!@ÎíØÑéŠ7L©¦Ù0QH;^}júkë‡MiÂ¬øÓl=·ãFæ5J.Tx _·~,éT¿ÄÆ®³ŞÌá€æ¨B}¹¼„v?¢‡²aµbÔÑ
-01k•Şş`ßòŞ1!ß]ä%D^óiàïó0w¡–Løã!	‚­»ë›:®¸Ên/ğ	À÷fÿ«ÔwÈ.½†Ü#¬{ä‡%ûúœx.b®½,©ˆH›?J”Îú"fo2šX¹¿­2ıÙ÷¶®³fÄ^­ššñEúÄ£d€W·Q¾‘ÙæHGûa™ê©ºaµ=ÉÅMm1£­øÓ^:ıÏÙ¨É
-ŸÂŸ}@TÊF»ÙBÙføĞ’dP¨ĞˆÈäM“åX‚-1•ÀfS‡Ûëà·‘ˆ4ÑCH¸7÷xt™c\Yîjú¿p¿Â¨‘B ÇSü33ğXddmOı¸CøÕvzâoÌ—.HàìòÛé”‹tiU£	<æ;>L„u:´Pxù~ì“qjqWµDQ@Q)¦CQW0ƒ©—v>™0c6ÁCoG”Ó…yÌ`Mã†íĞ‹„ÂÒFñašÿäÁ¥j'a•‘İûsÃhABÌëJ¦	YPZıs!SudŞM»]èsàÈî¾@xn™¶ê¹?ÓgÿS|ÁñÓgÍØÖ,¡'Øaæu!=KP»­'Æ‰æ!“h-OÒÆrF#\üŠ¢I7ßû¹Ï
-³¦]¿ÇÇÓhÙ*HtRz‘,wÿû=éÅ#TÚ×÷#+0·A‘IÖ`ÏĞÅ®Ò§°Pç]ğ–iøK{ì¯î¢gO®³‘t¬úX5bËö“f"-FOÕÌô7\J³’
-ıQ¹ÜË£(–}¢Çu	û$)¯Å`…cyÑ¨Ç1›ŸNe1’‰]ù)‹—èÔ.Æ{¤Ğ?×8¾h{×»¸…
-\Ó£:Ìû…ßM; ±O2|jâ²©›;¶1æºÑPõá!—k:ê¥™°ÃÉ¡›u‡[—åU=ê÷ÜÒg1/¨ÔâHi¬8"¯–Vıä7Vçk:ø
-®› èõü‹‡hœÙÈö…QMéœâµ(K¨š¼Ù”Wyœ¹ù‹¾&°Œ“ÀS1|ò›Ç/F‹)(ÓıŒaR+5TË…8u!›àl}îg`Šã<3Â’ìšH«œU\¤ÔülÛş­àXßRAğ0÷Ò#¡+Ç]V|INè¸¹’NG1,­ÆwbsL'{°B,+¢ó'`TDÏª“=Vï²„J ^EÅ nŞVÌ¼w™å¤P@5æàX´²K,²ªò2¡¨·ôQ˜ÏñĞ& ó¾!O8­GpiT‰Í~÷3x¹Ëî@m=å®A.¡îtrTlDP¹³ni”8P 
-‚#K£&9èmÓ4Ø’çš¾ú°kæ>ïˆ¨®s{¹ÁìŞx†ÇÉ5ñøzÿ?§Ö!,y–à2u-²·
-,“+>Q,L×ùÖn)½ub§¾¶Š€+&iö­1Kî¬"sh!t¢5ù¨l¬›-éìê$WÌêõÑX%%ñP2DTQ	Å-9’dlfrUÉ…Gg[+ò 5VSTÈ~à>õFmóRi<”„¥ÆÚö®°£|öÙ÷G(×»&YÎñX½[¢¤Î , ?}¿—^{³V¤‡&>B4ˆ³d|®¤şË1T)Ó¥¹›*ª‡ñÌí—L%SÏná½×^bG(œÛ£cNş£âV;h¢åMÂ0]VHæ‘F;:È‚*ÿ’úİ*`ØxÌ‘ä›ê÷AØ'IÈ‚¢éËÓ…Nù†<²ÅS›Ä<«Æ/ë­SUİ¡h¹¢S¾[µXÑîû-ÚÁ&Ù7 Q­6ıjıòŠïÍi³µn»ì=°’_p]Ê.S	‹77~+˜M)¬F®´¯Õwèˆæ¯3dÑ¼ƒ&4ï•²¬ô¼VnÌ¹¶ë¨ÆıFE LÃ'b:¼”2Ïñ¢A+—ïå}á_nKn‹”519w4ºšL¶/´^’ÃC(ïj9½ŞpÉ)ÖœÒ¹«ÔvŞE	ÆÜ#­m3eûúniš"®¼:Â»ÈHš)! ú"gyY±ÚX¹©Æ†BıØáİófÄ_»ñ.±EúÅµl9;…© h¿Œèù(¯£±r²Á`§00núµL“M;¸ÆÅÅj_¤‚;«¡}Ò«‰²¼«"2µXˆÑéG0löÙ0V?G›-júlœ`BiÅÛ„<=·ä1šğ.Twašç~,î#Ã–®³Ù»EXæ¨E
-ı|ß¼„qHŞBE²fÂr­ãjà
-=ì¹»4^]úğ„CH´5ôcT]ÀÀxh‚uèœğj};­Îÿ—3T~ª«ÄÙ9û¹™Ç†{®èªÍäñ²|–İ:?BxF5úãAïr·.5Î˜ QÖUŞû;õV®ÄŠY „†1óäJÎ*o£gİÍ”[áDãWš›Lt›Hß¶«²"ìß½‘‘J>|S‚j¹¼ÌıE…WW¼cw{¦s(W	wp _°cxàmçk<«„è5åé“ß¸+}y%uOìJÇt@C.ÀYäGqGğ–e3OW+êÄÔüI5äÿ{¸ÑIÅ«Ğ™äÏ¯ã¸3¢4ÅèK“ö–^o8Ô¤nÈ¡pÏ8ß¨#&*ã‹¼$~KNzıOÇ	— }BöoÖ «÷|ÕK©ŒŸ‰p5„?“¨Xœä}…îDÓİãÛlÖ€êl4ïp[¹9Ü#! ök‚)
-¦(ã±9Éc/e6GÁºôAğœrpÎ¼f)¬q–gû‚}%=Fœ›«6ŞİWgñVf¦LÅj'¶9{››.éş"ç*ûn¤ÓhØ)ôª“Äó	sv•¾ë-÷UÊ«š!?%^ÔÑÎå~%ñ]ëÚ±	Å à”)Zt™ª±1K¶|™ÓgWRãµ^åğ”3Z›Ç+ïD­@µLctp¶ë¸‡ Qâ@™á™Æwñ£§b¬Š¡Û“óÀ7ûqD¤ks59_8ÚşJ²cs˜İt(mî	À/2xk—Qáziëœ]YMÒ»k³M}›çgaIæŠ©ÀXùìˆŞ÷b=Í›ü²¸Ğ\®zlÈ¾÷|ØêfÇ%¯FÕ¢ˆÄvÖë¶ålW‚@—rvq‘£I‰ŒÁÛ+‡ıDª…uÃ3Y_64ú´sv6Ä.îüü–Şâ»‡LG`µ|›;´;+\ÂÕÂ*°'ó]„WmÄßRpˆógghn¾ÆrGN*~ïôì_ÿ›ŠÖ7#ˆlQ¤€¯µa§ú¤ÇKá@óQ…-Ufà²k®m›°Ê?öê`U¸§R²$(N$2‹£rbTµ9|ÿŞÑæı§îÛË“±ğ)ÇökÍOæÃwKÑmÊ÷
-@*F™4Ü×b8¥Ñƒb¼ĞˆkaºS&üâLğ²Šı‚•»+@Ç!²b¦nfV6:VOŒHĞEîÔÊ³ºá–E!Å	rOe^î·/\Ù×>ÚõbCÙ£ÍnË+¢¡YK :X­ÓAË¶F­|‡è’9Hùs>çœ¦è“¥Îı“Û‘® ÇX¬É—õr}ìÿÒ‚w* ”q}H­»ÆoÇyÀ÷g“È.²{dÜ{äˆØ/½ìx!ŸËéÍ,© uÕë?J›3.eo2
-gŒşg¿­=ÿÒº©÷¶¡N²ƒ.­š•‘½´£‚«z:E?ENğ<)“q™öd8Áìßy•IõZÈ€HV›¶o£ÏìØˆ¥;€¸%
-öÒÌ[ï0Uõk	™AJ\¢¸ø§lOA#¾ôÍ‘9²êVVàÏ¦…r.‡½Ãh+©İ‘-K3Ó:”¾»ÿ<ÄBã)ÙØ<^Š7Fx
-¶àØ…j3åX¡Ø*ã	ñŞô'~î‚Çe ö¹¨
-'Ox™
-£1OÒ1»Õl{ãgÌ"·ÈÑÙÄëû‡Ë7pƒ¯¦ŸœQiI€ŒÊ/ê#}Ü[{H¸˜lãüÂDƒğRvÅE¯ÄUûß2ÓšŸ¸õÈåÀ8öLGÆ	tO0ÍÈFö›¿¯â¢öl÷é@ãöÃ}×c(œÚ÷Ûµò~„^»„[‘)în\—Ç«Hô	Ofœã+Täû«ª±fH³§ı¥’Š©“d±]ílhÓltª6ß¢éÏSsÜD@ˆ·''ˆïab©Á›ú$R«üËtkpğ0ë\è®tCSğÀYÎMÄ	Üôís^Aã9ÇYX×“a‰—Æmcgÿğ{&Š­)nN¿ù¥B5BzÕ·sm^µ¹ c"8š"N³0jÂz—…PŒĞ–CQ$ûËè4¦ÿHÓñKÏK5X÷+îyæéÍÈ}â §5\sô°<DŒšDlîxŠÄØİA­ìŸ­—0û
-rÔ¼ \C}›:ı@óà“)¹P§U>ù’Ôh¿ïë U#ÖiË‹´ck¨B?íÀ]TOk–åw@ã¤J­Œ?ïk,®Ó„æ4[Y7,½|€84Ê§ú˜Ô`a††2?s‚V}XÂ#úŒßÃ³óe»š‡}»~'+á¾úáRiÂ€`ïÏóÍšÄÈ¯Ywvğ=§XÉ!7!š q‚Èø%€mÊ¼Ôf‹»éÙãyÅÀ½Äk%mÚ"ÉÄıÖaw‡f|ÅrFTğ¯®»±Ce”"h¿@ƒ=_Æ<(µØÚ¸Ë‡ó#°EW³§+4‡,!?ßoúÏ7½¿V}•‰Ìœhç›†FV+Í™º…9	«ÎÇó]Àçw»yÃe£4¯S5ÖÌÓUD^úøóØƒp8èä÷ Ø•I‰‰—|ùŸb/»çPĞQ@õK%Qq/H,Y&†ôûæªú_Äø ½åå¬«"WûíÃ¿H¹ ‡>ï0(E¢O?¯İüXw´ƒlœa-˜·.¿_œ# ¤BT|±=Z¿v»¿ÎvµQ7»GL¡H—$:Gw%mŒJÁWeNû53DGRC¬œöög!â?f÷);ä€åÂšñŞ°§<ò™w÷ChÓÍ¼V]õŞ_Í[¦ä'\y^¸k—Z;·£÷&:0LÃd<ªBÔñÆ—"n"*§± @IÒ»G£®×–ïäähŞmsyœÕJµAGu†¤¦Ö9¼ş«»k÷5²ü¶Â| ªÁuà®¨Wc-¯²9Ö ±Û¾áKJµÇXêŸC“n¹/DğYTÄtó¿ı]ìU§Ü·òvs´÷Gñ	äÖ¥«‡ÿ4á=õÃ1|}Œ•ú¶&'IÎ¶Ä,(º^[si_›ìm®}çÃ¸”é»îlUVĞ-å1B6{¥Éy”DÍB`MåC/àpv	¢Aj¬½Ù—-!v9ıé%øÕN
-2–2ï¬iÓ•ÔFë‡#Ág“aÒœüGhø‚ämÊ‰R{Z‹”ÔG`Æ:ôíÀ@Lòx×ÓZNÑåò„q€9çUÖy&G%Ú­ª2Ïùk#3Ÿ«¼ñ «Áò'2cb›DjmÁ ö`YÁ|GB`)vdG/ÍVï9'Ô"˜gâ”-¿¾Ò—ø„Æ[êóÃS¥,EÕĞ°>j¾f(€È¯>ıYPW˜¦B¹—L"€B`0U¾ŠLı'ÀÄùÿ«5Ê¨§ÿír”ÎBj‘t^ÿâvš¢-‰–^|‹ª²307ó¾nŒã38İ#/bfFÕúôğf0Î¹6)­eÖgşÒ}Œ1}FÌ›ª"İR7ñWræL•j&¢y{Ë.èêbç/«o°NÓmˆ)õ¾ÓÄçHz1À•cA;>ò—R|ÃB¹~ì1…]w äZ¶qCJC2+—$yNéXŸäQh—c¶FA[Ègw*^ò½“S	"‡)Åä¤Ò‘MfÃ}â’«º!')ÃÆ ›Ë9ÏåÕã Â¥…›‘Ù`>iU¦A>z§:ğ^C G3²}}ºI®8·/VT©BK¤ÃíĞ=G¤J‚í´}°ıÁKÉvf+Œ•gĞ¾ğê´şÜé_IˆÊ£62ßé½ùì6­|’Õ‡' :h>sd_tƒ¦ˆîX“/ì˜ñø¦WärõRäR8‘Ó,ß{š„²fj«êPçÕâ‰ÂréQCøÑ·0>R¥Q–Sdp|M‚9íë:¶èÄE•znsµ•
-MöJ7{İÑG*ü‡=å	0f‰ òÉc¡Q.š‹4[F2§sHï‰6%Wc(›¥[[µZê€
-;¼—oßÄ J‰-4#¶y`¼ŸøévöP•[¨·ó8¼·Û°PğfßÎX)Äl(ëãş¾Kñ%èWù¯¥¼®v±C"¯MíUJ)ßÿ5|è²®/ªK™¶ö`g±×(ÖÏç=ãjõñ}3 ôà5¼£Q(õwô^[–4Èˆ²(z1¸ÉòwlŞúô5º¡ìÄ˜ÚÔYŠ½şÉÃ­ü„ÇNqU\ËçîôMD/Äø'&83ØKí›/HµÜğU ”6î³(CpÙÕ_;$·B¤¤©¼éjÇ¿5‰?í“Oªw“Å`B]‘2º?Â^Ï{Õ™öç³ñK—¹3<“'ı	–_j|É¼	9ÖPhÃ%«[¾­ô6	¯T.üÕK2D@Êµc0Ò‘øİ(Ak†ÕñF=gœ]f;|@EmeİÕÙ¤L1vô3º÷j"•ouAm255
-K4
-z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
-R0
-R1
-R0
-R1
-!s11e vcom 2023.3 2023.07, Jul 17 2023
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z2 dD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/questa
-T_opt
-!s110 1735672158
-VW6olzfQ2aof<3kgGWSDij0
-04 12 3 work cypher_block rtl 1
-=1-7c10c985eae4-6774415d-3c1-4028
-R1
-!s12b OEM100
-!s124 OEM10U66 
-o-quiet -auto_acc_if_foreign -work work +acc
-tCvgOpt 0
-n@_opt
-OL;O;2023.3;77
-Ebitwise_xor_32bit
-Z3 w1733921498
-Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
-Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 57
-R2
-Z7 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-Z8 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/bitwise_xor_32bit.vhd
-l0
-Z9 L17 1
-VUL^F8:MP?=4m2WI0dPRDT1
-!s100 2<Dkk:?K<57;X4[zm4<LB1
-Z10 OL;C;2023.3;77
-32
-Z11 !s110 1735672123
-!i10b 1
-!i113 0
-Z12 o-work work -2002 -explicit
-Z13 tExplicit 1 CvgOpt 0
-Abehavior
-R4
-R5
-R6
-DEx4 work 17 bitwise_xor_32bit 0 22 UL^F8:MP?=4m2WI0dPRDT1
-!i122 57
-l26
-L24 7
-Vf2zSK1gPA@E``eTWEgFN01
-!s100 15J2hWE4@Q9^Bif2C1n7X2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecounter_24_32bit
-R3
-R4
-R5
-R6
-!i122 58
-R2
-Z14 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-Z15 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/counter_24_32bit.vhd
-l0
-R9
-Vo0R;dbgi8HaQ?1=40dfN03
-!s100 ;h3`Y?B_[V7Wna41l<oL?1
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 16 counter_24_32bit 0 22 o0R;dbgi8HaQ?1=40dfN03
-!i122 58
-l29
-L25 20
-Vdn2Wm2<IUm:9?RXd5IB620
-!s100 ;V@`Y;NFYeQ1^d_P`VY;42
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block
-Z16 w1735669759
-R4
-R5
-R6
-!i122 59
-R2
-Z17 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-Z18 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block.vhd
-l0
-R9
-V49@hR<7e3PV823U6`HfU]2
-!s100 UzT0<`K6oRR`oPTJe>9l[1
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-Z19 DEx4 work 12 cypher_block 0 22 49@hR<7e3PV823U6`HfU]2
-!i122 59
-l241
-L27 708
-Vb:JM=GjQ4dP]ddAVTS;E`0
-!s100 71hMH]eROC?M@eJI4;HN:1
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Ecypher_block_tb
-Z20 w1733923091
-R4
-R5
-R6
-!i122 60
-R2
-Z21 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-Z22 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/cypher_block_tb.vhd
-l0
-L6 1
-V<5NJg8lH?3II]Z_PdfV];3
-!s100 `RAWOH@D>Zd6>3]lJa9B;2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Abench
-R19
-R4
-R5
-R6
-DEx4 work 15 cypher_block_tb 0 22 <5NJg8lH?3II]Z_PdfV];3
-!i122 60
-l20
-L9 25
-V1eL4bRlD3074D`;WL;P671
-!s100 >3i`NW@c5R]3:Zb6<SV>N2
-R10
-32
-R11
-!i10b 1
-!i113 0
-R12
-R13
-Eencrypt_lea
-R3
-R4
-R5
-R6
-!i122 42
-R2
-8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/encrypt_lea.vhd
-l0
-L5 1
-VPIA6WiMX^mEo^EzbJQ:^10
-!s100 zl5h]gRN_n7l7::5_5F0N3
-R10
-32
-!s110 1735666289
-!i10b 1
-!i113 0
-R12
-R13
-Elea_encrypt_fsm
-R3
-R4
-R5
-R6
-!i122 61
-R2
-Z23 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-Z24 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/lea_encrypt_fsm.vhd
-l0
-L26 1
-VDR<Q7HU_^S^[@jH_YMkOZ2
-!s100 J8zT8lIY2nooko8;dARDh2
-R10
-32
-Z25 !s110 1735672140
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 15 lea_encrypt_fsm 0 22 DR<Q7HU_^S^[@jH_YMkOZ2
-!i122 61
-l36
-L33 66
-V?;4H>:QbQkQ6QVD=66EfM3
-!s100 JbOFTaG?`8c?R:nKF6l:;2
-R10
-32
-R25
-!i10b 1
-!i113 0
-R12
-R13
-Emodular_addition_32bit
-R3
-R4
-R5
-R6
-!i122 62
-R2
-Z26 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-Z27 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/modular_addition_32bit.vhd
-l0
-R9
-V=a<E=:9HkS<JQNI0Hi?kg0
-!s100 V27Hf9ckWRScVOGHEJ<6i3
-R10
-32
-Z28 !s110 1735672141
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 22 modular_addition_32bit 0 22 =a<E=:9HkS<JQNI0Hi?kg0
-!i122 62
-l28
-L24 12
-Ve=43NAbFUg2A6B61KHoih0
-!s100 :G9=P_M7>TKFo;YAOD9@f1
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Emux2to1_32bit
-R3
-R4
-R5
-R6
-!i122 63
-R2
-Z29 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-Z30 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/mux2to1_32bit.vhd
-l0
-Z31 L16 1
-VjU7zk^cfXYz^c8j:jS>BZ0
-!s100 lHkOO[DQG:VbS6b7FS3JX0
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 13 mux2to1_32bit 0 22 jU7zk^cfXYz^c8j:jS>BZ0
-!i122 63
-l27
-L25 14
-VNa@2=z>cMkmWWkVjOoXSM2
-!s100 FE]``hDP4Mg>OWdK[>kK03
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Epseudo_rng
-Z32 w1733921499
-R4
-R5
-R6
-!i122 64
-R2
-Z33 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-Z34 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/pseudo_RNG.vhd
-l0
-L5 1
-V2jRZL_F]k2=<[N@QE9Ui>0
-!s100 cWh59N4Z9V`V[f3ai1oi^2
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 pseudo_rng 0 22 2jRZL_F]k2=<[N@QE9Ui>0
-!i122 64
-l16
-L14 16
-V`aAOO9hfnI?_:6:[W[3TI3
-!s100 :M1gA6;nhD2L`6e>359Y^0
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Eregister_32bit
-R32
-R4
-R5
-R6
-!i122 65
-R2
-Z35 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-Z36 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/register_32bit.vhd
-l0
-R31
-Va8lGFSX:91R37hf9V9[dC2
-!s100 GcmQdLh`W[Y0[nZ_NVEgf2
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 14 register_32bit 0 22 a8lGFSX:91R37hf9V9[dC2
-!i122 65
-l28
-L24 21
-VOZE1M_GW1fU2KGf7B6cd:0
-!s100 Sz4N5hG>4No7EeV61Kn@33
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Ereverse_32bit_for_lea_input
-R32
-R4
-R5
-R6
-!i122 66
-R2
-Z37 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-Z38 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/reverse_32bit_for_LEA_input.vhd
-l0
-L5 1
-VX^NTIn^Edmoi1E:`ALkzd0
-!s100 49GVROo0R[zUV24@<DLN60
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Artl
-R4
-R5
-R6
-DEx4 work 27 reverse_32bit_for_lea_input 0 22 X^NTIn^Edmoi1E:`ALkzd0
-!i122 66
-l14
-L12 41
-V^<;idKgYhlMQTLA<ZeYh<0
-!s100 dE:aJT4g4NR3XLH4BkFkn2
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Erol11_32bit
-R32
-R4
-R5
-R6
-!i122 72
-R2
-Z39 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-Z40 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol11_32bit.vhd
-l0
-R9
-V?Wc`nNG5V1oF2f?_G=Z?50
-!s100 j]2j@Q2WVX4aoR9:[R2VT3
-R10
-32
-Z41 !s110 1735672142
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 11 rol11_32bit 0 22 ?Wc`nNG5V1oF2f?_G=Z?50
-!i122 72
-l28
-Z42 L24 11
-V>lf^M=8gdB3h@oVi_9Z1j0
-!s100 nNFLe7P][fQc8?Ea31aRg3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Erol1_32bit
-R32
-R4
-R5
-R6
-!i122 67
-R2
-Z43 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-Z44 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol1_32bit.vhd
-l0
-R9
-V9zikD>SdJl8>9O7PhiNeI3
-!s100 ne6L?ezZ]S_<m`UmfMEkW1
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol1_32bit 0 22 9zikD>SdJl8>9O7PhiNeI3
-!i122 67
-l28
-R42
-V70^IM>7CN`NV<gc91T2I>0
-!s100 7Ob3n?o?b`3AKVJz?X`fd0
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Erol2_32bit
-R32
-R4
-R5
-R6
-!i122 68
-R2
-Z45 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-Z46 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol2_32bit.vhd
-l0
-R9
-VT5K3gC=W0iSS3o8H_INEl3
-!s100 ^zm0m_4XFbn9QCe31116I3
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol2_32bit 0 22 T5K3gC=W0iSS3o8H_INEl3
-!i122 68
-l28
-R42
-VDCVZI3f3V44mI[B6V^ZaN1
-!s100 H:PBfN1AF1nAE2FI<1BYF0
-R10
-32
-R28
-!i10b 1
-!i113 0
-R12
-R13
-Erol3_32bit
-R32
-R4
-R5
-R6
-!i122 69
-R2
-Z47 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-Z48 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol3_32bit.vhd
-l0
-R9
-VziZchPlOb_I;Oh<[gAZTX0
-!s100 Z9gBolX1D;MzkJ?[>2bhG3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol3_32bit 0 22 ziZchPlOb_I;Oh<[gAZTX0
-!i122 69
-l28
-R42
-VnzFJ_XZcA`=<[3YG3@67z2
-!s100 VBY4[oXWRRY@EBMei3ROX1
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Erol6_32bit
-R32
-R4
-R5
-R6
-!i122 70
-R2
-Z49 8D:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-Z50 FD:/teknikelektro/SistemDigital/cipher_block_encrypt_lea/rol6_32bit.vhd
-l0
-R9
-VkJM<VQfE0SI3H6lFWlL@Q3
-!s100 `Fi2N?TX=C0c@TXi<_B1W3
-R10
-32
-R41
-!i10b 1
-!i113 0
-R12
-R13
-Abehavior
-R4
-R5
-R6
-DEx4 work 10 rol6_32bit 0 22 kJM<VQfE0SI3H6lFWlL@Q3
-!i122 70
-l28
-R42
-VJY`2flog`RPS`3VeWN@Em0
-!s100 2Z0lzi?>I
