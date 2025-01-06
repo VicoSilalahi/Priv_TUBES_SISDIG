@@ -10,13 +10,12 @@ entity UART_TOP is
     i_Clk       : in std_logic; -- System clock
     i_RX_Serial : in std_logic; -- UART RX input pin to receive FROM client
     o_TX_Serial : out std_logic; -- UART TX output pin to transmitt TO Client
-
-
     -- Simulation IOs only, TODO: Delete Later
-    o_RX_DV     : out std_logic; -- Byte-received signal
-    o_RX_128DV  : out std_logic; -- 128-bit data valid signal
-    o_RX_Byte   : out std_logic_vector(7 downto 0); -- Debug: Received byte
-    o_RX_Block  : out std_logic_vector(127 downto 0) -- 128-bit received data
+    i_button : in std_logic
+    -- o_RX_DV    : out std_logic; -- Byte-received signal
+    -- o_RX_128DV : out std_logic; -- 128-bit data valid signal
+    -- o_RX_Byte  : out std_logic_vector(7 downto 0); -- Debug: Received byte
+    -- o_RX_Block : out std_logic_vector(127 downto 0) -- 128-bit received data
   );
 end UART_TOP;
 
@@ -96,6 +95,12 @@ begin
   );
 
   -- Signal Processes
-  s_TX_Block <= s_RX_Block;
+  s_TX_Block <= s_RX_Block; -- For Testing Purposes, that we will transmit the same data that we receive
+  s_TX_DV <= not i_button;
 
+  -- Simulation SIgnals
+  -- o_RX_DV    <= s_RX_DV;
+  -- o_RX_128DV <= s_RX_128DV;
+  -- o_RX_Byte  <= s_RX_Byte;
+  -- o_RX_Block <= s_RX_Block;
 end rtl;

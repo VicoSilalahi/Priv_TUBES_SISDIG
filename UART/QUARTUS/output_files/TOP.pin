@@ -154,10 +154,10 @@ GND                          : 82        : gnd    :                   :         
 RESERVED_INPUT               : 83        :        :                   :         : 5         :                
 RESERVED_INPUT               : 84        :        :                   :         : 5         :                
 RESERVED_INPUT               : 85        :        :                   :         : 5         :                
-o_LED2                       : 86        : output : 2.5 V             :         : 5         : Y              
-o_RX_LED                     : 87        : output : 2.5 V             :         : 5         : Y              
-i_Button                     : 88        : input  : 2.5 V             :         : 5         : Y              
-i_Button_LED2                : 89        : input  : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT               : 86        :        :                   :         : 5         :                
+RESERVED_INPUT               : 87        :        :                   :         : 5         :                
+i_button                     : 88        : input  : 2.5 V             :         : 5         : Y              
+GND+                         : 89        :        :                   :         : 5         :                
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                

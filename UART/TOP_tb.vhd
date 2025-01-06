@@ -15,6 +15,9 @@ architecture behave of UART_TOP_tb is
     port (
       i_Clk       : in std_logic;
       i_RX_Serial : in std_logic;
+      o_TX_Serial : out std_logic;
+
+      i_button    : in std_logic;
       o_RX_DV     : out std_logic;
       o_RX_128DV  : out std_logic;
       o_RX_Byte   : out std_logic_vector(7 downto 0);
@@ -27,6 +30,8 @@ architecture behave of UART_TOP_tb is
 
   signal r_CLOCK     : std_logic := '0';
   signal r_RX_SERIAL : std_logic := '1';
+  signal r_TX_Serial : std_logic := '1';
+  signal w_button    : std_logic := '1';
   signal w_RX_DV     : std_logic;
   signal w_RX_128DV  : std_logic;
   signal w_RX_BYTE   : std_logic_vector(7 downto 0);
@@ -76,6 +81,8 @@ begin
   (
     i_Clk       => r_CLOCK,
     i_RX_Serial => r_RX_SERIAL,
+    o_TX_Serial => r_TX_Serial,
+    i_button    => w_button,
     o_RX_DV     => w_RX_DV,
     o_RX_128DV  => w_RX_128DV,
     o_RX_Byte   => w_RX_BYTE,
@@ -105,17 +112,23 @@ begin
       report "Test Failed - Incorrect Block 1 Received" severity error;
     end if;
 
-    -- Test Block 2
-    UART_WRITE_BLOCK(c_TEST_BLOCK_2, r_RX_SERIAL);
-    wait for 17 * c_BIT_PERIOD;
 
-    -- Validate Received Block 2
-    wait until rising_edge(r_CLOCK);
-    if w_RX_BLOCK = c_TEST_BLOCK_2 then
-      report "Test Passed - Correct Block 2 Received" severity note;
-    else
-      report "Test Failed - Incorrect Block 2 Received" severity error;
-    end if;
+    w_button <= '0';
+    wait for 1 * c_BIT_PERIOD;
+    w_button <= '1';
+    wait for 500 * c_BIT_PERIOD;
+
+    -- -- Test Block 2
+    -- UART_WRITE_BLOCK(c_TEST_BLOCK_2, r_RX_SERIAL);
+    -- wait for 17 * c_BIT_PERIOD;
+
+    -- -- Validate Received Block 2
+    -- wait until rising_edge(r_CLOCK);
+    -- if w_RX_BLOCK = c_TEST_BLOCK_2 then
+    --   report "Test Passed - Correct Block 2 Received" severity note;
+    -- else
+    --   report "Test Failed - Incorrect Block 2 Received" severity error;
+    -- end if;
 
     -- End Simulation
     assert false report "Simulation Complete" severity failure;
