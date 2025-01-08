@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity UART_TX is
   generic (
-    g_CLKS_PER_BIT : integer := 87 -- Needs to be set correctly
+    g_CLKS_PER_BIT : integer := 5208 -- Needs to be set correctly
     -- To determine CLKS_PER_BIT:
     -- CLKS_PER_BIT = BIT_PERIOD/CLOCK_PERIOD
     -- BIT_PERIOD = 1/BAUD_RATE
@@ -15,7 +15,7 @@ entity UART_TX is
     i_TX_DV     : in std_logic; -- Input to indicate that the data is ready to be sent/Send immediately
     i_TX_Block  : in std_logic_vector(127 downto 0); -- Input of 128-bits block
     o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator. TODO: On TOP put LED
-    o_TX_Serial : out std_logic; -- TX Line communicates to Client/PC
+    o_TX_Serial : out std_logic := '1'; -- TX Line communicates to Client/PC
     o_TX_Done   : out std_logic -- Indicates 128-bit is done
   );
 end UART_TX;

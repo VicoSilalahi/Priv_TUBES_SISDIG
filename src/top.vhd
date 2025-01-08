@@ -68,7 +68,7 @@ architecture rtl of top is
   signal OutMUXIV : std_logic_vector(127 downto 0);
 
   -- Top Entity FSM
-  type state is (IDLE, LOAD_KEY, ENCRYPT, SEND_DATA, WAIT_FOR_PLAINTEXT);
+  type state is (IDLE, LOAD_KEY, ENCRYPT, LOAD_IV, SEND_DATA, WAIT_FOR_PLAINTEXT);
   signal currentstate, nextstate : state := IDLE;
   -- Currentstate
 
@@ -149,20 +149,23 @@ begin
         if reset = '1' then
           nextstate <= IDLE;
         elsif isdone = '1' then
-          nextstate <= SEND_DATA;
+          nextstate <= LOAD_IV; -- Transition to LOAD_IV after encryption is done
         else
           nextstate <= ENCRYPT;
         end if;
 
+      when LOAD_IV =>
+        nextstate <= SEND_DATA; -- Stay in LOAD_IV for one clock cycle
+
       when SEND_DATA =>
-        if data_sent = '1' then -- From UART TX MAYBE SHOULD BE o_TX_DONE
+        if data_sent = '1' then
           nextstate <= WAIT_FOR_PLAINTEXT;
         else
           nextstate <= SEND_DATA;
         end if;
 
       when WAIT_FOR_PLAINTEXT =>
-        if plaintext_ready = '1' then -- TODO: From UART RX
+        if plaintext_ready = '1' then
           nextstate <= ENCRYPT;
         else
           nextstate <= WAIT_FOR_PLAINTEXT;
@@ -182,45 +185,57 @@ begin
         En_IV     <= '0';
         En_Key    <= '1';
         START_LEA <= '0';
+        i_TX_DV   <= '0';
 
       when LOAD_KEY =>
         S_IV      <= '0';
         En_IV     <= '0';
         En_Key    <= '0';
         START_LEA <= '0';
+        i_TX_DV   <= '0';
 
       when ENCRYPT =>
-        S_IV      <= '1';
-        En_IV     <= '1';
-        En_Key    <= '0';
-        START_LEA <= '1';
-
-      when SEND_DATA =>
-        S_IV      <= '1';
+        S_IV      <= '1'; -- Selecting IV register input from plaintext
         En_IV     <= '0';
         En_Key    <= '0';
-        START_LEA <= '0';
+        START_LEA <= '1';
+        i_TX_DV   <= '0';
 
-        i_TX_DV <= '1';
+      when LOAD_IV =>
+        S_IV      <= '0'; -- Selecting next_IV as the input to the IV register
+        En_IV     <= '1'; -- Enable IV register to load next_IV
+        En_Key    <= '0';
+        START_LEA <= '0';
+        i_TX_DV   <= '0';
+
+      when SEND_DATA =>
+        S_IV      <= '1'; -- Maintain IV register value
+        En_IV     <= '0'; -- Disable IV register to hold value
+        En_Key    <= '0';
+        START_LEA <= '0';
+        i_TX_DV   <= '1'; -- Start data transmission
 
       when WAIT_FOR_PLAINTEXT =>
         S_IV      <= '0';
         En_IV     <= '0';
         En_Key    <= '0';
         START_LEA <= '0';
-
-        i_TX_DV <= '0';
+        i_TX_DV   <= '0';
 
       when others =>
         S_IV      <= '0';
         En_IV     <= '0';
         En_Key    <= '0';
         START_LEA <= '0';
+        i_TX_DV   <= '0';
     end case;
   end process;
 end architecture;
 
--- TODO
+-- (FINISHED)
 -- Simulate and Fix Plaintext Logic
 -- Supposed to be that after I load key, LEA-128 will have to wait until RX is finished with receiving
 -- Probaby after LOAD_KEY, go to WAIT_FOR_PLAINTEXT
+
+-- TODO
+-- Fix the button press sending too much UART at once (Add toggle functionality)

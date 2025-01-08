@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jan  7 19:26:20 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : cordicphase
+Top-level Entity Name : cordicphase
+Family : Cyclone IV E
+Total logic elements : 179
+    Total combinational functions : 151
+    Dedicated logic registers : 108
+Total registers : 108
+Total pins : 23
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

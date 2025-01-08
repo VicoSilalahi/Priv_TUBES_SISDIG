@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity UART_RX is
   generic (
-    g_CLKS_PER_BIT : integer := 87 -- Needs to be set correctly
+    g_CLKS_PER_BIT : integer := 5208 -- Needs to be set correctly
     -- To determine CLKS_PER_BIT:
     -- CLKS_PER_BIT = BIT_PERIOD/CLOCK_PERIOD
     -- BIT_PERIOD = 1/BAUD_RATE

@@ -8,6 +8,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_button_LED",
+					"strict" : false
+				},
+				{
+					"name" : "i_button_LED",
+					"strict" : false
+				},
+				{
 					"name" : "i_Clk",
 					"strict" : false
 				},

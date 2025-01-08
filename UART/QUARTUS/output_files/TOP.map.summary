@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jan  7 03:33:06 2025
+Analysis & Synthesis Status : Successful - Tue Jan  7 19:15:34 2025
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : TOP
 Top-level Entity Name : UART_TOP
 Family : Cyclone IV E
-Total logic elements : 464
-    Total combinational functions : 206
-    Dedicated logic registers : 314
-Total registers : 314
-Total pins : 4
+Total logic elements : 484
+    Total combinational functions : 226
+    Dedicated logic registers : 326
+Total registers : 326
+Total pins : 7
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

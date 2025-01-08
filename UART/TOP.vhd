@@ -4,14 +4,17 @@ use ieee.numeric_std.all;
 
 entity UART_TOP is
   generic (
-    g_CLKS_PER_BIT : integer := 87 -- Must match the value used in UART_RX
+    g_CLKS_PER_BIT : integer := 5208 -- Must match the value used in UART_RX
   );
   port (
     i_Clk       : in std_logic; -- System clock
     i_RX_Serial : in std_logic; -- UART RX input pin to receive FROM client
-    o_TX_Serial : out std_logic; -- UART TX output pin to transmitt TO Client
+    o_TX_Serial : out std_logic := '1'; -- UART TX output pin to transmitt TO Client
     -- Simulation IOs only, TODO: Delete Later
-    i_button : in std_logic
+    i_button     : in std_logic;
+    i_button_LED : in std_logic;
+    o_button_LED : out std_logic;
+    o_LED        : out std_logic
     -- o_RX_DV    : out std_logic; -- Byte-received signal
     -- o_RX_128DV : out std_logic; -- 128-bit data valid signal
     -- o_RX_Byte  : out std_logic_vector(7 downto 0); -- Debug: Received byte
@@ -29,7 +32,7 @@ architecture rtl of UART_TOP is
   -- Component declaration for UART_RX
   component UART_RX
     generic (
-      g_CLKS_PER_BIT : integer := 87
+      g_CLKS_PER_BIT : integer := 5208
     );
     port (
       i_Clk       : in std_logic;
@@ -50,7 +53,7 @@ architecture rtl of UART_TOP is
   -- Component declaration for UART_TX
   component UART_TX is
     generic (
-      g_CLKS_PER_BIT : integer := 87
+      g_CLKS_PER_BIT : integer := 5208
     );
     port (
       i_Clk       : in std_logic; -- Internal Clock
@@ -95,8 +98,10 @@ begin
   );
 
   -- Signal Processes
-  s_TX_Block <= s_RX_Block; -- For Testing Purposes, that we will transmit the same data that we receive
-  s_TX_DV <= not i_button;
+  s_TX_Block   <= s_RX_Block; -- For Testing Purposes, that we will transmit the same data that we receive
+  s_TX_DV      <= not i_button;
+  o_button_LED <= i_button_LED;
+  o_LED        <= '1';
 
   -- Simulation SIgnals
   -- o_RX_DV    <= s_RX_DV;
