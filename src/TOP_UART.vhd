@@ -85,90 +85,133 @@ architecture rtl of TOP_UART is
     );
   end component;
 
+  component register_128bit is
+    port (
+      Clk, En, Res : in std_logic; -- Clk clock, En enable, Res reset
+      D            : in std_logic_vector (127 downto 0); -- Input data
+      Q            : out std_logic_vector (127 downto 0) -- Output data
+    );
+  end component;
+
   -- Registers and MUX
   signal s_Masterkey_reg : std_logic_vector(127 downto 0) := (others => '0');
   signal s_Plaintext_reg : std_logic_vector(127 downto 0) := (others => '0');
 
+  signal En_Key, En_Ptx : std_logic := '0';
+  
+
   -- FSM Signals
   type FSM is (RXKEY, RXPLAINTEXT);
   signal currentstate, nextstate : FSM := RXKEY;
-    
+
 begin
-    -- UART_RX Instantiation
-    UART_RX_inst : UART_RX
-    generic map (
-      g_CLKS_PER_BIT => c_CLKS_PER_BIT
-    )
-    port map (
-      i_Clk       => i_Clk,
-      i_RX_Serial => i_RX_Serial,
-      o_RX_DV     => s_RX_DV,
-      o_RX_128DV  => s_RX_128DV,
-      o_RX_Byte   => s_RX_Byte,
-      o_RX_Block  => s_RX_Block
-    );
-  
-    -- UART_TX Instantiation
-    UART_TX_inst : UART_TX
-    generic map (
-      g_CLKS_PER_BIT => c_CLKS_PER_BIT
-    )
-    port map (
-      i_Clk       => i_Clk,
-      i_TX_DV     => s_TX_DV,
-      i_TX_Block  => s_TX_Block,
-      o_TX_Active => s_TX_Active,
-      o_TX_Serial => o_TX_Serial,
-      o_TX_Done   => s_TX_Done
-    );
-  
-    -- CFB Instantiation
-    CFB_inst : CFB
-    port map (
-      clk         => i_Clk,
-      reset       => reset,
-      start       => s_CFB_start,
-      ds          => s_Data_Sent,
-      ptxr        => s_Ptx_Ready,
-      masterkey   => s_Masterkey_reg,
-      plaintext   => s_Plaintext_reg,
-      ciphertext  => s_Ciphertext,
-      o_SEND_DATA => s_SEND_DATA
-    );
-  
-    -- FSM Process
-    process (i_Clk, reset)
-    begin
-      if reset = '1' then
-        currentstate <= RXKEY;
-        s_Masterkey_reg <= (others => '0');
-        s_Plaintext_reg <= (others => '0');
-      elsif rising_edge(i_Clk) then
-        currentstate <= nextstate;
-      end if;
-    end process;
-  
-    -- Next State Logic
-    process (currentstate, i_start, s_RX_Block, s_RX_128DV)
-    begin
-      -- Default assignments
-      nextstate <= currentstate;
-  
-      case currentstate is
+  -- UART_RX Instantiation
+  UART_RX_inst : UART_RX
+  generic map(
+    g_CLKS_PER_BIT => c_CLKS_PER_BIT
+  )
+  port map
+  (
+    i_Clk       => i_Clk,
+    i_RX_Serial => i_RX_Serial,
+    o_RX_DV     => s_RX_DV,
+    o_RX_128DV  => s_RX_128DV,
+    o_RX_Byte   => s_RX_Byte,
+    o_RX_Block  => s_RX_Block
+  );
+
+  -- UART_TX Instantiation
+  UART_TX_inst : UART_TX
+  generic map(
+    g_CLKS_PER_BIT => c_CLKS_PER_BIT
+  )
+  port map
+  (
+    i_Clk       => i_Clk,
+    i_TX_DV     => s_TX_DV,
+    i_TX_Block  => s_TX_Block,
+    o_TX_Active => s_TX_Active,
+    o_TX_Serial => o_TX_Serial,
+    o_TX_Done   => s_TX_Done
+  );
+
+  -- CFB Instantiation
+  CFB_inst : CFB
+  port map
+  (
+    clk         => i_Clk,
+    reset       => reset,
+    start       => s_CFB_start,
+    ds          => s_Data_Sent,
+    ptxr        => s_Ptx_Ready,
+    masterkey   => s_Masterkey_reg,
+    plaintext   => s_Plaintext_reg,
+    ciphertext  => s_Ciphertext,
+    o_SEND_DATA => s_SEND_DATA
+  );
+
+  Masterkey_REG: register_128bit
+   port map(
+      Clk => i_clk,
+      En => En_Key,
+      Res => reset,
+      D => s_RX_Block,
+      Q => s_Masterkey
+  );
+
+  Plaintext_REG: register_128bit
+   port map(
+      Clk => i_clk,
+      En => En_Ptx,
+      Res => reset,
+      D => s_RX_Block,
+      Q => s_Plaintext
+  );
+
+  -- FSM Process
+  process (i_Clk, reset)
+  begin
+    if reset = '1' then
+      currentstate    <= RXKEY;
+      s_Masterkey_reg <= (others => '0');
+      s_Plaintext_reg <= (others => '0');
+    elsif rising_edge(i_Clk) then
+      currentstate <= nextstate;
+    end if;
+  end process;
+
+  -- Next State Logic
+  process (currentstate, i_start, s_RX_Block, s_RX_128DV)
+  begin
+    -- Default assignments
+    nextstate <= currentstate;
+
+    case currentstate is
+      when RXKEY =>
+        if i_start = '1' then
+          nextstate <= RXPLAINTEXT;
+        end if;
+      when RXPLAINTEXT =>
+        if i_start = '0' then
+          nextstate <= RXKEY;
+        end if;
+    end case;
+  end process;
+
+  process (currentstate)
+  begin
+    case currentstate is
         when RXKEY =>
-          if i_start = '1' then
-            nextstate <= RXPLAINTEXT;
-          end if;
+            En_Ptx <= '0';
+            En_Key <= '1';
         when RXPLAINTEXT =>
-          if i_start = '0' then
-            nextstate <= RXKEY;
-          end if;
-      end case;
-    end process;
-  
-    -- Output Assignments
-    s_TX_Block  <= s_Ciphertext;
-    s_TX_DV     <= s_SEND_DATA;
-    s_CFB_start <= not i_start;
-  
-  end architecture;
+            En_Ptx <= '1';
+            En_Key <= '0';
+    end case;
+  end process;
+  -- Output Assignments
+  s_TX_Block  <= s_Ciphertext;
+  s_TX_DV     <= s_SEND_DATA;
+  s_CFB_start <= not i_start;
+
+end architecture;
