@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity top_tb is
+entity CFB_tb is
 end entity;
 
-architecture bench of top_tb is
+architecture bench of CFB_tb is
 
   -- Clock period
   constant clk_period : time := 10 ns;
@@ -23,7 +23,7 @@ architecture bench of top_tb is
 begin
 
   -- DUT instantiation
-  top_inst : entity work.top
+  top_inst : entity work.CFB
     port map
     (
       clk        => clk,
@@ -45,11 +45,14 @@ begin
     masterkey <= x"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
     wait for 1 * clk_period; -- Adjust the plaintext update delay
     start     <= '1';
-    plaintext <= x"4c6f72656d20697073756d20646f6c6f";
     wait for 1 * clk_period;
     start <= '0';
+    wait for 5 *clk_period;
+    plaintext <= x"4c6f72656d20697073756d20646f6c6f";
+    plaintext_ready <= '1';
+    wait for 1 * clk_period;
+    plaintext_ready <= '0';
     wait for 50 * clk_period;
-
 
     -- 1 Iteration
     wait for 50 * clk_period; -- Adjust the delay between plaintext changes

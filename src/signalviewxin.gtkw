@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Wed Jan  8 13:46:40 2025
+[*] Thu Jan  9 11:39:47 2025
 [*]
 [dumpfile] "C:\Users\ASUS\Documents\Sisdig\Priv_TUBES_SISDIG\src\wave.ghw"
-[dumpfile_mtime] "Wed Jan  8 13:39:06 2025"
+[dumpfile_mtime] "Thu Jan  9 11:39:20 2025"
 [dumpfile_size] 419879
 [savefile] "C:\Users\ASUS\Documents\Sisdig\Priv_TUBES_SISDIG\src\signalviewxin.gtkw"
 [timestart] 0
 [size] 1280 649
-[pos] -139 -42
-*-29.334795 1297100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-29.334795 416000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.top_tb.
 [treeopen] top.top_tb.top_inst.

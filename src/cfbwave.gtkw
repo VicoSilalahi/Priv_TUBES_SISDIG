@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Thu Jan  9 14:14:07 2025
+[*]
+[dumpfile] "C:\Users\ASUS\Documents\Sisdig\Priv_TUBES_SISDIG\src\wave.ghw"
+[dumpfile_mtime] "Thu Jan  9 14:11:41 2025"
+[dumpfile_size] 1034376
+[savefile] "C:\Users\ASUS\Documents\Sisdig\Priv_TUBES_SISDIG\src\cfbwave.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-41.579678 3211000000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.top_uart_tb.
+[treeopen] top.top_uart_tb.top_uart_inst.
+[sst_width] 174
+[signals_width] 178
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@420
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_mem_index
+@28
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_rx_128dv
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_rx_dv
+@420
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_bit_index
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_clk_count
+@28
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_rx_data
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_rx_data_r
+@420
+top.top_uart_tb.top_uart_inst.uart_rx_inst.r_sm_main
+@28
+top.top_uart_tb.top_uart_inst.uart_rx_inst.o_rx_128dv
+top.top_uart_tb.top_uart_inst.uart_rx_inst.o_rx_dv
+top.top_uart_tb.top_uart_inst.uart_rx_inst.i_rx_serial
+top.top_uart_tb.top_uart_inst.uart_rx_inst.i_clk
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_block_done
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_tx_done
+@420
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_byte_index
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_bit_index
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_clk_count
+top.top_uart_tb.top_uart_inst.uart_tx_inst.r_sm_main
+@28
+top.top_uart_tb.top_uart_inst.uart_tx_inst.o_tx_done
+top.top_uart_tb.top_uart_inst.uart_tx_inst.o_tx_serial
+top.top_uart_tb.top_uart_inst.uart_tx_inst.o_tx_active
+@29
+top.top_uart_tb.top_uart_inst.uart_tx_inst.i_tx_dv
+@28
+top.top_uart_tb.top_uart_inst.uart_tx_inst.i_clk
+[pattern_trace] 1
+[pattern_trace] 0

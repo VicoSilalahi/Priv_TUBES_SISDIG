@@ -3,19 +3,20 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
-entity top is
+entity CFB is
   port (
-    clk        : in std_logic;
-    reset      : in std_logic;
-    start      : in std_logic;
-    ds, ptxr   : in std_logic; -- temporary simulation input for UART RX READY AND UART TX DONE
-    masterkey  : in std_logic_vector(127 downto 0);
-    plaintext  : in std_logic_vector(127 downto 0);
-    ciphertext : out std_logic_vector(127 downto 0)
+    clk         : in std_logic;
+    reset       : in std_logic;
+    start       : in std_logic;
+    ds, ptxr    : in std_logic; -- temporary simulation input for UART RX READY AND UART TX DONE
+    masterkey   : in std_logic_vector(127 downto 0);
+    plaintext   : in std_logic_vector(127 downto 0);
+    ciphertext  : out std_logic_vector(127 downto 0);
+    o_SEND_DATA : out std_logic
   );
 end entity;
 
-architecture rtl of top is
+architecture rtl of CFB is
   component cypher_block is -- Main component of LEA-128 Encryption
     port (
       Plaintext, Master_Key : in std_logic_vector(127 downto 0);
@@ -49,14 +50,12 @@ architecture rtl of top is
   signal T_in, X_in, C_out                                         : std_logic_vector(127 downto 0);
 
   -- Top Entity Input
-  -- To be used when UART is Ready
-  signal is_busy : std_logic;
   -- Future ToDo:
   signal isdone : std_logic;
   -- SHOULD BE TX_DONE
   signal data_sent       : std_logic := '0';
   signal plaintext_ready : std_logic := '0';
-  signal i_TX_DV         : std_logic := '0';
+  signal s_SEND_DATA     : std_logic := '0';
 
   -- initialization Vector
   constant IV : std_logic_vector(127 downto 0) := x"00000000000000000000000000000000";
@@ -123,6 +122,7 @@ begin
   -- TODO: DELETE BELOW AND CHANGE WITH ACTUAL UART TX UART RX DONE STATUS/FLAG
   plaintext_ready <= ptxr;
   data_sent       <= ds;
+  o_SEND_DATA     <= s_SEND_DATA;
   -- FSM process
   process (clk)
   begin
@@ -143,7 +143,7 @@ begin
         end if;
 
       when LOAD_KEY =>
-        nextstate <= ENCRYPT; -- Assuming key loading is instantaneous
+        nextstate <= WAIT_FOR_PLAINTEXT; -- Assuming key loading is instantaneous
 
       when ENCRYPT =>
         if reset = '1' then
@@ -181,53 +181,53 @@ begin
   begin
     case currentstate is
       when IDLE =>
-        S_IV      <= '0';
-        En_IV     <= '0';
-        En_Key    <= '1';
-        START_LEA <= '0';
-        i_TX_DV   <= '0';
+        S_IV        <= '0';
+        En_IV       <= '0';
+        En_Key      <= '1';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '0';
 
       when LOAD_KEY =>
-        S_IV      <= '0';
-        En_IV     <= '0';
-        En_Key    <= '0';
-        START_LEA <= '0';
-        i_TX_DV   <= '0';
+        S_IV        <= '0';
+        En_IV       <= '0';
+        En_Key      <= '0';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '0';
 
       when ENCRYPT =>
-        S_IV      <= '1'; -- Selecting IV register input from plaintext
-        En_IV     <= '0';
-        En_Key    <= '0';
-        START_LEA <= '1';
-        i_TX_DV   <= '0';
+        S_IV        <= '1'; -- Selecting IV register input from plaintext
+        En_IV       <= '0';
+        En_Key      <= '0';
+        START_LEA   <= '1';
+        s_SEND_DATA <= '0';
 
       when LOAD_IV =>
-        S_IV      <= '0'; -- Selecting next_IV as the input to the IV register
-        En_IV     <= '1'; -- Enable IV register to load next_IV
-        En_Key    <= '0';
-        START_LEA <= '0';
-        i_TX_DV   <= '0';
+        S_IV        <= '0'; -- Selecting next_IV as the input to the IV register
+        En_IV       <= '1'; -- Enable IV register to load next_IV
+        En_Key      <= '0';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '0';
 
       when SEND_DATA =>
-        S_IV      <= '1'; -- Maintain IV register value
-        En_IV     <= '0'; -- Disable IV register to hold value
-        En_Key    <= '0';
-        START_LEA <= '0';
-        i_TX_DV   <= '1'; -- Start data transmission
+        S_IV        <= '1'; -- Maintain IV register value
+        En_IV       <= '0'; -- Disable IV register to hold value
+        En_Key      <= '0';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '1'; -- Start data transmission
 
       when WAIT_FOR_PLAINTEXT =>
-        S_IV      <= '0';
-        En_IV     <= '0';
-        En_Key    <= '0';
-        START_LEA <= '0';
-        i_TX_DV   <= '0';
+        S_IV        <= '0';
+        En_IV       <= '0';
+        En_Key      <= '0';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '0';
 
       when others =>
-        S_IV      <= '0';
-        En_IV     <= '0';
-        En_Key    <= '0';
-        START_LEA <= '0';
-        i_TX_DV   <= '0';
+        S_IV        <= '0';
+        En_IV       <= '0';
+        En_Key      <= '0';
+        START_LEA   <= '0';
+        s_SEND_DATA <= '0';
     end case;
   end process;
 end architecture;
