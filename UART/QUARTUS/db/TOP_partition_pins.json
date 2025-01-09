@@ -4,23 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "o_TX_Serial",
+					"name" : "o_LED_compare",
 					"strict" : false
 				},
 				{
-					"name" : "o_button_LED",
-					"strict" : false
-				},
-				{
-					"name" : "i_button_LED",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
 					"name" : "i_Clk",
-					"strict" : false
-				},
-				{
-					"name" : "i_button",
 					"strict" : false
 				},
 				{

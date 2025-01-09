@@ -4,21 +4,16 @@ use ieee.numeric_std.all;
 
 entity UART_TOP is
   generic (
-    g_CLKS_PER_BIT : integer := 5208 -- Must match the value used in UART_RX
+    g_CLKS_PER_BIT : integer := 20834 -- Must match the value used in UART_RX
   );
   port (
     i_Clk       : in std_logic; -- System clock
     i_RX_Serial : in std_logic; -- UART RX input pin to receive FROM client
-    o_TX_Serial : out std_logic := '1'; -- UART TX output pin to transmitt TO Client
-    -- Simulation IOs only, TODO: Delete Later
-    i_button     : in std_logic;
-    i_button_LED : in std_logic;
-    o_button_LED : out std_logic;
-    o_LED        : out std_logic
-    -- o_RX_DV    : out std_logic; -- Byte-received signal
-    -- o_RX_128DV : out std_logic; -- 128-bit data valid signal
-    -- o_RX_Byte  : out std_logic_vector(7 downto 0); -- Debug: Received byte
-    -- o_RX_Block : out std_logic_vector(127 downto 0) -- 128-bit received data
+    o_TX_Serial : out std_logic := '1'; -- UART TX output pin to transmit TO Client
+    reset       : in std_logic  := '0';
+
+    -- FOR FPGA testing Simulation IOs only, TODO: Delete Later
+    o_LED_compare : out std_logic := '1'
   );
 end UART_TOP;
 
@@ -29,10 +24,21 @@ architecture rtl of UART_TOP is
   signal s_RX_Byte  : std_logic_vector(7 downto 0);
   signal s_RX_Block : std_logic_vector(127 downto 0);
 
+  -- Signal for TX
+  signal s_TX_DV     : std_logic := '0';
+  signal s_TX_Block  : std_logic_vector(127 downto 0);
+  signal s_TX_Active : std_logic;
+  signal s_TX_Done   : std_logic;
+
+  -- Button handling
+  signal s_button_sync : std_logic := '0';
+  signal s_button_prev : std_logic := '0';
+  signal s_button_edge : std_logic := '0';
+
   -- Component declaration for UART_RX
   component UART_RX
     generic (
-      g_CLKS_PER_BIT : integer := 5208
+      g_CLKS_PER_BIT : integer := 20834
     );
     port (
       i_Clk       : in std_logic;
@@ -44,16 +50,10 @@ architecture rtl of UART_TOP is
     );
   end component;
 
-  -- SIgnal for TX
-  signal s_TX_DV     : std_logic;
-  signal s_TX_Block  : std_logic_vector(127 downto 0);
-  signal s_TX_Active : std_logic;
-  signal s_TX_Done   : std_logic;
-
   -- Component declaration for UART_TX
   component UART_TX is
     generic (
-      g_CLKS_PER_BIT : integer := 5208
+      g_CLKS_PER_BIT : integer := 20834
     );
     port (
       i_Clk       : in std_logic; -- Internal Clock
@@ -64,6 +64,13 @@ architecture rtl of UART_TOP is
       o_TX_Done   : out std_logic -- Indicates 128-bit is done
     );
   end component;
+  -- Define the clock frequency (e.g., 50 MHz)
+  constant clk_freq         : integer := 50000000; -- Adjust to your FPGA's clock frequency
+  constant one_second_count : integer := clk_freq; -- Number of clock cycles in 1 second
+
+  -- Signals
+  signal rx_led_timer : integer   := 0; -- Timer to track 1-second interval
+  signal led_output   : std_logic := '0'; -- LED output signal
 
 begin
 
@@ -97,15 +104,66 @@ begin
     o_TX_Done   => s_TX_Done
   );
 
-  -- Signal Processes
-  s_TX_Block   <= s_RX_Block; -- For Testing Purposes, that we will transmit the same data that we receive
-  s_TX_DV      <= not i_button;
-  o_button_LED <= i_button_LED;
-  o_LED        <= '1';
+  -- process (s_RX_Block)
+  --   constant tocompare : std_logic_vector(127 downto 0) := x"ffffffffffffffffffffffffffffffff";
 
-  -- Simulation SIgnals
-  -- o_RX_DV    <= s_RX_DV;
-  -- o_RX_128DV <= s_RX_128DV;
-  -- o_RX_Byte  <= s_RX_Byte;
-  -- o_RX_Block <= s_RX_Block;
+  -- begin
+  --   if s_RX_Block = tocompare then
+  --     o_LED_compare <= '0';
+  --   else
+  --     o_LED_compare <= '1';
+  --   end if;
+  -- end process;
+
+  -- Synchronize and debounce the button
+  -- process (i_Clk)
+  -- begin
+  --   if rising_edge(i_Clk) then
+  --     s_button_sync <= i_button;            -- Synchronize button to clock domain
+  --     s_button_edge <= s_button_sync and not s_button_prev; -- Detect rising edge
+  --     s_button_prev <= s_button_sync;       -- Store previous button state
+  --   end if;
+  -- end process;
+
+  -- -- Control TX_DV signal
+  -- process (i_Clk)
+  -- begin
+  --   if rising_edge(i_Clk) then
+  --     if s_button_edge = '1' then
+  --       s_TX_DV <= '1';  -- Assert TX_DV for one clock cycle
+  --     else
+  --       s_TX_DV <= '0';  -- Deassert TX_DV
+  --     end if;
+  --   end if;
+  -- end process;
+
+  -- -- Connect signals
+  -- s_TX_Block   <= s_RX_Block; -- For Testing Purposes, transmit the same data received
+  -- o_button_LED <= i_button_LED;
+  -- o_LED        <= '1';
+  -- Process to handle the LED timer
+  process (i_Clk)
+  begin
+    if rising_edge(i_Clk) then
+      if reset = '1' then
+        -- Reset the timer and LED output
+        rx_led_timer <= 0;
+        led_output   <= '0';
+      elsif s_RX_DV = '1' then
+        -- Start/Restart the timer on RX event
+        rx_led_timer <= one_second_count;
+        led_output   <= '1'; -- Turn on LED
+      elsif rx_led_timer > 0 then
+        -- Decrement timer if active
+        rx_led_timer <= rx_led_timer - 1;
+        if rx_led_timer = 1 then
+          -- Turn off LED when timer expires
+          led_output <= '0';
+        end if;
+      end if;
+    end if;
+  end process;
+
+  -- Assign LED output to the FPGA pin
+  o_LED_compare <= not led_output;
 end rtl;

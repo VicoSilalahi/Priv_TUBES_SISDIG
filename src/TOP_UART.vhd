@@ -166,26 +166,6 @@ begin
       end case;
     end process;
   
-    -- Output Logic for Registers
-    process (i_Clk, reset)
-    begin
-      if reset = '1' then
-        s_Masterkey_reg <= (others => '0');
-        s_Plaintext_reg <= (others => '0');
-      elsif rising_edge(i_Clk) then
-        if s_RX_128DV = '1' then
-          case currentstate is
-            when RXKEY =>
-              s_Masterkey_reg <= s_RX_Block;
-            when RXPLAINTEXT =>
-              s_Plaintext_reg <= s_RX_Block;
-            when others =>
-              null;
-          end case;
-        end if;
-      end if;
-    end process;
-  
     -- Output Assignments
     s_TX_Block  <= s_Ciphertext;
     s_TX_DV     <= s_SEND_DATA;

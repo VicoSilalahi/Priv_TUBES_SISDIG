@@ -96,6 +96,8 @@ begin
 
     -- Wait for transmission to complete
     wait until w_TX_Done = '1';
+    wait until rising_edge(r_Clk);
+    wait for 5*c_CLOCK_PERIOD;
     report "128-bit block transmission complete." severity note;
 
     -- Observe transmitted output
