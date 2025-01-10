@@ -64,14 +64,16 @@ architecture rtl of UART_TOP is
       o_TX_Done   : out std_logic -- Indicates 128-bit is done
     );
   end component;
-  -- Define the clock frequency (e.g., 50 MHz)
-  constant clk_freq         : integer := 50000000; -- Adjust to your FPGA's clock frequency
-  constant one_second_count : integer := clk_freq; -- Number of clock cycles in 1 second
 
-  -- Signals
-  signal rx_led_timer : integer   := 0; -- Timer to track 1-second interval
-  signal led_output   : std_logic := '0'; -- LED output signal
+  signal clk_counter   : integer   := 0; -- Counter for clock cycles
+  signal pulse_counter : integer   := 0; -- Counter for pulse duration
+  signal pulse_active  : std_logic := '0'; -- Signal to indicate active pulse
+  signal time_elapsed  : std_logic := '0'; -- Indicates the end of m seconds
 
+  constant CLK_FREQ  : integer := 50_000_000; -- Example: 50 MHz clock frequency
+  constant M_SECONDS : integer := 2; -- Duration m in seconds
+  constant N_CYCLES  : integer := 10; -- Number of cycles the signal stays high
+  constant M_COUNT   : integer := CLK_FREQ * M_SECONDS; -- Total clocks for m seconds
 begin
 
   -- Instantiate UART_RX
@@ -103,67 +105,38 @@ begin
     o_TX_Serial => o_TX_Serial,
     o_TX_Done   => s_TX_Done
   );
-
-  -- process (s_RX_Block)
-  --   constant tocompare : std_logic_vector(127 downto 0) := x"ffffffffffffffffffffffffffffffff";
-
-  -- begin
-  --   if s_RX_Block = tocompare then
-  --     o_LED_compare <= '0';
-  --   else
-  --     o_LED_compare <= '1';
-  --   end if;
-  -- end process;
-
-  -- Synchronize and debounce the button
-  -- process (i_Clk)
-  -- begin
-  --   if rising_edge(i_Clk) then
-  --     s_button_sync <= i_button;            -- Synchronize button to clock domain
-  --     s_button_edge <= s_button_sync and not s_button_prev; -- Detect rising edge
-  --     s_button_prev <= s_button_sync;       -- Store previous button state
-  --   end if;
-  -- end process;
-
-  -- -- Control TX_DV signal
-  -- process (i_Clk)
-  -- begin
-  --   if rising_edge(i_Clk) then
-  --     if s_button_edge = '1' then
-  --       s_TX_DV <= '1';  -- Assert TX_DV for one clock cycle
-  --     else
-  --       s_TX_DV <= '0';  -- Deassert TX_DV
-  --     end if;
-  --   end if;
-  -- end process;
-
-  -- -- Connect signals
-  -- s_TX_Block   <= s_RX_Block; -- For Testing Purposes, transmit the same data received
-  -- o_button_LED <= i_button_LED;
-  -- o_LED        <= '1';
-  -- Process to handle the LED timer
-  process (i_Clk)
+  -- Process to generate the timed pulse
+  process (i_Clk, reset)
   begin
-    if rising_edge(i_Clk) then
-      if reset = '1' then
-        -- Reset the timer and LED output
-        rx_led_timer <= 0;
-        led_output   <= '0';
-      elsif s_RX_DV = '1' then
-        -- Start/Restart the timer on RX event
-        rx_led_timer <= one_second_count;
-        led_output   <= '1'; -- Turn on LED
-      elsif rx_led_timer > 0 then
-        -- Decrement timer if active
-        rx_led_timer <= rx_led_timer - 1;
-        if rx_led_timer = 1 then
-          -- Turn off LED when timer expires
-          led_output <= '0';
+    if reset = '1' then
+      clk_counter   <= 0;
+      pulse_counter <= 0;
+      pulse_active  <= '0';
+      time_elapsed  <= '0';
+    elsif rising_edge(i_Clk) then
+      if time_elapsed = '0' then
+        -- Count clock cycles for m seconds
+        if clk_counter < M_COUNT - 1 then
+          clk_counter <= clk_counter + 1;
+        else
+          clk_counter  <= 0;
+          time_elapsed <= '1'; -- m seconds elapsed
         end if;
+      elsif pulse_active = '1' then
+        -- Count clock cycles for n cycles
+        if pulse_counter < N_CYCLES - 1 then
+          pulse_counter <= pulse_counter + 1;
+        else
+          pulse_counter <= 0;
+          pulse_active  <= '0'; -- End the pulse
+          time_elapsed  <= '0'; -- Reset time elapsed for the next cycle
+        end if;
+      else
+        -- Trigger the pulse
+        pulse_active <= '1';
       end if;
     end if;
   end process;
 
-  -- Assign LED output to the FPGA pin
-  o_LED_compare <= not led_output;
+  s_TX_DV <= pulse_active; -- Assign pulse signal to output
 end rtl;
