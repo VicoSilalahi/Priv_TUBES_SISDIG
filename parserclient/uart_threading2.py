@@ -1,37 +1,57 @@
-import serial
+
 import threading
+import serial
+import time
 
-# Configure the serial port
-ser = serial.Serial(
-    port='COM8',  # Replace with your port name
-    baudrate=9600,
-    timeout=1
-)
+# Shared stop flag for threads
+stop_event = threading.Event()
 
-# Function to transmit data
-def transmit_data():
-    while True:
-        data_to_send = input("Enter ASCII data to send: ")
-        ser.write(data_to_send.encode())  # Transmit ASCII data
-        print(f"Sent: {data_to_send}")
+def transmit(serial_port):
+    """Thread for transmitting data."""
+    while not stop_event.is_set():
+        data = input("Enter data to send (or Ctrl+C to quit): ")
+        serial_port.write(data.encode())
+        print(f"Sent: {data}")
+        time.sleep(0.1)
 
-# Function to receive data
-def receive_data():
-    while True:
-        if ser.in_waiting > 0:
-            received_data = ser.read(ser.in_waiting)  # Read all available bytes
-            binary_output = ' '.join(format(byte, '08b') for byte in received_data)
-            print(f"Received (binary): {binary_output}")
+def receive(serial_port):
+    """Thread for receiving data."""
+    while not stop_event.is_set():
+        if serial_port.in_waiting > 0:
+            data = serial_port.read(serial_port.in_waiting)
+            print(f"Received: {data}")
+        time.sleep(0.1)
 
-# Create threads for transmission and reception
-transmit_thread = threading.Thread(target=transmit_data)
-receive_thread = threading.Thread(target=receive_data)
+def main():
+    try:
+        # Open the serial port
+        serial_port = serial.Serial('COM6', 9600, timeout=1)
+        
+        # Create threads
+        tx_thread = threading.Thread(target=transmit, args=(serial_port,))
+        rx_thread = threading.Thread(target=receive, args=(serial_port,))
 
-# Start the threads
-transmit_thread.start()
-receive_thread.start()
+        # Make threads daemon
+        tx_thread.daemon = True
+        rx_thread.daemon = True
 
-# Ensure the threads run indefinitely
-transmit_thread.join()
-receive_thread.join()
+        # Start threads
+        tx_thread.start()
+        rx_thread.start()
+
+        # Keep the main program running
+        while not stop_event.is_set():
+            time.sleep(0.1)
+
+    except KeyboardInterrupt:
+        print("\nStopping...")
+        stop_event.set()  # Signal threads to stop
+
+    finally:
+        # Close the serial port
+        serial_port.close()
+        print("Serial port closed. Goodbye!")
+
+if __name__ == "__main__":
+    main()
 
