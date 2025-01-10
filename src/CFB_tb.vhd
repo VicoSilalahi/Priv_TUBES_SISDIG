@@ -76,6 +76,17 @@ begin
     plaintext_ready <= '0';
     wait for 50 * clk_period;
 
+    -- 1 Iteration
+    wait for 50 * clk_period; -- Adjust the delay between plaintext changes
+    data_sent <= '1';
+    wait for clk_period;
+    data_sent       <= '0';
+    plaintext       <= x"01234567890123456789012345678901";
+    plaintext_ready <= '1';
+    wait for 1 * clk_period;
+    plaintext_ready <= '0';
+    wait for 50 * clk_period;
+
     assert false
     report "Simulation capped at this point"
       severity failure;

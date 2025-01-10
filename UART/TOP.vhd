@@ -4,11 +4,12 @@ use ieee.numeric_std.all;
 
 entity UART_TOP is
   generic (
-    g_CLKS_PER_BIT : integer := 20834 -- Must match the value used in UART_RX
+    g_CLKS_PER_BIT : integer := 5208 -- Must match the value used in UART_RX
   );
   port (
     i_Clk       : in std_logic; -- System clock
     i_RX_Serial : in std_logic; -- UART RX input pin to receive FROM client
+    i_button    : in std_logic;
     o_TX_Serial : out std_logic := '1'; -- UART TX output pin to transmit TO Client
     reset       : in std_logic  := '0';
 
@@ -38,7 +39,7 @@ architecture rtl of UART_TOP is
   -- Component declaration for UART_RX
   component UART_RX
     generic (
-      g_CLKS_PER_BIT : integer := 20834
+      g_CLKS_PER_BIT : integer := 5208
     );
     port (
       i_Clk       : in std_logic;
@@ -53,7 +54,7 @@ architecture rtl of UART_TOP is
   -- Component declaration for UART_TX
   component UART_TX is
     generic (
-      g_CLKS_PER_BIT : integer := 20834
+      g_CLKS_PER_BIT : integer := 5208
     );
     port (
       i_Clk       : in std_logic; -- Internal Clock
@@ -138,5 +139,6 @@ begin
     end if;
   end process;
 
-  s_TX_DV <= pulse_active; -- Assign pulse signal to output
+  s_TX_Block <= s_RX_Block;
+  s_TX_DV <= not i_button; -- Assign pulse signal to output
 end rtl;

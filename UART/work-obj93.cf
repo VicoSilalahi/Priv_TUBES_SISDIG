@@ -1,0 +1,13 @@
+v 4
+file . "UART_RX_tb.vhd" "1f119920b8451306a6e2f9252f1270b178945912" "20250110124254.921":
+  entity uart_rx_tb at 1( 0) + 0 on 17;
+  architecture behave of uart_rx_tb at 13( 244) + 0 on 18;
+file . ".\UART_RX.vhd" "40a27f764e426ba97c3acd637cfbef41b4831d8c" "20250110124254.627":
+  entity uart_rx at 1( 0) + 0 on 11;
+  architecture rtl of uart_rx at 22( 859) + 0 on 12;
+file . ".\UART_TX.vhd" "923b7dc51a607465fddb06942855b0bf037bea43" "20250110124254.629":
+  entity uart_tx at 1( 0) + 0 on 13;
+  architecture rtl of uart_tx at 23( 854) + 0 on 14;
+file . ".\TOP.vhd" "36dc25818651d1a88bec1606e23c014fa8c60370" "20250110124254.632":
+  entity uart_top at 1( 0) + 0 on 15;
+  architecture rtl of uart_top at 21( 618) + 0 on 16;

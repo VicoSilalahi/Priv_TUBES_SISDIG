@@ -98,7 +98,7 @@ VCCIO2                       : 26        : power  :                   : 2.5V    
 GND                          : 27        : gnd    :                   :         :           :                
 RESERVED_INPUT               : 28        :        :                   :         : 2         :                
 VCCINT                       : 29        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 30        :        :                   :         : 2         :                
+reset                        : 30        : input  : 2.5 V             :         : 2         : N              
 RESERVED_INPUT               : 31        :        :                   :         : 2         :                
 RESERVED_INPUT               : 32        :        :                   :         : 2         :                
 RESERVED_INPUT               : 33        :        :                   :         : 2         :                
@@ -154,9 +154,9 @@ GND                          : 82        : gnd    :                   :         
 RESERVED_INPUT               : 83        :        :                   :         : 5         :                
 RESERVED_INPUT               : 84        :        :                   :         : 5         :                
 RESERVED_INPUT               : 85        :        :                   :         : 5         :                
-RESERVED_INPUT               : 86        :        :                   :         : 5         :                
-o_LED_compare                : 87        : output : 2.5 V             :         : 5         : N              
-GND+                         : 88        :        :                   :         : 5         :                
+o_LED_compare                : 86        : output : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT               : 87        :        :                   :         : 5         :                
+i_button                     : 88        : input  : 2.5 V             :         : 5         : Y              
 GND+                         : 89        :        :                   :         : 5         :                
 GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
@@ -172,7 +172,7 @@ RESERVED_INPUT               : 100       :        :                   :         
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 101       : output : 2.5 V             :         : 6         : N              
 VCCINT                       : 102       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT               : 103       :        :                   :         : 6         :                
-reset                        : 104       : input  : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : 104       :        :                   :         : 6         :                
 RESERVED_INPUT               : 105       :        :                   :         : 6         :                
 RESERVED_INPUT               : 106       :        :                   :         : 6         :                
 VCCA2                        : 107       : power  :                   : 2.5V    :           :                
