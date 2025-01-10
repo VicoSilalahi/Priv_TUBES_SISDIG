@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/QUARTUS/output_files/") File("TOP.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/QUARTUS/output_files/") File("TOP.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

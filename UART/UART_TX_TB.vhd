@@ -17,7 +17,7 @@ architecture behave of UART_TX_tb is
       i_TX_DV     : in  std_logic;
       i_TX_Block  : in  std_logic_vector(127 downto 0);
       o_TX_Active : out std_logic;
-      o_TX_Serial : out std_logic;
+      o_TX_Serial : out std_logic:='1';
       o_TX_Done   : out std_logic
     );
   end component;

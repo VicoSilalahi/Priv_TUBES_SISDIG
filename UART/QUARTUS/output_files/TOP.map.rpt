@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TOP
-Fri Jan 10 18:59:05 2025
+Sat Jan 11 05:26:52 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -25,7 +25,8 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  17. Port Connectivity Checks: "UART_RX:UART_RX_inst"
  18. Post-Synthesis Netlist Statistics for Top Partition
  19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Equations
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -52,16 +53,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jan 10 18:59:05 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sat Jan 11 05:26:52 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; TOP                                            ;
 ; Top-level Entity Name              ; UART_TOP                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 484                                            ;
-;     Total combinational functions  ; 226                                            ;
-;     Dedicated logic registers      ; 326                                            ;
-; Total registers                    ; 326                                            ;
-; Total pins                         ; 6                                              ;
+; Total logic elements               ; 619                                            ;
+;     Total combinational functions  ; 229                                            ;
+;     Dedicated logic registers      ; 458                                            ;
+; Total registers                    ; 458                                            ;
+; Total pins                         ; 7                                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -160,7 +161,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -177,9 +178,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
-; ../UART_TX.vhd                   ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX.vhd ;         ;
-; ../UART_RX.vhd                   ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_RX.vhd ;         ;
-; ../TOP.vhd                       ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd     ;         ;
+; ../UART_TX.vhd                   ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX.vhd ;         ;
+; ../UART_RX.vhd                   ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX.vhd ;         ;
+; ../TOP.vhd                       ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd     ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 
 
@@ -188,30 +189,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 484         ;
+; Estimated Total logic elements              ; 619         ;
 ;                                             ;             ;
-; Total combinational functions               ; 226         ;
+; Total combinational functions               ; 229         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 154         ;
-;     -- 3 input functions                    ; 20          ;
-;     -- <=2 input functions                  ; 52          ;
+;     -- 4 input functions                    ; 148         ;
+;     -- 3 input functions                    ; 21          ;
+;     -- <=2 input functions                  ; 60          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 202         ;
-;     -- arithmetic mode                      ; 24          ;
+;     -- normal mode                          ; 201         ;
+;     -- arithmetic mode                      ; 28          ;
 ;                                             ;             ;
-; Total registers                             ; 326         ;
-;     -- Dedicated logic registers            ; 326         ;
+; Total registers                             ; 458         ;
+;     -- Dedicated logic registers            ; 458         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 6           ;
+; I/O pins                                    ; 7           ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_Clk~input ;
-; Maximum fan-out                             ; 326         ;
-; Total fan-out                               ; 1769        ;
-; Average fan-out                             ; 3.14        ;
+; Maximum fan-out                             ; 458         ;
+; Total fan-out                               ; 2171        ;
+; Average fan-out                             ; 3.10        ;
 +---------------------------------------------+-------------+
 
 
@@ -220,9 +221,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
-; |UART_TOP                  ; 226 (0)             ; 326 (0)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |UART_TOP                      ; UART_TOP    ; work         ;
-;    |UART_RX:UART_RX_inst|  ; 95 (95)             ; 163 (163)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_TOP|UART_RX:UART_RX_inst ; UART_RX     ; work         ;
-;    |UART_TX:UART_TX_inst|  ; 131 (131)           ; 163 (163)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_TOP|UART_TX:UART_TX_inst ; UART_TX     ; work         ;
+; |UART_TOP                  ; 229 (1)             ; 458 (131)                 ; 0           ; 0            ; 0       ; 0         ; 7    ; 0            ; |UART_TOP                      ; UART_TOP    ; work         ;
+;    |UART_RX:UART_RX_inst|  ; 91 (91)             ; 163 (163)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_TOP|UART_RX:UART_RX_inst ; UART_RX     ; work         ;
+;    |UART_TX:UART_TX_inst|  ; 137 (137)           ; 164 (164)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_TOP|UART_TX:UART_TX_inst ; UART_TX     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -261,12 +262,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 326   ;
+; Total registers                              ; 458   ;
 ; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 290   ;
+; Number of registers using Clock Enable       ; 429   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -277,23 +278,24 @@ Encoding Type:  One-Hot
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; UART_TX:UART_TX_inst|o_TX_Serial       ; 2       ;
-; Total number of inverted registers = 1 ;         ;
+; UART_TX:UART_TX_inst|r_Byte_Index[0]   ; 33      ;
+; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |UART_TOP|UART_TX:UART_TX_inst|r_Clk_Count[10] ;
-; 7:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |UART_TOP|UART_RX:UART_RX_inst|r_Clk_Count[1]  ;
-; 20:1               ; 8 bits    ; 104 LEs       ; 88 LEs               ; 16 LEs                 ; Yes        ; |UART_TOP|UART_TX:UART_TX_inst|r_TX_Data[1]    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |UART_TOP|UART_TX:UART_TX_inst|r_Bit_Index     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |UART_TOP|UART_RX:UART_RX_inst|r_Bit_Index     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_TOP|UART_TX:UART_TX_inst|Selector32      ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |UART_TOP|UART_RX:UART_RX_inst|Selector21      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |UART_TOP|UART_TX:UART_TX_inst|r_Clk_Count[10]     ;
+; 7:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |UART_TOP|UART_RX:UART_RX_inst|r_Clk_Count[11]     ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 88 LEs               ; 16 LEs                 ; Yes        ; |UART_TOP|UART_TX:UART_TX_inst|r_TX_Data[1]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |UART_TOP|UART_TX:UART_TX_inst|r_Bit_Index         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |UART_TOP|UART_RX:UART_RX_inst|r_Bit_Index         ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_TOP|UART_TX:UART_TX_inst|Selector33          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |UART_TOP|UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -352,24 +354,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
-; cycloneiii_ff         ; 326                         ;
-;     ENA               ; 256                         ;
+; boundary_port         ; 7                           ;
+; cycloneiii_ff         ; 458                         ;
+;     CLR               ; 4                           ;
+;     ENA               ; 395                         ;
 ;     ENA SCLR          ; 26                          ;
 ;     ENA SLD           ; 8                           ;
-;     plain             ; 36                          ;
-; cycloneiii_lcell_comb ; 228                         ;
-;     arith             ; 24                          ;
-;         2 data inputs ; 24                          ;
-;     normal            ; 204                         ;
+;     plain             ; 25                          ;
+; cycloneiii_lcell_comb ; 231                         ;
+;     arith             ; 28                          ;
+;         2 data inputs ; 28                          ;
+;     normal            ; 203                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 154                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 148                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.60                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -378,8 +381,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/QUARTUS/output_files/TOP.map.eqn.
 
 
 +-------------------------------+
@@ -388,50 +397,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Jan 10 18:58:36 2025
+    Info: Processing started: Sat Jan 11 05:26:41 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TOP -c TOP
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/uart/uart_tx_tb.vhd
-    Info (12022): Found design unit 1: UART_TX_tb-behave File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX_TB.vhd Line: 8
-    Info (12023): Found entity 1: UART_TX_tb File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX_TB.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/uart/uart_tx.vhd
-    Info (12022): Found design unit 1: UART_TX-RTL File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 23
-    Info (12023): Found entity 1: UART_TX File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/uart/uart_rx_tb.vhd
-    Info (12022): Found design unit 1: UART_RX_tb-behave File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_RX_TB.vhd Line: 13
-    Info (12023): Found entity 1: UART_RX_tb File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_RX_TB.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/uart/uart_rx.vhd
-    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_RX.vhd Line: 22
-    Info (12023): Found entity 1: UART_RX File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_RX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/uart/top.vhd
-    Info (12022): Found design unit 1: UART_TOP-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 21
-    Info (12023): Found entity 1: UART_TOP File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/uart/uart_tx_tb.vhd
+    Info (12022): Found design unit 1: UART_TX_tb-behave File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX_TB.vhd Line: 8
+    Info (12023): Found entity 1: UART_TX_tb File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX_TB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/uart/uart_tx.vhd
+    Info (12022): Found design unit 1: UART_TX-RTL File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 23
+    Info (12023): Found entity 1: UART_TX File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/uart/uart_rx_tb.vhd
+    Info (12022): Found design unit 1: UART_RX_tb-behave File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX_TB.vhd Line: 13
+    Info (12023): Found entity 1: UART_RX_tb File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX_TB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/uart/uart_rx.vhd
+    Info (12022): Found design unit 1: UART_RX-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX.vhd Line: 23
+    Info (12023): Found entity 1: UART_RX File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/uart/top.vhd
+    Info (12022): Found design unit 1: UART_TOP-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 23
+    Info (12023): Found entity 1: UART_TOP File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 5
 Info (12127): Elaborating entity "UART_TOP" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at TOP.vhd(17): used explicit default value for signal "o_LED_compare" because signal was never assigned a value File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 17
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(23): object "s_RX_DV" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 23
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(24): object "s_RX_128DV" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 24
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(25): object "s_RX_Byte" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 25
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(31): object "s_TX_Active" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(32): object "s_TX_Done" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 32
-Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:UART_RX_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 81
-Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:UART_TX_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 96
-Warning (10036): Verilog HDL or VHDL warning at UART_TX.vhd(34): object "r_TX_Done" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 34
+Warning (10541): VHDL Signal Declaration warning at TOP.vhd(14): used implicit default value for signal "o_LED_87" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at TOP.vhd(15): used implicit default value for signal "o_LED_86" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 15
+Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(27): object "s_RX_DV" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(28): object "s_RX_128DV" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(29): object "s_RX_Byte" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(35): object "s_TX_Active" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at TOP.vhd(36): object "s_TX_Done" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 36
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:UART_RX_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at UART_RX.vhd(59): signal "i_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_RX.vhd Line: 59
+Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:UART_TX_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 103
+Warning (10036): Verilog HDL or VHDL warning at UART_TX.vhd(34): object "r_TX_Done" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/UART_TX.vhd Line: 34
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_LED_compare" is stuck at VCC File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 17
+    Warning (13410): Pin "o_LED_87" is stuck at GND File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 14
+    Warning (13410): Pin "o_LED_86" is stuck at GND File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/UART/TOP.vhd Line: 14
-Info (21057): Implemented 492 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 626 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 486 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 619 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 4811 megabytes
-    Info: Processing ended: Fri Jan 10 18:59:05 2025
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Processing ended: Sat Jan 11 05:26:52 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

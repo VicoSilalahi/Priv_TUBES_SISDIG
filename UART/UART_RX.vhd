@@ -12,6 +12,7 @@ entity UART_RX is
   );
   port (
     i_Clk       : in std_logic; -- Internal Clock
+    i_reset     : in std_logic;
     i_RX_Serial : in std_logic; -- Input RX Pin (Receive from Client/PC)
     o_RX_DV     : out std_logic; -- Output Signal when a byte has been received TODO: Create the mechanism for 128-bit DV
     o_RX_128DV  : out std_logic;
@@ -55,7 +56,11 @@ begin
   -- Purpose: Control RX state machine and store data in memory
   p_UART_RX : process (i_Clk)
   begin
-    if rising_edge(i_Clk) then
+    if i_reset = '1' then
+      r_MEM_Index <= 0;
+      -- r_SM_Main <= s_Idle;
+      -- MEM_UART <= (others => (others => '0'));
+    elsif rising_edge(i_Clk) then
       case r_SM_Main is
         when s_Idle =>
           r_RX_DV     <= '0';

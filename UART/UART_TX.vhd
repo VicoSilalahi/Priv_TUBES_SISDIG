@@ -28,7 +28,7 @@ architecture RTL of UART_TX is
 
   signal r_Clk_Count  : integer range 0 to g_CLKS_PER_BIT - 1 := 0; -- Clock Indexer
   signal r_Bit_Index  : integer range 0 to 7                  := 0; -- 8 Bits Total, for indexing r_TX_Data
-  signal r_Byte_Index : integer range 0 to 15                 := 0; -- 16 Bytes Total, for indexing r_TX_Block
+  signal r_Byte_Index : integer range 1 to 16                 := 1; -- 16 Bytes Total, for indexing r_TX_Block
   signal r_TX_Data    : std_logic_vector(7 downto 0)          := (others => '0'); -- Temporary Buffer for each Byte
   signal r_TX_Block   : std_logic_vector(127 downto 0)        := (others => '0'); -- Internal Signal for the i_TX_Block
   signal r_TX_Done    : std_logic                             := '0'; -- Unused, TODO: Make it a byte sent indicator
@@ -48,7 +48,7 @@ begin
           r_TX_Done    <= '0'; -- Hasn't sent a data
           r_Clk_Count  <= 0; -- Resets/Initial clock count
           r_Bit_Index  <= 0;
-          r_Byte_Index <= 0;
+          r_Byte_Index <= 1;
 
           if i_TX_DV = '1' then -- Instructed to start the transmission
             r_TX_Block <= i_TX_Block; -- Load input block
@@ -97,23 +97,23 @@ begin
             r_SM_Main   <= s_Next_Byte; -- Initiate the transmission of the next Byte
           end if;
 
-
         when s_Next_Byte => -- Load Next Byte
-          if r_Byte_Index < 15 then -- Byte Indexing
+          if r_Byte_Index < 16 then -- Byte Indexing (0 to 15, for 16 bytes)
             r_Byte_Index <= r_Byte_Index + 1;
-            r_TX_Data    <= r_TX_Block((r_Byte_Index + 1) * 8 - 1 downto r_Byte_Index * 8); -- To get the prefered Byte
+            r_TX_Data    <= r_TX_Block((r_Byte_Index * 8) + 7 downto r_Byte_Index * 8); -- Correct byte loading
             r_SM_Main    <= s_TX_Start_Bit;
           else
-            r_Block_Done <= '1'; -- Indicates that all Bytes has been transmitted
-            r_SM_Main    <= s_Cleanup;
+            -- This condition ensures that the last byte is processed correctly
+            r_Block_Done <= '1'; -- Indicates that all Bytes have been transmitted
+            r_SM_Main    <= s_Cleanup; -- Cleanup state to return to idle
           end if;
 
           -- Cleanup State
         when s_Cleanup =>
-          o_TX_Active <= '0';
-          r_TX_Done   <= '0';
+          o_TX_Active  <= '0';
+          r_TX_Done    <= '0';
           r_Block_Done <= '0';
-          r_SM_Main   <= s_Idle;
+          r_SM_Main    <= s_Idle;
 
         when others =>
           r_SM_Main <= s_Idle;

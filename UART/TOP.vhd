@@ -11,14 +11,18 @@ entity UART_TOP is
     i_RX_Serial : in std_logic; -- UART RX input pin to receive FROM client
     i_button    : in std_logic;
     o_TX_Serial : out std_logic := '1'; -- UART TX output pin to transmit TO Client
-    reset       : in std_logic  := '0';
+    o_LED_87    : out std_logic;
+    o_LED_86    : out std_logic;
+    reset       : in std_logic := '0'
 
     -- FOR FPGA testing Simulation IOs only, TODO: Delete Later
-    o_LED_compare : out std_logic := '1'
+    -- o_LED_compare : out std_logic := '1'
   );
 end UART_TOP;
 
 architecture rtl of UART_TOP is
+  signal s_reset : std_logic;
+
   -- Signal for RX
   signal s_RX_DV    : std_logic;
   signal s_RX_128DV : std_logic;
@@ -43,6 +47,7 @@ architecture rtl of UART_TOP is
     );
     port (
       i_Clk       : in std_logic;
+      i_reset     : in std_logic;
       i_RX_Serial : in std_logic; -- RX Pin
       o_RX_DV     : out std_logic;
       o_RX_128DV  : out std_logic;
@@ -75,6 +80,7 @@ architecture rtl of UART_TOP is
   constant M_SECONDS : integer := 2; -- Duration m in seconds
   constant N_CYCLES  : integer := 10; -- Number of cycles the signal stays high
   constant M_COUNT   : integer := CLK_FREQ * M_SECONDS; -- Total clocks for m seconds
+
 begin
 
   -- Instantiate UART_RX
@@ -85,6 +91,7 @@ begin
   port map
   (
     i_Clk       => i_Clk,
+    i_reset     => s_reset,
     i_RX_Serial => i_RX_Serial,
     o_RX_DV     => s_RX_DV,
     o_RX_128DV  => s_RX_128DV,
@@ -106,39 +113,47 @@ begin
     o_TX_Serial => o_TX_Serial,
     o_TX_Done   => s_TX_Done
   );
-  -- Process to generate the timed pulse
+  -- Button synchronization and edge detection
   process (i_Clk, reset)
   begin
-    if reset = '1' then
-      clk_counter   <= 0;
-      pulse_counter <= 0;
-      pulse_active  <= '0';
-      time_elapsed  <= '0';
-    elsif rising_edge(i_Clk) then
-      if time_elapsed = '0' then
-        -- Count clock cycles for m seconds
-        if clk_counter < M_COUNT - 1 then
-          clk_counter <= clk_counter + 1;
-        else
-          clk_counter  <= 0;
-          time_elapsed <= '1'; -- m seconds elapsed
-        end if;
-      elsif pulse_active = '1' then
-        -- Count clock cycles for n cycles
-        if pulse_counter < N_CYCLES - 1 then
-          pulse_counter <= pulse_counter + 1;
-        else
-          pulse_counter <= 0;
-          pulse_active  <= '0'; -- End the pulse
-          time_elapsed  <= '0'; -- Reset time elapsed for the next cycle
-        end if;
+    s_reset <= not reset;
+
+    -- if s_reset = '1' then
+    --   s_button_sync <= '0';
+    --   s_button_prev <= '0';
+    --   s_button_edge <= '0';
+    if rising_edge(i_Clk) then
+      -- Synchronize button input to avoid metastability
+      s_button_sync <= i_button;
+      -- Detect rising edge (button press) and falling edge (button release)
+      if s_button_sync = '1' and s_button_prev = '0' then
+        s_button_edge <= '1'; -- Rising edge detected (button press)
       else
-        -- Trigger the pulse
-        pulse_active <= '1';
+        s_button_edge <= '0'; -- No rising edge
+      end if;
+      s_button_prev <= s_button_sync;
+    end if;
+  end process;
+
+  -- Button press triggers data transmission
+  s_TX_DV <= '1' when s_button_edge = '1' else
+    '0';
+
+  -- Ensure that the transmission logic works correctly
+  process (i_Clk)
+  begin
+    if rising_edge(i_Clk) then
+      if s_TX_DV = '1' then
+        -- Start sending data on button press
+        s_TX_Block <= s_RX_Block; -- Load the block to be sent
       end if;
     end if;
   end process;
 
-  s_TX_Block <= s_RX_Block;
-  s_TX_DV <= not i_button; -- Assign pulse signal to output
+  -- s_TX_Block <= s_RX_Block;
+  -- s_TX_DV    <= not i_button; -- Assign pulse signal to output
+  -- o_LED_87   <= '0' when s_RX_Block(127 downto 0) = "00110001" else
+  --   '1';
+  -- o_LED_86 <= not s_TX_DV;
+  -- -- o_LED <= '0' when s_RX_Block /= (others => '0') else '1';
 end rtl;

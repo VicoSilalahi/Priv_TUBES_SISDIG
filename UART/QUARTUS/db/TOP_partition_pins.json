@@ -12,6 +12,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "i_button",
 					"strict" : false
 				},

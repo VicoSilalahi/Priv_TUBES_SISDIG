@@ -93,12 +93,12 @@ nCE                          : 21        :        :                   :         
 GND                          : 22        : gnd    :                   :         :           :                
 i_Clk                        : 23        : input  : 2.5 V             :         : 1         : Y              
 GND+                         : 24        :        :                   :         : 2         :                
-GND+                         : 25        :        :                   :         : 2         :                
+reset                        : 25        : input  : 2.5 V             :         : 2         : Y              
 VCCIO2                       : 26        : power  :                   : 2.5V    : 2         :                
 GND                          : 27        : gnd    :                   :         :           :                
 RESERVED_INPUT               : 28        :        :                   :         : 2         :                
 VCCINT                       : 29        : power  :                   : 1.2V    :           :                
-reset                        : 30        : input  : 2.5 V             :         : 2         : N              
+RESERVED_INPUT               : 30        :        :                   :         : 2         :                
 RESERVED_INPUT               : 31        :        :                   :         : 2         :                
 RESERVED_INPUT               : 32        :        :                   :         : 2         :                
 RESERVED_INPUT               : 33        :        :                   :         : 2         :                
@@ -154,8 +154,8 @@ GND                          : 82        : gnd    :                   :         
 RESERVED_INPUT               : 83        :        :                   :         : 5         :                
 RESERVED_INPUT               : 84        :        :                   :         : 5         :                
 RESERVED_INPUT               : 85        :        :                   :         : 5         :                
-o_LED_compare                : 86        : output : 2.5 V             :         : 5         : Y              
-RESERVED_INPUT               : 87        :        :                   :         : 5         :                
+o_LED_86                     : 86        : output : 2.5 V             :         : 5         : Y              
+o_LED_87                     : 87        : output : 2.5 V             :         : 5         : Y              
 i_button                     : 88        : input  : 2.5 V             :         : 5         : Y              
 GND+                         : 89        :        :                   :         : 5         :                
 GND+                         : 90        :        :                   :         : 6         :                
