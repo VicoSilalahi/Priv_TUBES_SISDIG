@@ -60,6 +60,84 @@ C1_r_TX_Data[0] = DFFEAS(C1L316, i_Clk,  ,  , C1L318, s_TX_Block[0],  ,  , !C1_r
 C1_r_TX_Data[3] = DFFEAS(C1L286, i_Clk,  ,  , C1L318, s_TX_Block[3],  ,  , !C1_r_SM_Main.s_Next_Byte);
 
 
+--B1_r_Clk_Count[12] is UART_RX:UART_RX_inst|r_Clk_Count[12]
+--register power-up is low
+
+B1_r_Clk_Count[12] = DFFEAS(B1L235, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[10] is UART_RX:UART_RX_inst|r_Clk_Count[10]
+--register power-up is low
+
+B1_r_Clk_Count[10] = DFFEAS(B1L227, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[11] is UART_RX:UART_RX_inst|r_Clk_Count[11]
+--register power-up is low
+
+B1_r_Clk_Count[11] = DFFEAS(B1L230, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[7] is UART_RX:UART_RX_inst|r_Clk_Count[7]
+--register power-up is low
+
+B1_r_Clk_Count[7] = DFFEAS(B1L218, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[8] is UART_RX:UART_RX_inst|r_Clk_Count[8]
+--register power-up is low
+
+B1_r_Clk_Count[8] = DFFEAS(B1L221, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[9] is UART_RX:UART_RX_inst|r_Clk_Count[9]
+--register power-up is low
+
+B1_r_Clk_Count[9] = DFFEAS(B1L224, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[2] is UART_RX:UART_RX_inst|r_Clk_Count[2]
+--register power-up is low
+
+B1_r_Clk_Count[2] = DFFEAS(B1L203, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[0] is UART_RX:UART_RX_inst|r_Clk_Count[0]
+--register power-up is low
+
+B1_r_Clk_Count[0] = DFFEAS(B1L197, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[1] is UART_RX:UART_RX_inst|r_Clk_Count[1]
+--register power-up is low
+
+B1_r_Clk_Count[1] = DFFEAS(B1L200, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[3] is UART_RX:UART_RX_inst|r_Clk_Count[3]
+--register power-up is low
+
+B1_r_Clk_Count[3] = DFFEAS(B1L206, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[5] is UART_RX:UART_RX_inst|r_Clk_Count[5]
+--register power-up is low
+
+B1_r_Clk_Count[5] = DFFEAS(B1L212, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[4] is UART_RX:UART_RX_inst|r_Clk_Count[4]
+--register power-up is low
+
+B1_r_Clk_Count[4] = DFFEAS(B1L209, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
+--B1_r_Clk_Count[6] is UART_RX:UART_RX_inst|r_Clk_Count[6]
+--register power-up is low
+
+B1_r_Clk_Count[6] = DFFEAS(B1L215, i_Clk,  ,  , B1L237,  ,  , B1L233,  );
+
+
 --C1_r_Clk_Count[10] is UART_TX:UART_TX_inst|r_Clk_Count[10]
 --register power-up is low
 
@@ -136,6 +214,94 @@ C1_r_Clk_Count[9] = DFFEAS(C1L68, i_Clk,  ,  , C1L27,  ,  , C1L73,  );
 --register power-up is low
 
 C1_r_Clk_Count[12] = DFFEAS(C1L78, i_Clk,  ,  , C1L27,  ,  , C1L73,  );
+
+
+--B1L197 is UART_RX:UART_RX_inst|r_Clk_Count[0]~15
+B1L197 = B1_r_Clk_Count[0] $ (VCC);
+
+--B1L198 is UART_RX:UART_RX_inst|r_Clk_Count[0]~16
+B1L198 = CARRY(B1_r_Clk_Count[0]);
+
+
+--B1L200 is UART_RX:UART_RX_inst|r_Clk_Count[1]~17
+B1L200 = (B1_r_Clk_Count[1] & (!B1L198)) # (!B1_r_Clk_Count[1] & ((B1L198) # (GND)));
+
+--B1L201 is UART_RX:UART_RX_inst|r_Clk_Count[1]~18
+B1L201 = CARRY((!B1L198) # (!B1_r_Clk_Count[1]));
+
+
+--B1L203 is UART_RX:UART_RX_inst|r_Clk_Count[2]~19
+B1L203 = (B1_r_Clk_Count[2] & (B1L201 $ (GND))) # (!B1_r_Clk_Count[2] & (!B1L201 & VCC));
+
+--B1L204 is UART_RX:UART_RX_inst|r_Clk_Count[2]~20
+B1L204 = CARRY((B1_r_Clk_Count[2] & !B1L201));
+
+
+--B1L206 is UART_RX:UART_RX_inst|r_Clk_Count[3]~21
+B1L206 = (B1_r_Clk_Count[3] & (!B1L204)) # (!B1_r_Clk_Count[3] & ((B1L204) # (GND)));
+
+--B1L207 is UART_RX:UART_RX_inst|r_Clk_Count[3]~22
+B1L207 = CARRY((!B1L204) # (!B1_r_Clk_Count[3]));
+
+
+--B1L209 is UART_RX:UART_RX_inst|r_Clk_Count[4]~23
+B1L209 = (B1_r_Clk_Count[4] & (B1L207 $ (GND))) # (!B1_r_Clk_Count[4] & (!B1L207 & VCC));
+
+--B1L210 is UART_RX:UART_RX_inst|r_Clk_Count[4]~24
+B1L210 = CARRY((B1_r_Clk_Count[4] & !B1L207));
+
+
+--B1L212 is UART_RX:UART_RX_inst|r_Clk_Count[5]~25
+B1L212 = (B1_r_Clk_Count[5] & (!B1L210)) # (!B1_r_Clk_Count[5] & ((B1L210) # (GND)));
+
+--B1L213 is UART_RX:UART_RX_inst|r_Clk_Count[5]~26
+B1L213 = CARRY((!B1L210) # (!B1_r_Clk_Count[5]));
+
+
+--B1L215 is UART_RX:UART_RX_inst|r_Clk_Count[6]~27
+B1L215 = (B1_r_Clk_Count[6] & (B1L213 $ (GND))) # (!B1_r_Clk_Count[6] & (!B1L213 & VCC));
+
+--B1L216 is UART_RX:UART_RX_inst|r_Clk_Count[6]~28
+B1L216 = CARRY((B1_r_Clk_Count[6] & !B1L213));
+
+
+--B1L218 is UART_RX:UART_RX_inst|r_Clk_Count[7]~29
+B1L218 = (B1_r_Clk_Count[7] & (!B1L216)) # (!B1_r_Clk_Count[7] & ((B1L216) # (GND)));
+
+--B1L219 is UART_RX:UART_RX_inst|r_Clk_Count[7]~30
+B1L219 = CARRY((!B1L216) # (!B1_r_Clk_Count[7]));
+
+
+--B1L221 is UART_RX:UART_RX_inst|r_Clk_Count[8]~31
+B1L221 = (B1_r_Clk_Count[8] & (B1L219 $ (GND))) # (!B1_r_Clk_Count[8] & (!B1L219 & VCC));
+
+--B1L222 is UART_RX:UART_RX_inst|r_Clk_Count[8]~32
+B1L222 = CARRY((B1_r_Clk_Count[8] & !B1L219));
+
+
+--B1L224 is UART_RX:UART_RX_inst|r_Clk_Count[9]~33
+B1L224 = (B1_r_Clk_Count[9] & (!B1L222)) # (!B1_r_Clk_Count[9] & ((B1L222) # (GND)));
+
+--B1L225 is UART_RX:UART_RX_inst|r_Clk_Count[9]~34
+B1L225 = CARRY((!B1L222) # (!B1_r_Clk_Count[9]));
+
+
+--B1L227 is UART_RX:UART_RX_inst|r_Clk_Count[10]~35
+B1L227 = (B1_r_Clk_Count[10] & (B1L225 $ (GND))) # (!B1_r_Clk_Count[10] & (!B1L225 & VCC));
+
+--B1L228 is UART_RX:UART_RX_inst|r_Clk_Count[10]~36
+B1L228 = CARRY((B1_r_Clk_Count[10] & !B1L225));
+
+
+--B1L230 is UART_RX:UART_RX_inst|r_Clk_Count[11]~37
+B1L230 = (B1_r_Clk_Count[11] & (!B1L228)) # (!B1_r_Clk_Count[11] & ((B1L228) # (GND)));
+
+--B1L231 is UART_RX:UART_RX_inst|r_Clk_Count[11]~38
+B1L231 = CARRY((!B1L228) # (!B1_r_Clk_Count[11]));
+
+
+--B1L235 is UART_RX:UART_RX_inst|r_Clk_Count[12]~39
+B1L235 = B1_r_Clk_Count[12] $ (!B1L231);
 
 
 --C1L41 is UART_TX:UART_TX_inst|r_Clk_Count[0]~13
@@ -258,188 +424,138 @@ C1L12 = CARRY((!C1L9) # (!C1_r_Byte_Index[3]));
 C1L14 = C1_r_Byte_Index[4] $ (!C1L12);
 
 
---B1_r_Clk_Count[12] is UART_RX:UART_RX_inst|r_Clk_Count[12]
---register power-up is low
-
-B1_r_Clk_Count[12] = DFFEAS(B1L236, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[11] is UART_RX:UART_RX_inst|r_Clk_Count[11]
---register power-up is low
-
-B1_r_Clk_Count[11] = DFFEAS(B1L231, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[7] is UART_RX:UART_RX_inst|r_Clk_Count[7]
---register power-up is low
-
-B1_r_Clk_Count[7] = DFFEAS(B1L219, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[8] is UART_RX:UART_RX_inst|r_Clk_Count[8]
---register power-up is low
-
-B1_r_Clk_Count[8] = DFFEAS(B1L222, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[9] is UART_RX:UART_RX_inst|r_Clk_Count[9]
---register power-up is low
-
-B1_r_Clk_Count[9] = DFFEAS(B1L225, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[5] is UART_RX:UART_RX_inst|r_Clk_Count[5]
---register power-up is low
-
-B1_r_Clk_Count[5] = DFFEAS(B1L213, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[4] is UART_RX:UART_RX_inst|r_Clk_Count[4]
---register power-up is low
-
-B1_r_Clk_Count[4] = DFFEAS(B1L210, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[6] is UART_RX:UART_RX_inst|r_Clk_Count[6]
---register power-up is low
-
-B1_r_Clk_Count[6] = DFFEAS(B1L216, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[2] is UART_RX:UART_RX_inst|r_Clk_Count[2]
---register power-up is low
-
-B1_r_Clk_Count[2] = DFFEAS(B1L204, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[0] is UART_RX:UART_RX_inst|r_Clk_Count[0]
---register power-up is low
-
-B1_r_Clk_Count[0] = DFFEAS(B1L198, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[1] is UART_RX:UART_RX_inst|r_Clk_Count[1]
---register power-up is low
-
-B1_r_Clk_Count[1] = DFFEAS(B1L201, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[3] is UART_RX:UART_RX_inst|r_Clk_Count[3]
---register power-up is low
-
-B1_r_Clk_Count[3] = DFFEAS(B1L207, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1_r_Clk_Count[10] is UART_RX:UART_RX_inst|r_Clk_Count[10]
---register power-up is low
-
-B1_r_Clk_Count[10] = DFFEAS(B1L228, i_Clk,  ,  , B1L238,  ,  , B1L234,  );
-
-
---B1L198 is UART_RX:UART_RX_inst|r_Clk_Count[0]~13
-B1L198 = B1_r_Clk_Count[0] $ (VCC);
-
---B1L199 is UART_RX:UART_RX_inst|r_Clk_Count[0]~14
-B1L199 = CARRY(B1_r_Clk_Count[0]);
-
-
---B1L201 is UART_RX:UART_RX_inst|r_Clk_Count[1]~15
-B1L201 = (B1_r_Clk_Count[1] & (!B1L199)) # (!B1_r_Clk_Count[1] & ((B1L199) # (GND)));
-
---B1L202 is UART_RX:UART_RX_inst|r_Clk_Count[1]~16
-B1L202 = CARRY((!B1L199) # (!B1_r_Clk_Count[1]));
-
-
---B1L204 is UART_RX:UART_RX_inst|r_Clk_Count[2]~17
-B1L204 = (B1_r_Clk_Count[2] & (B1L202 $ (GND))) # (!B1_r_Clk_Count[2] & (!B1L202 & VCC));
-
---B1L205 is UART_RX:UART_RX_inst|r_Clk_Count[2]~18
-B1L205 = CARRY((B1_r_Clk_Count[2] & !B1L202));
-
-
---B1L207 is UART_RX:UART_RX_inst|r_Clk_Count[3]~19
-B1L207 = (B1_r_Clk_Count[3] & (!B1L205)) # (!B1_r_Clk_Count[3] & ((B1L205) # (GND)));
-
---B1L208 is UART_RX:UART_RX_inst|r_Clk_Count[3]~20
-B1L208 = CARRY((!B1L205) # (!B1_r_Clk_Count[3]));
-
-
---B1L210 is UART_RX:UART_RX_inst|r_Clk_Count[4]~21
-B1L210 = (B1_r_Clk_Count[4] & (B1L208 $ (GND))) # (!B1_r_Clk_Count[4] & (!B1L208 & VCC));
-
---B1L211 is UART_RX:UART_RX_inst|r_Clk_Count[4]~22
-B1L211 = CARRY((B1_r_Clk_Count[4] & !B1L208));
-
-
---B1L213 is UART_RX:UART_RX_inst|r_Clk_Count[5]~23
-B1L213 = (B1_r_Clk_Count[5] & (!B1L211)) # (!B1_r_Clk_Count[5] & ((B1L211) # (GND)));
-
---B1L214 is UART_RX:UART_RX_inst|r_Clk_Count[5]~24
-B1L214 = CARRY((!B1L211) # (!B1_r_Clk_Count[5]));
-
-
---B1L216 is UART_RX:UART_RX_inst|r_Clk_Count[6]~25
-B1L216 = (B1_r_Clk_Count[6] & (B1L214 $ (GND))) # (!B1_r_Clk_Count[6] & (!B1L214 & VCC));
-
---B1L217 is UART_RX:UART_RX_inst|r_Clk_Count[6]~26
-B1L217 = CARRY((B1_r_Clk_Count[6] & !B1L214));
-
-
---B1L219 is UART_RX:UART_RX_inst|r_Clk_Count[7]~27
-B1L219 = (B1_r_Clk_Count[7] & (!B1L217)) # (!B1_r_Clk_Count[7] & ((B1L217) # (GND)));
-
---B1L220 is UART_RX:UART_RX_inst|r_Clk_Count[7]~28
-B1L220 = CARRY((!B1L217) # (!B1_r_Clk_Count[7]));
-
-
---B1L222 is UART_RX:UART_RX_inst|r_Clk_Count[8]~29
-B1L222 = (B1_r_Clk_Count[8] & (B1L220 $ (GND))) # (!B1_r_Clk_Count[8] & (!B1L220 & VCC));
-
---B1L223 is UART_RX:UART_RX_inst|r_Clk_Count[8]~30
-B1L223 = CARRY((B1_r_Clk_Count[8] & !B1L220));
-
-
---B1L225 is UART_RX:UART_RX_inst|r_Clk_Count[9]~31
-B1L225 = (B1_r_Clk_Count[9] & (!B1L223)) # (!B1_r_Clk_Count[9] & ((B1L223) # (GND)));
-
---B1L226 is UART_RX:UART_RX_inst|r_Clk_Count[9]~32
-B1L226 = CARRY((!B1L223) # (!B1_r_Clk_Count[9]));
-
-
---B1L228 is UART_RX:UART_RX_inst|r_Clk_Count[10]~33
-B1L228 = (B1_r_Clk_Count[10] & (B1L226 $ (GND))) # (!B1_r_Clk_Count[10] & (!B1L226 & VCC));
-
---B1L229 is UART_RX:UART_RX_inst|r_Clk_Count[10]~34
-B1L229 = CARRY((B1_r_Clk_Count[10] & !B1L226));
-
-
---B1L231 is UART_RX:UART_RX_inst|r_Clk_Count[11]~35
-B1L231 = (B1_r_Clk_Count[11] & (!B1L229)) # (!B1_r_Clk_Count[11] & ((B1L229) # (GND)));
-
---B1L232 is UART_RX:UART_RX_inst|r_Clk_Count[11]~36
-B1L232 = CARRY((!B1L229) # (!B1_r_Clk_Count[11]));
-
-
---B1L236 is UART_RX:UART_RX_inst|r_Clk_Count[12]~37
-B1L236 = B1_r_Clk_Count[12] $ (!B1L232);
-
-
 --o_TX_Serial is o_TX_Serial
 o_TX_Serial = OUTPUT(C1L28);
 
 
 --o_LED_87 is o_LED_87
-o_LED_87 = OUTPUT(A1L141);
+o_LED_87 = OUTPUT(A1L11);
 
 
 --o_LED_86 is o_LED_86
-o_LED_86 = OUTPUT(A1L141);
+o_LED_86 = OUTPUT(A1L147);
 
 
 --C1_o_TX_Serial is UART_TX:UART_TX_inst|o_TX_Serial
 --register power-up is low
 
 C1_o_TX_Serial = DFFEAS(C1L228, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][5] is UART_RX:UART_RX_inst|MEM_UART[15][5]
+--register power-up is low
+
+B1_MEM_UART[15][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][4] is UART_RX:UART_RX_inst|MEM_UART[15][4]
+--register power-up is low
+
+B1_MEM_UART[15][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][7] is UART_RX:UART_RX_inst|MEM_UART[15][7]
+--register power-up is low
+
+B1_MEM_UART[15][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][6] is UART_RX:UART_RX_inst|MEM_UART[15][6]
+--register power-up is low
+
+B1_MEM_UART[15][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--A1L6 is o_LED_87~0
+A1L6 = (B1_MEM_UART[15][5] & (B1_MEM_UART[15][4] & (!B1_MEM_UART[15][7] & !B1_MEM_UART[15][6])));
+
+
+--B1_MEM_UART[15][3] is UART_RX:UART_RX_inst|MEM_UART[15][3]
+--register power-up is low
+
+B1_MEM_UART[15][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][2] is UART_RX:UART_RX_inst|MEM_UART[15][2]
+--register power-up is low
+
+B1_MEM_UART[15][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][1] is UART_RX:UART_RX_inst|MEM_UART[15][1]
+--register power-up is low
+
+B1_MEM_UART[15][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--B1_MEM_UART[15][0] is UART_RX:UART_RX_inst|MEM_UART[15][0]
+--register power-up is low
+
+B1_MEM_UART[15][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L13,  ,  ,  ,  );
+
+
+--A1L7 is o_LED_87~1
+A1L7 = (B1_MEM_UART[15][3] & (!B1_MEM_UART[15][2] & (!B1_MEM_UART[15][1] & !B1_MEM_UART[15][0])));
+
+
+--B1_MEM_UART[14][5] is UART_RX:UART_RX_inst|MEM_UART[14][5]
+--register power-up is low
+
+B1_MEM_UART[14][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][4] is UART_RX:UART_RX_inst|MEM_UART[14][4]
+--register power-up is low
+
+B1_MEM_UART[14][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][7] is UART_RX:UART_RX_inst|MEM_UART[14][7]
+--register power-up is low
+
+B1_MEM_UART[14][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][6] is UART_RX:UART_RX_inst|MEM_UART[14][6]
+--register power-up is low
+
+B1_MEM_UART[14][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--A1L8 is o_LED_87~2
+A1L8 = (B1_MEM_UART[14][5] & (B1_MEM_UART[14][4] & (!B1_MEM_UART[14][7] & !B1_MEM_UART[14][6])));
+
+
+--B1_MEM_UART[14][2] is UART_RX:UART_RX_inst|MEM_UART[14][2]
+--register power-up is low
+
+B1_MEM_UART[14][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][1] is UART_RX:UART_RX_inst|MEM_UART[14][1]
+--register power-up is low
+
+B1_MEM_UART[14][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][0] is UART_RX:UART_RX_inst|MEM_UART[14][0]
+--register power-up is low
+
+B1_MEM_UART[14][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--B1_MEM_UART[14][3] is UART_RX:UART_RX_inst|MEM_UART[14][3]
+--register power-up is low
+
+B1_MEM_UART[14][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L15,  ,  ,  ,  );
+
+
+--A1L9 is o_LED_87~3
+A1L9 = (B1_MEM_UART[14][2] & (B1_MEM_UART[14][1] & (B1_MEM_UART[14][0] & !B1_MEM_UART[14][3])));
+
+
+--A1L10 is o_LED_87~4
+A1L10 = (A1L6 & (A1L7 & (A1L8 & A1L9)));
 
 
 --C1_r_SM_Main.s_TX_Stop_Bit is UART_TX:UART_TX_inst|r_SM_Main.s_TX_Stop_Bit
@@ -457,7 +573,7 @@ C1_r_Bit_Index[2] = DFFEAS(C1L230, i_Clk,  ,  ,  ,  ,  ,  ,  );
 --C1_r_SM_Main.s_TX_Data_Bits is UART_TX:UART_TX_inst|r_SM_Main.s_TX_Data_Bits
 --register power-up is low
 
-C1_r_SM_Main.s_TX_Data_Bits = DFFEAS(C1L322, i_Clk,  ,  ,  ,  ,  ,  ,  );
+C1_r_SM_Main.s_TX_Data_Bits = DFFEAS(C1L323, i_Clk,  ,  ,  ,  ,  ,  ,  );
 
 
 --C1_r_Bit_Index[0] is UART_TX:UART_TX_inst|r_Bit_Index[0]
@@ -505,7 +621,7 @@ C1_r_SM_Main.s_Cleanup = DFFEAS(C1L325, i_Clk,  ,  ,  ,  ,  ,  ,  );
 --C1_r_SM_Main.s_Next_Byte is UART_TX:UART_TX_inst|r_SM_Main.s_Next_Byte
 --register power-up is low
 
-C1_r_SM_Main.s_Next_Byte = DFFEAS(C1L323, i_Clk,  ,  ,  ,  ,  ,  ,  );
+C1_r_SM_Main.s_Next_Byte = DFFEAS(C1L320, i_Clk,  ,  ,  ,  ,  ,  ,  );
 
 
 --C1L27 is UART_TX:UART_TX_inst|o_TX_Serial~0
@@ -524,6 +640,124 @@ C1L228 = (!C1L227 & (C1_r_SM_Main.s_Idle & ((C1L27) # (C1_o_TX_Serial))));
 
 --i_Clk is i_Clk
 i_Clk = INPUT();
+
+
+--B1_r_RX_Byte[5] is UART_RX:UART_RX_inst|r_RX_Byte[5]
+--register power-up is low
+
+B1_r_RX_Byte[5] = DFFEAS(B1L260, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_MEM_Index[3] is UART_RX:UART_RX_inst|r_MEM_Index[3]
+--register power-up is low
+
+B1_r_MEM_Index[3] = DFFEAS(B1L247, i_Clk, reset,  ,  ,  ,  ,  ,  );
+
+
+--reset is reset
+reset = INPUT();
+
+
+--B1_r_SM_Main.s_RX_Stop_Bit is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Stop_Bit
+--register power-up is low
+
+B1_r_SM_Main.s_RX_Stop_Bit = DFFEAS(B1_r_SM_Main.s_RX_Data_Bits, i_Clk,  ,  , B1L272,  ,  ,  ,  );
+
+
+--B1L40 is UART_RX:UART_RX_inst|LessThan1~2
+B1L40 = (!B1_r_Clk_Count[11] & (!B1_r_Clk_Count[7] & (!B1_r_Clk_Count[8] & !B1_r_Clk_Count[9])));
+
+
+--B1L41 is UART_RX:UART_RX_inst|LessThan1~3
+B1L41 = (!B1_r_Clk_Count[3] & (((!B1_r_Clk_Count[1]) # (!B1_r_Clk_Count[0])) # (!B1_r_Clk_Count[2])));
+
+
+--B1L42 is UART_RX:UART_RX_inst|LessThan1~4
+B1L42 = ((!B1_r_Clk_Count[5] & !B1_r_Clk_Count[4])) # (!B1_r_Clk_Count[6]);
+
+
+--B1L43 is UART_RX:UART_RX_inst|LessThan1~5
+B1L43 = (B1_r_Clk_Count[10] & (((B1L40 & B1L46)))) # (!B1_r_Clk_Count[10] & (((B1L40 & B1L46)) # (!B1_r_Clk_Count[11])));
+
+
+--B1L11 is UART_RX:UART_RX_inst|Decoder1~0
+B1L11 = (reset & (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Stop_Bit & !B1L43)));
+
+
+--B1_r_MEM_Index[0] is UART_RX:UART_RX_inst|r_MEM_Index[0]
+--register power-up is low
+
+B1_r_MEM_Index[0] = DFFEAS(B1L240, i_Clk, reset,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_MEM_Index[1] is UART_RX:UART_RX_inst|r_MEM_Index[1]
+--register power-up is low
+
+B1_r_MEM_Index[1] = DFFEAS(B1L243, i_Clk, reset,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_MEM_Index[2] is UART_RX:UART_RX_inst|r_MEM_Index[2]
+--register power-up is low
+
+B1_r_MEM_Index[2] = DFFEAS(B1L245, i_Clk, reset,  ,  ,  ,  ,  ,  );
+
+
+--B1L12 is UART_RX:UART_RX_inst|Decoder1~1
+B1L12 = (B1L11 & (B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
+
+
+--B1L13 is UART_RX:UART_RX_inst|Decoder1~2
+B1L13 = (B1_r_MEM_Index[3] & B1L12);
+
+
+--B1_r_RX_Byte[4] is UART_RX:UART_RX_inst|r_RX_Byte[4]
+--register power-up is low
+
+B1_r_RX_Byte[4] = DFFEAS(B1L258, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[7] is UART_RX:UART_RX_inst|r_RX_Byte[7]
+--register power-up is low
+
+B1_r_RX_Byte[7] = DFFEAS(B1L264, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[6] is UART_RX:UART_RX_inst|r_RX_Byte[6]
+--register power-up is low
+
+B1_r_RX_Byte[6] = DFFEAS(B1L262, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[3] is UART_RX:UART_RX_inst|r_RX_Byte[3]
+--register power-up is low
+
+B1_r_RX_Byte[3] = DFFEAS(B1L256, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[2] is UART_RX:UART_RX_inst|r_RX_Byte[2]
+--register power-up is low
+
+B1_r_RX_Byte[2] = DFFEAS(B1L254, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[1] is UART_RX:UART_RX_inst|r_RX_Byte[1]
+--register power-up is low
+
+B1_r_RX_Byte[1] = DFFEAS(B1L252, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_RX_Byte[0] is UART_RX:UART_RX_inst|r_RX_Byte[0]
+--register power-up is low
+
+B1_r_RX_Byte[0] = DFFEAS(B1L250, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1L14 is UART_RX:UART_RX_inst|Decoder1~3
+B1L14 = (B1L11 & (!B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
+
+
+--B1L15 is UART_RX:UART_RX_inst|Decoder1~4
+B1L15 = (B1_r_MEM_Index[3] & B1L14);
 
 
 --C1L16 is UART_TX:UART_TX_inst|LessThan0~0
@@ -563,7 +797,7 @@ C1L230 = (C1_r_SM_Main.s_TX_Data_Bits & ((C1_r_Bit_Index[2] $ (C1L229)))) # (!C1
 
 
 --C1L320 is UART_TX:UART_TX_inst|Selector33~0
-C1L320 = (C1_r_SM_Main.s_Idle & (C1_r_SM_Main.s_TX_Data_Bits & (!C1_r_SM_Main.s_Cleanup & !C1_r_SM_Main.s_Next_Byte)));
+C1L320 = (!C1L20 & C1_r_SM_Main.s_TX_Stop_Bit);
 
 
 --C1_r_SM_Main.s_TX_Start_Bit is UART_TX:UART_TX_inst|r_SM_Main.s_TX_Start_Bit
@@ -573,11 +807,15 @@ C1_r_SM_Main.s_TX_Start_Bit = DFFEAS(C1L319, i_Clk,  ,  ,  ,  ,  ,  ,  );
 
 
 --C1L321 is UART_TX:UART_TX_inst|Selector33~1
-C1L321 = (C1L86 & ((C1L320) # ((C1_r_SM_Main.s_TX_Start_Bit & !C1L20)))) # (!C1L86 & (((C1_r_SM_Main.s_TX_Start_Bit & !C1L20))));
+C1L321 = (C1_r_SM_Main.s_TX_Start_Bit & !C1L20);
 
 
 --C1L322 is UART_TX:UART_TX_inst|Selector33~2
-C1L322 = (C1L321 & ((C1L20) # (!C1_r_SM_Main.s_TX_Stop_Bit)));
+C1L322 = (C1_r_SM_Main.s_Idle & (C1_r_SM_Main.s_TX_Data_Bits & (!C1_r_SM_Main.s_Cleanup & !C1_r_SM_Main.s_Next_Byte)));
+
+
+--C1L323 is UART_TX:UART_TX_inst|Selector33~3
+C1L323 = (!C1L320 & ((C1L321) # ((C1L86 & C1L322))));
 
 
 --C1_r_TX_Block[53] is UART_TX:UART_TX_inst|r_TX_Block[53]
@@ -755,7 +993,7 @@ C1_r_Byte_Index[4] = DFFEAS(C1L235, i_Clk,  ,  ,  ,  ,  ,  ,  );
 --s_button_edge is s_button_edge
 --register power-up is low
 
-s_button_edge = DFFEAS(A1L7, i_Clk,  ,  ,  ,  ,  ,  ,  );
+s_button_edge = DFFEAS(A1L13, i_Clk,  ,  ,  ,  ,  ,  ,  );
 
 
 --C1L318 is UART_TX:UART_TX_inst|Selector32~0
@@ -1780,12 +2018,200 @@ s_TX_Block[3] = DFFEAS(B1_MEM_UART[0][3], i_Clk,  ,  , s_button_edge,  ,  ,  ,  
 C1L325 = (C1_r_SM_Main.s_Next_Byte & C1_r_Byte_Index[4]);
 
 
---C1L323 is UART_TX:UART_TX_inst|Selector33~3
-C1L323 = (!C1L20 & C1_r_SM_Main.s_TX_Stop_Bit);
-
-
 --C1L317 is UART_TX:UART_TX_inst|Selector31~0
 C1L317 = (!C1_r_SM_Main.s_Cleanup & ((C1_r_SM_Main.s_Idle) # (s_button_edge)));
+
+
+--B1_r_RX_Data is UART_RX:UART_RX_inst|r_RX_Data
+--register power-up is low
+
+B1_r_RX_Data = DFFEAS(B1_r_RX_Data_R, i_Clk,  ,  ,  ,  ,  ,  ,  );
+
+
+--B1_r_Bit_Index[0] is UART_RX:UART_RX_inst|r_Bit_Index[0]
+--register power-up is low
+
+B1_r_Bit_Index[0] = DFFEAS(B1L283, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1_r_Bit_Index[1] is UART_RX:UART_RX_inst|r_Bit_Index[1]
+--register power-up is low
+
+B1_r_Bit_Index[1] = DFFEAS(B1L281, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1_r_Bit_Index[2] is UART_RX:UART_RX_inst|r_Bit_Index[2]
+--register power-up is low
+
+B1_r_Bit_Index[2] = DFFEAS(B1L279, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1_r_SM_Main.s_RX_Data_Bits is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Data_Bits
+--register power-up is low
+
+B1_r_SM_Main.s_RX_Data_Bits = DFFEAS(B1L287, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1L1 is UART_RX:UART_RX_inst|Decoder0~0
+B1L1 = (reset & (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Data_Bits & !B1L43)));
+
+
+--B1L2 is UART_RX:UART_RX_inst|Decoder0~1
+B1L2 = (B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L260 is UART_RX:UART_RX_inst|r_RX_Byte[5]~0
+B1L260 = (B1L2 & (B1_r_RX_Data)) # (!B1L2 & ((B1_r_RX_Byte[5])));
+
+
+--B1L242 is UART_RX:UART_RX_inst|r_MEM_Index[1]~0
+B1L242 = (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Stop_Bit & (B1_r_MEM_Index[0] & !B1L43)));
+
+
+--B1L247 is UART_RX:UART_RX_inst|r_MEM_Index[3]~1
+B1L247 = B1_r_MEM_Index[3] $ (((B1_r_MEM_Index[1] & (B1_r_MEM_Index[2] & B1L242))));
+
+
+--B1L232 is UART_RX:UART_RX_inst|r_Clk_Count[11]~41
+B1L232 = (B1_r_Clk_Count[12] & (!B1L43 & ((B1_r_SM_Main.s_RX_Stop_Bit) # (B1_r_SM_Main.s_RX_Data_Bits))));
+
+
+--B1_r_SM_Main.s_RX_Start_Bit is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Start_Bit
+--register power-up is low
+
+B1_r_SM_Main.s_RX_Start_Bit = DFFEAS(B1L285, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1L36 is UART_RX:UART_RX_inst|Equal0~0
+B1L36 = (B1_r_Clk_Count[0] & (B1_r_Clk_Count[1] & (!B1_r_Clk_Count[7] & !B1_r_Clk_Count[8])));
+
+
+--B1L37 is UART_RX:UART_RX_inst|Equal0~1
+B1L37 = (B1_r_Clk_Count[5] & (B1_r_Clk_Count[3] & (!B1_r_Clk_Count[2] & !B1_r_Clk_Count[4])));
+
+
+--B1L38 is UART_RX:UART_RX_inst|Equal0~2
+B1L38 = (B1_r_Clk_Count[11] & (B1_r_Clk_Count[9] & (!B1_r_Clk_Count[10] & !B1_r_Clk_Count[6])));
+
+
+--B1L39 is UART_RX:UART_RX_inst|Equal0~3
+B1L39 = (B1L36 & (B1L37 & (B1L38 & !B1_r_Clk_Count[12])));
+
+
+--B1L286 is UART_RX:UART_RX_inst|Selector19~2
+B1L286 = (B1_r_SM_Main.s_RX_Start_Bit & B1L39);
+
+
+--B1_r_SM_Main.s_Idle is UART_RX:UART_RX_inst|r_SM_Main.s_Idle
+--register power-up is low
+
+B1_r_SM_Main.s_Idle = DFFEAS(B1L284, i_Clk,  ,  , reset,  ,  ,  ,  );
+
+
+--B1_r_SM_Main.s_Cleanup is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup
+--register power-up is low
+
+B1_r_SM_Main.s_Cleanup = DFFEAS(B1_r_SM_Main.s_RX_Stop_Bit, i_Clk,  ,  , B1L272,  ,  ,  ,  );
+
+
+--B1L237 is UART_RX:UART_RX_inst|r_Clk_Count[12]~42
+B1L237 = (reset & (!B1_r_SM_Main.s_Cleanup & ((!B1L286) # (!B1_r_RX_Data))));
+
+
+--B1L268 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~0
+B1L268 = ((B1_r_SM_Main.s_RX_Start_Bit & !B1L39)) # (!reset);
+
+
+--B1L44 is UART_RX:UART_RX_inst|LessThan1~6
+B1L44 = (!B1_r_Clk_Count[10] & !B1_r_Clk_Count[11]);
+
+
+--B1L45 is UART_RX:UART_RX_inst|LessThan1~7
+B1L45 = (B1L40 & ((B1L42) # ((B1L41 & !B1_r_Clk_Count[5]))));
+
+
+--B1L269 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~1
+B1L269 = (B1_r_SM_Main.s_RX_Stop_Bit & ((B1L44) # ((B1L45) # (!B1_r_Clk_Count[12]))));
+
+
+--B1L270 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~2
+B1L270 = (B1_r_Clk_Count[12] & (B1_r_Bit_Index[1] & (!B1L44 & !B1L45)));
+
+
+--B1L271 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~3
+B1L271 = (B1_r_SM_Main.s_RX_Data_Bits & (((!B1L270) # (!B1_r_Bit_Index[2])) # (!B1_r_Bit_Index[0])));
+
+
+--B1L272 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~4
+B1L272 = (!B1L268 & (!B1L269 & !B1L271));
+
+
+--B1L240 is UART_RX:UART_RX_inst|r_MEM_Index[0]~2
+B1L240 = B1_r_MEM_Index[0] $ (((!B1L43 & (B1_r_Clk_Count[12] & B1_r_SM_Main.s_RX_Stop_Bit))));
+
+
+--B1L243 is UART_RX:UART_RX_inst|r_MEM_Index[1]~3
+B1L243 = B1_r_MEM_Index[1] $ (B1L242);
+
+
+--B1L245 is UART_RX:UART_RX_inst|r_MEM_Index[2]~4
+B1L245 = B1_r_MEM_Index[2] $ (((B1_r_MEM_Index[1] & B1L242)));
+
+
+--B1L3 is UART_RX:UART_RX_inst|Decoder0~2
+B1L3 = (!B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L258 is UART_RX:UART_RX_inst|r_RX_Byte[4]~1
+B1L258 = (B1L3 & (B1_r_RX_Data)) # (!B1L3 & ((B1_r_RX_Byte[4])));
+
+
+--B1L4 is UART_RX:UART_RX_inst|Decoder0~3
+B1L4 = (B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L264 is UART_RX:UART_RX_inst|r_RX_Byte[7]~2
+B1L264 = (B1L4 & (B1_r_RX_Data)) # (!B1L4 & ((B1_r_RX_Byte[7])));
+
+
+--B1L5 is UART_RX:UART_RX_inst|Decoder0~4
+B1L5 = (!B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L262 is UART_RX:UART_RX_inst|r_RX_Byte[6]~3
+B1L262 = (B1L5 & (B1_r_RX_Data)) # (!B1L5 & ((B1_r_RX_Byte[6])));
+
+
+--B1L6 is UART_RX:UART_RX_inst|Decoder0~5
+B1L6 = (B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L256 is UART_RX:UART_RX_inst|r_RX_Byte[3]~4
+B1L256 = (B1L6 & (B1_r_RX_Data)) # (!B1L6 & ((B1_r_RX_Byte[3])));
+
+
+--B1L7 is UART_RX:UART_RX_inst|Decoder0~6
+B1L7 = (!B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L254 is UART_RX:UART_RX_inst|r_RX_Byte[2]~5
+B1L254 = (B1L7 & (B1_r_RX_Data)) # (!B1L7 & ((B1_r_RX_Byte[2])));
+
+
+--B1L8 is UART_RX:UART_RX_inst|Decoder0~7
+B1L8 = (B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L252 is UART_RX:UART_RX_inst|r_RX_Byte[1]~6
+B1L252 = (B1L8 & (B1_r_RX_Data)) # (!B1L8 & ((B1_r_RX_Byte[1])));
+
+
+--B1L9 is UART_RX:UART_RX_inst|Decoder0~8
+B1L9 = (!B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
+
+
+--B1L250 is UART_RX:UART_RX_inst|r_RX_Byte[0]~7
+B1L250 = (B1L9 & (B1_r_RX_Data)) # (!B1L9 & ((B1_r_RX_Byte[0])));
 
 
 --C1L73 is UART_TX:UART_TX_inst|r_Clk_Count[10]~35
@@ -1917,7 +2343,7 @@ s_TX_Block[125] = DFFEAS(B1_MEM_UART[15][5], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][5] is UART_RX:UART_RX_inst|MEM_UART[0][5]
 --register power-up is low
 
-B1_MEM_UART[0][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --C1L235 is UART_TX:UART_TX_inst|Selector18~0
@@ -1936,8 +2362,8 @@ s_button_sync = DFFEAS(i_button, i_Clk,  ,  ,  ,  ,  ,  ,  );
 s_button_prev = DFFEAS(s_button_sync, i_Clk,  ,  ,  ,  ,  ,  ,  );
 
 
---A1L7 is process_0~0
-A1L7 = (s_button_sync & !s_button_prev);
+--A1L13 is process_0~0
+A1L13 = (s_button_sync & !s_button_prev);
 
 
 --s_TX_Block[54] is s_TX_Block[54]
@@ -2033,7 +2459,7 @@ s_TX_Block[126] = DFFEAS(B1_MEM_UART[15][6], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][6] is UART_RX:UART_RX_inst|MEM_UART[0][6]
 --register power-up is low
 
-B1_MEM_UART[0][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[44] is s_TX_Block[44]
@@ -2129,7 +2555,7 @@ s_TX_Block[124] = DFFEAS(B1_MEM_UART[15][4], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][4] is UART_RX:UART_RX_inst|MEM_UART[0][4]
 --register power-up is low
 
-B1_MEM_UART[0][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[87] is s_TX_Block[87]
@@ -2225,7 +2651,7 @@ s_TX_Block[127] = DFFEAS(B1_MEM_UART[15][7], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][7] is UART_RX:UART_RX_inst|MEM_UART[0][7]
 --register power-up is low
 
-B1_MEM_UART[0][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[50] is s_TX_Block[50]
@@ -2321,7 +2747,7 @@ s_TX_Block[122] = DFFEAS(B1_MEM_UART[15][2], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][2] is UART_RX:UART_RX_inst|MEM_UART[0][2]
 --register power-up is low
 
-B1_MEM_UART[0][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[49] is s_TX_Block[49]
@@ -2417,7 +2843,7 @@ s_TX_Block[121] = DFFEAS(B1_MEM_UART[15][1], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][1] is UART_RX:UART_RX_inst|MEM_UART[0][1]
 --register power-up is low
 
-B1_MEM_UART[0][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[40] is s_TX_Block[40]
@@ -2513,7 +2939,7 @@ s_TX_Block[120] = DFFEAS(B1_MEM_UART[15][0], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][0] is UART_RX:UART_RX_inst|MEM_UART[0][0]
 --register power-up is low
 
-B1_MEM_UART[0][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L14,  ,  ,  ,  );
+B1_MEM_UART[0][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --s_TX_Block[83] is s_TX_Block[83]
@@ -2609,1125 +3035,7 @@ s_TX_Block[123] = DFFEAS(B1_MEM_UART[15][3], i_Clk,  ,  , s_button_edge,  ,  ,  
 --B1_MEM_UART[0][3] is UART_RX:UART_RX_inst|MEM_UART[0][3]
 --register power-up is low
 
-B1_MEM_UART[0][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L14,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][5] is UART_RX:UART_RX_inst|MEM_UART[6][5]
---register power-up is low
-
-B1_MEM_UART[6][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][5] is UART_RX:UART_RX_inst|MEM_UART[5][5]
---register power-up is low
-
-B1_MEM_UART[5][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][5] is UART_RX:UART_RX_inst|MEM_UART[4][5]
---register power-up is low
-
-B1_MEM_UART[4][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][5] is UART_RX:UART_RX_inst|MEM_UART[7][5]
---register power-up is low
-
-B1_MEM_UART[7][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][5] is UART_RX:UART_RX_inst|MEM_UART[9][5]
---register power-up is low
-
-B1_MEM_UART[9][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][5] is UART_RX:UART_RX_inst|MEM_UART[10][5]
---register power-up is low
-
-B1_MEM_UART[10][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][5] is UART_RX:UART_RX_inst|MEM_UART[8][5]
---register power-up is low
-
-B1_MEM_UART[8][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][5] is UART_RX:UART_RX_inst|MEM_UART[11][5]
---register power-up is low
-
-B1_MEM_UART[11][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][5] is UART_RX:UART_RX_inst|MEM_UART[1][5]
---register power-up is low
-
-B1_MEM_UART[1][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][5] is UART_RX:UART_RX_inst|MEM_UART[2][5]
---register power-up is low
-
-B1_MEM_UART[2][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][5] is UART_RX:UART_RX_inst|MEM_UART[3][5]
---register power-up is low
-
-B1_MEM_UART[3][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][5] is UART_RX:UART_RX_inst|MEM_UART[14][5]
---register power-up is low
-
-B1_MEM_UART[14][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][5] is UART_RX:UART_RX_inst|MEM_UART[13][5]
---register power-up is low
-
-B1_MEM_UART[13][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][5] is UART_RX:UART_RX_inst|MEM_UART[12][5]
---register power-up is low
-
-B1_MEM_UART[12][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][5] is UART_RX:UART_RX_inst|MEM_UART[15][5]
---register power-up is low
-
-B1_MEM_UART[15][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[5] is UART_RX:UART_RX_inst|r_RX_Byte[5]
---register power-up is low
-
-B1_r_RX_Byte[5] = DFFEAS(B1L261, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_r_SM_Main.s_RX_Stop_Bit is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Stop_Bit
---register power-up is low
-
-B1_r_SM_Main.s_RX_Stop_Bit = DFFEAS(B1_r_SM_Main.s_RX_Data_Bits, i_Clk,  ,  , B1L272,  ,  ,  ,  );
-
-
---B1L41 is UART_RX:UART_RX_inst|LessThan1~2
-B1L41 = (!B1_r_Clk_Count[11] & (!B1_r_Clk_Count[7] & (!B1_r_Clk_Count[8] & !B1_r_Clk_Count[9])));
-
-
---B1L42 is UART_RX:UART_RX_inst|LessThan1~3
-B1L42 = ((!B1_r_Clk_Count[5] & !B1_r_Clk_Count[4])) # (!B1_r_Clk_Count[6]);
-
-
---B1L43 is UART_RX:UART_RX_inst|LessThan1~4
-B1L43 = (!B1_r_Clk_Count[3] & (((!B1_r_Clk_Count[1]) # (!B1_r_Clk_Count[0])) # (!B1_r_Clk_Count[2])));
-
-
---B1L44 is UART_RX:UART_RX_inst|LessThan1~5
-B1L44 = (B1L41 & ((B1L42) # ((B1L43 & !B1_r_Clk_Count[5]))));
-
-
---reset is reset
-reset = INPUT();
-
-
---B1L11 is UART_RX:UART_RX_inst|Decoder1~0
-B1L11 = (reset & ((B1_r_Clk_Count[10]) # (B1_r_Clk_Count[11])));
-
-
---B1L12 is UART_RX:UART_RX_inst|Decoder1~1
-B1L12 = (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Stop_Bit & (!B1L44 & B1L11)));
-
-
---B1_r_MEM_Index[0] is UART_RX:UART_RX_inst|r_MEM_Index[0]
---register power-up is low
-
-B1_r_MEM_Index[0] = DFFEAS(B1L241, i_Clk, reset,  ,  ,  ,  ,  ,  );
-
-
---B1_r_MEM_Index[1] is UART_RX:UART_RX_inst|r_MEM_Index[1]
---register power-up is low
-
-B1_r_MEM_Index[1] = DFFEAS(B1L243, i_Clk, reset,  ,  ,  ,  ,  ,  );
-
-
---B1_r_MEM_Index[2] is UART_RX:UART_RX_inst|r_MEM_Index[2]
---register power-up is low
-
-B1_r_MEM_Index[2] = DFFEAS(B1L246, i_Clk, reset,  ,  ,  ,  ,  ,  );
-
-
---B1L13 is UART_RX:UART_RX_inst|Decoder1~2
-B1L13 = (B1L12 & (!B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
-
-
---B1_r_MEM_Index[3] is UART_RX:UART_RX_inst|r_MEM_Index[3]
---register power-up is low
-
-B1_r_MEM_Index[3] = DFFEAS(B1L248, i_Clk, reset,  ,  ,  ,  ,  ,  );
-
-
---B1L14 is UART_RX:UART_RX_inst|Decoder1~3
-B1L14 = (B1L13 & !B1_r_MEM_Index[3]);
-
-
---i_button is i_button
-i_button = INPUT();
-
-
---B1_MEM_UART[6][6] is UART_RX:UART_RX_inst|MEM_UART[6][6]
---register power-up is low
-
-B1_MEM_UART[6][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][6] is UART_RX:UART_RX_inst|MEM_UART[10][6]
---register power-up is low
-
-B1_MEM_UART[10][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][6] is UART_RX:UART_RX_inst|MEM_UART[2][6]
---register power-up is low
-
-B1_MEM_UART[2][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][6] is UART_RX:UART_RX_inst|MEM_UART[14][6]
---register power-up is low
-
-B1_MEM_UART[14][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][6] is UART_RX:UART_RX_inst|MEM_UART[9][6]
---register power-up is low
-
-B1_MEM_UART[9][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][6] is UART_RX:UART_RX_inst|MEM_UART[5][6]
---register power-up is low
-
-B1_MEM_UART[5][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][6] is UART_RX:UART_RX_inst|MEM_UART[1][6]
---register power-up is low
-
-B1_MEM_UART[1][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][6] is UART_RX:UART_RX_inst|MEM_UART[13][6]
---register power-up is low
-
-B1_MEM_UART[13][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][6] is UART_RX:UART_RX_inst|MEM_UART[4][6]
---register power-up is low
-
-B1_MEM_UART[4][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][6] is UART_RX:UART_RX_inst|MEM_UART[8][6]
---register power-up is low
-
-B1_MEM_UART[8][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][6] is UART_RX:UART_RX_inst|MEM_UART[12][6]
---register power-up is low
-
-B1_MEM_UART[12][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][6] is UART_RX:UART_RX_inst|MEM_UART[11][6]
---register power-up is low
-
-B1_MEM_UART[11][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][6] is UART_RX:UART_RX_inst|MEM_UART[7][6]
---register power-up is low
-
-B1_MEM_UART[7][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][6] is UART_RX:UART_RX_inst|MEM_UART[3][6]
---register power-up is low
-
-B1_MEM_UART[3][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][6] is UART_RX:UART_RX_inst|MEM_UART[15][6]
---register power-up is low
-
-B1_MEM_UART[15][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[6] is UART_RX:UART_RX_inst|r_RX_Byte[6]
---register power-up is low
-
-B1_r_RX_Byte[6] = DFFEAS(B1L263, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][4] is UART_RX:UART_RX_inst|MEM_UART[5][4]
---register power-up is low
-
-B1_MEM_UART[5][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][4] is UART_RX:UART_RX_inst|MEM_UART[9][4]
---register power-up is low
-
-B1_MEM_UART[9][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][4] is UART_RX:UART_RX_inst|MEM_UART[1][4]
---register power-up is low
-
-B1_MEM_UART[1][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][4] is UART_RX:UART_RX_inst|MEM_UART[13][4]
---register power-up is low
-
-B1_MEM_UART[13][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][4] is UART_RX:UART_RX_inst|MEM_UART[10][4]
---register power-up is low
-
-B1_MEM_UART[10][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][4] is UART_RX:UART_RX_inst|MEM_UART[6][4]
---register power-up is low
-
-B1_MEM_UART[6][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][4] is UART_RX:UART_RX_inst|MEM_UART[2][4]
---register power-up is low
-
-B1_MEM_UART[2][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][4] is UART_RX:UART_RX_inst|MEM_UART[14][4]
---register power-up is low
-
-B1_MEM_UART[14][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][4] is UART_RX:UART_RX_inst|MEM_UART[8][4]
---register power-up is low
-
-B1_MEM_UART[8][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][4] is UART_RX:UART_RX_inst|MEM_UART[4][4]
---register power-up is low
-
-B1_MEM_UART[4][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][4] is UART_RX:UART_RX_inst|MEM_UART[12][4]
---register power-up is low
-
-B1_MEM_UART[12][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][4] is UART_RX:UART_RX_inst|MEM_UART[7][4]
---register power-up is low
-
-B1_MEM_UART[7][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][4] is UART_RX:UART_RX_inst|MEM_UART[11][4]
---register power-up is low
-
-B1_MEM_UART[11][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][4] is UART_RX:UART_RX_inst|MEM_UART[3][4]
---register power-up is low
-
-B1_MEM_UART[3][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][4] is UART_RX:UART_RX_inst|MEM_UART[15][4]
---register power-up is low
-
-B1_MEM_UART[15][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[4] is UART_RX:UART_RX_inst|r_RX_Byte[4]
---register power-up is low
-
-B1_r_RX_Byte[4] = DFFEAS(B1L259, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][7] is UART_RX:UART_RX_inst|MEM_UART[10][7]
---register power-up is low
-
-B1_MEM_UART[10][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][7] is UART_RX:UART_RX_inst|MEM_UART[9][7]
---register power-up is low
-
-B1_MEM_UART[9][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][7] is UART_RX:UART_RX_inst|MEM_UART[8][7]
---register power-up is low
-
-B1_MEM_UART[8][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][7] is UART_RX:UART_RX_inst|MEM_UART[11][7]
---register power-up is low
-
-B1_MEM_UART[11][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][7] is UART_RX:UART_RX_inst|MEM_UART[5][7]
---register power-up is low
-
-B1_MEM_UART[5][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][7] is UART_RX:UART_RX_inst|MEM_UART[6][7]
---register power-up is low
-
-B1_MEM_UART[6][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][7] is UART_RX:UART_RX_inst|MEM_UART[4][7]
---register power-up is low
-
-B1_MEM_UART[4][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][7] is UART_RX:UART_RX_inst|MEM_UART[7][7]
---register power-up is low
-
-B1_MEM_UART[7][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][7] is UART_RX:UART_RX_inst|MEM_UART[2][7]
---register power-up is low
-
-B1_MEM_UART[2][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][7] is UART_RX:UART_RX_inst|MEM_UART[1][7]
---register power-up is low
-
-B1_MEM_UART[1][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][7] is UART_RX:UART_RX_inst|MEM_UART[3][7]
---register power-up is low
-
-B1_MEM_UART[3][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][7] is UART_RX:UART_RX_inst|MEM_UART[13][7]
---register power-up is low
-
-B1_MEM_UART[13][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][7] is UART_RX:UART_RX_inst|MEM_UART[14][7]
---register power-up is low
-
-B1_MEM_UART[14][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][7] is UART_RX:UART_RX_inst|MEM_UART[12][7]
---register power-up is low
-
-B1_MEM_UART[12][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][7] is UART_RX:UART_RX_inst|MEM_UART[15][7]
---register power-up is low
-
-B1_MEM_UART[15][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[7] is UART_RX:UART_RX_inst|r_RX_Byte[7]
---register power-up is low
-
-B1_r_RX_Byte[7] = DFFEAS(B1L265, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][2] is UART_RX:UART_RX_inst|MEM_UART[6][2]
---register power-up is low
-
-B1_MEM_UART[6][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][2] is UART_RX:UART_RX_inst|MEM_UART[10][2]
---register power-up is low
-
-B1_MEM_UART[10][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][2] is UART_RX:UART_RX_inst|MEM_UART[2][2]
---register power-up is low
-
-B1_MEM_UART[2][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][2] is UART_RX:UART_RX_inst|MEM_UART[14][2]
---register power-up is low
-
-B1_MEM_UART[14][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][2] is UART_RX:UART_RX_inst|MEM_UART[9][2]
---register power-up is low
-
-B1_MEM_UART[9][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][2] is UART_RX:UART_RX_inst|MEM_UART[5][2]
---register power-up is low
-
-B1_MEM_UART[5][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][2] is UART_RX:UART_RX_inst|MEM_UART[1][2]
---register power-up is low
-
-B1_MEM_UART[1][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][2] is UART_RX:UART_RX_inst|MEM_UART[13][2]
---register power-up is low
-
-B1_MEM_UART[13][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][2] is UART_RX:UART_RX_inst|MEM_UART[4][2]
---register power-up is low
-
-B1_MEM_UART[4][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][2] is UART_RX:UART_RX_inst|MEM_UART[8][2]
---register power-up is low
-
-B1_MEM_UART[8][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][2] is UART_RX:UART_RX_inst|MEM_UART[12][2]
---register power-up is low
-
-B1_MEM_UART[12][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][2] is UART_RX:UART_RX_inst|MEM_UART[11][2]
---register power-up is low
-
-B1_MEM_UART[11][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][2] is UART_RX:UART_RX_inst|MEM_UART[7][2]
---register power-up is low
-
-B1_MEM_UART[7][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][2] is UART_RX:UART_RX_inst|MEM_UART[3][2]
---register power-up is low
-
-B1_MEM_UART[3][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][2] is UART_RX:UART_RX_inst|MEM_UART[15][2]
---register power-up is low
-
-B1_MEM_UART[15][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[2] is UART_RX:UART_RX_inst|r_RX_Byte[2]
---register power-up is low
-
-B1_r_RX_Byte[2] = DFFEAS(B1L255, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][1] is UART_RX:UART_RX_inst|MEM_UART[6][1]
---register power-up is low
-
-B1_MEM_UART[6][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][1] is UART_RX:UART_RX_inst|MEM_UART[5][1]
---register power-up is low
-
-B1_MEM_UART[5][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][1] is UART_RX:UART_RX_inst|MEM_UART[4][1]
---register power-up is low
-
-B1_MEM_UART[4][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][1] is UART_RX:UART_RX_inst|MEM_UART[7][1]
---register power-up is low
-
-B1_MEM_UART[7][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][1] is UART_RX:UART_RX_inst|MEM_UART[9][1]
---register power-up is low
-
-B1_MEM_UART[9][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][1] is UART_RX:UART_RX_inst|MEM_UART[10][1]
---register power-up is low
-
-B1_MEM_UART[10][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][1] is UART_RX:UART_RX_inst|MEM_UART[8][1]
---register power-up is low
-
-B1_MEM_UART[8][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][1] is UART_RX:UART_RX_inst|MEM_UART[11][1]
---register power-up is low
-
-B1_MEM_UART[11][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][1] is UART_RX:UART_RX_inst|MEM_UART[1][1]
---register power-up is low
-
-B1_MEM_UART[1][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][1] is UART_RX:UART_RX_inst|MEM_UART[2][1]
---register power-up is low
-
-B1_MEM_UART[2][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][1] is UART_RX:UART_RX_inst|MEM_UART[3][1]
---register power-up is low
-
-B1_MEM_UART[3][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][1] is UART_RX:UART_RX_inst|MEM_UART[14][1]
---register power-up is low
-
-B1_MEM_UART[14][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][1] is UART_RX:UART_RX_inst|MEM_UART[13][1]
---register power-up is low
-
-B1_MEM_UART[13][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][1] is UART_RX:UART_RX_inst|MEM_UART[12][1]
---register power-up is low
-
-B1_MEM_UART[12][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][1] is UART_RX:UART_RX_inst|MEM_UART[15][1]
---register power-up is low
-
-B1_MEM_UART[15][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[1] is UART_RX:UART_RX_inst|r_RX_Byte[1]
---register power-up is low
-
-B1_r_RX_Byte[1] = DFFEAS(B1L253, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][0] is UART_RX:UART_RX_inst|MEM_UART[5][0]
---register power-up is low
-
-B1_MEM_UART[5][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][0] is UART_RX:UART_RX_inst|MEM_UART[9][0]
---register power-up is low
-
-B1_MEM_UART[9][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][0] is UART_RX:UART_RX_inst|MEM_UART[1][0]
---register power-up is low
-
-B1_MEM_UART[1][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][0] is UART_RX:UART_RX_inst|MEM_UART[13][0]
---register power-up is low
-
-B1_MEM_UART[13][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][0] is UART_RX:UART_RX_inst|MEM_UART[10][0]
---register power-up is low
-
-B1_MEM_UART[10][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][0] is UART_RX:UART_RX_inst|MEM_UART[6][0]
---register power-up is low
-
-B1_MEM_UART[6][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][0] is UART_RX:UART_RX_inst|MEM_UART[2][0]
---register power-up is low
-
-B1_MEM_UART[2][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][0] is UART_RX:UART_RX_inst|MEM_UART[14][0]
---register power-up is low
-
-B1_MEM_UART[14][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][0] is UART_RX:UART_RX_inst|MEM_UART[8][0]
---register power-up is low
-
-B1_MEM_UART[8][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][0] is UART_RX:UART_RX_inst|MEM_UART[4][0]
---register power-up is low
-
-B1_MEM_UART[4][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][0] is UART_RX:UART_RX_inst|MEM_UART[12][0]
---register power-up is low
-
-B1_MEM_UART[12][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][0] is UART_RX:UART_RX_inst|MEM_UART[7][0]
---register power-up is low
-
-B1_MEM_UART[7][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][0] is UART_RX:UART_RX_inst|MEM_UART[11][0]
---register power-up is low
-
-B1_MEM_UART[11][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][0] is UART_RX:UART_RX_inst|MEM_UART[3][0]
---register power-up is low
-
-B1_MEM_UART[3][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][0] is UART_RX:UART_RX_inst|MEM_UART[15][0]
---register power-up is low
-
-B1_MEM_UART[15][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[0] is UART_RX:UART_RX_inst|r_RX_Byte[0]
---register power-up is low
-
-B1_r_RX_Byte[0] = DFFEAS(B1L251, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_MEM_UART[10][3] is UART_RX:UART_RX_inst|MEM_UART[10][3]
---register power-up is low
-
-B1_MEM_UART[10][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L26,  ,  ,  ,  );
-
-
---B1_MEM_UART[9][3] is UART_RX:UART_RX_inst|MEM_UART[9][3]
---register power-up is low
-
-B1_MEM_UART[9][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L24,  ,  ,  ,  );
-
-
---B1_MEM_UART[8][3] is UART_RX:UART_RX_inst|MEM_UART[8][3]
---register power-up is low
-
-B1_MEM_UART[8][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L27,  ,  ,  ,  );
-
-
---B1_MEM_UART[11][3] is UART_RX:UART_RX_inst|MEM_UART[11][3]
---register power-up is low
-
-B1_MEM_UART[11][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L29,  ,  ,  ,  );
-
-
---B1_MEM_UART[5][3] is UART_RX:UART_RX_inst|MEM_UART[5][3]
---register power-up is low
-
-B1_MEM_UART[5][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L18,  ,  ,  ,  );
-
-
---B1_MEM_UART[6][3] is UART_RX:UART_RX_inst|MEM_UART[6][3]
---register power-up is low
-
-B1_MEM_UART[6][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L16,  ,  ,  ,  );
-
-
---B1_MEM_UART[4][3] is UART_RX:UART_RX_inst|MEM_UART[4][3]
---register power-up is low
-
-B1_MEM_UART[4][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L20,  ,  ,  ,  );
-
-
---B1_MEM_UART[7][3] is UART_RX:UART_RX_inst|MEM_UART[7][3]
---register power-up is low
-
-B1_MEM_UART[7][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L22,  ,  ,  ,  );
-
-
---B1_MEM_UART[2][3] is UART_RX:UART_RX_inst|MEM_UART[2][3]
---register power-up is low
-
-B1_MEM_UART[2][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L31,  ,  ,  ,  );
-
-
---B1_MEM_UART[1][3] is UART_RX:UART_RX_inst|MEM_UART[1][3]
---register power-up is low
-
-B1_MEM_UART[1][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L30,  ,  ,  ,  );
-
-
---B1_MEM_UART[3][3] is UART_RX:UART_RX_inst|MEM_UART[3][3]
---register power-up is low
-
-B1_MEM_UART[3][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L32,  ,  ,  ,  );
-
-
---B1_MEM_UART[13][3] is UART_RX:UART_RX_inst|MEM_UART[13][3]
---register power-up is low
-
-B1_MEM_UART[13][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L34,  ,  ,  ,  );
-
-
---B1_MEM_UART[14][3] is UART_RX:UART_RX_inst|MEM_UART[14][3]
---register power-up is low
-
-B1_MEM_UART[14][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L33,  ,  ,  ,  );
-
-
---B1_MEM_UART[12][3] is UART_RX:UART_RX_inst|MEM_UART[12][3]
---register power-up is low
-
-B1_MEM_UART[12][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L35,  ,  ,  ,  );
-
-
---B1_MEM_UART[15][3] is UART_RX:UART_RX_inst|MEM_UART[15][3]
---register power-up is low
-
-B1_MEM_UART[15][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L36,  ,  ,  ,  );
-
-
---B1_r_RX_Byte[3] is UART_RX:UART_RX_inst|r_RX_Byte[3]
---register power-up is low
-
-B1_r_RX_Byte[3] = DFFEAS(B1L257, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1L15 is UART_RX:UART_RX_inst|Decoder1~4
-B1L15 = (B1L12 & (!B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
-
-
---B1L16 is UART_RX:UART_RX_inst|Decoder1~5
-B1L16 = (B1L15 & !B1_r_MEM_Index[3]);
-
-
---B1L17 is UART_RX:UART_RX_inst|Decoder1~6
-B1L17 = (B1L12 & (B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
-
-
---B1L18 is UART_RX:UART_RX_inst|Decoder1~7
-B1L18 = (B1L17 & !B1_r_MEM_Index[3]);
-
-
---B1L19 is UART_RX:UART_RX_inst|Decoder1~8
-B1L19 = (B1L12 & (!B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
-
-
---B1L20 is UART_RX:UART_RX_inst|Decoder1~9
-B1L20 = (B1L19 & !B1_r_MEM_Index[3]);
-
-
---B1L21 is UART_RX:UART_RX_inst|Decoder1~10
-B1L21 = (B1L12 & (B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
-
-
---B1L22 is UART_RX:UART_RX_inst|Decoder1~11
-B1L22 = (B1L21 & !B1_r_MEM_Index[3]);
-
-
---B1L23 is UART_RX:UART_RX_inst|Decoder1~12
-B1L23 = (B1L12 & (B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
-
-
---B1L24 is UART_RX:UART_RX_inst|Decoder1~13
-B1L24 = (B1_r_MEM_Index[3] & B1L23);
-
-
---B1L25 is UART_RX:UART_RX_inst|Decoder1~14
-B1L25 = (B1L12 & (!B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
-
-
---B1L26 is UART_RX:UART_RX_inst|Decoder1~15
-B1L26 = (B1_r_MEM_Index[3] & B1L25);
-
-
---B1L27 is UART_RX:UART_RX_inst|Decoder1~16
-B1L27 = (B1_r_MEM_Index[3] & B1L13);
-
-
---B1L28 is UART_RX:UART_RX_inst|Decoder1~17
-B1L28 = (B1L12 & (B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
-
-
---B1L29 is UART_RX:UART_RX_inst|Decoder1~18
-B1L29 = (B1_r_MEM_Index[3] & B1L28);
-
-
---B1L30 is UART_RX:UART_RX_inst|Decoder1~19
-B1L30 = (B1L23 & !B1_r_MEM_Index[3]);
-
-
---B1L31 is UART_RX:UART_RX_inst|Decoder1~20
-B1L31 = (B1L25 & !B1_r_MEM_Index[3]);
-
-
---B1L32 is UART_RX:UART_RX_inst|Decoder1~21
-B1L32 = (B1L28 & !B1_r_MEM_Index[3]);
-
-
---B1L33 is UART_RX:UART_RX_inst|Decoder1~22
-B1L33 = (B1_r_MEM_Index[3] & B1L15);
-
-
---B1L34 is UART_RX:UART_RX_inst|Decoder1~23
-B1L34 = (B1_r_MEM_Index[3] & B1L17);
-
-
---B1L35 is UART_RX:UART_RX_inst|Decoder1~24
-B1L35 = (B1_r_MEM_Index[3] & B1L19);
-
-
---B1L36 is UART_RX:UART_RX_inst|Decoder1~25
-B1L36 = (B1_r_MEM_Index[3] & B1L21);
-
-
---B1_r_RX_Data is UART_RX:UART_RX_inst|r_RX_Data
---register power-up is low
-
-B1_r_RX_Data = DFFEAS(B1_r_RX_Data_R, i_Clk,  ,  ,  ,  ,  ,  ,  );
-
-
---B1_r_Bit_Index[0] is UART_RX:UART_RX_inst|r_Bit_Index[0]
---register power-up is low
-
-B1_r_Bit_Index[0] = DFFEAS(B1L283, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1_r_Bit_Index[1] is UART_RX:UART_RX_inst|r_Bit_Index[1]
---register power-up is low
-
-B1_r_Bit_Index[1] = DFFEAS(B1L281, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1_r_Bit_Index[2] is UART_RX:UART_RX_inst|r_Bit_Index[2]
---register power-up is low
-
-B1_r_Bit_Index[2] = DFFEAS(B1L279, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1_r_SM_Main.s_RX_Data_Bits is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Data_Bits
---register power-up is low
-
-B1_r_SM_Main.s_RX_Data_Bits = DFFEAS(B1L287, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1L45 is UART_RX:UART_RX_inst|LessThan1~6
-B1L45 = (B1L44) # ((!B1_r_Clk_Count[10] & !B1_r_Clk_Count[11]));
-
-
---B1L1 is UART_RX:UART_RX_inst|Decoder0~0
-B1L1 = (reset & (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Data_Bits & !B1L45)));
-
-
---B1L2 is UART_RX:UART_RX_inst|Decoder0~1
-B1L2 = (B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L261 is UART_RX:UART_RX_inst|r_RX_Byte[5]~0
-B1L261 = (B1L2 & (B1_r_RX_Data)) # (!B1L2 & ((B1_r_RX_Byte[5])));
-
-
---B1_r_SM_Main.s_RX_Start_Bit is UART_RX:UART_RX_inst|r_SM_Main.s_RX_Start_Bit
---register power-up is low
-
-B1_r_SM_Main.s_RX_Start_Bit = DFFEAS(B1L285, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1L37 is UART_RX:UART_RX_inst|Equal0~0
-B1L37 = (B1_r_Clk_Count[0] & (B1_r_Clk_Count[1] & (!B1_r_Clk_Count[7] & !B1_r_Clk_Count[8])));
-
-
---B1L38 is UART_RX:UART_RX_inst|Equal0~1
-B1L38 = (B1_r_Clk_Count[5] & (B1_r_Clk_Count[3] & (!B1_r_Clk_Count[2] & !B1_r_Clk_Count[4])));
-
-
---B1L39 is UART_RX:UART_RX_inst|Equal0~2
-B1L39 = (B1_r_Clk_Count[11] & (B1_r_Clk_Count[9] & (!B1_r_Clk_Count[10] & !B1_r_Clk_Count[6])));
-
-
---B1L40 is UART_RX:UART_RX_inst|Equal0~3
-B1L40 = (B1L37 & (B1L38 & (B1L39 & !B1_r_Clk_Count[12])));
-
-
---B1L286 is UART_RX:UART_RX_inst|Selector19~2
-B1L286 = (B1_r_SM_Main.s_RX_Start_Bit & B1L40);
-
-
---B1L46 is UART_RX:UART_RX_inst|LessThan1~7
-B1L46 = (!B1_r_Clk_Count[10] & !B1_r_Clk_Count[11]);
-
-
---B1L233 is UART_RX:UART_RX_inst|r_Clk_Count[11]~39
-B1L233 = (B1_r_SM_Main.s_RX_Stop_Bit) # (B1_r_SM_Main.s_RX_Data_Bits);
-
-
---B1_r_SM_Main.s_Idle is UART_RX:UART_RX_inst|r_SM_Main.s_Idle
---register power-up is low
-
-B1_r_SM_Main.s_Idle = DFFEAS(B1L284, i_Clk,  ,  , reset,  ,  ,  ,  );
-
-
---B1L234 is UART_RX:UART_RX_inst|r_Clk_Count[11]~40
-B1L234 = (B1L286) # (((B1L47 & B1L233)) # (!B1_r_SM_Main.s_Idle));
-
-
---B1_r_SM_Main.s_Cleanup is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup
---register power-up is low
-
-B1_r_SM_Main.s_Cleanup = DFFEAS(B1_r_SM_Main.s_RX_Stop_Bit, i_Clk,  ,  , B1L272,  ,  ,  ,  );
-
-
---B1L238 is UART_RX:UART_RX_inst|r_Clk_Count[12]~41
-B1L238 = (reset & (!B1_r_SM_Main.s_Cleanup & ((!B1L286) # (!B1_r_RX_Data))));
-
-
---B1L269 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~0
-B1L269 = ((B1_r_SM_Main.s_RX_Start_Bit & !B1L40)) # (!reset);
-
-
---B1L270 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~1
-B1L270 = (B1_r_Clk_Count[12] & (B1_r_Bit_Index[1] & (!B1L46 & !B1L44)));
-
-
---B1L271 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~2
-B1L271 = (B1_r_SM_Main.s_RX_Data_Bits & (((!B1L270) # (!B1_r_Bit_Index[2])) # (!B1_r_Bit_Index[0])));
-
-
---B1L272 is UART_RX:UART_RX_inst|r_SM_Main.s_Cleanup~3
-B1L272 = (!B1L269 & (!B1L271 & ((B1L47) # (!B1_r_SM_Main.s_RX_Stop_Bit))));
-
-
---B1L241 is UART_RX:UART_RX_inst|r_MEM_Index[0]~0
-B1L241 = B1_r_MEM_Index[0] $ (((!B1L45 & (B1_r_Clk_Count[12] & B1_r_SM_Main.s_RX_Stop_Bit))));
-
-
---B1L243 is UART_RX:UART_RX_inst|r_MEM_Index[1]~1
-B1L243 = B1_r_MEM_Index[1] $ (((B1L47 & (B1_r_SM_Main.s_RX_Stop_Bit & B1_r_MEM_Index[0]))));
-
-
---B1L244 is UART_RX:UART_RX_inst|r_MEM_Index[1]~2
-B1L244 = (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Stop_Bit & (B1_r_MEM_Index[0] & !B1L45)));
-
-
---B1L246 is UART_RX:UART_RX_inst|r_MEM_Index[2]~3
-B1L246 = B1_r_MEM_Index[2] $ (((B1_r_MEM_Index[1] & B1L244)));
-
-
---B1L248 is UART_RX:UART_RX_inst|r_MEM_Index[3]~4
-B1L248 = B1_r_MEM_Index[3] $ (((B1_r_MEM_Index[1] & (B1_r_MEM_Index[2] & B1L244))));
-
-
---B1L3 is UART_RX:UART_RX_inst|Decoder0~2
-B1L3 = (!B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L263 is UART_RX:UART_RX_inst|r_RX_Byte[6]~1
-B1L263 = (B1L3 & (B1_r_RX_Data)) # (!B1L3 & ((B1_r_RX_Byte[6])));
-
-
---B1L4 is UART_RX:UART_RX_inst|Decoder0~3
-B1L4 = (!B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L259 is UART_RX:UART_RX_inst|r_RX_Byte[4]~2
-B1L259 = (B1L4 & (B1_r_RX_Data)) # (!B1L4 & ((B1_r_RX_Byte[4])));
-
-
---B1L5 is UART_RX:UART_RX_inst|Decoder0~4
-B1L5 = (B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L265 is UART_RX:UART_RX_inst|r_RX_Byte[7]~3
-B1L265 = (B1L5 & (B1_r_RX_Data)) # (!B1L5 & ((B1_r_RX_Byte[7])));
-
-
---B1L6 is UART_RX:UART_RX_inst|Decoder0~5
-B1L6 = (!B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L255 is UART_RX:UART_RX_inst|r_RX_Byte[2]~4
-B1L255 = (B1L6 & (B1_r_RX_Data)) # (!B1L6 & ((B1_r_RX_Byte[2])));
-
-
---B1L7 is UART_RX:UART_RX_inst|Decoder0~6
-B1L7 = (B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L253 is UART_RX:UART_RX_inst|r_RX_Byte[1]~5
-B1L253 = (B1L7 & (B1_r_RX_Data)) # (!B1L7 & ((B1_r_RX_Byte[1])));
-
-
---B1L8 is UART_RX:UART_RX_inst|Decoder0~7
-B1L8 = (!B1_r_Bit_Index[0] & (!B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L251 is UART_RX:UART_RX_inst|r_RX_Byte[0]~6
-B1L251 = (B1L8 & (B1_r_RX_Data)) # (!B1L8 & ((B1_r_RX_Byte[0])));
-
-
---B1L9 is UART_RX:UART_RX_inst|Decoder0~8
-B1L9 = (B1_r_Bit_Index[0] & (B1_r_Bit_Index[1] & (!B1_r_Bit_Index[2] & B1L1)));
-
-
---B1L257 is UART_RX:UART_RX_inst|r_RX_Byte[3]~7
-B1L257 = (B1L9 & (B1_r_RX_Data)) # (!B1L9 & ((B1_r_RX_Byte[3])));
+B1_MEM_UART[0][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L17,  ,  ,  ,  );
 
 
 --B1_r_RX_Data_R is UART_RX:UART_RX_inst|r_RX_Data_R
@@ -3741,19 +3049,19 @@ B1L282 = (B1_r_SM_Main.s_RX_Data_Bits & ((B1_r_Clk_Count[12]))) # (!B1_r_SM_Main
 
 
 --B1L283 is UART_RX:UART_RX_inst|Selector16~1
-B1L283 = (B1_r_SM_Main.s_RX_Data_Bits & (B1_r_Bit_Index[0] $ (((!B1L45 & B1L282))))) # (!B1_r_SM_Main.s_RX_Data_Bits & (B1_r_Bit_Index[0] & ((B1L282))));
-
-
---B1L280 is UART_RX:UART_RX_inst|Selector15~0
-B1L280 = (B1_r_Bit_Index[1] & ((B1_r_SM_Main.s_RX_Data_Bits & ((!B1L47))) # (!B1_r_SM_Main.s_RX_Data_Bits & (B1_r_SM_Main.s_Idle))));
+B1L283 = (B1_r_SM_Main.s_RX_Data_Bits & (B1_r_Bit_Index[0] $ (((!B1L43 & B1L282))))) # (!B1_r_SM_Main.s_RX_Data_Bits & (B1_r_Bit_Index[0] & ((B1L282))));
 
 
 --B1L10 is UART_RX:UART_RX_inst|Decoder0~9
-B1L10 = (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Data_Bits & (!B1L46 & !B1L44)));
+B1L10 = (B1_r_Clk_Count[12] & (B1_r_SM_Main.s_RX_Data_Bits & (!B1L44 & !B1L45)));
+
+
+--B1L280 is UART_RX:UART_RX_inst|Selector15~0
+B1L280 = (B1_r_SM_Main.s_RX_Data_Bits & ((B1L43) # ((!B1_r_Clk_Count[12])))) # (!B1_r_SM_Main.s_RX_Data_Bits & (((B1_r_SM_Main.s_Idle))));
 
 
 --B1L281 is UART_RX:UART_RX_inst|Selector15~1
-B1L281 = (B1L280) # ((B1L10 & (B1_r_Bit_Index[0] $ (B1_r_Bit_Index[1]))));
+B1L281 = (B1_r_Bit_Index[1] & ((B1L280) # ((B1L10 & !B1_r_Bit_Index[0])))) # (!B1_r_Bit_Index[1] & (B1L10 & (B1_r_Bit_Index[0])));
 
 
 --B1L277 is UART_RX:UART_RX_inst|Selector14~0
@@ -3769,30 +3077,746 @@ B1L279 = (B1L278) # ((B1_r_Bit_Index[2] & (B1_r_SM_Main.s_Idle & !B1_r_SM_Main.s
 
 
 --B1L285 is UART_RX:UART_RX_inst|Selector18~0
-B1L285 = (B1_r_SM_Main.s_RX_Start_Bit & (((!B1_r_RX_Data & !B1_r_SM_Main.s_Idle)) # (!B1L40))) # (!B1_r_SM_Main.s_RX_Start_Bit & (!B1_r_RX_Data & (!B1_r_SM_Main.s_Idle)));
+B1L285 = (B1_r_SM_Main.s_RX_Start_Bit & (((!B1_r_RX_Data & !B1_r_SM_Main.s_Idle)) # (!B1L39))) # (!B1_r_SM_Main.s_RX_Start_Bit & (!B1_r_RX_Data & (!B1_r_SM_Main.s_Idle)));
 
 
 --B1L284 is UART_RX:UART_RX_inst|Selector17~0
 B1L284 = (!B1_r_SM_Main.s_Cleanup & (((!B1L286 & B1_r_SM_Main.s_Idle)) # (!B1_r_RX_Data)));
 
 
+--B1_MEM_UART[6][5] is UART_RX:UART_RX_inst|MEM_UART[6][5]
+--register power-up is low
+
+B1_MEM_UART[6][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][5] is UART_RX:UART_RX_inst|MEM_UART[5][5]
+--register power-up is low
+
+B1_MEM_UART[5][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][5] is UART_RX:UART_RX_inst|MEM_UART[4][5]
+--register power-up is low
+
+B1_MEM_UART[4][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][5] is UART_RX:UART_RX_inst|MEM_UART[7][5]
+--register power-up is low
+
+B1_MEM_UART[7][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][5] is UART_RX:UART_RX_inst|MEM_UART[9][5]
+--register power-up is low
+
+B1_MEM_UART[9][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][5] is UART_RX:UART_RX_inst|MEM_UART[10][5]
+--register power-up is low
+
+B1_MEM_UART[10][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][5] is UART_RX:UART_RX_inst|MEM_UART[8][5]
+--register power-up is low
+
+B1_MEM_UART[8][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][5] is UART_RX:UART_RX_inst|MEM_UART[11][5]
+--register power-up is low
+
+B1_MEM_UART[11][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][5] is UART_RX:UART_RX_inst|MEM_UART[1][5]
+--register power-up is low
+
+B1_MEM_UART[1][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][5] is UART_RX:UART_RX_inst|MEM_UART[2][5]
+--register power-up is low
+
+B1_MEM_UART[2][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][5] is UART_RX:UART_RX_inst|MEM_UART[3][5]
+--register power-up is low
+
+B1_MEM_UART[3][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][5] is UART_RX:UART_RX_inst|MEM_UART[13][5]
+--register power-up is low
+
+B1_MEM_UART[13][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][5] is UART_RX:UART_RX_inst|MEM_UART[12][5]
+--register power-up is low
+
+B1_MEM_UART[12][5] = DFFEAS(B1_r_RX_Byte[5], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1L16 is UART_RX:UART_RX_inst|Decoder1~5
+B1L16 = (B1L11 & (!B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
+
+
+--B1L17 is UART_RX:UART_RX_inst|Decoder1~6
+B1L17 = (B1L16 & !B1_r_MEM_Index[3]);
+
+
+--i_button is i_button
+i_button = INPUT();
+
+
+--B1_MEM_UART[6][6] is UART_RX:UART_RX_inst|MEM_UART[6][6]
+--register power-up is low
+
+B1_MEM_UART[6][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][6] is UART_RX:UART_RX_inst|MEM_UART[10][6]
+--register power-up is low
+
+B1_MEM_UART[10][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][6] is UART_RX:UART_RX_inst|MEM_UART[2][6]
+--register power-up is low
+
+B1_MEM_UART[2][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][6] is UART_RX:UART_RX_inst|MEM_UART[9][6]
+--register power-up is low
+
+B1_MEM_UART[9][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][6] is UART_RX:UART_RX_inst|MEM_UART[5][6]
+--register power-up is low
+
+B1_MEM_UART[5][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][6] is UART_RX:UART_RX_inst|MEM_UART[1][6]
+--register power-up is low
+
+B1_MEM_UART[1][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][6] is UART_RX:UART_RX_inst|MEM_UART[13][6]
+--register power-up is low
+
+B1_MEM_UART[13][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][6] is UART_RX:UART_RX_inst|MEM_UART[4][6]
+--register power-up is low
+
+B1_MEM_UART[4][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][6] is UART_RX:UART_RX_inst|MEM_UART[8][6]
+--register power-up is low
+
+B1_MEM_UART[8][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][6] is UART_RX:UART_RX_inst|MEM_UART[12][6]
+--register power-up is low
+
+B1_MEM_UART[12][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][6] is UART_RX:UART_RX_inst|MEM_UART[11][6]
+--register power-up is low
+
+B1_MEM_UART[11][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][6] is UART_RX:UART_RX_inst|MEM_UART[7][6]
+--register power-up is low
+
+B1_MEM_UART[7][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][6] is UART_RX:UART_RX_inst|MEM_UART[3][6]
+--register power-up is low
+
+B1_MEM_UART[3][6] = DFFEAS(B1_r_RX_Byte[6], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][4] is UART_RX:UART_RX_inst|MEM_UART[5][4]
+--register power-up is low
+
+B1_MEM_UART[5][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][4] is UART_RX:UART_RX_inst|MEM_UART[9][4]
+--register power-up is low
+
+B1_MEM_UART[9][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][4] is UART_RX:UART_RX_inst|MEM_UART[1][4]
+--register power-up is low
+
+B1_MEM_UART[1][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][4] is UART_RX:UART_RX_inst|MEM_UART[13][4]
+--register power-up is low
+
+B1_MEM_UART[13][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][4] is UART_RX:UART_RX_inst|MEM_UART[10][4]
+--register power-up is low
+
+B1_MEM_UART[10][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][4] is UART_RX:UART_RX_inst|MEM_UART[6][4]
+--register power-up is low
+
+B1_MEM_UART[6][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][4] is UART_RX:UART_RX_inst|MEM_UART[2][4]
+--register power-up is low
+
+B1_MEM_UART[2][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][4] is UART_RX:UART_RX_inst|MEM_UART[8][4]
+--register power-up is low
+
+B1_MEM_UART[8][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][4] is UART_RX:UART_RX_inst|MEM_UART[4][4]
+--register power-up is low
+
+B1_MEM_UART[4][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][4] is UART_RX:UART_RX_inst|MEM_UART[12][4]
+--register power-up is low
+
+B1_MEM_UART[12][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][4] is UART_RX:UART_RX_inst|MEM_UART[7][4]
+--register power-up is low
+
+B1_MEM_UART[7][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][4] is UART_RX:UART_RX_inst|MEM_UART[11][4]
+--register power-up is low
+
+B1_MEM_UART[11][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][4] is UART_RX:UART_RX_inst|MEM_UART[3][4]
+--register power-up is low
+
+B1_MEM_UART[3][4] = DFFEAS(B1_r_RX_Byte[4], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][7] is UART_RX:UART_RX_inst|MEM_UART[10][7]
+--register power-up is low
+
+B1_MEM_UART[10][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][7] is UART_RX:UART_RX_inst|MEM_UART[9][7]
+--register power-up is low
+
+B1_MEM_UART[9][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][7] is UART_RX:UART_RX_inst|MEM_UART[8][7]
+--register power-up is low
+
+B1_MEM_UART[8][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][7] is UART_RX:UART_RX_inst|MEM_UART[11][7]
+--register power-up is low
+
+B1_MEM_UART[11][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][7] is UART_RX:UART_RX_inst|MEM_UART[5][7]
+--register power-up is low
+
+B1_MEM_UART[5][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][7] is UART_RX:UART_RX_inst|MEM_UART[6][7]
+--register power-up is low
+
+B1_MEM_UART[6][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][7] is UART_RX:UART_RX_inst|MEM_UART[4][7]
+--register power-up is low
+
+B1_MEM_UART[4][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][7] is UART_RX:UART_RX_inst|MEM_UART[7][7]
+--register power-up is low
+
+B1_MEM_UART[7][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][7] is UART_RX:UART_RX_inst|MEM_UART[2][7]
+--register power-up is low
+
+B1_MEM_UART[2][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][7] is UART_RX:UART_RX_inst|MEM_UART[1][7]
+--register power-up is low
+
+B1_MEM_UART[1][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][7] is UART_RX:UART_RX_inst|MEM_UART[3][7]
+--register power-up is low
+
+B1_MEM_UART[3][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][7] is UART_RX:UART_RX_inst|MEM_UART[13][7]
+--register power-up is low
+
+B1_MEM_UART[13][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][7] is UART_RX:UART_RX_inst|MEM_UART[12][7]
+--register power-up is low
+
+B1_MEM_UART[12][7] = DFFEAS(B1_r_RX_Byte[7], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][2] is UART_RX:UART_RX_inst|MEM_UART[6][2]
+--register power-up is low
+
+B1_MEM_UART[6][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][2] is UART_RX:UART_RX_inst|MEM_UART[10][2]
+--register power-up is low
+
+B1_MEM_UART[10][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][2] is UART_RX:UART_RX_inst|MEM_UART[2][2]
+--register power-up is low
+
+B1_MEM_UART[2][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][2] is UART_RX:UART_RX_inst|MEM_UART[9][2]
+--register power-up is low
+
+B1_MEM_UART[9][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][2] is UART_RX:UART_RX_inst|MEM_UART[5][2]
+--register power-up is low
+
+B1_MEM_UART[5][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][2] is UART_RX:UART_RX_inst|MEM_UART[1][2]
+--register power-up is low
+
+B1_MEM_UART[1][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][2] is UART_RX:UART_RX_inst|MEM_UART[13][2]
+--register power-up is low
+
+B1_MEM_UART[13][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][2] is UART_RX:UART_RX_inst|MEM_UART[4][2]
+--register power-up is low
+
+B1_MEM_UART[4][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][2] is UART_RX:UART_RX_inst|MEM_UART[8][2]
+--register power-up is low
+
+B1_MEM_UART[8][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][2] is UART_RX:UART_RX_inst|MEM_UART[12][2]
+--register power-up is low
+
+B1_MEM_UART[12][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][2] is UART_RX:UART_RX_inst|MEM_UART[11][2]
+--register power-up is low
+
+B1_MEM_UART[11][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][2] is UART_RX:UART_RX_inst|MEM_UART[7][2]
+--register power-up is low
+
+B1_MEM_UART[7][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][2] is UART_RX:UART_RX_inst|MEM_UART[3][2]
+--register power-up is low
+
+B1_MEM_UART[3][2] = DFFEAS(B1_r_RX_Byte[2], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][1] is UART_RX:UART_RX_inst|MEM_UART[6][1]
+--register power-up is low
+
+B1_MEM_UART[6][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][1] is UART_RX:UART_RX_inst|MEM_UART[5][1]
+--register power-up is low
+
+B1_MEM_UART[5][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][1] is UART_RX:UART_RX_inst|MEM_UART[4][1]
+--register power-up is low
+
+B1_MEM_UART[4][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][1] is UART_RX:UART_RX_inst|MEM_UART[7][1]
+--register power-up is low
+
+B1_MEM_UART[7][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][1] is UART_RX:UART_RX_inst|MEM_UART[9][1]
+--register power-up is low
+
+B1_MEM_UART[9][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][1] is UART_RX:UART_RX_inst|MEM_UART[10][1]
+--register power-up is low
+
+B1_MEM_UART[10][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][1] is UART_RX:UART_RX_inst|MEM_UART[8][1]
+--register power-up is low
+
+B1_MEM_UART[8][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][1] is UART_RX:UART_RX_inst|MEM_UART[11][1]
+--register power-up is low
+
+B1_MEM_UART[11][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][1] is UART_RX:UART_RX_inst|MEM_UART[1][1]
+--register power-up is low
+
+B1_MEM_UART[1][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][1] is UART_RX:UART_RX_inst|MEM_UART[2][1]
+--register power-up is low
+
+B1_MEM_UART[2][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][1] is UART_RX:UART_RX_inst|MEM_UART[3][1]
+--register power-up is low
+
+B1_MEM_UART[3][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][1] is UART_RX:UART_RX_inst|MEM_UART[13][1]
+--register power-up is low
+
+B1_MEM_UART[13][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][1] is UART_RX:UART_RX_inst|MEM_UART[12][1]
+--register power-up is low
+
+B1_MEM_UART[12][1] = DFFEAS(B1_r_RX_Byte[1], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][0] is UART_RX:UART_RX_inst|MEM_UART[5][0]
+--register power-up is low
+
+B1_MEM_UART[5][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][0] is UART_RX:UART_RX_inst|MEM_UART[9][0]
+--register power-up is low
+
+B1_MEM_UART[9][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][0] is UART_RX:UART_RX_inst|MEM_UART[1][0]
+--register power-up is low
+
+B1_MEM_UART[1][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][0] is UART_RX:UART_RX_inst|MEM_UART[13][0]
+--register power-up is low
+
+B1_MEM_UART[13][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][0] is UART_RX:UART_RX_inst|MEM_UART[10][0]
+--register power-up is low
+
+B1_MEM_UART[10][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][0] is UART_RX:UART_RX_inst|MEM_UART[6][0]
+--register power-up is low
+
+B1_MEM_UART[6][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][0] is UART_RX:UART_RX_inst|MEM_UART[2][0]
+--register power-up is low
+
+B1_MEM_UART[2][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][0] is UART_RX:UART_RX_inst|MEM_UART[8][0]
+--register power-up is low
+
+B1_MEM_UART[8][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][0] is UART_RX:UART_RX_inst|MEM_UART[4][0]
+--register power-up is low
+
+B1_MEM_UART[4][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][0] is UART_RX:UART_RX_inst|MEM_UART[12][0]
+--register power-up is low
+
+B1_MEM_UART[12][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][0] is UART_RX:UART_RX_inst|MEM_UART[7][0]
+--register power-up is low
+
+B1_MEM_UART[7][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][0] is UART_RX:UART_RX_inst|MEM_UART[11][0]
+--register power-up is low
+
+B1_MEM_UART[11][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][0] is UART_RX:UART_RX_inst|MEM_UART[3][0]
+--register power-up is low
+
+B1_MEM_UART[3][0] = DFFEAS(B1_r_RX_Byte[0], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[10][3] is UART_RX:UART_RX_inst|MEM_UART[10][3]
+--register power-up is low
+
+B1_MEM_UART[10][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L27,  ,  ,  ,  );
+
+
+--B1_MEM_UART[9][3] is UART_RX:UART_RX_inst|MEM_UART[9][3]
+--register power-up is low
+
+B1_MEM_UART[9][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L25,  ,  ,  ,  );
+
+
+--B1_MEM_UART[8][3] is UART_RX:UART_RX_inst|MEM_UART[8][3]
+--register power-up is low
+
+B1_MEM_UART[8][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L28,  ,  ,  ,  );
+
+
+--B1_MEM_UART[11][3] is UART_RX:UART_RX_inst|MEM_UART[11][3]
+--register power-up is low
+
+B1_MEM_UART[11][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L30,  ,  ,  ,  );
+
+
+--B1_MEM_UART[5][3] is UART_RX:UART_RX_inst|MEM_UART[5][3]
+--register power-up is low
+
+B1_MEM_UART[5][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L20,  ,  ,  ,  );
+
+
+--B1_MEM_UART[6][3] is UART_RX:UART_RX_inst|MEM_UART[6][3]
+--register power-up is low
+
+B1_MEM_UART[6][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L18,  ,  ,  ,  );
+
+
+--B1_MEM_UART[4][3] is UART_RX:UART_RX_inst|MEM_UART[4][3]
+--register power-up is low
+
+B1_MEM_UART[4][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L22,  ,  ,  ,  );
+
+
+--B1_MEM_UART[7][3] is UART_RX:UART_RX_inst|MEM_UART[7][3]
+--register power-up is low
+
+B1_MEM_UART[7][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L23,  ,  ,  ,  );
+
+
+--B1_MEM_UART[2][3] is UART_RX:UART_RX_inst|MEM_UART[2][3]
+--register power-up is low
+
+B1_MEM_UART[2][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L32,  ,  ,  ,  );
+
+
+--B1_MEM_UART[1][3] is UART_RX:UART_RX_inst|MEM_UART[1][3]
+--register power-up is low
+
+B1_MEM_UART[1][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L31,  ,  ,  ,  );
+
+
+--B1_MEM_UART[3][3] is UART_RX:UART_RX_inst|MEM_UART[3][3]
+--register power-up is low
+
+B1_MEM_UART[3][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L33,  ,  ,  ,  );
+
+
+--B1_MEM_UART[13][3] is UART_RX:UART_RX_inst|MEM_UART[13][3]
+--register power-up is low
+
+B1_MEM_UART[13][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L34,  ,  ,  ,  );
+
+
+--B1_MEM_UART[12][3] is UART_RX:UART_RX_inst|MEM_UART[12][3]
+--register power-up is low
+
+B1_MEM_UART[12][3] = DFFEAS(B1_r_RX_Byte[3], i_Clk,  ,  , B1L35,  ,  ,  ,  );
+
+
 --i_RX_Serial is i_RX_Serial
 i_RX_Serial = INPUT();
 
 
---B1L47 is UART_RX:UART_RX_inst|LessThan1~8
-B1L47 = (B1_r_Clk_Count[12] & (!B1L44 & ((B1_r_Clk_Count[10]) # (B1_r_Clk_Count[11]))));
+--B1L18 is UART_RX:UART_RX_inst|Decoder1~7
+B1L18 = (B1L14 & !B1_r_MEM_Index[3]);
+
+
+--B1L19 is UART_RX:UART_RX_inst|Decoder1~8
+B1L19 = (B1L11 & (B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
+
+
+--B1L20 is UART_RX:UART_RX_inst|Decoder1~9
+B1L20 = (B1L19 & !B1_r_MEM_Index[3]);
+
+
+--B1L21 is UART_RX:UART_RX_inst|Decoder1~10
+B1L21 = (B1L11 & (!B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & B1_r_MEM_Index[2])));
+
+
+--B1L22 is UART_RX:UART_RX_inst|Decoder1~11
+B1L22 = (B1L21 & !B1_r_MEM_Index[3]);
+
+
+--B1L23 is UART_RX:UART_RX_inst|Decoder1~12
+B1L23 = (B1L12 & !B1_r_MEM_Index[3]);
+
+
+--B1L24 is UART_RX:UART_RX_inst|Decoder1~13
+B1L24 = (B1L11 & (B1_r_MEM_Index[0] & (!B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
+
+
+--B1L25 is UART_RX:UART_RX_inst|Decoder1~14
+B1L25 = (B1_r_MEM_Index[3] & B1L24);
+
+
+--B1L26 is UART_RX:UART_RX_inst|Decoder1~15
+B1L26 = (B1L11 & (!B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
+
+
+--B1L27 is UART_RX:UART_RX_inst|Decoder1~16
+B1L27 = (B1_r_MEM_Index[3] & B1L26);
+
+
+--B1L28 is UART_RX:UART_RX_inst|Decoder1~17
+B1L28 = (B1_r_MEM_Index[3] & B1L16);
+
+
+--B1L29 is UART_RX:UART_RX_inst|Decoder1~18
+B1L29 = (B1L11 & (B1_r_MEM_Index[0] & (B1_r_MEM_Index[1] & !B1_r_MEM_Index[2])));
+
+
+--B1L30 is UART_RX:UART_RX_inst|Decoder1~19
+B1L30 = (B1_r_MEM_Index[3] & B1L29);
+
+
+--B1L31 is UART_RX:UART_RX_inst|Decoder1~20
+B1L31 = (B1L24 & !B1_r_MEM_Index[3]);
+
+
+--B1L32 is UART_RX:UART_RX_inst|Decoder1~21
+B1L32 = (B1L26 & !B1_r_MEM_Index[3]);
+
+
+--B1L33 is UART_RX:UART_RX_inst|Decoder1~22
+B1L33 = (B1L29 & !B1_r_MEM_Index[3]);
+
+
+--B1L34 is UART_RX:UART_RX_inst|Decoder1~23
+B1L34 = (B1_r_MEM_Index[3] & B1L19);
+
+
+--B1L35 is UART_RX:UART_RX_inst|Decoder1~24
+B1L35 = (B1_r_MEM_Index[3] & B1L21);
+
+
+--B1L46 is UART_RX:UART_RX_inst|LessThan1~8
+B1L46 = ((!B1_r_Clk_Count[5] & ((B1L41) # (!B1_r_Clk_Count[4])))) # (!B1_r_Clk_Count[6]);
+
+
+--B1L233 is UART_RX:UART_RX_inst|r_Clk_Count[11]~43
+B1L233 = (B1L232) # (((B1_r_SM_Main.s_RX_Start_Bit & B1L39)) # (!B1_r_SM_Main.s_Idle));
 
 
 --B1L287 is UART_RX:UART_RX_inst|Selector19~3
-B1L287 = (B1L271) # ((B1_r_SM_Main.s_RX_Start_Bit & (B1L40 & !B1_r_RX_Data)));
+B1L287 = (B1L271) # ((B1_r_SM_Main.s_RX_Start_Bit & (B1L39 & !B1_r_RX_Data)));
 
 
---A1L141 is ~GND
-A1L141 = GND;
+--A1L147 is ~GND
+A1L147 = GND;
 
 
 --C1L28 is UART_TX:UART_TX_inst|o_TX_Serial~_wirecell
 C1L28 = !C1_o_TX_Serial;
+
+
+--A1L11 is o_LED_87~4_wirecell
+A1L11 = !A1L10;
 
 

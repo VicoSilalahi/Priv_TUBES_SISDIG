@@ -150,10 +150,32 @@ begin
     end if;
   end process;
 
-  -- s_TX_Block <= s_RX_Block;
-  -- s_TX_DV    <= not i_button; -- Assign pulse signal to output
-  -- o_LED_87   <= '0' when s_RX_Block(127 downto 0) = "00110001" else
-  --   '1';
-  -- o_LED_86 <= not s_TX_DV;
-  -- -- o_LED <= '0' when s_RX_Block /= (others => '0') else '1';
-end rtl;
+  -- process (i_Clk, reset)
+  -- begin
+  --   if rising_edge(i_Clk) then
+  --     -- Compare s_RX_Block with reference_value
+  --     -- if s_RX_Block = "00110001001100100011001100110100001101010011011000110111001110000011000100110010001100110011010000110101001101100011011100111000" then
+  --     if s_RX_Block = x"31323334353637383132333435363738" then
+  --       o_LED_87 <= '0'; -- Set to '0' if the values match
+  --     else
+  --       o_LED_87 <= '1'; -- Set to '1' if the values do not match
+  --     end if;
+
+  --     -- if s_RX_Block = "00011100111011000110110010101100001011001100110001001100100011000001110011101100011011001010110000101100110011000100110010001100" then
+  --     if s_RX_Block = x"1CEC6CAC2CCC4C8C1CEC6CAC2CCC4C8C" then
+  --       o_LED_86 <= '0';
+  --     else
+  --       o_LED_86 <= '1';
+  --     end if;
+  --   end if;
+  -- end process;
+  o_LED_87 <= '0' when (s_RX_Block(127 downto 120) = x"38") and (s_RX_Block(119 downto 112) = x"37") else '1'; -- Debugging output
+  -- o_LED_86 <= '0' when s_RX_Block = x"1CEC6CAC2CCC4C8C1CEC6CAC2CCC4C8C" else '1';
+
+    -- s_TX_Block <= s_RX_Block;
+    -- s_TX_DV    <= not i_button; -- Assign pulse signal to output
+    -- o_LED_87   <= '0' when s_RX_Block(127 downto 0) = "00110001" else
+    --   '1';
+    -- o_LED_86 <= not s_TX_DV;
+    -- -- o_LED <= '0' when s_RX_Block /= (others => '0') else '1';
+  end rtl;

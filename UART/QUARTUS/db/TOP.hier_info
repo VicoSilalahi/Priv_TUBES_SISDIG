@@ -134,9 +134,9 @@ i_Clk => s_button_sync.CLK
 i_Clk => UART_TX:UART_TX_inst.i_Clk
 i_RX_Serial => UART_RX:UART_RX_inst.i_RX_Serial
 i_button => s_button_sync.DATAIN
-o_TX_Serial << UART_TX:UART_TX_inst.o_TX_Serial
-o_LED_87 << o_LED_87.DB_MAX_OUTPUT_PORT_TYPE
-o_LED_86 << comb.DB_MAX_OUTPUT_PORT_TYPE
+o_TX_Serial <= UART_TX:UART_TX_inst.o_TX_Serial
+o_LED_87 <= o_LED_87.DB_MAX_OUTPUT_PORT_TYPE
+o_LED_86 <= comb.DB_MAX_OUTPUT_PORT_TYPE
 reset => UART_RX:UART_RX_inst.i_reset
 
 
