@@ -1,3 +1,20 @@
+------------------------------------------------------------------------------------------------------------------------
+-- Kelompok 23
+-- LEA-128 Enkrispi CFB
+--
+--
+------------------------------------------------------------------------------------------------------------------------
+-- Deskripsi
+-- UART TX untuk menerima data dari CLIENT
+--
+-- Fungsi     : UART Receiver
+-- Input      : i_Clk -> Internal Clock
+--            : i_TX_DV -> Input to indicate that the data is ready to be sent/Send immediately
+-- Output     : o_TX_Serial -> TX Pin for transmitting data
+--            : o_TX_Done -> Output Signal when 128-bit has been transmitted
+--
+------------------------------------------------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -14,7 +31,7 @@ entity UART_TX is
     i_Clk       : in std_logic; -- Internal Clock
     i_TX_DV     : in std_logic; -- Input to indicate that the data is ready to be sent/Send immediately
     i_TX_Block  : in std_logic_vector(127 downto 0); -- Input of 128-bits block
-    o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator. TODO: On TOP put LED
+    o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator.
     o_TX_Serial : out std_logic := '1'; -- TX Line communicates to Client/PC
     o_TX_Done   : out std_logic -- Indicates 128-bit is done
   );

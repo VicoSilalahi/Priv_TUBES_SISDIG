@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_TX_Serial",
+					"strict" : false
+				},
+				{
+					"name" : "o_LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "i_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "i_start",
+					"strict" : false
+				},
+				{
+					"name" : "i_RX_Serial",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

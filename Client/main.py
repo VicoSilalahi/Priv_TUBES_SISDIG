@@ -4,6 +4,9 @@ import serial
 import threading
 import time
 
+BdRt = 9600
+ComLoc = "COM3"
+
 # Function for converting CSV to HEX
 def csv_to_hex():
     file_name = input("Input the file name: ")
@@ -34,8 +37,8 @@ def csv_to_hex():
 # UART Transmit and Receive
 def uart_transmit_receive():
     try:
-        ser = serial.Serial('COM3', baudrate=9600, timeout=1)
-        print("Connected to COM3.")
+        ser = serial.Serial(ComLoc, baudrate=BdRt, timeout=1)
+        print(f"Connected to {ComLoc}.")
         
         def transmit_data():
             nonlocal current_line
@@ -94,8 +97,8 @@ def uart_transmit_receive():
 # UART Transmit, Receive Automatically After Each Response
 def uart_transmit_receive_auto():
     try:
-        ser = serial.Serial('COM3', baudrate=115200, timeout=1)
-        print("Connected to COM3.")
+        ser = serial.Serial(ComLoc, baudrate=BdRt, timeout=1)
+        print(f"Connected to {ComLoc}.")
         
         def transmit_data_auto():
             nonlocal current_line
@@ -112,6 +115,17 @@ def uart_transmit_receive_auto():
                 # 115200 = 0.0034s -> 0.004s
                 # 57600 = 0.0067s -> 0.007s
                 # 9600 = 0.041s -> 0.05s
+
+                if (BdRt == 9600):
+                    time.sleep(0.05)
+                elif(BdRt == 57600):
+                    time.sleep(0.007)
+                elif(BdRt == 115200):
+                    time.sleep(0.004)
+                elif(BdRt == 128000):
+                    time.sleep(0.004)
+                else:
+                    time.sleep(0.1)
 
                 if current_line < len(output_lines):
                     line_to_send = output_lines[current_line].strip()

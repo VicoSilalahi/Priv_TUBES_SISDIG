@@ -1,7 +1,15 @@
+------------------------------------------------------------------------------------------------------------------------
+-- Kelompok 23
+-- LEA-128 Enkrispi CFB
+--
+------------------------------------------------------------------------------------------------------------------------
+-- Deskripsi
+-- State Representation untuk LEA-128 dan UART RX dan UART TX
+--
+------------------------------------------------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
--- use ieee.math_real.all;
 
 entity reverseinput is
   port (
@@ -16,7 +24,6 @@ begin
 
   process (A)
   begin
-    -- Loop to assign corresponding bits from A to B
     for i in 0 to 15 loop
       B(127 - 8 * i downto 120 - 8 * i) <= A(8 * (i + 1) - 1 downto 8 * i);
     end loop;

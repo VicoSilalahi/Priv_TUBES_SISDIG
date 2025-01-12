@@ -1,16 +1,35 @@
+------------------------------------------------------------------------------------------------------------------------
+-- Kelompok 23
+-- LEA-128 Enkrispi CFB
+--
+--
+------------------------------------------------------------------------------------------------------------------------
+-- Deskripsi
+-- TOP Entity dari LEA-128 Enkripsi CFB, berpusat pada implementasi UART dan komunikasi dengan CFB
+--
+-- Fungsi     : UART Receive and Transmit TOP entity to communicate with CFB
+-- Input      : i_clk, i_start, reset -> Internal Clock, reset, dan sinyal start
+--            : ds, ptxr -> Status signals from and to UART (Data Sent and Plaintext Ready)
+--            : i_RX_Serial -> RX pin for receiving data
+-- Output     : o_TX_Serial -> TX pin for transmitting data
+--            : o_LED -> Show which STATE it is right now (CFB)
+------------------------------------------------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
--- use ieee.math_real.all
 
 entity TOP_UART is
   generic (
-    c_CLKS_PER_BIT : integer := 434
+    c_CLKS_PER_BIT : integer := 5208
     -- To determine CLKS_PER_BIT:
     -- CLKS_PER_BIT = BIT_PERIOD/CLOCK_PERIOD
     -- BIT_PERIOD = 1/BAUD_RATE
     -- CLOCK PERIOD = 1/Hz
+    --
     -- HZ / BaudRate
+    -- 9600 : 5208
+    -- 57600 : 868
   );
   port (
     i_clk       : in std_logic;
@@ -37,9 +56,9 @@ architecture rtl of TOP_UART is
     port (
       i_Clk       : in std_logic; -- Internal Clock
       i_RX_Serial : in std_logic; -- Input RX Pin (Receive from Client/PC)
-      o_RX_DV     : out std_logic; -- Output Signal when a byte has been received TODO: Create the mechanism for 128-bit DV
+      o_RX_DV     : out std_logic; -- Output Signal when a byte has been received
       o_RX_128DV  : out std_logic;
-      o_RX_Byte   : out std_logic_vector(7 downto 0); -- TODO: Remove doesn't need outside of simulation
+      o_RX_Byte   : out std_logic_vector(7 downto 0); -- Useless on this scope
       o_RX_Block  : out std_logic_vector(127 downto 0) -- Output of the UART Receiver, sized 128-bit to be input into TOP
     );
   end component;
@@ -59,7 +78,7 @@ architecture rtl of TOP_UART is
       i_Clk       : in std_logic; -- Internal Clock
       i_TX_DV     : in std_logic; -- Input to indicate that the data is ready to be sent/Send immediately
       i_TX_Block  : in std_logic_vector(127 downto 0); -- Input of 128-bits block
-      o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator. TODO: On TOP put LED
+      o_TX_Active : out std_logic; -- Indicate that TX line is active, maybe useful for LED Indicator.
       o_TX_Serial : out std_logic := '1'; -- TX Line communicates to Client/PC
       o_TX_Done   : out std_logic -- Indicates 128-bit is done
     );
@@ -78,7 +97,7 @@ architecture rtl of TOP_UART is
       clk         : in std_logic;
       reset       : in std_logic;
       start       : in std_logic;
-      ds, ptxr    : in std_logic; -- temporary simulation input for UART RX READY AND UART TX DONE
+      ds, ptxr    : in std_logic; -- UART TX and RX Signals
       masterkey   : in std_logic_vector(127 downto 0);
       plaintext   : in std_logic_vector(127 downto 0);
       ciphertext  : out std_logic_vector(127 downto 0);
@@ -94,7 +113,7 @@ architecture rtl of TOP_UART is
       Q            : out std_logic_vector (127 downto 0) -- Output data
     );
   end component;
-  component reverseinput is
+  component reverseinput is -- Reverse Input for RX and TX
     port (
       A : in std_logic_vector(127 downto 0);
       B : out std_logic_vector(127 downto 0)
@@ -106,22 +125,10 @@ architecture rtl of TOP_UART is
   type FSM is (RXKEY, RXPLAINTEXT);
   signal currentstate, nextstate : FSM := RXKEY;
 
-  signal s_LED_Stage : std_logic := '1';
-
-  signal tx_dv_counter : integer range 0 to 10 := 0;
-
-  signal s_CFBSM        : std_logic_vector(2 downto 0);
+  signal s_CFBSM        : std_logic_vector(2 downto 0); -- State LED signal
   signal s_reset        : std_logic := '0';
   signal s_RX_Block_inv : std_logic_vector(127 downto 0);
 
-  function reverse_bits(input : std_logic_vector) return std_logic_vector is
-    variable reversed           : std_logic_vector(input'range); -- Same range as input
-  begin
-    for i in input'range loop
-      reversed(input'left - i) := input(i);
-    end loop;
-    return reversed;
-  end function;
 begin
   -- UART_RX Instantiation
   UART_RX_inst : UART_RX
@@ -169,6 +176,7 @@ begin
     o_SM        => s_CFBSM
   );
 
+  -- Masterkey Register instantiation
   Masterkey_REG : register_128bit
   port map
   (
@@ -179,6 +187,7 @@ begin
     Q   => s_Masterkey
   );
 
+  -- Plaintext Register instantiation
   Plaintext_REG : register_128bit
   port map
   (
@@ -189,13 +198,15 @@ begin
     Q   => s_Plaintext
   );
 
+  -- RX State Representation
   RX_BLOCK_REVERSE : reverseinput
   port map
   (
     A => s_RX_Block,
     B => s_RX_Block_inv
   );
-
+  
+  -- TX RX State Representation
   TX_BLOCK_REVERSE : reverseinput
   port map
   (
@@ -243,8 +254,8 @@ begin
         En_Key <= '0';
     end case;
   end process;
+
   -- Output Assignments
-  -- s_TX_Block  <= s_Ciphertext;
   s_TX_DV     <= s_SEND_DATA;
   s_CFB_start <= not i_start;
   s_Data_Sent <= s_TX_Done;

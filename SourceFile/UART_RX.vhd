@@ -1,3 +1,21 @@
+------------------------------------------------------------------------------------------------------------------------
+-- Kelompok 23
+-- LEA-128 Enkrispi CFB
+--
+--
+------------------------------------------------------------------------------------------------------------------------
+-- Deskripsi
+-- UART RX untuk menerima data dari CLIENT
+--
+-- Fungsi     : UART Receiver
+-- Input      : i_Clk -> Internal Clock
+--            : i_RX_Serial -> RX pin for receiving data
+-- Output     : o_RX_DV -> Output Signal when a byte has been received
+--            : o_RX_128DV -> Output Signal when 128-bit has been received
+--            : o_RX_Block -> Data received
+--
+------------------------------------------------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -12,11 +30,10 @@ entity UART_RX is
   );
   port (
     i_Clk       : in std_logic; -- Internal Clock
-    -- i_reset     : in std_logic;
     i_RX_Serial : in std_logic; -- Input RX Pin (Receive from Client/PC)
-    o_RX_DV     : out std_logic; -- Output Signal when a byte has been received TODO: Create the mechanism for 128-bit DV
+    o_RX_DV     : out std_logic; -- Output Signal when a byte has been received
     o_RX_128DV  : out std_logic;
-    o_RX_Byte   : out std_logic_vector(7 downto 0); -- TODO: Remove doesn't need outside of simulation
+    o_RX_Byte   : out std_logic_vector(7 downto 0);
     o_RX_Block  : out std_logic_vector(127 downto 0) -- Output of the UART Receiver, sized 128-bit to be input into TOP
   );
 end UART_RX;
