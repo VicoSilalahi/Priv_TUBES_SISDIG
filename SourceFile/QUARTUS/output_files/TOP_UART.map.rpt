@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TOP_UART
-Sun Jan 12 09:10:55 2025
+Sun Jan 12 22:07:55 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -45,8 +45,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  37. Port Connectivity Checks: "UART_RX:UART_RX_inst"
  38. Post-Synthesis Netlist Statistics for Top Partition
  39. Elapsed Time Per Partition
- 40. Analysis & Synthesis Equations
- 41. Analysis & Synthesis Messages
+ 40. Analysis & Synthesis Messages
 
 
 
@@ -73,15 +72,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 12 09:10:55 2025          ;
+; Analysis & Synthesis Status        ; Successful - Sun Jan 12 22:07:55 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; TOP_UART                                       ;
 ; Top-level Entity Name              ; TOP_UART                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 1,738                                          ;
-;     Total combinational functions  ; 1,479                                          ;
-;     Dedicated logic registers      ; 1,241                                          ;
-; Total registers                    ; 1241                                           ;
+; Total logic elements               ; 1,729                                          ;
+;     Total combinational functions  ; 1,470                                          ;
+;     Dedicated logic registers      ; 1,235                                          ;
+; Total registers                    ; 1235                                           ;
 ; Total pins                         ; 8                                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -181,7 +180,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -200,17 +199,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
-; ../UART_TX.vhd                   ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd         ;         ;
-; ../UART_RX.vhd                   ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd         ;         ;
-; ../TOP_UART.vhd                  ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd        ;         ;
-; ../reverseinput.vhd              ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd    ;         ;
-; ../register_128bit.vhd           ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd ;         ;
-; ../register_32bit.vhd            ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd  ;         ;
-; ../mux2to1_128bit.vhd            ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd  ;         ;
-; ../mux2to1_32bit.vhd             ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd   ;         ;
-; ../LEA_128.vhd                   ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd         ;         ;
-; ../counter_24.vhd                ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd      ;         ;
-; ../CFB.vhd                       ; yes             ; User VHDL File  ; D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd             ;         ;
+; ../UART_TX.vhd                   ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd         ;         ;
+; ../UART_RX.vhd                   ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd         ;         ;
+; ../TOP_UART.vhd                  ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd        ;         ;
+; ../reverseinput.vhd              ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd    ;         ;
+; ../register_128bit.vhd           ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd ;         ;
+; ../register_32bit.vhd            ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd  ;         ;
+; ../mux2to1_128bit.vhd            ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd  ;         ;
+; ../mux2to1_32bit.vhd             ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd   ;         ;
+; ../LEA_128.vhd                   ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd         ;         ;
+; ../counter_24.vhd                ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd      ;         ;
+; ../CFB.vhd                       ; yes             ; User VHDL File  ; C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd             ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 
 
@@ -219,20 +218,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 1,738       ;
+; Estimated Total logic elements              ; 1,729       ;
 ;                                             ;             ;
-; Total combinational functions               ; 1479        ;
+; Total combinational functions               ; 1470        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 408         ;
-;     -- 3 input functions                    ; 416         ;
-;     -- <=2 input functions                  ; 655         ;
+;     -- 4 input functions                    ; 406         ;
+;     -- 3 input functions                    ; 413         ;
+;     -- <=2 input functions                  ; 651         ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 1230        ;
-;     -- arithmetic mode                      ; 249         ;
+;     -- normal mode                          ; 1227        ;
+;     -- arithmetic mode                      ; 243         ;
 ;                                             ;             ;
-; Total registers                             ; 1241        ;
-;     -- Dedicated logic registers            ; 1241        ;
+; Total registers                             ; 1235        ;
+;     -- Dedicated logic registers            ; 1235        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 8           ;
@@ -240,8 +239,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_clk~input ;
-; Maximum fan-out                             ; 1241        ;
-; Total fan-out                               ; 8103        ;
+; Maximum fan-out                             ; 1235        ;
+; Total fan-out                               ; 8054        ;
 ; Average fan-out                             ; 2.96        ;
 +---------------------------------------------+-------------+
 
@@ -251,7 +250,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name     ; Library Name ;
 +--------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
-; |TOP_UART                                                    ; 1479 (1)            ; 1241 (1)                  ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |TOP_UART                                                                                     ; TOP_UART        ; work         ;
+; |TOP_UART                                                    ; 1470 (1)            ; 1235 (1)                  ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |TOP_UART                                                                                     ; TOP_UART        ; work         ;
 ;    |CFB:CFB_inst|                                            ; 1114 (138)          ; 655 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst                                                                        ; CFB             ; work         ;
 ;       |LEA_128:LEA_128_inst|                                 ; 718 (326)           ; 393 (4)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst                                                   ; LEA_128         ; work         ;
 ;          |counter_24:counter_24_inst|                        ; 8 (8)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst|counter_24:counter_24_inst                        ; counter_24      ; work         ;
@@ -278,8 +277,8 @@ https://fpgasoftware.intel.com/eula.
 ;          |register_32bit:\gen_T_Registers:3:T_Register|      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst|register_32bit:\gen_T_Registers:3:T_Register      ; register_32bit  ; work         ;
 ;       |register_128bit:Key|                                  ; 129 (129)           ; 128 (128)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst|register_128bit:Key                                                    ; register_128bit ; work         ;
 ;       |register_128bit:Ptx|                                  ; 129 (129)           ; 128 (128)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|CFB:CFB_inst|register_128bit:Ptx                                                    ; register_128bit ; work         ;
-;    |UART_RX:UART_RX_inst|                                    ; 88 (88)             ; 164 (164)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|UART_RX:UART_RX_inst                                                                ; UART_RX         ; work         ;
-;    |UART_TX:UART_TX_inst|                                    ; 146 (146)           ; 165 (165)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|UART_TX:UART_TX_inst                                                                ; UART_TX         ; work         ;
+;    |UART_RX:UART_RX_inst|                                    ; 82 (82)             ; 161 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|UART_RX:UART_RX_inst                                                                ; UART_RX         ; work         ;
+;    |UART_TX:UART_TX_inst|                                    ; 143 (143)           ; 162 (162)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|UART_TX:UART_TX_inst                                                                ; UART_TX         ; work         ;
 ;    |register_128bit:Masterkey_REG|                           ; 1 (1)               ; 128 (128)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|register_128bit:Masterkey_REG                                                       ; register_128bit ; work         ;
 ;    |register_128bit:Plaintext_REG|                           ; 129 (129)           ; 128 (128)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TOP_UART|register_128bit:Plaintext_REG                                                       ; register_128bit ; work         ;
 +--------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-----------------+--------------+
@@ -348,12 +347,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1241  ;
-; Number of registers using Synchronous Clear  ; 31    ;
+; Total registers                              ; 1235  ;
+; Number of registers using Synchronous Clear  ; 25    ;
 ; Number of registers using Synchronous Load   ; 96    ;
 ; Number of registers using Asynchronous Clear ; 6     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1194  ;
+; Number of registers using Clock Enable       ; 1188  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -374,19 +373,19 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
-; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|CFB:CFB_inst|register_128bit:Key|temp_data[70]                                   ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|CFB:CFB_inst|register_128bit:Key|temp_data[114]                                  ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst|counter_24:counter_24_inst|internal_counter[4] ;
-; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|register_128bit:Plaintext_REG|temp_data[46]                                      ;
-; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|register_128bit:Masterkey_REG|temp_data[76]                                      ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|CFB:CFB_inst|register_128bit:Ptx|temp_data[16]                                   ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |TOP_UART|UART_TX:UART_TX_inst|r_Clk_Count[10]                                             ;
-; 7:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |TOP_UART|UART_RX:UART_RX_inst|r_Clk_Count[8]                                              ;
-; 20:1               ; 8 bits    ; 104 LEs       ; 88 LEs               ; 16 LEs                 ; Yes        ; |TOP_UART|UART_TX:UART_TX_inst|r_TX_Data[0]                                                ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|register_128bit:Plaintext_REG|temp_data[22]                                      ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|register_128bit:Masterkey_REG|temp_data[72]                                      ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |TOP_UART|CFB:CFB_inst|register_128bit:Ptx|temp_data[88]                                   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |TOP_UART|UART_TX:UART_TX_inst|r_Clk_Count[9]                                              ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |TOP_UART|UART_RX:UART_RX_inst|r_Clk_Count[0]                                              ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 88 LEs               ; 16 LEs                 ; Yes        ; |TOP_UART|UART_TX:UART_TX_inst|r_TX_Data[7]                                                ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TOP_UART|UART_TX:UART_TX_inst|r_Bit_Index                                                 ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |TOP_UART|UART_RX:UART_RX_inst|r_Bit_Index                                                 ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst|s_CMUX                                         ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |TOP_UART|UART_TX:UART_TX_inst|Selector36                                                  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_UART|UART_RX:UART_RX_inst|Selector20                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TOP_UART|CFB:CFB_inst|LEA_128:LEA_128_inst|s_Res_Ctr                                      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |TOP_UART|UART_TX:UART_TX_inst|Selector33                                                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |TOP_UART|UART_RX:UART_RX_inst|Selector18                                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
 
 
@@ -395,7 +394,7 @@ Encoding Type:  One-Hot
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
-; c_CLKS_PER_BIT ; 5208  ; Signed Integer                                  ;
+; c_CLKS_PER_BIT ; 868   ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -405,7 +404,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------------+
 ; Parameter Name ; Value ; Type                                     ;
 +----------------+-------+------------------------------------------+
-; g_clks_per_bit ; 5208  ; Signed Integer                           ;
+; g_clks_per_bit ; 868   ; Signed Integer                           ;
 +----------------+-------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -415,7 +414,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------------+
 ; Parameter Name ; Value ; Type                                     ;
 +----------------+-------+------------------------------------------+
-; g_clks_per_bit ; 5208  ; Signed Integer                           ;
+; g_clks_per_bit ; 868   ; Signed Integer                           ;
 +----------------+-------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -497,19 +496,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 ; Port        ; Type  ; Severity ; Details                                                                        ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
-; a_0[30..27] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[23..22] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[20..16] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[13..12] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[7..5]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[3..2]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[26..24] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[15..14] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[11..8]  ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[1..0]   ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[21]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[4]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[30..27] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[23..22] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[20..16] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[13..12] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[7..5]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[3..2]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[26..24] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[15..14] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[11..8]  ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[1..0]   ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[21]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[4]      ; Input ; Info     ; Stuck at GND                                                                   ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 
 
@@ -518,21 +517,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 ; Port        ; Type  ; Severity ; Details                                                                        ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
-; a_0[30..27] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[24..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[14..10] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[26..25] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[20..18] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[16..15] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[9..8]   ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[6..4]   ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[17]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[7]      ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[3]      ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[2]      ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[1]      ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[0]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[30..27] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[24..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[14..10] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[26..25] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[20..18] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[16..15] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[9..8]   ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[6..4]   ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[17]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[7]      ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[3]      ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[2]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[1]      ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[0]      ; Input ; Info     ; Stuck at GND                                                                   ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 
 
@@ -541,23 +540,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 ; Port        ; Type  ; Severity ; Details                                                                        ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
-; a_0[22..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[14..13] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[9..8]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[29..27] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[25..23] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[20..18] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[16..15] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[7..2]   ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[30]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[26]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[17]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[12]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[11]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[10]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[1]      ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[0]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[22..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[14..13] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[9..8]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[29..27] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[25..23] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[20..18] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[16..15] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[7..2]   ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[31]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[30]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[26]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[17]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[12]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[11]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[10]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[1]      ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[0]      ; Input ; Info     ; Stuck at GND                                                                   ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 
 
@@ -566,19 +565,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 ; Port        ; Type  ; Severity ; Details                                                                        ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
-; a_0[31..30] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[25..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[19..13] ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[8..6]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[4..3]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[1..0]   ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[29..26] ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[10..9]  ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[20]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[12]     ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[11]     ; Input ; Info     ; Stuck at VCC                                                                   ;
-; a_0[5]      ; Input ; Info     ; Stuck at GND                                                                   ;
-; a_0[2]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[31..30] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[25..21] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[19..13] ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[8..6]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[4..3]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[1..0]   ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[29..26] ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[10..9]  ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[20]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[12]     ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[11]     ; Input ; Info     ; Stuck at VCC                                                                   ;
+; i_a[5]      ; Input ; Info     ; Stuck at GND                                                                   ;
+; i_a[2]      ; Input ; Info     ; Stuck at GND                                                                   ;
 +-------------+-------+----------+--------------------------------------------------------------------------------+
 
 
@@ -632,7 +631,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-------------------------------------+
 ; Port ; Type  ; Severity ; Details                             ;
 +------+-------+----------+-------------------------------------+
-; b_1  ; Input ; Info     ; Stuck at GND                        ;
+; i_b  ; Input ; Info     ; Stuck at GND                        ;
 +------+-------+----------+-------------------------------------+
 
 
@@ -661,24 +660,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 8                           ;
-; cycloneiii_ff         ; 1241                        ;
+; cycloneiii_ff         ; 1235                        ;
 ;     CLR               ; 6                           ;
 ;     ENA               ; 1067                        ;
-;     ENA SCLR          ; 31                          ;
+;     ENA SCLR          ; 25                          ;
 ;     ENA SLD           ; 96                          ;
 ;     plain             ; 41                          ;
-; cycloneiii_lcell_comb ; 1481                        ;
-;     arith             ; 249                         ;
-;         2 data inputs ; 32                          ;
+; cycloneiii_lcell_comb ; 1472                        ;
+;     arith             ; 243                         ;
+;         2 data inputs ; 26                          ;
 ;         3 data inputs ; 217                         ;
-;     normal            ; 1232                        ;
+;     normal            ; 1229                        ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 619                         ;
-;         3 data inputs ; 199                         ;
-;         4 data inputs ; 408                         ;
+;         2 data inputs ; 621                         ;
+;         3 data inputs ; 196                         ;
+;         4 data inputs ; 406                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.20                        ;
-; Average LUT depth     ; 3.48                        ;
+; Average LUT depth     ; 3.47                        ;
 +-----------------------+-----------------------------+
 
 
@@ -687,14 +686,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
-
-
-+--------------------------------+
-; Analysis & Synthesis Equations ;
-+--------------------------------+
-The equations can be found in D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/QUARTUS/output_files/TOP_UART.map.eqn.
 
 
 +-------------------------------+
@@ -703,104 +696,102 @@ The equations can be found in D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/S
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Jan 12 09:10:41 2025
+    Info: Processing started: Sun Jan 12 22:07:36 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TOP_UART -c TOP_UART
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/uart_tx.vhd
-    Info (12022): Found design unit 1: UART_TX-RTL File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 23
-    Info (12023): Found entity 1: UART_TX File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/uart_rx.vhd
-    Info (12022): Found design unit 1: UART_RX-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd Line: 23
-    Info (12023): Found entity 1: UART_RX File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/top_uart_tb.vhd
-    Info (12022): Found design unit 1: TOP_UART_tb-bench File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART_tb.vhd Line: 9
-    Info (12023): Found entity 1: TOP_UART_tb File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART_tb.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/top_uart.vhd
-    Info (12022): Found design unit 1: TOP_UART-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 27
-    Info (12023): Found entity 1: TOP_UART File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/reverseinput.vhd
-    Info (12022): Found design unit 1: reverseinput-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd Line: 12
-    Info (12023): Found entity 1: reverseinput File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/register_128bit.vhd
-    Info (12022): Found design unit 1: register_128bit-behavior File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd Line: 19
-    Info (12023): Found entity 1: register_128bit File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd Line: 11
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/register_32bit.vhd
-    Info (12022): Found design unit 1: register_32bit-behavior File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd Line: 24
-    Info (12023): Found entity 1: register_32bit File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd Line: 16
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/mux2to1_128bit.vhd
-    Info (12022): Found design unit 1: mux2to1_128bit-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd Line: 15
-    Info (12023): Found entity 1: mux2to1_128bit File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/mux2to1_32bit.vhd
-    Info (12022): Found design unit 1: mux2to1_32bit-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd Line: 25
-    Info (12023): Found entity 1: mux2to1_32bit File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd Line: 16
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/lea_encrypt_fsm.vhd
-    Info (12022): Found design unit 1: lea_encrypt_fsm-behavior File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/lea_encrypt_fsm.vhd Line: 33
-    Info (12023): Found entity 1: lea_encrypt_fsm File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/lea_encrypt_fsm.vhd Line: 26
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/lea_128_tb.vhd
-    Info (12022): Found design unit 1: LEA_128_tb-bench File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128_tb.vhd Line: 9
-    Info (12023): Found entity 1: LEA_128_tb File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128_tb.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/lea_128_fsm_v2.vhd
-    Info (12022): Found design unit 1: LEA_128_FSM_V2-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128_FSM_V2.vhd Line: 17
-    Info (12023): Found entity 1: LEA_128_FSM_V2 File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128_FSM_V2.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/lea_128.vhd
-    Info (12022): Found design unit 1: LEA_128-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 16
-    Info (12023): Found entity 1: LEA_128 File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/cypher_block.vhd
-    Info (12022): Found design unit 1: cypher_block-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/cypher_block.vhd Line: 27
-    Info (12023): Found entity 1: cypher_block File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/cypher_block.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/counter_24.vhd
-    Info (12022): Found design unit 1: counter_24-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd Line: 15
-    Info (12023): Found entity 1: counter_24 File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/cfb_tb.vhd
-    Info (12022): Found design unit 1: CFB_tb-bench File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB_tb.vhd Line: 8
-    Info (12023): Found entity 1: CFB_tb File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB_tb.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /teknikelektro/sistemdigital/priv_tubes_sisdig/sourcefile/cfb.vhd
-    Info (12022): Found design unit 1: CFB-rtl File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 20
-    Info (12023): Found entity 1: CFB File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/uart_tx.vhd
+    Info (12022): Found design unit 1: UART_TX-RTL File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 40
+    Info (12023): Found entity 1: UART_TX File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/uart_rx.vhd
+    Info (12022): Found design unit 1: UART_RX-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd Line: 40
+    Info (12023): Found entity 1: UART_RX File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_RX.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/top_uart_tb.vhd
+    Info (12022): Found design unit 1: TOP_UART_tb-bench File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART_tb.vhd Line: 12
+    Info (12023): Found entity 1: TOP_UART_tb File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART_tb.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/top_uart.vhd
+    Info (12022): Found design unit 1: TOP_UART-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 44
+    Info (12023): Found entity 1: TOP_UART File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/reverseinput.vhd
+    Info (12022): Found design unit 1: reverseinput-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd Line: 21
+    Info (12023): Found entity 1: reverseinput File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/reverseinput.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/register_128bit.vhd
+    Info (12022): Found design unit 1: register_128bit-behavior File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd Line: 19
+    Info (12023): Found entity 1: register_128bit File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_128bit.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/register_32bit.vhd
+    Info (12022): Found design unit 1: register_32bit-behavior File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd Line: 24
+    Info (12023): Found entity 1: register_32bit File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/register_32bit.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/mux2to1_128bit.vhd
+    Info (12022): Found design unit 1: mux2to1_128bit-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd Line: 23
+    Info (12023): Found entity 1: mux2to1_128bit File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_128bit.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/mux2to1_32bit.vhd
+    Info (12022): Found design unit 1: mux2to1_32bit-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd Line: 27
+    Info (12023): Found entity 1: mux2to1_32bit File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/mux2to1_32bit.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/lea_encrypt_fsm.vhd
+    Info (12022): Found design unit 1: lea_encrypt_fsm-behavior File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/lea_encrypt_fsm.vhd Line: 33
+    Info (12023): Found entity 1: lea_encrypt_fsm File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/lea_encrypt_fsm.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/lea_128_tb.vhd
+    Info (12022): Found design unit 1: LEA_128_tb-bench File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128_tb.vhd Line: 12
+    Info (12023): Found entity 1: LEA_128_tb File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128_tb.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/lea_128_fsm_v2.vhd
+    Info (12022): Found design unit 1: LEA_128_FSM_V2-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128_FSM_V2.vhd Line: 17
+    Info (12023): Found entity 1: LEA_128_FSM_V2 File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128_FSM_V2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/lea_128.vhd
+    Info (12022): Found design unit 1: LEA_128-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 37
+    Info (12023): Found entity 1: LEA_128 File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 27
+Warning (12019): Can't analyze file -- file ../cypher_block.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/counter_24.vhd
+    Info (12022): Found design unit 1: counter_24-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd Line: 15
+    Info (12023): Found entity 1: counter_24 File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/counter_24.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/cfb_tb.vhd
+    Info (12022): Found design unit 1: CFB_tb-bench File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB_tb.vhd Line: 12
+    Info (12023): Found entity 1: CFB_tb File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB_tb.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/asus/documents/sisdig/priv_tubes_sisdig/sourcefile/cfb.vhd
+    Info (12022): Found design unit 1: CFB-rtl File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 38
+    Info (12023): Found entity 1: CFB File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 24
 Info (12127): Elaborating entity "TOP_UART" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(29): object "s_RX_DV" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 29
-Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(31): object "s_RX_Byte" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(52): object "s_TX_Active" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at TOP_UART.vhd(229): signal "s_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 229
-Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:UART_RX_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 129
-Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:UART_TX_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 144
-Warning (10036): Verilog HDL or VHDL warning at UART_TX.vhd(34): object "r_TX_Done" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 34
-Info (12128): Elaborating entity "CFB" for hierarchy "CFB:CFB_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 159
-Warning (10540): VHDL Signal Declaration warning at CFB.vhd(60): used explicit default value for signal "STOP_LEA" because signal was never assigned a value File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 60
-Info (12128): Elaborating entity "register_128bit" for hierarchy "CFB:CFB_inst|register_128bit:Key" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 87
-Info (12128): Elaborating entity "mux2to1_128bit" for hierarchy "CFB:CFB_inst|mux2to1_128bit:IVMUX" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 112
-Info (12128): Elaborating entity "LEA_128" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 134
-Warning (10036): Verilog HDL or VHDL warning at LEA_128.vhd(71): object "s_reset" assigned a value but never read File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_PMUX", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_KMUX", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_CMUX", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_En_Reg_All", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_En_Ctr", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_Res_Ctr", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Warning (10631): VHDL Process Statement warning at LEA_128.vhd(308): inferring latch(es) for signal or variable "s_Res_Reg_All", which holds its previous value in one or more paths through the process File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_Res_Reg_All" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_Res_Ctr" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_En_Ctr" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_En_Reg_All" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_CMUX" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_KMUX" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (10041): Inferred latch for "s_PMUX" at LEA_128.vhd(308) File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 308
-Info (12128): Elaborating entity "reverseinput" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|reverseinput:Masterkey_State_Representation" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 103
-Info (12128): Elaborating entity "counter_24" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|counter_24:counter_24_inst" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 160
-Info (12128): Elaborating entity "register_32bit" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|register_32bit:\gen_C_Registers:0:C_Register" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 171
-Info (12128): Elaborating entity "mux2to1_32bit" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|mux2to1_32bit:\gen_C_Multiplexers:0:C_Multiplexer" File: D:/teknikelektro/SistemDigital/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 183
+Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(46): object "s_RX_DV" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(48): object "s_RX_Byte" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at TOP_UART.vhd(69): object "s_TX_Active" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at TOP_UART.vhd(238): signal "s_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 238
+Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:UART_RX_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 134
+Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:UART_TX_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 149
+Warning (10036): Verilog HDL or VHDL warning at UART_TX.vhd(51): object "r_TX_Done" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/UART_TX.vhd Line: 51
+Info (12128): Elaborating entity "CFB" for hierarchy "CFB:CFB_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/TOP_UART.vhd Line: 164
+Warning (10540): VHDL Signal Declaration warning at CFB.vhd(68): used explicit default value for signal "STOP_LEA" because signal was never assigned a value File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 68
+Info (12128): Elaborating entity "register_128bit" for hierarchy "CFB:CFB_inst|register_128bit:Key" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 91
+Info (12128): Elaborating entity "mux2to1_128bit" for hierarchy "CFB:CFB_inst|mux2to1_128bit:IVMUX" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 116
+Info (12128): Elaborating entity "LEA_128" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/CFB.vhd Line: 138
+Warning (10036): Verilog HDL or VHDL warning at LEA_128.vhd(92): object "s_reset" assigned a value but never read File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 92
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_PMUX", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_KMUX", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_CMUX", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_En_Reg_All", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_En_Ctr", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_Res_Ctr", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Warning (10631): VHDL Process Statement warning at LEA_128.vhd(310): inferring latch(es) for signal or variable "s_Res_Reg_All", which holds its previous value in one or more paths through the process File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_Res_Reg_All" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_Res_Ctr" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_En_Ctr" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_En_Reg_All" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_CMUX" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_KMUX" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (10041): Inferred latch for "s_PMUX" at LEA_128.vhd(310) File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 310
+Info (12128): Elaborating entity "reverseinput" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|reverseinput:Masterkey_State_Representation" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 124
+Info (12128): Elaborating entity "counter_24" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|counter_24:counter_24_inst" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 164
+Info (12128): Elaborating entity "register_32bit" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|register_32bit:\gen_C_Registers:0:C_Register" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 175
+Info (12128): Elaborating entity "mux2to1_32bit" for hierarchy "CFB:CFB_inst|LEA_128:LEA_128_inst|mux2to1_32bit:\gen_C_Multiplexers:0:C_Multiplexer" File: C:/Users/ASUS/Documents/Sisdig/Priv_TUBES_SISDIG/SourceFile/LEA_128.vhd Line: 187
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2004 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1995 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 1996 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4805 megabytes
-    Info: Processing ended: Sun Jan 12 09:10:55 2025
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:24
+    Info (21061): Implemented 1987 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4812 megabytes
+    Info: Processing ended: Sun Jan 12 22:07:55 2025
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:27
 
 

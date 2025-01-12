@@ -48,48 +48,66 @@ begin
     start     <= '0';
     masterkey <= x"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
     wait for 1 * clk_period; -- Adjust the plaintext update delay
-    start     <= '1';
+    start <= '1';
     wait for 1 * clk_period;
     start <= '0';
-    wait for 5 *clk_period;
-    plaintext <= x"4c6f72656d20697073756d20646f6c6f";
+    wait for 5 * clk_period;
+    plaintext       <= x"4c6f72656d20697073756d20646f6c6f";
     plaintext_ready <= '1';
     wait for 1 * clk_period;
     plaintext_ready <= '0';
     wait for 50 * clk_period;
 
-    -- 1 Iteration
-    wait for 50 * clk_period; -- Adjust the delay between plaintext changes
-    data_sent <= '1';
-    wait for clk_period;
-    data_sent       <= '0';
-    plaintext       <= x"722073697420616d65742c20636f6e73";
+    reset <= '1';
+
+    wait for 10 * clk_period;
+
+    reset <= '0';
+    start     <= '0';
+    masterkey <= x"0f1e2d3c4b5a69788796a5b4c3d2e1f0";
+    wait for 1 * clk_period; -- Adjust the plaintext update delay
+    start <= '1';
+    wait for 1 * clk_period;
+    start <= '0';
+    wait for 5 * clk_period;
+    plaintext       <= x"4c6f72656d20697073756d20646f6c6f";
     plaintext_ready <= '1';
     wait for 1 * clk_period;
     plaintext_ready <= '0';
     wait for 50 * clk_period;
 
-    -- 1 Iteration
-    wait for 50 * clk_period; -- Adjust the delay between plaintext changes
-    data_sent <= '1';
-    wait for clk_period;
-    data_sent       <= '0';
-    plaintext       <= x"65637465747572206164697069736369";
-    plaintext_ready <= '1';
-    wait for 1 * clk_period;
-    plaintext_ready <= '0';
-    wait for 50 * clk_period;
+    -- -- 1 Iteration
+    -- wait for 50 * clk_period; -- Adjust the delay between plaintext changes
+    -- data_sent <= '1';
+    -- wait for clk_period;
+    -- data_sent       <= '0';
+    -- plaintext       <= x"722073697420616d65742c20636f6e73";
+    -- plaintext_ready <= '1';
+    -- wait for 1 * clk_period;
+    -- plaintext_ready <= '0';
+    -- wait for 50 * clk_period;
 
-    -- 1 Iteration
-    wait for 50 * clk_period; -- Adjust the delay between plaintext changes
-    data_sent <= '1';
-    wait for clk_period;
-    data_sent       <= '0';
-    plaintext       <= x"01234567890123456789012345678901";
-    plaintext_ready <= '1';
-    wait for 1 * clk_period;
-    plaintext_ready <= '0';
-    wait for 50 * clk_period;
+    -- -- 1 Iteration
+    -- wait for 50 * clk_period; -- Adjust the delay between plaintext changes
+    -- data_sent <= '1';
+    -- wait for clk_period;
+    -- data_sent       <= '0';
+    -- plaintext       <= x"65637465747572206164697069736369";
+    -- plaintext_ready <= '1';
+    -- wait for 1 * clk_period;
+    -- plaintext_ready <= '0';
+    -- wait for 50 * clk_period;
+
+    -- -- 1 Iteration
+    -- wait for 50 * clk_period; -- Adjust the delay between plaintext changes
+    -- data_sent <= '1';
+    -- wait for clk_period;
+    -- data_sent       <= '0';
+    -- plaintext       <= x"01234567890123456789012345678901";
+    -- plaintext_ready <= '1';
+    -- wait for 1 * clk_period;
+    -- plaintext_ready <= '0';
+    -- wait for 50 * clk_period;
 
     assert false
     report "Simulation capped at this point"

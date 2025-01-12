@@ -1,5 +1,5 @@
 Flow report for TOP_UART
-Sun Jan 12 09:11:22 2025
+Sun Jan 12 22:08:28 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Sun Jan 12 09:11:22 2025          ;
+; Flow Status                        ; Successful - Sun Jan 12 22:08:28 2025          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; TOP_UART                                       ;
 ; Top-level Entity Name              ; TOP_UART                                       ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE6E22C8                                    ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 1,811 / 6,272 ( 29 % )                         ;
-;     Total combinational functions  ; 1,479 / 6,272 ( 24 % )                         ;
-;     Dedicated logic registers      ; 1,241 / 6,272 ( 20 % )                         ;
-; Total registers                    ; 1241                                           ;
+; Total logic elements               ; 1,814 / 6,272 ( 29 % )                         ;
+;     Total combinational functions  ; 1,470 / 6,272 ( 23 % )                         ;
+;     Dedicated logic registers      ; 1,235 / 6,272 ( 20 % )                         ;
+; Total registers                    ; 1235                                           ;
 ; Total pins                         ; 8 / 92 ( 9 % )                                 ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                            ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/12/2025 09:10:42 ;
+; Start date & time ; 01/12/2025 22:07:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TOP_UART            ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 1097548347491.173664784123316          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 1098377165196.173669445714308          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -101,12 +101,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4805 MB             ; 00:00:24                           ;
-; Fitter               ; 00:00:14     ; 1.1                     ; 5507 MB             ; 00:00:14                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4698 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.2                     ; 4775 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4640 MB             ; 00:00:01                           ;
-; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:42                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4812 MB             ; 00:00:27                           ;
+; Fitter               ; 00:00:21     ; 1.1                     ; 5508 MB             ; 00:00:18                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4701 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.3                     ; 4787 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4644 MB             ; 00:00:01                           ;
+; Total                ; 00:00:45     ; --                      ; --                  ; 00:00:50                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,11 +115,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-CHI75ES  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-CHI75ES  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-CHI75ES  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-CHI75ES  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-CHI75ES  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; LAPTOP-PJA0SD74  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; LAPTOP-PJA0SD74  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; LAPTOP-PJA0SD74  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; LAPTOP-PJA0SD74  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; LAPTOP-PJA0SD74  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

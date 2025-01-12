@@ -26,7 +26,7 @@ architecture bench of TOP_UART_tb is
   -- Ports
   signal i_clk       : std_logic:= '0';
   signal i_start     : std_logic:= '1'; -- Inverse in code for button normal behaviour
-  signal reset       : std_logic:= '0';
+  signal reset       : std_logic:= '1';
   signal i_RX_Serial : std_logic;
   signal o_TX_Serial : std_logic;
 
@@ -58,7 +58,7 @@ architecture bench of TOP_UART_tb is
     variable v_byte : std_logic_vector(7 downto 0);
   begin
     -- Send Each Byte in Block
-    for ii in 0 to 15 loop
+    for ii in 15 downto 0 loop
       v_byte := i_data_block((ii + 1) * 8 - 1 downto ii * 8);
       UART_WRITE_BYTE(v_byte, o_serial);
     end loop;
@@ -103,17 +103,37 @@ begin
     wait until rising_edge(i_clk);
     wait for 150 * c_BIT_PERIOD;
 
-    UART_WRITE_BLOCK(ptx_2, i_RX_Serial);
+    -- UART_WRITE_BLOCK(ptx_2, i_RX_Serial);
+    -- wait for 17 * c_BIT_PERIOD;
+    -- wait until rising_edge(i_clk);
+    -- wait for 150 * c_BIT_PERIOD;
+
+    -- UART_WRITE_BLOCK(ptx_3, i_RX_Serial);
+    -- wait for 17 * c_BIT_PERIOD;
+    -- wait until rising_edge(i_clk);
+    -- wait for 150 * c_BIT_PERIOD;
+
+    reset <= not reset;
+
+    wait for clk_period;
+
+    reset <= not reset;
+
+    wait until rising_edge(i_clk);
+    UART_WRITE_BLOCK(masterkey, i_RX_Serial);
+    wait for 17 * c_BIT_PERIOD;
+    wait until rising_edge(i_clk);
+
+    i_start <= not i_start;
+    wait for 100 * clk_period;
+    i_start <= not i_start;
+
+    wait for 1 * c_BIT_PERIOD;
+
+    UART_WRITE_BLOCK(ptx_1, i_RX_Serial);
     wait for 17 * c_BIT_PERIOD;
     wait until rising_edge(i_clk);
     wait for 150 * c_BIT_PERIOD;
-
-    UART_WRITE_BLOCK(ptx_3, i_RX_Serial);
-    wait for 17 * c_BIT_PERIOD;
-    wait until rising_edge(i_clk);
-    wait for 150 * c_BIT_PERIOD;
-
-
 
     assert false
       report "Simulation Stopped Here"

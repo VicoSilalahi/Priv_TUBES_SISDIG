@@ -21,7 +21,7 @@ use ieee.numeric_std.all;
 
 entity TOP_UART is
   generic (
-    c_CLKS_PER_BIT : integer := 5208
+    c_CLKS_PER_BIT : integer := 868
     -- To determine CLKS_PER_BIT:
     -- CLKS_PER_BIT = BIT_PERIOD/CLOCK_PERIOD
     -- BIT_PERIOD = 1/BAUD_RATE

@@ -4,7 +4,7 @@ import serial
 import threading
 import time
 
-BdRt = 9600
+BdRt = 57600
 ComLoc = "COM3"
 
 # Function for converting CSV to HEX
@@ -51,7 +51,7 @@ def uart_transmit_receive():
                 if current_line < len(output_lines):
                     line_to_send = output_lines[current_line].strip()
                     ser.write(bytes.fromhex(line_to_send))
-                    print(f"Transmitted: {line_to_send}")
+                    print(f"Transmitted Line {current_line + 1}: {line_to_send}")
                     current_line += 1
                     time.sleep(1)  # Add a 1-second delay between transmissions
                 else:
@@ -94,7 +94,6 @@ def uart_transmit_receive():
     except Exception as e:
         print(f"Error: {e}")
 
-# UART Transmit, Receive Automatically After Each Response
 def uart_transmit_receive_auto():
     try:
         ser = serial.Serial(ComLoc, baudrate=BdRt, timeout=1)
@@ -103,26 +102,14 @@ def uart_transmit_receive_auto():
         def transmit_data_auto():
             nonlocal current_line
             while current_line < len(output_lines):
-                # Add delay after user presses Enter before transmitting next line
-                time.sleep(0.0034)  # Add a 1-second delay between transmissions
-                # Baudrate of 115200 will have
-                # a transmit/receive time of (128 + 2*8*16) * (1/115200) = 0.00333333333333333333
-                # And given a delay inside the FPGA: let's say 1000 clock of process of 50 Mhz Clock
-                # 1000 * (1/50e6) = 2e-5 (less than 0.0001) (Only needs the transmit time to be rounded up a little)
-                # Therefore the delay needs to be atleast 0.0034s
-
-                # 128000 = 0.0031s -> 0.004s
-                # 115200 = 0.0034s -> 0.004s
-                # 57600 = 0.0067s -> 0.007s
-                # 9600 = 0.041s -> 0.05s
-
-                if (BdRt == 9600):
+                # Add delay for transmission
+                if BdRt == 9600:
                     time.sleep(0.05)
-                elif(BdRt == 57600):
+                elif BdRt == 57600:
                     time.sleep(0.007)
-                elif(BdRt == 115200):
+                elif BdRt == 115200:
                     time.sleep(0.004)
-                elif(BdRt == 128000):
+                elif BdRt == 128000:
                     time.sleep(0.004)
                 else:
                     time.sleep(0.1)
@@ -130,7 +117,7 @@ def uart_transmit_receive_auto():
                 if current_line < len(output_lines):
                     line_to_send = output_lines[current_line].strip()
                     ser.write(bytes.fromhex(line_to_send))
-                    print(f"Transmitted: {line_to_send}")
+                    print(f"Transmitted Line {current_line + 1}: {line_to_send}")
                     current_line += 1
 
         def receive_data():
@@ -198,3 +185,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         print("\nProgram exited via keyboard interrupt. Goodbye!")
+

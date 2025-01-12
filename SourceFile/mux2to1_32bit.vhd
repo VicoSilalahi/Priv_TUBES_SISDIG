@@ -25,13 +25,16 @@ entity mux2to1_32bit is
 end entity;
 
 architecture rtl of mux2to1_32bit is
+  signal temp_data : std_logic_vector(31 downto 0) := (others => '0');
 begin
-  process (i_S)
+  process (i_A, i_B, i_S)
   begin
     if i_S = '0' then
-      o_C <= i_A;
+      temp_data <= i_A;
     else
-      o_C <= i_B;
+      temp_data <= i_B;
     end if;
   end process;
+
+  o_C <= temp_data;
 end architecture;
