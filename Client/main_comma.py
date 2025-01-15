@@ -3,6 +3,8 @@ import binascii
 import serial
 import threading
 import time
+import csv
+import subprocess
 
 BdRt = 57600
 ComLoc = "COM3"
@@ -12,8 +14,9 @@ def csv_to_hex():
     file_name = input("Input the file name: ")
     try:
         with open(file_name, 'r') as csv_file:
-            data = csv_file.read().strip()
-        
+            csv_reader = csv.reader(csv_file)
+            data = '\n'.join(','.join(row) for row in csv_reader).strip()
+
         # Calculate padding for 128-bit alignment
         bit_length = len(data) * 8  # Assuming 1 byte per character
         padding_bits = (128 - (bit_length % 128)) % 128
@@ -25,14 +28,16 @@ def csv_to_hex():
             chunk = padded_data[i:i+16]
             hex_chunk = binascii.hexlify(chunk.encode()).decode()
             hex_output.append(hex_chunk.upper())
-        
-        with open("output_hex.txt", 'w') as output_file:
+
+        with open("output_hex_comma.txt", 'w') as output_file:
             output_file.write("\n".join(hex_output))
-        print("HEX conversion completed. Saved to 'output_hex.txt'.")
+        print("HEX conversion completed. Saved to 'output_hex_comma.txt'.")
     except FileNotFoundError:
         print("Error: File not found.")
     except Exception as e:
         print(f"Error: {e}")
+
+
 
 # UART Transmit and Receive
 def uart_transmit_receive():
@@ -75,7 +80,7 @@ def uart_transmit_receive():
                         print(f"Error in receiving data: {e}")
                         break
 
-        with open("output_hex.txt", 'r') as output_file:
+        with open("output_hex_comma.txt", 'r') as output_file:
             output_lines = output_file.readlines()
 
         current_line = 0
@@ -88,7 +93,7 @@ def uart_transmit_receive():
         receive_thread.start()
         transmit_data()
     except FileNotFoundError:
-        print("Error: 'output_hex.txt' not found.")
+        print("Error: 'output_hex_comma.txt' not found.")
     except serial.SerialException as e:
         print(f"Error: {e}")
     except Exception as e:
@@ -136,7 +141,7 @@ def uart_transmit_receive_auto():
                         print(f"Error in receiving data: {e}")
                         break
 
-        with open("output_hex.txt", 'r') as output_file:
+        with open("output_hex_comma.txt", 'r') as output_file:
             output_lines = output_file.readlines()
 
         current_line = 0
@@ -152,11 +157,31 @@ def uart_transmit_receive_auto():
         receive_thread.start()
         transmit_data_auto()
     except FileNotFoundError:
-        print("Error: 'output_hex.txt' not found.")
+        print("Error: 'output_hex_comma.txt' not found.")
     except serial.SerialException as e:
         print(f"Error: {e}")
     except Exception as e:
         print(f"Error: {e}")
+
+
+
+def program_fpga():
+    try:
+        # Define the command
+        quartus_command = r'C:\intelFPGA_lite\23.1std\quartus\bin64\quartus_pgm.exe -m jtag -o "p;C:\Users\ASUS\Documents\Sisdig\Priv_TUBES_SISDIG\SourceFile\QUARTUS\output_files\TOP_UART.sof@1"'
+
+        # Execute the command
+        print("Programming FPGA... Please wait.")
+        result = subprocess.run(quartus_command, shell=True, capture_output=True, text=True)
+
+        # Check the result
+        if result.returncode == 0:
+            print("FPGA programming completed successfully.")
+        else:
+            print("Error programming FPGA.")
+            print(f"Error Output:\n{result.stderr}")
+    except Exception as e:
+        print(f"An error occurred while programming the FPGA: {e}")
 
 # Main Menu
 def main():
@@ -165,7 +190,8 @@ def main():
         print("1. CSV to HEX")
         print("2. UART Transmit and Receive")
         print("3. UART Transmit and Receive Automatically After Each Response")
-        print("4. Exit")
+        print("4. Program FPGA (Reset)")
+        print("5. Exit")
         choice = input("Choose an option: ")
         
         if choice == "1":
@@ -175,6 +201,8 @@ def main():
         elif choice == "3":
             uart_transmit_receive_auto()
         elif choice == "4":
+            program_fpga()
+        elif choice == "5":
             print("Exiting program. Goodbye!")
             break
         else:
@@ -185,4 +213,3 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         print("\nProgram exited via keyboard interrupt. Goodbye!")
-
