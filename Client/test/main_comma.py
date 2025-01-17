@@ -5,6 +5,7 @@ import threading
 import time
 import csv
 import subprocess
+import filecmp
 
 BdRt = 57600
 ComLoc = "COM3"
@@ -206,29 +207,37 @@ def validate_fpga():
         compare_files("output_ciphertext.txt", "capture_hex.txt")
     except Exception as e:
         print(f"Error: {e}")
-
 def compare_files(file1, file2):
-    try:
-        with open(file1, "r") as f1, open(file2, "r") as f2:
-            lines1 = f1.readlines()
-            lines2 = f2.readlines()
+    result = filecmp.cmp(file1, file2)
+    print(result)
+# def compare_files(file1, file2):
+#     try:
+#         with open(file1, "r") as f1, open(file2, "r") as f2:
+#             lines1 = [line.strip() for line in f1.readlines()]
+#             lines2 = [line.strip() for line in f2.readlines()]
+#
+#             total_lines = len(lines1)
+#             if total_lines != len(lines2):
+#                 print(f"Mismatch: File lengths differ ({total_lines} vs {len(lines2)}).")
+#                 return
+#
+#             mismatches = 0
+#             for i, (line1, line2) in enumerate(zip(lines1, lines2), start=1):
+#                 if line1 != line2:
+#                     print(f"Mismatch on line {i}:")
+#                     print(f"Software Output: {line1}")
+#                     print(f"FPGA Output:    {line2}")
+#                     mismatches += 1
+#
+#             if mismatches == 0:
+#                 print("Validation successful: All lines match.")
+#             else:
+#                 print(f"Validation failed: {mismatches} mismatched lines out of {total_lines}.")
+#     except FileNotFoundError as e:
+#         print(f"Error: {e}")
+#     except Exception as e:
+#         print(f"Unexpected error during comparison: {e}")
 
-            if len(lines1) != len(lines2):
-                print(f"Mismatch: File lengths are different ({len(lines1)} vs {len(lines2)}).")
-                return
-
-            for i, (line1, line2) in enumerate(zip(lines1, lines2), start=1):
-                line1 = line1.strip()
-                line2 = line2.strip()
-                if line1 != line2:
-                    print(f"Mismatch on line {i}:")
-                    print(f"Software Output: {line1}")
-                    print(f"FPGA Output:    {line2}")
-                    return
-
-        print("Validation successful: Files match.")
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
 
 # Main Menu
 def main():
